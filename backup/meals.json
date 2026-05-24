@@ -1,0 +1,31 @@
+{
+  "exported": "2026-05-24T13:56:37.012Z",
+  "version": "v1",
+  "data": {
+    "meals": {},
+    "favorites": [
+      {
+        "id": "fav_protein_smoothie",
+        "name": "Protein Smoothie",
+        "macros": {
+          "protein": 57,
+          "fiber": 5,
+          "carbs": 80,
+          "calories": 680,
+          "fat": 16,
+          "satFat": 6,
+          "sodium": 326,
+          "sugar": 31,
+          "calcium": 630,
+          "vitD": 0,
+          "insulin": 0
+        }
+      }
+    ],
+    "goals": {
+      "protein": 200,
+      "fiber": 30,
+      "calories": 2800
+    }
+  }
+}
