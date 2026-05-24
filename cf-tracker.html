@@ -1,0 +1,3833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Nutrition Tracker" />
+<meta name="theme-color" content="#0b0d0f" />
+<title>Nutrition Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0b0d0f;
+    --surface: #13161a;
+    --surface-2: #181c21;
+    --border: #1f242a;
+    --text: #e6e8eb;
+    --text-dim: #8b9199;
+    --text-faint: #555c66;
+    --green-1: #4dbb88;
+    --green-2: #3a9970;
+    --green-3: #2a7055;
+    --green-4: #0f2a1e;
+    --blue: #3a8fd4;
+    --orange: #d4954a;
+    --purple: #9d6fff;
+    --red: #d44a4a;
+    --mono: 'Space Mono', ui-monospace, monospace;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: contain;
+  }
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .wrap { padding: 16px 14px 80px; }
+  h1, h2, h3 { font-family: var(--mono); font-weight: 700; margin: 0; }
+  h1 { font-size: 18px; letter-spacing: -0.5px; color: var(--green-1); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green-2); margin: 0 0 10px; }
+  h3 { font-size: 14px; color: var(--text); }
+  button {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  button:active { transform: scale(0.97); }
+  button.primary {
+    background: var(--green-3);
+    border-color: var(--green-2);
+    color: #fff;
+  }
+  button.primary:active { background: var(--green-2); }
+  button.ghost { background: transparent; }
+  button.danger { color: var(--red); border-color: #3a1f1f; }
+  button.report-btn {
+    position: relative;
+    border: 1px solid var(--green-2);
+    background: linear-gradient(180deg, var(--surface) 0%, #0c1b15 100%);
+    box-shadow: 0 0 0 1px var(--green-3) inset, 0 0 12px rgba(77, 187, 136, 0.25);
+    font-family: var(--mono);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+  input, textarea, select {
+    font-family: var(--body);
+    font-size: 15px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 11px;
+    width: 100%;
+  }
+  input:focus, textarea:focus { outline: none; border-color: var(--green-2); }
+  textarea { resize: vertical; min-height: 70px; font-family: var(--mono); font-size: 16px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* Header bar */
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 4px 4px 14px;
+  }
+  header .logo {
+    display: flex; align-items: center; gap: 8px;
+  }
+  header .logo-mark {
+    width: 26px; height: 26px;
+    background: var(--green-4);
+    border: 1px solid var(--green-3);
+    border-radius: 6px;
+    display: grid; place-items: center;
+    color: var(--green-1);
+    font-family: var(--mono); font-weight: 700; font-size: 13px;
+  }
+
+  /* Date nav */
+  .datenav {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 8px; margin-bottom: 14px;
+  }
+  .datenav button { padding: 8px 12px; }
+  .datenav .datepick {
+    flex: 1; text-align: center;
+    font-family: var(--mono); font-size: 14px; color: var(--green-1);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 8px;
+    cursor: pointer;
+    position: relative;
+  }
+  .datenav input[type=date] {
+    position: absolute; inset: 0;
+    opacity: 0; cursor: pointer;
+  }
+
+  /* Goals + secondary cards */
+  .goals { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .goal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .goal-card .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-dim);
+  }
+  .goal-card .num {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-1);
+    margin-top: 2px;
+    line-height: 1.1;
+  }
+  .goal-card .num .target {
+    color: var(--text-faint);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .progress {
+    height: 4px;
+    background: var(--green-4);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .progress > span {
+    display: block; height: 100%;
+    background: var(--green-1);
+    transition: width 0.3s ease, background 0.2s ease;
+  }
+  .progress.hit > span { background: var(--blue); }
+
+  /* Secondary stats */
+  .secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .sec-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 9px;
+  }
+  .sec-card.insulin {
+    background: linear-gradient(180deg, var(--surface) 0%, #0d1b15 100%);
+    border-color: var(--green-3);
+  }
+  .sec-card .label {
+    font-family: var(--mono); font-size: 9px;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-dim);
+  }
+  .sec-card .val {
+    font-family: var(--mono); font-size: 14px; font-weight: 700;
+    color: var(--green-1);
+    margin-top: 2px;
+  }
+  .sec-card .val .u { color: var(--text-faint); font-size: 11px; font-weight: 400; }
+
+
+
+  /* Smart paste */
+  .smart-paste-row { display: flex; gap: 8px; margin-top: 8px; }
+  .smart-paste-row button { flex-shrink: 0; }
+
+  /* Meal form */
+  .meal-form { display: grid; gap: 8px; }
+  .meal-form .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .meal-form .row.row-name { grid-template-columns: 1fr; }
+  .meal-form input { padding: 7px 9px; font-size: 13px; }
+  .meal-form input[type=text] { font-size: 14px; }
+  .meal-form .field { display: flex; flex-direction: column; }
+  .meal-form .field label {
+    font-family: var(--mono); font-size: 9px;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-dim); margin-bottom: 3px;
+  }
+  .form-actions { display: flex; gap: 8px; margin-top: 4px; }
+
+  /* Meals list */
+  .meal-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px; align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .meal-row:last-child { border-bottom: none; }
+  .meal-row .name { font-weight: 600; font-size: 16px; }
+  .meal-row .macros {
+    font-family: var(--mono); font-size: 13px;
+    color: var(--text-dim); margin-top: 3px;
+  }
+  .meal-row .macros span { margin-right: 8px; }
+  .meal-row .macros .p { color: var(--green-1); }
+  .meal-row .macros .i { color: var(--blue); }
+  .meal-row .actions { display: flex; gap: 4px; }
+  .meal-row .icon-btn {
+    background: transparent;
+    border: none;
+    padding: 6px;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .meal-row .icon-btn.star.active { color: var(--green-1); }
+  .meal-row .icon-btn.delete:active { color: var(--red); }
+
+  /* Favorites */
+  .fav-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 6px; align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .fav-row:last-child { border-bottom: none; }
+  .fav-row .fname { font-size: 14px; font-weight: 500; }
+  .fav-row .fmeta {
+    font-family: var(--mono); font-size: 10px;
+    color: var(--text-dim);
+  }
+  .fav-row button { padding: 6px 10px; font-size: 12px; }
+
+  /* Action grid */
+  .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .action-grid button { width: 100%; }
+
+  /* Toast */
+  .toast {
+    position: fixed; left: 50%; bottom: 24px;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--green-4);
+    color: var(--green-1);
+    border: 1px solid var(--green-2);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-family: var(--mono); font-size: 13px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1000;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.error {
+    background: #2a1212; color: #ff8a8a; border-color: #4a2020;
+  }
+
+  /* Modal */
+  .modal-bg {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 999;
+    align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .modal-bg.show { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    width: 100%;
+    max-width: 460px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .modal h3 { margin-bottom: 12px; }
+  .modal textarea { min-height: 240px; font-size: 11px; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 12px; justify-content: flex-end; }
+
+  /* Empty state */
+  .empty {
+    text-align: center;
+    padding: 30px 16px;
+    color: var(--text-faint);
+    font-size: 13px;
+    font-family: var(--mono);
+  }
+
+  /* Dose panel */
+  .dose-meal-chip { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .dose-meal-chip .dm-name { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .dose-meal-chip .dm-macros { font-family: var(--mono); font-size: 11px; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 8px; }
+  .dose-meal-chip .dm-p { color: var(--green-1); }
+  .dose-meal-chip .dm-f { color: var(--orange); }
+  .dose-hf-badge { display: inline-flex; padding: 2px 7px; border-radius: 4px; background: rgba(212,149,74,0.12); color: var(--orange); border: 1px solid rgba(212,149,74,0.2); font-family: var(--mono); font-size: 10px; font-weight: 700; margin-top: 5px; }
+  .dose-iob-block { background: rgba(58,143,212,0.07); border: 1px solid rgba(58,143,212,0.22); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+  .dose-iob-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .dose-iob-label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--blue); margin-bottom: 3px; }
+  .dose-iob-big { font-family: var(--mono); font-size: 30px; font-weight: 700; color: var(--blue); line-height: 1; }
+  .dose-iob-u { font-size: 14px; color: rgba(58,143,212,0.5); }
+  .dose-iob-detail { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 3px; }
+  .dose-iob-edit-btn { font-family: var(--mono); font-size: 10px; color: var(--blue); background: rgba(58,143,212,0.1); border: 1px solid rgba(58,143,212,0.2); border-radius: 6px; padding: 5px 10px; cursor: pointer; flex-shrink: 0; }
+  .dose-iob-edit-area { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(58,143,212,0.15); }
+  .dose-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .dose-field { display: flex; flex-direction: column; gap: 4px; }
+  .dose-field label { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); }
+  .dose-field input { font-family: var(--mono); font-size: 20px; font-weight: 700; text-align: center; padding: 10px 8px; }
+  .dose-tod-chip { font-family: var(--mono); font-size: 18px; font-weight: 700; text-align: center; background: var(--surface-2); color: var(--green-1); border: 1px solid var(--border); border-radius: 8px; padding: 10px 8px; cursor: pointer; user-select: none; line-height: 1.3; }
+  .dose-tod-hint { font-size: 9px; color: var(--text-dim); font-weight: 400; margin-top: 2px; }
+  .dose-ex-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--green-2); margin: 0 0 7px; }
+  .dose-ex-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+  .dose-ex-btn { padding: 10px 8px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text-dim); font-size: 13px; font-weight: 500; text-align: left; line-height: 1.3; cursor: pointer; }
+  .dose-ex-btn .dose-ex-hint { display: block; font-size: 9px; font-family: var(--mono); opacity: 0.6; margin-top: 2px; }
+  .dose-ex-btn.active { background: var(--green-4); border-color: var(--green-2); color: var(--green-1); }
+  .dose-result-card { background: linear-gradient(180deg, var(--surface) 0%, #0c1b15 100%); border: 1px solid var(--green-3); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; text-align: center; }
+  .dose-result-lbl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; color: var(--green-2); margin-bottom: 6px; }
+  .dose-result-num { font-family: var(--mono); font-size: 56px; font-weight: 700; color: var(--green-1); line-height: 1; }
+  .dose-result-u { font-size: 22px; color: var(--text-faint); }
+  .dose-result-timing { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .dose-calc-toggle { font-family: var(--mono); font-size: 10px; color: var(--text-faint); text-align: center; padding: 2px 0 8px; cursor: pointer; letter-spacing: 0.5px; }
+  .dose-calc-drawer { display: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .dose-calc-drawer.open { display: block; }
+  .dose-calc-row { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; padding: 4px 0; border-bottom: 1px solid rgba(31,36,42,0.6); }
+  .dose-calc-row:last-child { border-bottom: none; padding-top: 6px; }
+  .dose-calc-row .dcl { color: var(--text-dim); }
+  .dose-calc-row .dcv { font-weight: 700; }
+  .manual-toggle { font-family: var(--mono); font-size: 11px; color: var(--text-faint); cursor: pointer; padding: 0 0 10px; display: block; letter-spacing: 0.5px; }
+
+  /* Capture row */
+  .capture-row {
+    display: flex; gap: 8px; margin-bottom: 10px;
+  }
+  .capture-btn {
+    flex: 1;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 8px;
+    cursor: pointer;
+    touch-action: manipulation;
+    font-family: var(--body);
+  }
+  .capture-btn:active { background: var(--green-4); border-color: var(--green-3); color: var(--green-1); }
+  .capture-btn.active { background: var(--green-4); border-color: var(--green-3); color: var(--green-1); }
+
+  /* Sync dot */
+  .sync-dot {
+    display: inline-block; width: 7px; height: 7px;
+    border-radius: 50%; margin-left: 6px; vertical-align: middle;
+  }
+  .sync-dot.ok { background: var(--green-1); }
+  .sync-dot.err { background: var(--red); }
+  .sync-dot.syncing { background: var(--orange); animation: pulse-glow 1s ease-in-out infinite; }
+
+  /* Recent meals row */
+  .recent-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 0; border-bottom: 1px solid var(--border); gap: 8px;
+  }
+  .recent-row:last-child { border-bottom: none; }
+  .recent-name { font-size: 14px; font-weight: 500; flex: 1; min-width: 0; }
+  .recent-meta { font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+
+  /* Fav photo match chip */
+  .fav-match-chip {
+    background: linear-gradient(135deg, var(--green-4), #0c1b15);
+    border: 1px solid var(--green-2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .fav-match-chip.show { display: block; }
+  .fav-match-title { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green-2); margin-bottom: 6px; }
+  .fav-match-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .fav-match-actions { display: flex; gap: 8px; }
+  .fav-match-actions button { flex: 1; font-size: 13px; padding: 8px; border-radius: 7px; }
+
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 1px var(--green-3) inset, 0 0 12px rgba(77, 187, 136, 0.25); }
+    50% { box-shadow: 0 0 0 1px var(--green-2) inset, 0 0 18px rgba(77, 187, 136, 0.45); }
+  }
+  .report-btn { animation: pulse-glow 3s ease-in-out infinite; }
+
+  /* Tabs */
+  .tabs {
+    display: flex; gap: 4px; margin-bottom: 14px;
+    background: var(--surface); padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .tabs button {
+    flex: 1; background: transparent; border: none; padding: 9px 6px;
+    color: var(--text-dim); font-size: 13px; font-weight: 500;
+    border-radius: 7px; font-family: var(--bo);
+    transition: all 0.15s;
+  }
+  .tabs button.active {
+    background: var(--green-4); color: var(--green-1);
+    border: 1px solid var(--green-3);
+  }
+  /* Reports tab button */
+  .tabs button[data-tab="reports"] {
+    border: 1px solid var(--green-3);
+    color: var(--green-1);
+  }
+  .tabs button[data-tab="reports"].active {
+    background: var(--green-4);
+    color: var(--green-1);
+  }
+  .restore-banner {
+    display: none;
+    background: linear-gradient(135deg, #0c1b15 0%, #0f2a1e 100%);
+    border: 1px solid var(--green-2);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 0 16px rgba(77,187,136,0.15);
+  }
+  .restore-banner.show { display: block; }
+  .restore-banner .rb-title {
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
+    color: var(--green-1); text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .restore-banner .rb-body {
+    font-size: 13px; color: var(--text-dim); margin-bottom: 12px; line-height: 1.5;
+  }
+  .restore-banner button {
+    width: 100%; background: var(--green-3); border-color: var(--green-2);
+    color: #fff; font-family: var(--mono); font-weight: 700;
+    font-size: 13px; letter-spacing: 0.5px; padding: 11px;
+  }
+  .restore-banner button:active { background: var(--green-2); }
+
+  /* Reports tab button */
+  .tabs button[data-tab="reports"] {
+    border: 1px solid var(--green-3);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--green-1);
+  }
+  .tabs button[data-tab="reports"].active {
+    background: var(--green-4);
+    color: var(--green-1);
+  }
+
+  /* Reports UI */
+  #reports-ui {
+    display: none;
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    background: var(--bg);
+    z-index: 1010;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  #reports-ui.show { display: flex; }
+
+  .r-hdr {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px max(12px,env(safe-area-inset-right)) 9px max(12px,env(safe-area-inset-left));
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    height: 54px;
+    touch-action: manipulation;
+  }
+  .r-back-btn {
+    width: 38px; height: 38px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-size: 16px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    font-family: var(--body);
+  }
+  .r-back-btn:active { background: var(--surface-2); }
+  .r-nav { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; min-width: 0; }
+  .r-nav-btn {
+    width: 38px; height: 38px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-size: 16px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    font-family: var(--body);
+  }
+  .r-nav-btn:active { background: var(--surface-2); }
+  .r-nav-btn:disabled { opacity: 0.22; pointer-events: none; }
+  .r-date-chip {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-1);
+    text-align: center;
+    line-height: 1.3;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .r-date-chip .r-sub {
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-faint);
+    margin-top: 2px;
+  }
+  .r-hdr-actions { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+  .r-icon-btn {
+    width: 38px; height: 38px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-size: 14px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    font-family: var(--body);
+  }
+  .r-icon-btn:active { background: var(--surface-2); }
+  .r-icon-btn.r-active { background: var(--green-4); border-color: var(--green-3); color: var(--green-1); }
+  .r-icon-btn.r-danger:active { color: var(--red); border-color: #3a1f1f; }
+  .r-plus-btn {
+    width: 38px; height: 38px;
+    background: var(--green-3);
+    border: 1px solid var(--green-2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 22px;
+    display: grid; place-items: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    font-family: var(--body);
+  }
+  .r-plus-btn:active { background: var(--green-2); }
+
+  .r-tabs {
+    flex-shrink: 0;
+    display: flex;
+    gap: 4px;
+    padding: 5px max(8px,env(safe-area-inset-right)) 5px max(8px,env(safe-area-inset-left));
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .r-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 7px;
+    border-radius: 7px;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dim);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .r-tab-btn.active { background: var(--green-4); color: var(--green-1); }
+
+  .r-content { flex: 1; position: relative; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+  .r-frame-wrap {
+    display: none;
+    width: 100%;
+  }
+  .r-frame-wrap.show { display: block; }
+  #r-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    display: block;
+    background: transparent;
+  }
+
+  .r-empty {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 14px; padding: 32px 24px;
+  }
+  .r-empty-glyph { font-size: 44px; opacity: 0.13; font-family: var(--mono); color: var(--green-1); letter-spacing: -2px; }
+  .r-empty-title { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--text-dim); }
+  .r-empty-body { font-size: 13px; color: var(--text-faint); text-align: center; max-width: 260px; line-height: 1.65; }
+  .r-empty-btn {
+    margin-top: 6px;
+    background: var(--green-3); border: 1px solid var(--green-2);
+    color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700;
+    letter-spacing: 0.5px; padding: 13px 22px; border-radius: 9px;
+    cursor: pointer; touch-action: manipulation;
+  }
+  .r-empty-btn:active { background: var(--green-2); }
+
+  .r-index-panel {
+    position: absolute; inset: 0;
+    background: var(--bg);
+    z-index: 10;
+    display: none; flex-direction: column; overflow: hidden;
+  }
+  .r-index-panel.show { display: flex; }
+  .r-index-search {
+    flex-shrink: 0;
+    padding: 10px max(12px,env(safe-area-inset-right)) 10px max(12px,env(safe-area-inset-left));
+    border-bottom: 1px solid var(--border);
+  }
+  .r-index-search input {
+    width: 100%;
+    font-family: var(--mono);
+    font-size: 16px;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 11px;
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  .r-index-search input::placeholder { color: var(--text-faint); }
+  .r-index-search input:focus { outline: none; border-color: var(--green-2); }
+  .r-index-list {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px max(10px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
+  }
+  .r-month-label {
+    font-family: var(--mono); font-size: 9px;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--green-2); padding: 10px 4px 6px;
+  }
+  .r-idx-card {
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: 10px;
+    padding: 11px 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 7px; cursor: pointer;
+    touch-action: manipulation;
+  }
+  .r-idx-card:active { border-color: var(--green-3); background: var(--surface-2); }
+  .r-idx-card.r-current { border-color: var(--green-2); background: linear-gradient(135deg, var(--surface) 0%, #0c1b15 100%); }
+  .r-idx-card.r-weekly { border-left: 2px solid var(--purple); }
+  .r-idx-card.r-weekly.r-current { border-color: var(--purple); border-left-color: var(--purple); }
+  .r-idx-date { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--text); }
+  .r-idx-dow { font-family: var(--mono); font-size: 9px; color: var(--text-faint); margin-top: 2px; text-transform: uppercase; letter-spacing: 1px; }
+  .r-idx-meta { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+  .r-pill { font-family: var(--mono); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+  .r-pill-blue { background: rgba(58,143,212,0.12); color: var(--blue); }
+  .r-pill-red { background: rgba(212,68,74,0.12); color: var(--red); }
+  .r-pill-orange { background: rgba(212,149,74,0.12); color: var(--orange); }
+  .r-pill-purple { background: rgba(157,111,255,0.12); color: var(--purple); }
+  .r-pill-dim { background: var(--surface-2); color: var(--text-faint); }
+  .r-idx-tir { font-family: var(--mono); font-size: 18px; font-weight: 700; text-align: right; line-height: 1; }
+  .r-idx-tir .r-tir-lbl { font-size: 8px; font-weight: 400; color: var(--text-faint); display: block; margin-top: 3px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .r-slide-left  { animation: rSL 0.2s ease forwards; }
+  .r-slide-right { animation: rSR 0.2s ease forwards; }
+  @keyframes rSL { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-20px); opacity: 0; } }
+  @keyframes rSR { from { transform: translateX(0); opacity: 1; } to { transform: translateX(20px);  opacity: 0; } }
+
+  .r-sheet-bg {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.72);
+    display: none; z-index: 300;
+    align-items: flex-end; justify-content: center;
+  }
+  .r-sheet-bg.show { display: flex; }
+  .r-sheet {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px 16px 0 0;
+    padding: 20px max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+    width: 100%; max-width: 600px;
+    max-height: 90vh; overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .r-sheet-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 0 auto 16px; }
+  .r-sheet-title { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--green-1); margin-bottom: 3px; }
+  .r-sheet-title.danger { color: var(--red); }
+  .r-sheet-sub { font-size: 13px; color: var(--text-faint); margin-bottom: 14px; line-height: 1.5; }
+  .r-sheet textarea {
+    width: 100%; font-family: var(--mono); font-size: 16px;
+    background: var(--bg); color: var(--text-dim);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 11px; height: 160px; resize: none; line-height: 1.5;
+    display: block; -webkit-appearance: none;
+    -webkit-user-select: text; user-select: text;
+  }
+  .r-sheet textarea:focus { outline: none; border-color: var(--green-2); }
+  .r-date-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .r-date-row .r-lbl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-dim); flex-shrink: 0; }
+  .r-date-row input[type=date] {
+    flex: 1; font-family: var(--mono); font-size: 16px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 9px 10px; -webkit-appearance: none;
+    -webkit-user-select: text; user-select: text;
+  }
+  .r-date-row input[type=date]:focus { outline: none; border-color: var(--green-2); }
+  .r-overwrite { font-family: var(--mono); font-size: 11px; color: var(--red); margin-top: 6px; display: none; }
+  .r-overwrite.show { display: block; }
+  .r-sheet-actions { display: flex; gap: 8px; margin-top: 14px; }
+  .r-sheet-actions button {
+    font-family: var(--body); font-size: 15px; font-weight: 500;
+    border-radius: 10px; padding: 13px 16px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    touch-action: manipulation;
+  }
+  .r-sheet-actions button:active { opacity: 0.75; }
+  .r-sheet-actions .r-save { flex: 1; background: var(--green-3); border-color: var(--green-2); color: #fff; }
+  .r-sheet-actions .r-cancel { color: var(--text-dim); }
+  .r-sheet-actions .r-del { background: #2a1212; border-color: #4a2020; color: var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark">⬡</div>
+      <h1>Nutrition Tracker</h1>
+    </div>
+
+  </header>
+
+  <!-- DATE NAV -->
+  <div class="datenav">
+    <button id="prevDay">←</button>
+    <div class="datepick" id="datePickWrap">
+      <span id="dateLabel">Today</span>
+      <input type="date" id="dateInput" />
+    </div>
+    <button id="nextDay">→</button>
+  </div>
+
+  <!-- GOALS / PRIMARY -->
+  <div class="goals">
+    <div class="goal-card">
+      <div class="label">Protein</div>
+      <div class="num"><span id="proteinNow">0</span><span class="target"> / <span id="proteinGoal">200</span>g</span></div>
+      <div class="progress" id="proteinProg"><span style="width:0%"></span></div>
+    </div>
+    <div class="goal-card">
+      <div class="label">Fiber</div>
+      <div class="num"><span id="fiberNow">0</span><span class="target"> / <span id="fiberGoal">30</span>g</span></div>
+      <div class="progress" id="fiberProg"><span style="width:0%"></span></div>
+    </div>
+    <div class="goal-card">
+      <div class="label">Calories</div>
+      <div class="num"><span id="calNow">0</span><span class="target"> / <span id="calGoal">2800</span></span></div>
+      <div class="progress" id="calProg"><span style="width:0%"></span></div>
+    </div>
+  </div>
+
+  <!-- SECONDARY -->
+  <div class="secondary">
+    <div class="sec-card"><div class="label">Carbs</div><div class="val"><span id="carbsNow">0</span><span class="u">g</span></div></div>
+    <div class="sec-card"><div class="label">Net Carb</div><div class="val"><span id="netNow">0</span><span class="u">g</span></div></div>
+    <div class="sec-card"><div class="label">Fat</div><div class="val"><span id="fatNow">0</span><span class="u">g</span></div></div>
+    <div class="sec-card"><div class="label">Sat Fat</div><div class="val"><span id="satNow">0</span><span class="u">g</span></div></div>
+    <div class="sec-card"><div class="label">Sodium</div><div class="val"><span id="sodNow">0</span><span class="u">mg</span></div></div>
+    <div class="sec-card"><div class="label">Sugar</div><div class="val"><span id="sugNow">0</span><span class="u">g</span></div></div>
+    <div class="sec-card"><div class="label">Vit D</div><div class="val"><span id="vdNow">0</span><span class="u">IU</span></div></div>
+    <div class="sec-card"><div class="label">Calcium</div><div class="val"><span id="caNow">0</span><span class="u">mg</span></div></div>
+  </div>
+
+  <div class="secondary" style="grid-template-columns: 1fr;">
+    <div class="sec-card insulin">
+      <div class="label">Insulin Today</div>
+      <div class="val" style="font-size:20px;"><span id="insulinNow">0</span><span class="u" style="font-size:14px;">u</span> <span style="color:var(--text-faint); font-size:12px; margin-left:8px;">across <span id="insulinMeals">0</span> meals</span></div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="active" data-tab="log">Log</button>
+    <button data-tab="favs">Favorites</button>
+    <button data-tab="dose">Dose</button>
+    <button data-tab="reports">⊙ Reports</button>
+    <button data-tab="settings">⚙</button>
+  </div>
+
+  <!-- LOG TAB -->
+  <section id="tab-log">
+
+    <!-- RESTORE BANNER — shown only when localStorage is empty -->
+    <div class="restore-banner" id="restoreBanner">
+      <div class="rb-title">⬡ No Data Found</div>
+      <div class="rb-body">Looks like a fresh install. Tap below to restore your meal history, favorites, and goals from backup.</div>
+      <button onclick="document.getElementById('mergeImportFile').value='';document.getElementById('mergeImportFile').click();">Restore My Data</button>
+    </div>
+
+    <!-- SMART PASTE -->
+    <div class="card">
+      <h2>Smart Paste</h2>
+
+      <!-- Quick capture row -->
+      <div class="capture-row" id="captureRow">
+        <button class="capture-btn" id="photoBtn">📷 Photo</button>
+        <button class="capture-btn" id="barcodeBtn">⬛ Barcode</button>
+        <button class="capture-btn" id="partialAddBtn" style="display:none;">+ Add More</button>
+      </div>
+
+      <!-- Photo description field (shown when photo selected) -->
+      <div id="photoDescRow" style="display:none;margin-bottom:8px;">
+        <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:4px;">Describe or add detail (optional)</div>
+        <input type="text" id="photoDesc" placeholder="e.g. 6oz chicken, cup of rice, large bowl…" style="font-size:13px;" />
+      </div>
+
+      <!-- AI scanning status -->
+      <div id="aiScanStatus" style="display:none;font-family:var(--mono);font-size:11px;color:var(--green-1);padding:8px 0;text-align:center;letter-spacing:0.5px;"></div>
+
+      <!-- Input state -->
+      <div id="spInputRow">
+        <textarea id="smartPaste" placeholder="Paste from Claude — Name, Protein: 50, Carbs: 30, Fat: 20…"></textarea>
+        <div class="smart-paste-row">
+          <button class="primary" id="parseBtn">Preview Dose</button>
+          <button class="ghost" id="parseClearBtn">Clear</button>
+        </div>
+      </div>
+
+      <!-- Hidden file inputs -->
+      <input type="file" id="photoFile" accept="image/*" capture="environment" style="display:none;" />
+      <input type="file" id="barcodeFile" accept="image/*" capture="environment" style="display:none;" />
+
+      <!-- Dose panel (shown after parse) -->
+      <div id="spDosePanel" style="display:none;">
+
+        <!-- Favorite match suggestion -->
+        <div class="fav-match-chip" id="favMatchChip">
+          <div class="fav-match-title">⬡ Looks like a favorite</div>
+          <div class="fav-match-name" id="favMatchName">—</div>
+          <div class="fav-match-actions">
+            <button class="primary" id="favMatchUseBtn">Use Favorite</button>
+            <button class="ghost" id="favMatchDismissBtn">Keep Estimate</button>
+          </div>
+        </div>
+
+        <div class="dose-meal-chip">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+            <div class="dm-name" id="dpMealName">—</div>
+            <button class="dose-iob-edit-btn" id="dpMealEditBtn" onclick="toggleDpMealEdit()" style="margin-left:8px;flex-shrink:0;">edit</button>
+          </div>
+          <div class="dm-macros">
+            <span class="dm-p" id="dpProtein">P 0g</span>
+            <span id="dpCarbs">C 0g</span>
+            <span id="dpNetCarbs" style="color:var(--green-2);font-weight:700;">Net 0g</span>
+            <span class="dm-f" id="dpFat">Fat 0g</span>
+            <span id="dpCal">0 cal</span>
+          </div>
+          <div id="dpHfBadge"></div>
+          <div id="dpMealEditArea" style="display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">
+            <div class="dose-two-col" style="margin-bottom:6px;">
+              <div class="dose-field"><label>Name</label><input type="text" id="dpEditName" style="font-size:14px;font-family:var(--bo);font-weight:500;text-align:left;padding:8px;" /></div>
+              <div class="dose-field"><label>Carbs (g)</label><input type="number" id="dpEditCarbs" step="1" oninput="applyDpMealEdit()" /></div>
+            </div>
+            <div class="dose-two-col" style="margin-bottom:0;">
+              <div class="dose-field"><label>Fiber (g)</label><input type="number" id="dpEditFiber" step="0.1" oninput="applyDpMealEdit()" /></div>
+              <div class="dose-field"><label>Fat (g)</label><input type="number" id="dpEditFat" step="0.1" oninput="applyDpMealEdit()" /></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dose-iob-block">
+          <div class="dose-iob-top">
+            <div>
+              <div class="dose-iob-label">IOB Remaining</div>
+              <div><span class="dose-iob-big" id="dpIobBig">0.0</span><span class="dose-iob-u"> u</span></div>
+              <div class="dose-iob-detail" id="dpIobDetail">No recent insulin</div>
+            </div>
+            <button class="dose-iob-edit-btn" id="dpIobEditBtn" onclick="toggleDpIobEdit()">edit</button>
+          </div>
+          <div class="dose-iob-edit-area" id="dpIobEditArea">
+            <div class="dose-two-col" style="margin-bottom:0;">
+              <div class="dose-field"><label>Last dose (u)</label><input type="number" id="dpLastDose" step="0.5" min="0" value="0" oninput="recalcDp()"/></div>
+              <div class="dose-field"><label>Hours ago</label><input type="number" id="dpHoursAgo" step="0.5" min="0" max="4" value="0" oninput="recalcDp()"/></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dose-two-col">
+          <div class="dose-field">
+            <label>Current BS</label>
+            <input type="number" id="dpBs" step="1" value="140" oninput="recalcDp()"/>
+          </div>
+          <div class="dose-field">
+            <label>Time of day</label>
+            <div class="dose-tod-chip" id="dpTodChip" onclick="cycleDpTod()">
+              <span id="dpTodLabel">Afternoon</span>
+              <div class="dose-tod-hint">tap to change</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dose-ex-label">Exercise</div>
+        <div class="dose-ex-grid" id="dpExGrid" style="grid-template-columns:1fr 1fr;margin-bottom:10px;">
+          <button class="dose-ex-btn active" data-ex="none" onclick="setDpEx(this)">None<span class="dose-ex-hint">Standard</span></button>
+          <button class="dose-ex-btn" data-ex="sedentary" onclick="setDpEx(this)">Sedentary<span class="dose-ex-hint">+1u</span></button>
+          <button class="dose-ex-btn" data-ex="hiit_cortisol" onclick="setDpEx(this)">HIIT &lt;1hr<span class="dose-ex-hint">No reduction · cortisol active</span></button>
+          <button class="dose-ex-btn" data-ex="hiit_active" onclick="setDpEx(this)">HIIT 1–3hr<span class="dose-ex-hint">−25% carbs</span></button>
+          <button class="dose-ex-btn" data-ex="hiit_recent" onclick="setDpEx(this)" style="grid-column:span 2;">HIIT 3–6hr<span class="dose-ex-hint">−20% carbs</span></button>
+        </div>
+
+        <div class="dose-result-card">
+          <div class="dose-result-lbl">Suggested Humalog</div>
+          <div><span class="dose-result-num" id="dpDoseNum">0</span><span class="dose-result-u"> u</span></div>
+          <div class="dose-result-timing" id="dpTiming">5–10 min before eating</div>
+        </div>
+        <div id="dpNightAdvisory" style="display:none;font-family:var(--mono);font-size:10px;color:var(--orange);text-align:center;padding:4px 0 6px;letter-spacing:0.3px;"></div>
+
+        <div class="dose-ex-label" style="margin-top:4px;">Timing · for log only</div>
+        <div class="dose-ex-grid" id="dpPreBolGrid" style="margin-bottom:8px;">
+          <button class="dose-ex-btn active" data-pb="10min" onclick="setDpPb(this)">10 min before<span class="dose-ex-hint">Standard pre-bolus</span></button>
+          <button class="dose-ex-btn" data-pb="first_bite" onclick="setDpPb(this)">First bite<span class="dose-ex-hint">High fat / low BS</span></button>
+          <button class="dose-ex-btn" data-pb="after" onclick="setDpPb(this)">After eating<span class="dose-ex-hint">Edge case</span></button>
+          <button class="dose-ex-btn" data-pb="correction" onclick="setDpPb(this)">Correction<span class="dose-ex-hint">No meal</span></button>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:10px;">
+          <div>
+            <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:2px;">Light activity after eating?</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--text-faint);">Walking/standing — logs for future data</div>
+          </div>
+          <button id="dpActivityToggle" onclick="toggleDpActivity()" style="font-family:var(--mono);font-size:12px;font-weight:700;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);cursor:pointer;min-width:52px;">No</button>
+        </div>
+
+        <div class="dose-calc-toggle" id="dpCalcToggle" onclick="toggleDpCalc()">show calculation ↓</div>
+        <div class="dose-calc-drawer" id="dpCalcDrawer">
+          <div class="dose-calc-row"><span class="dcl" id="dpCarbLbl">Net carb dose</span><span class="dcv" id="dpCarbVal" style="color:var(--green-1)">+0.0u</span></div>
+          <div class="dose-calc-row"><span class="dcl" id="dpCorrLbl">Correction</span><span class="dcv" id="dpCorrVal" style="color:var(--orange)">0.0u</span></div>
+          <div class="dose-calc-row"><span class="dcl">IOB subtract</span><span class="dcv" id="dpIobSubVal" style="color:var(--blue)">−0.0u</span></div>
+          <div class="dose-calc-row" id="dpExRow" style="display:none;"><span class="dcl" id="dpExLbl">Exercise</span><span class="dcv" id="dpExVal"></span></div>
+          <div class="dose-calc-row"><span class="dcl" style="color:var(--text);font-weight:700;">Total (rounded 0.5)</span><span class="dcv" id="dpTotalVal" style="color:var(--text);">0u</span></div>
+        </div>
+
+        <button class="primary" id="doseLogBtn" style="width:100%;margin-bottom:6px;">⬡ Dose + Log Meal</button>
+        <button class="ghost" id="doseSkipBtn" style="width:100%;font-size:13px;color:var(--text-dim);">Log without insulin</button>
+        <button class="ghost" id="doseCancelBtn" style="width:100%;font-size:12px;color:var(--text-faint);margin-top:2px;">✕ Cancel — don't log this meal</button>
+      </div>
+    </div>
+
+    <!-- MANUAL FORM (collapsible) -->
+    <div class="card">
+      <span class="manual-toggle" id="manualToggle" onclick="toggleManualForm()">+ Log manually</span>
+      <div id="manualFormBody" style="display:none;">
+      <div class="meal-form">
+        <div class="row row-name">
+          <div class="field">
+            <label>Meal Name</label>
+            <input type="text" id="m_name" placeholder="e.g. Chicken Bowl" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Protein (g)</label><input type="number" step="0.1" id="m_protein" /></div>
+          <div class="field"><label>Fiber (g)</label><input type="number" step="0.1" id="m_fiber" /></div>
+          <div class="field"><label>Carbs (g)</label><input type="number" step="0.1" id="m_carbs" /></div>
+          <div class="field"><label>Cal</label><input type="number" step="1" id="m_cal" /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Fat (g)</label><input type="number" step="0.1" id="m_fat" /></div>
+          <div class="field"><label>Sat Fat</label><input type="number" step="0.1" id="m_sat" /></div>
+          <div class="field"><label>Sodium</label><input type="number" step="1" id="m_sod" /></div>
+          <div class="field"><label>Sugar (g)</label><input type="number" step="0.1" id="m_sug" /></div>
+        </div>
+        <div class="row">
+          <div class="field"><label>Vit D (IU)</label><input type="number" step="1" id="m_vd" /></div>
+          <div class="field"><label>Calcium</label><input type="number" step="1" id="m_ca" /></div>
+          <div class="field"><label>Insulin (u)</label><input type="number" step="0.5" id="m_ins" /></div>
+          <div class="field"><label>Time</label><input type="time" id="m_time" /></div>
+        </div>
+        <div class="form-actions">
+          <button class="primary" id="addMealBtn">Add</button>
+          <button class="ghost" id="clearFormBtn">Clear</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- MEAL LIST -->
+    <div class="card">
+      <h2>Meals — <span id="dateLabelMeals" style="text-transform:none; letter-spacing:0; color:var(--text);">today</span></h2>
+      <div id="mealList"></div>
+    </div>
+
+    <!-- ACTION GRID -->
+    <div class="card">
+      <div class="action-grid">
+        <button class="report-btn" id="dailyReportBtn">⬡ Daily Report</button>
+        <button class="report-btn" id="weeklyReportBtn">⬡ Weekly Report</button>
+        <button id="exportCsvBtn">Export CSV</button>
+        <button id="moveTrackerBtn">Move Tracker</button>
+      </div>
+      <div id="weeklyDayPicker" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+        <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);margin-bottom:8px;">Select days to include</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;" id="dayCheckGrid"></div>
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <button class="primary" id="weeklyBuildBtn" style="flex:1;">Build Report</button>
+          <button class="ghost" id="weeklyPickerCancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FAVORITES TAB -->
+  <section id="tab-favs" style="display:none">
+    <!-- RECENTS -->
+    <div class="card" id="recentsCard">
+      <h2>Recent Meals</h2>
+      <div id="recentsList"></div>
+    </div>
+    <div class="card">
+      <h2>Favorites</h2>
+      <div id="favList"></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS TAB -->
+  <section id="tab-settings" style="display:none">
+    <div class="card">
+      <h2>API Keys</h2>
+      <div style="font-size:13px;color:var(--text-dim);margin-bottom:12px;line-height:1.5;">Required for photo logging and barcode AI. Keys stored on this device only.</div>
+
+      <div class="dose-field" style="margin-bottom:12px;">
+        <label>Anthropic API Key <span id="anthropicStatus" style="float:right;font-size:10px;"></span></label>
+        <input type="password" id="settingAnthropicKey" placeholder="sk-ant-…" style="font-family:var(--mono);font-size:13px;" />
+      </div>
+      <button class="primary" id="saveAnthropicBtn" style="width:100%;margin-bottom:16px;">Save API Key</button>
+
+      <div class="dose-field" style="margin-bottom:12px;">
+        <label>GitHub Username <span id="githubStatus" style="float:right;font-size:10px;"></span></label>
+        <input type="text" id="settingGithubUser" placeholder="your-username" style="font-family:var(--mono);font-size:13px;" />
+      </div>
+      <div class="dose-field" style="margin-bottom:12px;">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="settingGithubPat" placeholder="ghp_…" style="font-family:var(--mono);font-size:13px;" />
+      </div>
+      <button class="primary" id="saveGithubBtn" style="width:100%;margin-bottom:8px;">Save GitHub Settings</button>
+      <button id="syncNowBtn" style="width:100%;border-color:var(--green-3);color:var(--green-1);">⟳ Sync Now</button>
+      <div id="syncStatus" style="font-family:var(--mono);font-size:10px;color:var(--text-faint);text-align:center;margin-top:8px;"></div>
+    </div>
+
+    <div class="card">
+      <h2>Goals</h2>
+      <div class="dose-two-col" style="margin-bottom:8px;">
+        <div class="dose-field"><label>Protein (g)</label><input type="number" id="goalProtein" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" /></div>
+        <div class="dose-field"><label>Fiber (g)</label><input type="number" id="goalFiber" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" /></div>
+      </div>
+      <div class="dose-field" style="margin-bottom:10px;">
+        <label>Calories</label>
+        <input type="number" id="goalCalories" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" />
+      </div>
+      <button class="primary" id="saveGoalsBtn" style="width:100%;">Save Goals</button>
+    </div>
+  </section>
+
+  <!-- DOSE TAB -->
+  <section id="tab-dose" style="display:none">
+    <div class="card">
+      <h2>Dose Calculator</h2>
+      <div class="dose-iob-block" style="margin-bottom:10px;">
+        <div class="dose-iob-top">
+          <div>
+            <div class="dose-iob-label">IOB Remaining</div>
+            <div><span class="dose-iob-big" id="scIobBig">0.0</span><span class="dose-iob-u"> u</span></div>
+            <div class="dose-iob-detail" id="scIobDetail">No recent insulin</div>
+          </div>
+          <button class="dose-iob-edit-btn" id="scIobEditBtn" onclick="toggleScIobEdit()">edit</button>
+        </div>
+        <div class="dose-iob-edit-area" id="scIobEditArea">
+          <div class="dose-two-col" style="margin-bottom:0;">
+            <div class="dose-field"><label>Last dose (u)</label><input type="number" id="scLastDose" step="0.5" min="0" value="0" oninput="recalcSc()"/></div>
+            <div class="dose-field"><label>Hours ago</label><input type="number" id="scHoursAgo" step="0.5" min="0" max="4" value="0" oninput="recalcSc()"/></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dose-two-col">
+        <div class="dose-field">
+          <label>Current BS</label>
+          <input type="number" id="scBs" step="1" value="140" oninput="recalcSc()"/>
+        </div>
+        <div class="dose-field">
+          <label>Carbs (g)</label>
+          <input type="number" id="scCarbs" step="1" value="0" oninput="recalcSc()"/>
+        </div>
+      </div>
+
+      <div class="dose-two-col">
+        <div class="dose-field">
+          <label>Fiber (g)</label>
+          <input type="number" id="scFiber" step="0.1" min="0" value="0" oninput="recalcSc()"/>
+        </div>
+        <div class="dose-field">
+          <label>Fat (g)</label>
+          <input type="number" id="scFat" step="1" min="0" value="0" oninput="recalcSc()"/>
+        </div>
+      </div>
+
+      <div class="dose-ex-label">Exercise</div>
+      <div class="dose-ex-grid" id="scExGrid" style="grid-template-columns:1fr 1fr;">
+        <button class="dose-ex-btn active" data-scex="none" onclick="setScEx(this)">None<span class="dose-ex-hint">Standard</span></button>
+        <button class="dose-ex-btn" data-scex="sedentary" onclick="setScEx(this)">Sedentary<span class="dose-ex-hint">+1u</span></button>
+        <button class="dose-ex-btn" data-scex="hiit_cortisol" onclick="setScEx(this)">HIIT &lt;1hr<span class="dose-ex-hint">No reduction · cortisol</span></button>
+        <button class="dose-ex-btn" data-scex="hiit_active" onclick="setScEx(this)">HIIT 1–3hr<span class="dose-ex-hint">−25% carbs</span></button>
+        <button class="dose-ex-btn" data-scex="hiit_recent" onclick="setScEx(this)" style="grid-column:span 2;">HIIT 3–6hr<span class="dose-ex-hint">−20% carbs</span></button>
+      </div>
+
+      <div class="dose-result-card">
+        <div class="dose-result-lbl" id="scResultLbl">Suggested Humalog</div>
+        <div><span class="dose-result-num" id="scDoseNum">0</span><span class="dose-result-u"> u</span></div>
+        <div class="dose-result-timing" id="scTiming">Enter BS and carbs above</div>
+      </div>
+      <div id="scNightAdvisory" style="display:none;font-family:var(--mono);font-size:10px;color:var(--orange);text-align:center;padding:4px 0 6px;letter-spacing:0.3px;"></div>
+      <p style="font-family:var(--mono);font-size:10px;color:var(--text-faint);text-align:center;margin:0;">For corrections &amp; planning only · log via Smart Paste or Favorites</p>
+    </div>
+
+    <div class="card">
+      <h2>Log Insulin Only</h2>
+      <div class="dose-two-col" style="margin-bottom:8px;">
+        <div class="dose-field">
+          <label>Units</label>
+          <input type="number" id="insOnlyUnits" step="0.5" min="0" value="" placeholder="0" style="font-family:var(--mono);font-size:28px;font-weight:700;text-align:center;padding:10px 8px;" />
+        </div>
+        <div class="dose-field">
+          <label>Reason</label>
+          <select id="insOnlyReason" style="font-family:var(--mono);font-size:14px;font-weight:600;text-align:center;background:var(--surface-2);color:var(--tx);border:1px solid var(--border);border-radius:8px;padding:10px 8px;outline:none;width:100%;color:var(--text);">
+            <option value="correction">Correction</option>
+            <option value="lantus">Lantus</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="dose-field" style="margin-bottom:10px;">
+        <label>Current BS (optional)</label>
+        <input type="number" id="insOnlyBs" step="1" min="0" value="" placeholder="e.g. 215" style="font-family:var(--mono);font-size:20px;font-weight:700;text-align:center;padding:10px 8px;" />
+      </div>
+      <button class="primary" id="insOnlyLogBtn" style="width:100%;">Log Insulin</button>
+    </div>
+
+    <div class="card">
+      <h2>Data Tools</h2>
+      <div class="action-grid">
+        <button id="exportFullBtn" style="grid-column: span 2; border-color: var(--green-2); color: var(--green-1);">&#11015; Export Full Backup</button>
+        <button id="mergeImportBtn" style="grid-column: span 2; border-color: var(--green-3); color: var(--green-1);">&#11014; Smart Merge Import</button>
+        <button id="exportReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Export Reports</button>
+        <button id="importReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Import Reports</button>
+        <button class="danger" id="resetDayBtn">Clear Today</button>
+        <button class="danger" id="resetAllBtn">Reset All Data</button>
+      </div>
+    </div>
+    <input type="file" id="importReportsFile" accept=".json" style="display:none;" />
+    <input type="file" id="mergeImportFile" accept=".json" style="display:none;" />
+  </section>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Modal: report prompt -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3 id="modalTitle">Title</h3>
+    <textarea id="modalText" readonly></textarea>
+    <div class="modal-actions">
+      <button class="ghost" id="modalCloseBtn">Close</button>
+      <button class="primary" id="modalCopyBtn">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: edit meal -->
+<div class="modal-bg" id="editModal">
+  <div class="modal">
+    <h3>Edit Meal</h3>
+    <div class="meal-form" style="margin-top:12px;">
+      <div class="row row-name">
+        <div class="field"><label>Name</label><input type="text" id="edit_name" /></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Protein (g)</label><input type="number" step="0.1" id="edit_protein" /></div>
+        <div class="field"><label>Fiber (g)</label><input type="number" step="0.1" id="edit_fiber" /></div>
+        <div class="field"><label>Carbs (g)</label><input type="number" step="0.1" id="edit_carbs" /></div>
+        <div class="field"><label>Cal</label><input type="number" step="1" id="edit_cal" /></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Fat (g)</label><input type="number" step="0.1" id="edit_fat" /></div>
+        <div class="field"><label>Sat Fat</label><input type="number" step="0.1" id="edit_sat" /></div>
+        <div class="field"><label>Sodium</label><input type="number" step="1" id="edit_sod" /></div>
+        <div class="field"><label>Sugar (g)</label><input type="number" step="0.1" id="edit_sug" /></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Vit D (IU)</label><input type="number" step="1" id="edit_vd" /></div>
+        <div class="field"><label>Calcium</label><input type="number" step="1" id="edit_ca" /></div>
+        <div class="field"><label>Insulin (u)</label><input type="number" step="0.5" id="edit_ins" /></div>
+        <div class="field"><label>Time</label><input type="time" id="edit_time" /></div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="ghost" id="editCancelBtn">Cancel</button>
+      <button class="primary" id="editSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal: edit favorite -->
+<div class="modal-bg" id="favEditModal">
+  <div class="modal" style="max-width:340px;">
+    <h3 style="margin-bottom:12px;">Edit Favorite</h3>
+    <div class="meal-form">
+      <div class="row row-name">
+        <div class="field"><label>Name</label><input type="text" id="favEditName" style="font-size:15px;" /></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Protein</label><input type="number" step="0.1" id="favEditProtein" /></div>
+        <div class="field"><label>Carbs</label><input type="number" step="0.1" id="favEditCarbs" /></div>
+        <div class="field"><label>Fiber</label><input type="number" step="0.1" id="favEditFiber" /></div>
+        <div class="field"><label>Fat</label><input type="number" step="0.1" id="favEditFat" /></div>
+      </div>
+      <div class="row row-name">
+        <div class="field"><label>Calories</label><input type="number" step="1" id="favEditCal" /></div>
+      </div>
+    </div>
+    <div class="modal-actions" style="margin-top:14px;">
+      <button class="ghost" id="favEditCancelBtn">Cancel</button>
+      <button class="primary" id="favEditSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- REPORTS UI -->
+<div id="reports-ui">
+  <div class="r-hdr">
+    <button class="r-back-btn" id="r-back" title="Back to Tracker"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3C10 3 6 3 4.5 5C3 7 4 10 7 11C9 11.7 11 11 12 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M4 3L2 5.5L5 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="r-nav">
+      <button class="r-nav-btn" id="r-prev" disabled>←</button>
+      <div class="r-date-chip" id="r-date-chip">
+        <span id="r-date-lbl">—</span>
+        <span class="r-sub" id="r-count"></span>
+      </div>
+      <button class="r-nav-btn" id="r-next" disabled>→</button>
+    </div>
+    <div class="r-hdr-actions">
+      <button class="r-icon-btn" id="r-index-btn">☰</button>
+      <button class="r-icon-btn r-danger" id="r-del-btn" style="display:none;">🗑</button>
+      <button class="r-plus-btn" id="r-import-btn">+</button>
+    </div>
+  </div>
+
+  <div class="r-tabs">
+    <button class="r-tab-btn active" data-rmode="daily">Daily</button>
+    <button class="r-tab-btn" data-rmode="weekly">Weekly</button>
+  </div>
+
+  <div class="r-content" id="r-content">
+    <div class="r-empty" id="r-empty">
+      <div class="r-empty-glyph">⬡⬡⬡</div>
+      <div class="r-empty-title" id="r-empty-title">No Daily Reports</div>
+      <div class="r-empty-body">Tap <strong style="color:var(--green-1)">+</strong> and paste a report's HTML. Saved on this device.</div>
+      <button class="r-empty-btn" id="r-empty-cta">+ Import First Report</button>
+    </div>
+
+    <div class="r-frame-wrap" id="r-frame-wrap">
+      <iframe id="r-frame" sandbox="allow-scripts allow-same-origin" scrolling="no"></iframe>
+    </div>
+
+    <div class="r-index-panel" id="r-index-panel">
+      <div class="r-index-search">
+        <input type="search" id="r-search" placeholder="Search by month or date…"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      </div>
+      <div class="r-index-list" id="r-index-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Reports import sheet -->
+<div class="r-sheet-bg" id="r-import-modal">
+  <div class="r-sheet">
+    <div class="r-sheet-handle"></div>
+    <div class="r-sheet-title" id="r-import-title">Import Daily Report</div>
+    <div class="r-sheet-sub">Paste the full HTML from any report artifact. Date is auto-detected.</div>
+    <textarea id="r-paste" placeholder="Paste report HTML here…" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+    <div class="r-date-row">
+      <span class="r-lbl" id="r-date-lbl2">Date</span>
+      <input type="date" id="r-import-date"/>
+    </div>
+    <div class="r-overwrite" id="r-overwrite">⚠ A report for this date already exists — it will be replaced.</div>
+    <div class="r-sheet-actions">
+      <button class="r-cancel" id="r-import-cancel">Cancel</button>
+      <button class="r-save" id="r-import-save">Save Report</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reports delete sheet -->
+<div class="r-sheet-bg" id="r-del-modal">
+  <div class="r-sheet" style="max-width:440px;">
+    <div class="r-sheet-handle"></div>
+    <div class="r-sheet-title danger">Delete Report?</div>
+    <div class="r-sheet-sub" id="r-del-sub">This removes the report from this device.</div>
+    <div class="r-sheet-actions">
+      <button class="r-cancel" id="r-del-cancel">Cancel</button>
+      <button class="r-del" id="r-del-confirm">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ============================================================
+// STORAGE
+// ============================================================
+const STORAGE_KEY = 'cfTrackerData_v1';
+
+const DEFAULT_GOALS = { protein: 200, fiber: 30, calories: 2800 };
+
+const SEED_FAVORITES = [
+  {
+    id: 'fav_protein_smoothie',
+    name: 'Protein Smoothie',
+    macros: {
+      protein: 57, fiber: 5, carbs: 80, calories: 680,
+      fat: 16, satFat: 6, sodium: 326, sugar: 31,
+      calcium: 630, vitD: 0, insulin: 0
+    }
+  }
+];
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return blankData();
+    const d = JSON.parse(raw);
+    if (!d.meals) d.meals = {};
+    if (!d.favorites) d.favorites = [...SEED_FAVORITES];
+    if (!d.goals) d.goals = { ...DEFAULT_GOALS };
+    return d;
+  } catch (e) {
+    console.error('loadData error', e);
+    return blankData();
+  }
+}
+function blankData() {
+  return {
+    meals: {},
+    favorites: [...SEED_FAVORITES],
+    goals: { ...DEFAULT_GOALS }
+  };
+}
+function saveData() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    console.error('saveData error', e);
+    showToast('Storage error — data may not be saved', true);
+  }
+}
+
+let state = loadData();
+
+// ============================================================
+// DOSE CALCULATOR ENGINE
+// ============================================================
+const DOSE_ICR = 7;
+const DOSE_TARGET = 140;
+const DOSE_ISF = { morning: 51, afternoon: 51, evening: 65 };
+const DOSE_TOD_LABELS = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
+const DOSE_TOD_CYCLE = ['morning', 'afternoon', 'evening'];
+const DOSE_TIMING = {
+  standard: '5–10 min before eating', fast_carbs: '10–15 min before eating',
+  pizza: '0–5 min before eating', smoothie: '5–10 min before eating',
+  high_fat: 'With food or a few bites in', protein_only: 'No Humalog needed'
+};
+
+// Dose panel state (Smart Paste + Favorites flow)
+let dpPendingMeal = null;
+let dpTodState = 'afternoon';
+let dpExState = 'none';
+let dpIobEditOpen = false;
+let dpCalcOpen = false;
+let dpPreBolState = '10min';
+let dpActivityOn = false;
+let dpMealEditOpen = false;
+let dpStackedCount = 0; // count of stacked doses contributing to prefilled IOB
+
+// Standalone calc state (Dose tab)
+let scExState = 'none';
+let scIobEditOpen = false;
+let scTodState = 'afternoon';
+let scStackedCount = 0;
+
+function getNightAdvisory(bs) {
+  const h = new Date().getHours();
+  if (!bs || bs <= 180) return null;
+  if (h >= 22) return 'After 10pm — max 1u recommended · Lantus active';
+  if (h >= 21) return 'After 9pm — consider capping at 1u · Lantus starting soon';
+  return null;
+}
+function doseAutoTod() {
+  const h = new Date().getHours();
+  return h >= 18 ? 'evening' : h >= 12 ? 'afternoon' : 'morning';
+}
+function detectMealType(name, fat, carbs) {
+  if (carbs < 10) return 'protein_only';
+  const n = (name || '').toLowerCase();
+  if (n.includes('pizza')) return 'pizza';
+  if (n.includes('smoothie')) return 'smoothie';
+  if (n.includes('juice') || n.includes('banana')) return 'fast_carbs';
+  if (fat >= 30) return 'high_fat';
+  return 'standard';
+}
+function getLastInsulinDose() {
+  // Returns most recent single dose for UI display purposes.
+  // For total IOB across stacked doses, use getActiveIob().
+  const now = new Date();
+  let best = null;
+  const yest = new Date(now); yest.setDate(yest.getDate() - 1);
+  for (const d of [todayISO(), toLocalISODate(yest)]) {
+    for (const m of (state.meals[d] || [])) {
+      const ins = m.macros.insulin || 0;
+      if (ins <= 0 || !m.time) continue;
+      // Lantus is long-acting — never counts toward Humalog IOB
+      if ((m.name || '').toLowerCase().includes('lantus')) continue;
+      const [hh, mm] = m.time.split(':').map(Number);
+      const mealDt = fromLocalISODate(d);
+      mealDt.setHours(hh, mm, 0, 0);
+      const diffHrs = (now - mealDt) / 3600000;
+      if (diffHrs >= 0 && diffHrs < 4) {
+        if (!best || mealDt > best.dt) best = { dose: ins, hoursAgo: diffHrs, dt: mealDt };
+      }
+    }
+  }
+  return best;
+}
+function getActiveIob() {
+  // Returns total IOB summed across ALL doses still active in the past 4 hours.
+  // This is what the calculator should use to avoid stacking lows.
+  const now = new Date();
+  let total = 0;
+  let count = 0;
+  const yest = new Date(now); yest.setDate(yest.getDate() - 1);
+  for (const d of [todayISO(), toLocalISODate(yest)]) {
+    for (const m of (state.meals[d] || [])) {
+      const ins = m.macros.insulin || 0;
+      if (ins <= 0 || !m.time) continue;
+      if ((m.name || '').toLowerCase().includes('lantus')) continue;
+      const [hh, mm] = m.time.split(':').map(Number);
+      const mealDt = fromLocalISODate(d);
+      mealDt.setHours(hh, mm, 0, 0);
+      const diffHrs = (now - mealDt) / 3600000;
+      if (diffHrs >= 0 && diffHrs < 4) {
+        total += ins * (1 - diffHrs / 4);
+        count++;
+      }
+    }
+  }
+  return { totalIob: Math.max(0, total), stackCount: count };
+}
+function calcIOB(lastDoseVal, hoursAgo) {
+  return Math.max(0, lastDoseVal * (1 - Math.min(hoursAgo, 4) / 4));
+}
+function runDoseCalc(carbs, fiber, fat, name, bs, tod, ex, lastDoseVal, hoursAgo) {
+  const isf = DOSE_ISF[tod] || 51;
+  const iob = calcIOB(lastDoseVal, hoursAgo);
+  const mt = detectMealType(name, fat, carbs);
+  const isProtein = mt === 'protein_only';
+  const isHighFat = fat >= 30;
+  const netCarbs = Math.max(0, carbs - fiber);
+  let carbDose = isProtein ? 0 : netCarbs / DOSE_ICR;
+  let exAdj = 0;
+  if (ex === 'hiit_cortisol') { exAdj = 0; }
+  else if (ex === 'hiit_active') { exAdj = -(carbDose * 0.25); carbDose *= 0.75; }
+  else if (ex === 'hiit_recent') { exAdj = -(carbDose * 0.20); carbDose *= 0.80; }
+  else if (ex === 'sedentary' && !isProtein) { exAdj = 1.0; }
+  const corr = (bs - DOSE_TARGET) / isf;
+  const raw = carbDose + corr - iob + (ex === 'sedentary' ? exAdj : 0);
+  const rec = Math.max(0, Math.round(raw * 2) / 2);
+  return { rec, iob, corr, carbDose: isProtein ? 0 : netCarbs / DOSE_ICR, exAdj, isf, mt, isProtein, isHighFat, icr: DOSE_ICR, netCarbs };
+}
+const f1 = n => parseFloat(n.toFixed(1));
+
+// ============================================================
+// DOSE PANEL (Smart Paste / Favorites)
+// ============================================================
+function openDosePanel(meal) {
+  dpPendingMeal = meal;
+  dpExState = 'none';
+  dpCalcOpen = false;
+  dpIobEditOpen = false;
+  dpMealEditOpen = false;
+  dpActivityOn = false;
+  dpPreBolState = '10min';
+  dpTodState = doseAutoTod();
+  const x = meal.macros;
+  const netC = Math.max(0, (x.carbs || 0) - (x.fiber || 0));
+  document.getElementById('dpMealName').textContent = meal.name;
+  document.getElementById('dpProtein').textContent = 'P ' + (x.protein || 0) + 'g';
+  document.getElementById('dpCarbs').textContent = 'C ' + (x.carbs || 0) + 'g';
+  document.getElementById('dpNetCarbs').textContent = 'Net ' + netC + 'g';
+  document.getElementById('dpFat').textContent = 'Fat ' + (x.fat || 0) + 'g';
+  document.getElementById('dpCal').textContent = (x.calories || 0) + ' cal';
+  document.getElementById('dpHfBadge').innerHTML = (x.fat || 0) >= 30 ? '<div class="dose-hf-badge">High fat · dose with food</div>' : '';
+  document.getElementById('dpEditName').value = meal.name;
+  document.getElementById('dpEditCarbs').value = x.carbs || 0;
+  document.getElementById('dpEditFiber').value = x.fiber || 0;
+  document.getElementById('dpEditFat').value = x.fat || 0;
+  document.getElementById('dpTodLabel').textContent = DOSE_TOD_LABELS[dpTodState];
+  document.getElementById('dpCalcDrawer').classList.remove('open');
+  document.getElementById('dpCalcToggle').textContent = 'show calculation ↓';
+  document.getElementById('dpIobEditArea').style.display = 'none';
+  document.getElementById('dpIobEditBtn').textContent = 'edit';
+  document.getElementById('dpMealEditArea').style.display = 'none';
+  document.getElementById('dpMealEditBtn').textContent = 'edit';
+  document.getElementById('dpActivityToggle').textContent = 'No';
+  document.getElementById('dpActivityToggle').style.color = 'var(--text-dim)';
+  document.getElementById('dpActivityToggle').style.borderColor = 'var(--border)';
+  document.querySelectorAll('#dpExGrid .dose-ex-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('#dpExGrid .dose-ex-btn[data-ex="none"]').classList.add('active');
+  document.querySelectorAll('#dpPreBolGrid .dose-ex-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('#dpPreBolGrid .dose-ex-btn[data-pb="10min"]').classList.add('active');
+  const last = getLastInsulinDose();
+  const active = getActiveIob();
+  dpStackedCount = active.stackCount;
+  if (active.totalIob > 0.05) {
+    // Show aggregate IOB as a single equivalent dose at "0 hours ago"
+    // so the calculator's IOB subtraction is correct even with stacked doses.
+    document.getElementById('dpLastDose').value = f1(active.totalIob);
+    document.getElementById('dpHoursAgo').value = 0;
+  } else if (last) {
+    document.getElementById('dpLastDose').value = last.dose;
+    document.getElementById('dpHoursAgo').value = f1(last.hoursAgo);
+  } else {
+    document.getElementById('dpLastDose').value = 0;
+    document.getElementById('dpHoursAgo').value = 0;
+  }
+  document.getElementById('spInputRow').style.display = 'none';
+  document.getElementById('spDosePanel').style.display = 'block';
+  recalcDp();
+}
+function closeDosePanel() {
+  dpPendingMeal = null;
+  document.getElementById('spInputRow').style.display = '';
+  document.getElementById('spDosePanel').style.display = 'none';
+  document.getElementById('smartPaste').value = '';
+}
+function recalcDp() {
+  if (!dpPendingMeal) return;
+  const bs = parseFloat(document.getElementById('dpBs').value) || DOSE_TARGET;
+  const lastDoseVal = parseFloat(document.getElementById('dpLastDose').value) || 0;
+  const hoursAgo = parseFloat(document.getElementById('dpHoursAgo').value) || 0;
+  const x = dpPendingMeal.macros;
+  const r = runDoseCalc(x.carbs || 0, x.fiber || 0, x.fat || 0, dpPendingMeal.name, bs, dpTodState, dpExState, lastDoseVal, hoursAgo);
+  const iob = r.iob;
+  document.getElementById('dpIobBig').textContent = f1(iob);
+  if (dpStackedCount > 1 && lastDoseVal > 0) {
+    document.getElementById('dpIobDetail').textContent = `Active IOB · ${dpStackedCount} doses stacked`;
+  } else {
+    document.getElementById('dpIobDetail').textContent = lastDoseVal > 0 ? `Last: ${lastDoseVal}u · ${f1(hoursAgo)}hr ago` : 'No recent insulin';
+  }
+  document.getElementById('dpIobSubVal').textContent = '−' + f1(iob) + 'u';
+  document.getElementById('dpDoseNum').textContent = r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1);
+  let timing = DOSE_TIMING[r.mt] || DOSE_TIMING.standard;
+  if (!r.isProtein && r.mt !== 'high_fat') {
+    if (bs >= 120) timing = '10 min before eating';
+    else if (bs >= 100) timing = 'At first bite (BS a little low)';
+    else timing = 'With food — BS too low to pre-bolus';
+  }
+  document.getElementById('dpTiming').textContent = timing;
+  document.getElementById('dpCarbLbl').textContent = r.isProtein ? 'Protein-only meal' : `Net carbs (${r.netCarbs}g ÷ ${r.icr})`;
+  document.getElementById('dpCarbVal').textContent = '+' + f1(r.carbDose) + 'u';
+  const corrSign = r.corr >= 0 ? '+' : '';
+  document.getElementById('dpCorrLbl').textContent = `BS ${bs} → 140 (ISF ${r.isf})`;
+  document.getElementById('dpCorrVal').textContent = corrSign + f1(r.corr) + 'u';
+  document.getElementById('dpCorrVal').style.color = r.corr > 0 ? 'var(--orange)' : 'var(--green-1)';
+  const exRow = document.getElementById('dpExRow');
+  if (Math.abs(r.exAdj) >= 0.05) {
+    exRow.style.display = 'flex';
+    document.getElementById('dpExLbl').textContent = dpExState === 'sedentary' ? 'Sedentary (+1u)' : dpExState === 'hiit_cortisol' ? 'HIIT <1hr (cortisol active)' : dpExState === 'hiit_active' ? 'HIIT 1–3hr (−25%)' : 'HIIT 3–6hr (−20%)';
+    document.getElementById('dpExVal').textContent = (r.exAdj >= 0 ? '+' : '') + f1(r.exAdj) + 'u';
+    document.getElementById('dpExVal').style.color = r.exAdj > 0 ? 'var(--orange)' : 'var(--green-1)';
+  } else { exRow.style.display = 'none'; }
+  document.getElementById('dpTotalVal').textContent = (r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1)) + 'u';
+  // Night advisory
+  const advisory = getNightAdvisory(parseFloat(document.getElementById('dpBs').value) || DOSE_TARGET);
+  const advEl = document.getElementById('dpNightAdvisory');
+  advEl.textContent = advisory || '';
+  advEl.style.display = advisory ? 'block' : 'none';
+}
+function cycleDpTod() {
+  dpTodState = DOSE_TOD_CYCLE[(DOSE_TOD_CYCLE.indexOf(dpTodState) + 1) % 3];
+  document.getElementById('dpTodLabel').textContent = DOSE_TOD_LABELS[dpTodState];
+  recalcDp();
+}
+function setDpEx(btn) {
+  document.querySelectorAll('#dpExGrid .dose-ex-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  dpExState = btn.dataset.ex;
+  recalcDp();
+}
+function toggleDpIobEdit() {
+  dpIobEditOpen = !dpIobEditOpen;
+  document.getElementById('dpIobEditArea').style.display = dpIobEditOpen ? 'block' : 'none';
+  document.getElementById('dpIobEditBtn').textContent = dpIobEditOpen ? 'done' : 'edit';
+  recalcDp();
+}
+function toggleDpCalc() {
+  dpCalcOpen = !dpCalcOpen;
+  document.getElementById('dpCalcDrawer').classList.toggle('open', dpCalcOpen);
+  document.getElementById('dpCalcToggle').textContent = dpCalcOpen ? 'hide calculation ↑' : 'show calculation ↓';
+}
+function setDpPb(btn) {
+  document.querySelectorAll('#dpPreBolGrid .dose-ex-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  dpPreBolState = btn.dataset.pb;
+}
+function toggleDpActivity() {
+  dpActivityOn = !dpActivityOn;
+  const btn = document.getElementById('dpActivityToggle');
+  btn.textContent = dpActivityOn ? 'Yes' : 'No';
+  btn.style.color = dpActivityOn ? 'var(--green-1)' : 'var(--text-dim)';
+  btn.style.borderColor = dpActivityOn ? 'var(--green-2)' : 'var(--border)';
+  btn.style.background = dpActivityOn ? 'var(--green-4)' : 'var(--surface)';
+}
+function toggleDpMealEdit() {
+  dpMealEditOpen = !dpMealEditOpen;
+  document.getElementById('dpMealEditArea').style.display = dpMealEditOpen ? 'block' : 'none';
+  document.getElementById('dpMealEditBtn').textContent = dpMealEditOpen ? 'done' : 'edit';
+}
+function applyDpMealEdit() {
+  if (!dpPendingMeal) return;
+  const newName = document.getElementById('dpEditName').value.trim() || dpPendingMeal.name;
+  const newCarbs = parseFloat(document.getElementById('dpEditCarbs').value) || 0;
+  const newFiber = parseFloat(document.getElementById('dpEditFiber').value) || 0;
+  const newFat = parseFloat(document.getElementById('dpEditFat').value) || 0;
+  dpPendingMeal.name = newName;
+  dpPendingMeal.macros.carbs = newCarbs;
+  dpPendingMeal.macros.fiber = newFiber;
+  dpPendingMeal.macros.fat = newFat;
+  const netC = Math.max(0, newCarbs - newFiber);
+  document.getElementById('dpMealName').textContent = newName;
+  document.getElementById('dpCarbs').textContent = 'C ' + newCarbs + 'g';
+  document.getElementById('dpNetCarbs').textContent = 'Net ' + netC + 'g';
+  document.getElementById('dpFat').textContent = 'Fat ' + newFat + 'g';
+  document.getElementById('dpHfBadge').innerHTML = newFat >= 30 ? '<div class="dose-hf-badge">High fat · dose with food</div>' : '';
+  recalcDp();
+}
+function toggleManualForm() {
+  const body = document.getElementById('manualFormBody');
+  const toggle = document.getElementById('manualToggle');
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  toggle.textContent = open ? '+ Log manually' : '− Log manually';
+}
+
+// ============================================================
+// STANDALONE DOSE CALC (Dose tab)
+// ============================================================
+function initScIob() {
+  const last = getLastInsulinDose();
+  const active = getActiveIob();
+  scStackedCount = active.stackCount;
+  if (active.totalIob > 0.05) {
+    document.getElementById('scLastDose').value = f1(active.totalIob);
+    document.getElementById('scHoursAgo').value = 0;
+  } else if (last) {
+    document.getElementById('scLastDose').value = last.dose;
+    document.getElementById('scHoursAgo').value = f1(last.hoursAgo);
+  }
+  scTodState = doseAutoTod();
+  recalcSc();
+}
+function recalcSc() {
+  const bs = parseFloat(document.getElementById('scBs').value) || DOSE_TARGET;
+  const carbs = parseFloat(document.getElementById('scCarbs').value) || 0;
+  const fiber = parseFloat(document.getElementById('scFiber').value) || 0;
+  const fat = parseFloat(document.getElementById('scFat').value) || 0;
+  const lastDoseVal = parseFloat(document.getElementById('scLastDose').value) || 0;
+  const hoursAgo = parseFloat(document.getElementById('scHoursAgo').value) || 0;
+  const iob = calcIOB(lastDoseVal, hoursAgo);
+  const isf = DOSE_ISF[scTodState] || 51;
+  const correctionOnly = carbs === 0;
+
+  document.getElementById('scIobBig').textContent = f1(iob);
+  if (scStackedCount > 1 && lastDoseVal > 0) {
+    document.getElementById('scIobDetail').textContent = `Active IOB · ${scStackedCount} doses stacked`;
+  } else {
+    document.getElementById('scIobDetail').textContent = lastDoseVal > 0 ? `Last: ${lastDoseVal}u · ${f1(hoursAgo)}hr ago` : 'No recent insulin';
+  }
+
+  let rec, timing, label;
+  if (correctionOnly) {
+    const corr = (bs - DOSE_TARGET) / isf;
+    const raw = corr - iob;
+    rec = Math.max(0, Math.round(raw * 2) / 2);
+    label = 'Correction Dose';
+    timing = bs <= DOSE_TARGET ? 'BS at or below target — no correction needed' : `BS ${bs} → 140 · ISF ${isf}`;
+  } else {
+    // Use shared runDoseCalc engine for parity with Smart Paste panel
+    const r = runDoseCalc(carbs, fiber, fat, '', bs, scTodState, scExState, lastDoseVal, hoursAgo);
+    rec = r.rec;
+    label = 'Suggested Humalog';
+    // BS-aware pre-bolus timing (matches Smart Paste flow + patient spec)
+    if (r.isHighFat) {
+      timing = 'With food or a few bites in';
+    } else if (bs >= 120) {
+      timing = '10 min before eating';
+    } else if (bs >= 100) {
+      timing = 'At first bite (BS a little low)';
+    } else {
+      timing = 'With food — BS too low to pre-bolus';
+    }
+  }
+
+  document.getElementById('scResultLbl').textContent = label;
+  document.getElementById('scDoseNum').textContent = rec % 1 === 0 ? rec.toFixed(0) : rec.toFixed(1);
+  document.getElementById('scTiming').textContent = timing;
+
+  // Night advisory
+  const advisory = getNightAdvisory(bs);
+  const advEl = document.getElementById('scNightAdvisory');
+  advEl.textContent = advisory || '';
+  advEl.style.display = advisory ? 'block' : 'none';
+}
+function toggleScIobEdit() {
+  scIobEditOpen = !scIobEditOpen;
+  document.getElementById('scIobEditArea').style.display = scIobEditOpen ? 'block' : 'none';
+  document.getElementById('scIobEditBtn').textContent = scIobEditOpen ? 'done' : 'edit';
+  recalcSc();
+}
+function setScEx(btn) {
+  document.querySelectorAll('#scExGrid .dose-ex-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  scExState = btn.dataset.scex;
+  recalcSc();
+}
+
+// ============================================================
+// DATE HELPERS
+// ============================================================
+function toLocalISODate(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+function fromLocalISODate(s) {
+  const [y, m, d] = s.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+function todayISO() { return toLocalISODate(new Date()); }
+function nowHHMM() {
+  const d = new Date();
+  return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+}
+function fmt12(time24) {
+  if (!time24) return '';
+  const [hh, mm] = time24.split(':').map(Number);
+  const period = hh >= 12 ? 'pm' : 'am';
+  const h = hh % 12 || 12;
+  return `${h}:${String(mm).padStart(2,'0')}${period}`;
+}
+function prettyDate(iso) {
+  const d = fromLocalISODate(iso);
+  const t = new Date(); t.setHours(0,0,0,0);
+  const diff = Math.round((d - t) / 86400000);
+  if (diff === 0) return 'Today';
+  if (diff === -1) return 'Yesterday';
+  if (diff === 1) return 'Tomorrow';
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+}
+function fullPrettyDate(iso) {
+  const d = fromLocalISODate(iso);
+  return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+}
+function chicagoOffsetForDate(date) {
+  const fmt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Chicago',
+    timeZoneName: 'shortOffset'
+  });
+  const parts = fmt.formatToParts(date);
+  const tz = parts.find(p => p.type === 'timeZoneName')?.value || 'GMT-6';
+  const m = tz.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
+  if (!m) return '-06:00';
+  const sign = m[1];
+  const hh = String(m[2]).padStart(2, '0');
+  const mm = m[3] || '00';
+  return `${sign}${hh}:${mm}`;
+}
+function chicagoISOAt(iso, hhmm) {
+  const d = fromLocalISODate(iso);
+  const offset = chicagoOffsetForDate(d);
+  return `${iso}T${hhmm}:00${offset}`;
+}
+function buildGlucoseWindows(iso) {
+  // Detect CDT (-05:00) vs CST (-06:00) for the report date
+  const d = fromLocalISODate(iso);
+  const offset = chicagoOffsetForDate(d);
+  const isCDT = offset === '-05:00';
+  // UTC hour at local midnight: CDT=5, CST=6
+  const mA = isCDT ? '05' : '06';
+  // UTC hour at local 3pm: CDT=20, CST=21
+  const m3pm = isCDT ? '20' : '21';
+  // UTC hour at local 7pm: CDT=00 next day, CST=01 next day
+  // UTC hour at local 11pm: CDT=04 next day, CST=05 next day
+  // UTC hour at local midnight (end B2): CDT=05 next day, CST=06 next day
+
+  // Compute DD+1
+  const next = new Date(d); next.setDate(next.getDate() + 1);
+  const isoNext = toLocalISODate(next);
+
+  if (isCDT) {
+    return {
+      workout: `  start: ${iso}T05:00:00Z\n  end:   ${isoNext}T05:00:00Z`,
+      a:   `  start: ${iso}T05:00:00Z  → sampleLimit 220`,
+      b1a: `  start: ${iso}T20:00:00Z  → sampleLimit 70`,
+      b1b: `  start: ${isoNext}T00:00:00Z → sampleLimit 70`,
+      b2:  `  start: ${isoNext}T05:00:00Z → sampleLimit 90`,
+      aEnd:   `${iso}T20:00:00Z`,
+      b1aEnd: `${isoNext}T00:00:00Z`,
+      b1bEnd: `${isoNext}T05:00:00Z`,
+      b2End:  `${isoNext}T11:00:00Z`,
+      tz: 'CDT (UTC-5)'
+    };
+  } else {
+    return {
+      workout: `  start: ${iso}T06:00:00Z\n  end:   ${isoNext}T06:00:00Z`,
+      a:   `  start: ${iso}T06:00:00Z  → sampleLimit 220`,
+      b1a: `  start: ${iso}T21:00:00Z  → sampleLimit 70`,
+      b1b: `  start: ${isoNext}T01:00:00Z → sampleLimit 70`,
+      b2:  `  start: ${isoNext}T06:00:00Z → sampleLimit 90`,
+      aEnd:   `${iso}T21:00:00Z`,
+      b1aEnd: `${isoNext}T01:00:00Z`,
+      b1bEnd: `${isoNext}T06:00:00Z`,
+      b2End:  `${isoNext}T12:00:00Z`,
+      tz: 'CST (UTC-6)'
+    };
+  }
+}
+
+// ============================================================
+// CURRENT DATE STATE
+// ============================================================
+let currentDate = todayISO();
+
+// ============================================================
+// MEAL HELPERS
+// ============================================================
+function dayMeals(iso) {
+  return state.meals[iso] || [];
+}
+function addMeal(iso, meal) {
+  if (!state.meals[iso]) state.meals[iso] = [];
+  state.meals[iso].push(meal);
+  saveData();
+}
+function deleteMeal(iso, id) {
+  if (!state.meals[iso]) return;
+  state.meals[iso] = state.meals[iso].filter(m => m.id !== id);
+  if (state.meals[iso].length === 0) delete state.meals[iso];
+  saveData();
+}
+
+function blankMacros() {
+  return {
+    protein: 0, fiber: 0, carbs: 0, calories: 0,
+    fat: 0, satFat: 0, sodium: 0, sugar: 0,
+    calcium: 0, vitD: 0, insulin: 0
+  };
+}
+function totalsFor(iso) {
+  const t = blankMacros();
+  for (const m of dayMeals(iso)) {
+    for (const k of Object.keys(t)) t[k] += Number(m.macros[k] || 0);
+  }
+  t.netCarbs = Math.max(0, t.carbs - t.fiber);
+  return t;
+}
+
+// ============================================================
+// SMART PASTE PARSER
+// ============================================================
+const MACRO_KEYS = [
+  'protein','fiber','carbs','calories','fat','sat fat','satfat','sodium',
+  'sugar','calcium','vit d','vitamin d','vitd','insulin','net carbs','net carb'
+];
+function parseSmartPaste(text) {
+  if (!text || typeof text !== 'string') return null;
+  text = text.replace(/```/g, '').trim();
+  if (!text) return null;
+
+  const lower = text.toLowerCase();
+  let firstMacroIdx = -1;
+  for (const k of MACRO_KEYS) {
+    const re = new RegExp('(^|[\\s,])' + k.replace(/ /g, '\\s*') + '\\s*:', 'i');
+    const m = lower.match(re);
+    if (m) {
+      const idx = m.index + (m[1] ? m[1].length : 0);
+      if (firstMacroIdx === -1 || idx < firstMacroIdx) firstMacroIdx = idx;
+    }
+  }
+
+  let name = '';
+  let macroPart = text;
+  if (firstMacroIdx > 0) {
+    name = text.slice(0, firstMacroIdx).replace(/[,\s]+$/, '').trim();
+    macroPart = text.slice(firstMacroIdx);
+  } else if (firstMacroIdx === -1) {
+    return { name: text.trim(), macros: blankMacros() };
+  } else {
+    name = '';
+  }
+
+  const macros = blankMacros();
+  macroPart = macroPart.replace(/(\d),(\d)/g, '$1$2');
+  const parts = macroPart.split(',');
+  for (const p of parts) {
+    const colonIdx = p.indexOf(':');
+    if (colonIdx === -1) continue;
+    const key = p.slice(0, colonIdx).trim().toLowerCase();
+    const valStr = p.slice(colonIdx + 1).trim();
+    const numMatch = valStr.replace(/,/g, '').match(/-?\d+(\.\d+)?/);
+    if (!numMatch) continue;
+    const val = parseFloat(numMatch[0]);
+    if (isNaN(val)) continue;
+    if (key === 'protein') macros.protein = val;
+    else if (key === 'fiber') macros.fiber = val;
+    else if (key === 'carbs' || key === 'carbohydrates') macros.carbs = val;
+    else if (key === 'calories' || key === 'cal' || key === 'kcal') macros.calories = val;
+    else if (key === 'fat') macros.fat = val;
+    else if (key === 'sat fat' || key === 'satfat' || key === 'saturated fat') macros.satFat = val;
+    else if (key === 'sodium') macros.sodium = val;
+    else if (key === 'sugar') macros.sugar = val;
+    else if (key === 'calcium') macros.calcium = val;
+    else if (key === 'vit d' || key === 'vitd' || key === 'vitamin d') macros.vitD = val;
+    else if (key === 'insulin') macros.insulin = val;
+  }
+  return { name: name || 'Meal', macros };
+}
+
+// Tab switching handled below after all features are initialized
+
+
+// ============================================================
+// UI: DATE NAV
+// ============================================================
+document.getElementById('prevDay').addEventListener('click', () => {
+  const d = fromLocalISODate(currentDate);
+  d.setDate(d.getDate() - 1);
+  currentDate = toLocalISODate(d);
+  renderAll();
+});
+document.getElementById('nextDay').addEventListener('click', () => {
+  const d = fromLocalISODate(currentDate);
+  d.setDate(d.getDate() + 1);
+  currentDate = toLocalISODate(d);
+  renderAll();
+});
+document.getElementById('dateInput').addEventListener('change', (e) => {
+  if (e.target.value) {
+    currentDate = e.target.value;
+    renderAll();
+  }
+});
+
+// ============================================================
+// UI: SMART PASTE
+// ============================================================
+document.getElementById('parseBtn').addEventListener('click', () => {
+  const raw = document.getElementById('smartPaste').value;
+  if (!raw.trim()) { showToast('Paste box is empty', true); return; }
+  const parsed = parseSmartPaste(raw);
+  if (!parsed) { showToast('Could not parse', true); return; }
+  openDosePanel(parsed);
+});
+document.getElementById('parseClearBtn').addEventListener('click', () => {
+  if (dpPendingMeal) { closeDosePanel(); } else { document.getElementById('smartPaste').value = ''; }
+});
+document.getElementById('doseLogBtn').addEventListener('click', () => {
+  if (!dpPendingMeal) return;
+  const doseText = document.getElementById('dpDoseNum').textContent;
+  const dose = parseFloat(doseText) || 0;
+  const meal = {
+    id: 'm_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+    name: dpPendingMeal.name,
+    macros: { ...dpPendingMeal.macros, insulin: dose },
+    time: nowHHMM(), starred: false,
+    doseLog: { preBolus: dpPreBolState, activityAfter: dpActivityOn, iob: f1(calcIOB(parseFloat(document.getElementById('dpLastDose').value)||0, parseFloat(document.getElementById('dpHoursAgo').value)||0)), bsAtDose: parseFloat(document.getElementById('dpBs').value) || null }
+  };
+  addMeal(currentDate, meal);
+  closeDosePanel();
+  renderAll();
+  showToast(`Added: ${meal.name}${dose > 0 ? ' · ' + dose + 'u' : ''}`);
+});
+document.getElementById('doseCancelBtn').addEventListener('click', () => {
+  closeDosePanel();
+});
+document.getElementById('doseSkipBtn').addEventListener('click', () => {
+  if (!dpPendingMeal) return;
+  const meal = {
+    id: 'm_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+    name: dpPendingMeal.name,
+    macros: { ...dpPendingMeal.macros, insulin: 0 },
+    time: nowHHMM(), starred: false
+  };
+  addMeal(currentDate, meal);
+  closeDosePanel();
+  renderAll();
+  showToast(`Added: ${meal.name}`);
+});
+
+// ============================================================
+// UI: MANUAL FORM
+// ============================================================
+document.getElementById('m_time').value = nowHHMM();
+
+document.getElementById('addMealBtn').addEventListener('click', () => {
+  const name = document.getElementById('m_name').value.trim();
+  if (!name) { showToast('Name required', true); return; }
+  const macros = {
+    protein: parseFloat(document.getElementById('m_protein').value) || 0,
+    fiber: parseFloat(document.getElementById('m_fiber').value) || 0,
+    carbs: parseFloat(document.getElementById('m_carbs').value) || 0,
+    calories: parseFloat(document.getElementById('m_cal').value) || 0,
+    fat: parseFloat(document.getElementById('m_fat').value) || 0,
+    satFat: parseFloat(document.getElementById('m_sat').value) || 0,
+    sodium: parseFloat(document.getElementById('m_sod').value) || 0,
+    sugar: parseFloat(document.getElementById('m_sug').value) || 0,
+    vitD: parseFloat(document.getElementById('m_vd').value) || 0,
+    calcium: parseFloat(document.getElementById('m_ca').value) || 0,
+    insulin: parseFloat(document.getElementById('m_ins').value) || 0
+  };
+  const meal = {
+    id: 'm_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+    name, macros,
+    time: document.getElementById('m_time').value || nowHHMM(),
+    starred: false
+  };
+  addMeal(currentDate, meal);
+  clearForm();
+  renderAll();
+  showToast(`Added: ${name}`);
+});
+document.getElementById('clearFormBtn').addEventListener('click', clearForm);
+function clearForm() {
+  ['m_name','m_protein','m_fiber','m_carbs','m_cal','m_fat','m_sat','m_sod','m_sug','m_vd','m_ca','m_ins'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('m_time').value = nowHHMM();
+}
+
+// ============================================================
+// UI: REPORT BUTTONS
+// ============================================================
+document.getElementById('dailyReportBtn').addEventListener('click', () => {
+  const prompt = buildDailyReportPrompt(currentDate);
+  copyToClipboard(prompt).then(() => showToast('Daily report prompt copied — paste in Claude'));
+});
+document.getElementById('weeklyReportBtn').addEventListener('click', () => {
+  // Build day picker for last 14 days
+  const picker = document.getElementById('weeklyDayPicker');
+  const grid = document.getElementById('dayCheckGrid');
+  grid.innerHTML = '';
+  const today = new Date(); today.setHours(0,0,0,0);
+  for (let i = 13; i >= 0; i--) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    const iso = toLocalISODate(d);
+    const hasData = (state.meals[iso] || []).length > 0;
+    const dayAbbr = ['Su','Mo','Tu','We','Th','Fr','Sa'][d.getDay()];
+    const dayNum = d.getDate();
+    const checked = i < 7 && hasData;
+    const btn = document.createElement('button');
+    btn.dataset.iso = iso;
+    btn.dataset.checked = checked ? '1' : '0';
+    btn.style.cssText = `padding:6px 2px;border-radius:6px;border:1px solid ${checked ? 'var(--green-2)' : 'var(--border)'};background:${checked ? 'var(--green-4)' : 'var(--surface-2)'};color:${hasData ? (checked ? 'var(--green-1)' : 'var(--text-dim)') : 'var(--text-faint)'};font-family:var(--mono);font-size:9px;cursor:pointer;line-height:1.4;`;
+    btn.innerHTML = `<div>${dayAbbr}</div><div style="font-size:11px;font-weight:700;">${dayNum}</div>`;
+    btn.addEventListener('click', () => {
+      const on = btn.dataset.checked === '1';
+      btn.dataset.checked = on ? '0' : '1';
+      btn.style.background = !on ? 'var(--green-4)' : 'var(--surface-2)';
+      btn.style.borderColor = !on ? 'var(--green-2)' : 'var(--border)';
+      btn.style.color = !on ? 'var(--green-1)' : (hasData ? 'var(--text-dim)' : 'var(--text-faint)');
+    });
+    grid.appendChild(btn);
+  }
+  picker.style.display = 'block';
+});
+document.getElementById('weeklyPickerCancel').addEventListener('click', () => {
+  document.getElementById('weeklyDayPicker').style.display = 'none';
+});
+document.getElementById('weeklyBuildBtn').addEventListener('click', () => {
+  const selectedDays = [...document.querySelectorAll('#dayCheckGrid button')]
+    .filter(b => b.dataset.checked === '1')
+    .map(b => b.dataset.iso)
+    .sort();
+  if (selectedDays.length === 0) { showToast('Select at least one day', true); return; }
+  const prompt = buildWeeklyReportPrompt(selectedDays[selectedDays.length - 1], selectedDays);
+  copyToClipboard(prompt).then(() => showToast('Weekly report prompt copied — paste in Claude'));
+  document.getElementById('weeklyDayPicker').style.display = 'none';
+});
+document.getElementById('exportCsvBtn').addEventListener('click', exportCSV);
+document.getElementById('moveTrackerBtn').addEventListener('click', () => {
+  const prompt = buildMovePrompt();
+  showModal('Move Tracker — Restoration Prompt', prompt);
+  copyToClipboard(prompt).then(() => showToast('Prompt copied — paste in Claude'));
+});
+// ============================================================
+// REPORT PROMPT BUILDERS
+// ============================================================
+function buildDailyReportPrompt(iso) {
+  const dateStr = fullPrettyDate(iso);
+  const w = buildGlucoseWindows(iso);
+  const meals = dayMeals(iso);
+  let mealLog = '';
+  if (meals.length === 0) {
+    mealLog = '(no meals logged)';
+  } else {
+    const sorted = [...meals].sort((a,b) => (a.time || '').localeCompare(b.time || ''));
+    mealLog = sorted.map(m => {
+      const x = m.macros;
+      return `- ${fmt12(m.time) || ''} — ${m.name}: Protein ${x.protein}g · Fiber ${x.fiber}g · Carbs ${x.carbs}g · Net Carbs ${Math.max(0,(x.carbs||0)-(x.fiber||0))}g · Calories ${x.calories} · Fat ${x.fat}g · Sat Fat ${x.satFat}g · Sodium ${x.sodium}mg · Sugar ${x.sugar}g · Calcium ${x.calcium}mg · Vit D ${x.vitD}IU · Insulin ${x.insulin}u${m.doseLog && m.doseLog.bsAtDose ? ' · BS ' + m.doseLog.bsAtDose : ''}${m.doseLog && m.doseLog.preBolus && m.doseLog.preBolus !== '10min' ? ' · pre-bolus ' + m.doseLog.preBolus : ''}`;
+    }).join('\n');
+  }
+  const t = totalsFor(iso);
+  return `daily report
+
+Date: ${dateStr} (${iso}) · ${w.tz}
+
+════════════════════════════════════════
+STEP 1 — WORKOUT PULL (do this first, isolated)
+════════════════════════════════════════
+Pull workoutType — samples mode, sampleLimit 10
+${w.workout}
+
+If this call fails, retry once. If still fails, note "workout pull failed — interpret morning spikes cautiously".
+Do NOT pull heartRate — OTF does not share heart rate with Apple Health.
+Do NOT pull stepCount — not needed.
+
+════════════════════════════════════════
+STEP 2 — GLUCOSE PULL (4 separate calls, never combined)
+════════════════════════════════════════
+Pull bloodGlucose — samples mode. Each window is its own isolated call.
+No window crosses UTC midnight — this is required to prevent timeouts.
+
+Window A   (local midnight → 3pm):
+  start: ${w.a.replace('  → sampleLimit 220', '')}
+  end:   ${w.aEnd}
+  sampleLimit: 220
+
+Window B1a (local 3pm → 7pm):
+  start: ${w.b1a.replace('  → sampleLimit 70', '')}
+  end:   ${w.b1aEnd}
+  sampleLimit: 70
+
+Window B1b (local 7pm → 11pm):
+  start: ${w.b1b.replace(' → sampleLimit 70', '')}
+  end:   ${w.b1bEnd}
+  sampleLimit: 70
+
+Window B2  (local 11pm → 5am next day):
+  start: ${w.b2.replace(' → sampleLimit 90', '')}
+  end:   ${w.b2End}
+  sampleLimit: 90
+
+⚠️ PULL RULES — DO NOT IMPROVISE AROUND THESE:
+- Use these exact UTC timestamps. Do not derive windows from sample data or re-calculate.
+- Never combine windows into a single call.
+- If any window returns samples_truncated: true, immediately pull the gap before building the report.
+  Gap fill: start = last timestamp from preceding window, end = oldest timestamp from truncated window, sampleLimit 20.
+- If a window times out: retry once, then flag in report and continue with available data.
+- Sensor gap of ~2 hours every 15 days is expected (new sensor warmup). Any other gap is a pull error — flag it.
+- Dexcom G7 = 288 samples/day at 5-min intervals. If total across all windows < 200, something went wrong — flag it.
+
+════════════════════════════════════════
+UTC → LOCAL TIME CONVERSION
+════════════════════════════════════════
+${w.tz === 'CDT (UTC-5)' ? 'CDT (UTC-5): local_min = (UTC_hour * 60 + UTC_min) - 300' : 'CST (UTC-6): local_min = (UTC_hour * 60 + UTC_min) - 360'}
+If local_min < 0: local_min += 1440  ← handles UTC rollover for post-midnight samples
+Post-midnight CDT samples (UTC 00:00–04:59Z next day) = local 7pm–11:59pm same report date.
+
+════════════════════════════════════════
+MEAL LOG
+════════════════════════════════════════
+${mealLog}
+
+Daily totals:
+Protein ${t.protein}g · Fiber ${t.fiber}g · Carbs ${t.carbs}g · Net Carbs ${t.netCarbs}g · Calories ${t.calories} · Fat ${t.fat}g · Sat Fat ${t.satFat}g · Sodium ${t.sodium}mg · Sugar ${t.sugar}g · Vit D ${t.vitD}IU · Calcium ${t.calcium}mg · Insulin ${t.insulin}u
+
+Goals: Protein ${state.goals.protein}g · Fiber ${state.goals.fiber}g · Calories ${state.goals.calories}kcal
+
+════════════════════════════════════════
+REPORT BUILD INSTRUCTIONS
+════════════════════════════════════════
+Build the full daily report HTML artifact per the project spec.
+
+WORKOUT CARD (when workout found):
+🔥 OTF HIIT · XX min
+${w.tz.split(' ')[0]} HH:MM–HH:MMam/pm · XXX kcal active
+Position between TIR summary and day chart. Omit entirely if no workout found.
+
+CHARTS:
+- TIR uses only local 00:00–23:59 samples. Post-midnight data = night chart only, not TIR.
+- Day panel: local mins 360–1080 (6am–6pm).
+- Night panel: extended-minute space ONLY. 6pm=1080, midnight=1440, 6am=1800.
+  Post-midnight samples: ext_min = 1440 + local_min. NEVER map night to 0–1440.
+  Draw labeled midnight marker at x=1440.
+  Default: truncate night chart at 2am (ext_min 1560) unless any sample <70, >130, or rising trend unresolved.
+- Glucose line color: red (#d44a4a) <70 · green (#4dbb88) 70–180 · orange (#d4954a) >180. Use crossing detection.
+- Meal pills: evenly spaced top, dashed leader to glucose dot at meal time.
+
+TIR SUMMARY (4 cards above charts):
+TIR % · Below 70 % · Above 180 % · Avg mg/dL (min/max) + proportional color bar.
+
+SECTIONS (in order): nutrition summary | TIR cards | workout card (if applicable) | day chart | night chart | meal log table | log entry block.`;
+}
+
+function buildWeeklyReportPrompt(endIso, selectedDays) {
+  let days;
+  if (selectedDays && selectedDays.length > 0) {
+    days = selectedDays.map(iso => {
+      const meals = dayMeals(iso);
+      const t = totalsFor(iso);
+      return { iso, label: fullPrettyDate(iso), meals, totals: t };
+    });
+  } else {
+    const end = fromLocalISODate(endIso);
+    const start = new Date(end); start.setDate(start.getDate() - 6);
+    days = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(start); d.setDate(d.getDate() + i);
+      const iso = toLocalISODate(d);
+      const meals = dayMeals(iso);
+      const t = totalsFor(iso);
+      days.push({ iso, label: fullPrettyDate(iso), meals, totals: t });
+    }
+  }
+  const startIso = days[0].iso;
+  const lastIso = days[days.length - 1].iso;
+  // Use chicagoOffsetForDate to get correct CDT/CST offset
+  const startD = fromLocalISODate(startIso);
+  const endD = fromLocalISODate(lastIso);
+  const startOffset = chicagoOffsetForDate(startD);
+  const endOffset = chicagoOffsetForDate(endD);
+  const tzLabel = startOffset === '-05:00' ? 'CDT (UTC-5)' : 'CST (UTC-6)';
+  const startISO = `${startIso}T00:00:00${startOffset}`;
+  const endISO = `${lastIso}T23:59:00${endOffset}`;
+
+  const dayLines = days.map(d => {
+    const t = d.totals;
+    return `- ${d.label}: Protein ${t.protein}g · Fiber ${t.fiber}g · Calories ${t.calories} · Sodium ${t.sodium}mg · Insulin ${t.insulin}u · ${d.meals.length} meals`;
+  }).join('\n');
+
+  let mealsByDay = '';
+  for (const d of days) {
+    if (d.meals.length === 0) continue;
+    mealsByDay += `\n${d.label}:\n`;
+    const sorted = [...d.meals].sort((a,b) => (a.time || '').localeCompare(b.time || ''));
+    for (const m of sorted) {
+      const x = m.macros;
+      mealsByDay += `  - ${m.time || ''} — ${m.name}: P${x.protein}g F${x.fiber}g C${x.carbs}g ${x.calories}cal Ins${x.insulin}u${m.doseLog && m.doseLog.bsAtDose ? ' BS' + m.doseLog.bsAtDose : ''}\n`;
+    }
+  }
+
+  return `weekly report
+
+Range: ${days[0].label} → ${days[days.length-1].label} (${days.length} days selected)
+Timezone: America/Chicago · ${tzLabel}
+Glucose pull window (use only if daily reports not in context):
+  start: ${startISO}
+  end:   ${endISO}
+
+⚠️ Weekly glucose pull rules:
+- Use HOURLY STATISTICS mode (avg/min/max per hour) — NOT raw samples. This produces ~168 points vs ~2,016 raw.
+- Pull: bloodGlucose statistics/hour · workoutType samples limit 20
+- Do NOT pull stepCount or heartRate
+- If daily reports are already in this conversation, read glucose data from them instead of re-pulling.
+- Use explicit ISO timestamps above with timezone offset — never bare date strings.
+
+Daily totals:
+${dayLines}
+
+Goals: Protein ${state.goals.protein}g · Fiber ${state.goals.fiber}g · Calories ${state.goals.calories} kcal
+
+Meal log by day:${mealsByDay || '\n(no meals logged)'}
+
+Build the weekly report HTML artifact per the project spec.
+
+SECTIONS (in order):
+1. Header — date range, ${tzLabel}, workout days count
+2. Glucose TIR summary — 4 cards: Overall TIR, Avg glucose, Below 70%, Above 180%
+3. Nutrition table per day — Day · Mx · Protein · Fiber · Cal · Ins · Carbs. Goal pills: ✓ blue · ✗ red · ~ orange (within 10g). No Steps column.
+4. Glucose trend chart — hourly avg line (color-coded: red <70, green 70–180, orange >180) + min/max shading band, day dividers
+5. Activity — Apple Health workouts only (type, duration, kcal). No steps, no restaurant work. Omit days with no recorded workout.
+6. Meal log by day — compact: time, name, P/C/cal, insulin
+7. Log entry block
+
+NIGHT CHART BUG TO AVOID:
+Night panels use extended-minute space: 6pm=1080, midnight=1440, 6am=1800. Do NOT use 0–1440.`;
+}
+
+function buildMovePrompt() {
+  const lines = [];
+  lines.push('Rebuild my CF Nutrition Tracker from scratch and restore my data. Use the project spec for the structure (dark mode, muted greens, Space Mono + Inter, all the features).');
+  lines.push('');
+  lines.push('## Restore goals');
+  lines.push(`Protein: ${state.goals.protein}g · Fiber: ${state.goals.fiber}g · Calories: ${state.goals.calories} kcal`);
+  lines.push('');
+  lines.push('## Restore favorites');
+  if (state.favorites.length === 0) {
+    lines.push('(none)');
+  } else {
+    for (const f of state.favorites) {
+      const x = f.macros;
+      lines.push(`- ${f.name}: Protein ${x.protein}g · Fiber ${x.fiber}g · Carbs ${x.carbs}g · Calories ${x.calories} · Fat ${x.fat}g · Sat Fat ${x.satFat}g · Sodium ${x.sodium}mg · Sugar ${x.sugar}g · Calcium ${x.calcium}mg · Vit D ${x.vitD} IU`);
+    }
+  }
+  lines.push('');
+  lines.push('## Restore meal history');
+  const dates = Object.keys(state.meals).sort();
+  if (dates.length === 0) {
+    lines.push('(empty)');
+  } else {
+    for (const d of dates) {
+      const meals = state.meals[d];
+      if (!meals || meals.length === 0) continue;
+      lines.push(`\n### ${d}`);
+      for (const m of meals) {
+        const x = m.macros;
+        lines.push(`- ${m.time || ''} ${m.name}: P${x.protein} Fi${x.fiber} C${x.carbs} Cal${x.calories} Fat${x.fat} Sat${x.satFat} Na${x.sodium} Sug${x.sugar} Ca${x.calcium} VD${x.vitD} Ins${x.insulin}`);
+      }
+    }
+  }
+  lines.push('');
+  lines.push('Once rebuilt, give me the HTML and these data values seeded into localStorage so I can save it on iPhone.');
+  return lines.join('\n');
+}
+
+// ============================================================
+// CSV EXPORT
+// ============================================================
+function exportCSV() {
+  const headers = ['date','time','name','protein_g','fiber_g','carbs_g','net_carbs_g','calories','fat_g','sat_fat_g','sodium_mg','sugar_g','calcium_mg','vit_d_iu','insulin_u','bs_at_dose'];
+  const rows = [headers.join(',')];
+  const dates = Object.keys(state.meals).sort();
+  for (const d of dates) {
+    for (const m of state.meals[d]) {
+      const x = m.macros;
+      const net = Math.max(0, (x.carbs || 0) - (x.fiber || 0));
+      const nameSafe = '"' + (m.name || '').replace(/"/g, '""') + '"';
+      const bs = (m.doseLog && m.doseLog.bsAtDose) ? m.doseLog.bsAtDose : '';
+      rows.push([d, m.time || '', nameSafe, x.protein, x.fiber, x.carbs, net, x.calories, x.fat, x.satFat, x.sodium, x.sugar, x.calcium, x.vitD, x.insulin, bs].join(','));
+    }
+  }
+  const csv = rows.join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cf-tracker-${todayISO()}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('CSV exported');
+}
+
+// ============================================================
+// FAVORITES
+// ============================================================
+document.getElementById('insOnlyLogBtn').addEventListener('click', () => {
+  const units = parseFloat(document.getElementById('insOnlyUnits').value);
+  if (!units || units <= 0) { showToast('Enter units first', true); return; }
+  const reason = document.getElementById('insOnlyReason').value;
+  const bsVal = parseFloat(document.getElementById('insOnlyBs').value) || null;
+  const label = reason === 'correction' ? 'Humalog Correction' : reason === 'lantus' ? 'Lantus' : 'Insulin';
+  const meal = {
+    id: 'm_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+    name: label,
+    macros: { protein:0, fiber:0, carbs:0, calories:0, fat:0, satFat:0, sodium:0, sugar:0, calcium:0, vitD:0, insulin: units },
+    time: nowHHMM(), starred: false,
+    doseLog: { bsAtDose: bsVal }
+  };
+  addMeal(currentDate, meal);
+  document.getElementById('insOnlyUnits').value = '';
+  document.getElementById('insOnlyBs').value = '';
+  renderAll();
+  showToast(`Logged: ${label} · ${units}u${bsVal ? ' · BS ' + bsVal : ''}`);
+});
+
+function renderFavorites() {
+  const list = document.getElementById('favList');
+  if (state.favorites.length === 0) {
+    list.innerHTML = '<div class="empty">No favorites yet. Star a meal to save it.</div>';
+    return;
+  }
+  list.innerHTML = '';
+  for (const f of state.favorites) {
+    const row = document.createElement('div');
+    row.className = 'fav-row';
+    const x = f.macros;
+    row.innerHTML = `
+      <div>
+        <div class="fname">${escapeHtml(f.name)}</div>
+        <div class="fmeta">P${x.protein} · Fi${x.fiber} · C${x.carbs} · ${x.calories}cal</div>
+      </div>
+      <button class="primary use-btn">USE</button>
+      <button class="ghost rename-btn">✎</button>
+      <button class="danger del-btn">×</button>
+    `;
+    row.querySelector('.use-btn').addEventListener('click', () => useFavorite(f.id));
+    row.querySelector('.rename-btn').addEventListener('click', () => renameFavorite(f.id));
+    row.querySelector('.del-btn').addEventListener('click', () => deleteFavorite(f.id));
+    list.appendChild(row);
+  }
+}
+function useFavorite(id) {
+  const f = state.favorites.find(x => x.id === id);
+  if (!f) return;
+  // Switch to Log tab and open dose panel
+  document.querySelector('.tabs button[data-tab="log"]').click();
+  openDosePanel({ name: f.name, macros: { ...f.macros } });
+}
+function renameFavorite(id) {
+  const f = state.favorites.find(x => x.id === id);
+  if (!f) return;
+  openEditFavoriteModal(f);
+}
+function openEditFavoriteModal(f) {
+  document.getElementById('favEditName').value = f.name;
+  document.getElementById('favEditProtein').value = f.macros.protein || 0;
+  document.getElementById('favEditCarbs').value = f.macros.carbs || 0;
+  document.getElementById('favEditFiber').value = f.macros.fiber || 0;
+  document.getElementById('favEditFat').value = f.macros.fat || 0;
+  document.getElementById('favEditCal').value = f.macros.calories || 0;
+  document.getElementById('favEditModal').classList.add('show');
+  document.getElementById('favEditSaveBtn').onclick = () => {
+    f.name = document.getElementById('favEditName').value.trim() || f.name;
+    f.macros.protein = parseFloat(document.getElementById('favEditProtein').value) || 0;
+    f.macros.carbs = parseFloat(document.getElementById('favEditCarbs').value) || 0;
+    f.macros.fiber = parseFloat(document.getElementById('favEditFiber').value) || 0;
+    f.macros.fat = parseFloat(document.getElementById('favEditFat').value) || 0;
+    f.macros.calories = parseFloat(document.getElementById('favEditCal').value) || 0;
+    saveData();
+    document.getElementById('favEditModal').classList.remove('show');
+    renderFavorites();
+    showToast('Favorite updated');
+  };
+  document.getElementById('favEditCancelBtn').onclick = () => {
+    document.getElementById('favEditModal').classList.remove('show');
+  };
+}
+function deleteFavorite(id) {
+  if (!confirm('Delete this favorite?')) return;
+  state.favorites = state.favorites.filter(x => x.id !== id);
+  saveData();
+  renderFavorites();
+}
+function starMeal(meal) {
+  meal.starred = !meal.starred;
+  if (meal.starred) {
+    if (!state.favorites.find(f => f.name.toLowerCase() === meal.name.toLowerCase())) {
+      state.favorites.push({
+        id: 'fav_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7),
+        name: meal.name,
+        macros: { ...meal.macros, insulin: 0 }
+      });
+    }
+  }
+  saveData();
+  renderAll();
+}
+
+// ============================================================
+// ============================================================
+// DATA TOOLS
+// ============================================================
+document.getElementById('resetDayBtn').addEventListener('click', () => {
+  if (!confirm(`Clear all meals for ${prettyDate(currentDate)}?`)) return;
+  delete state.meals[currentDate];
+  saveData();
+  renderAll();
+  showToast('Day cleared');
+});
+document.getElementById('resetAllBtn').addEventListener('click', () => {
+  if (!confirm('Reset ALL data including favorites and goals? This cannot be undone.')) return;
+  if (!confirm('Really? This will erase your entire history.')) return;
+  state = blankData();
+  saveData();
+  renderAll();
+  showToast('All data reset');
+});
+// ============================================================
+// EXPORT FULL BACKUP
+// ============================================================
+document.getElementById('exportFullBtn').addEventListener('click', () => {
+  const bundle = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key) bundle[key] = localStorage.getItem(key);
+  }
+  const count = Object.keys(bundle).length;
+  if (count === 0) { showToast('Nothing to export', true); return; }
+  const json = JSON.stringify(bundle);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cf-full-backup-${todayISO()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast(`Full backup exported (${count} keys)`);
+});
+
+// ============================================================
+// SMART MERGE IMPORT
+// ============================================================
+document.getElementById('mergeImportBtn').addEventListener('click', () => {
+  document.getElementById('mergeImportFile').value = '';
+  document.getElementById('mergeImportFile').click();
+});
+
+document.getElementById('mergeImportFile').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const incoming = JSON.parse(ev.target.result);
+
+      // --- Merge cfTrackerData_v1 (meals by date, keep local goals/favorites) ---
+      let mealsMerged = 0;
+      if (incoming[STORAGE_KEY]) {
+        const inData = JSON.parse(incoming[STORAGE_KEY]);
+        const local = loadData();
+        const inMeals = inData.meals || {};
+        const localMeals = local.meals || {};
+        // Merge: for each date in incoming, if local doesn't have it add it;
+        // if both have it, combine meal arrays deduped by id
+        for (const [date, meals] of Object.entries(inMeals)) {
+          if (!localMeals[date]) {
+            localMeals[date] = meals;
+            mealsMerged += meals.length;
+          } else {
+            const existingIds = new Set(localMeals[date].map(m => m.id));
+            for (const meal of meals) {
+              if (!existingIds.has(meal.id)) {
+                localMeals[date].push(meal);
+                mealsMerged++;
+              }
+            }
+          }
+        }
+        local.meals = localMeals;
+        // Keep local goals and favorites (they're current), only import if local is default/empty
+        if (!local.goals || JSON.stringify(local.goals) === JSON.stringify(DEFAULT_GOALS)) {
+          if (inData.goals) local.goals = inData.goals;
+        }
+        if (local.favorites.length <= 1 && inData.favorites && inData.favorites.length > 1) {
+          local.favorites = inData.favorites;
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(local));
+        state = loadData();
+      }
+
+      // --- Merge rlib_* report keys (non-destructive: only add missing dates) ---
+      let reportsMerged = 0;
+      for (const [key, val] of Object.entries(incoming)) {
+        if (key.startsWith('rlib_')) {
+          if (!localStorage.getItem(key)) {
+            localStorage.setItem(key, val);
+            if (!key.includes('index') && !key.includes('meta')) reportsMerged++;
+          }
+        }
+      }
+
+      // Rebuild report indexes by scanning all rlib_ keys
+      const dailyDates = [], weeklyDates = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (!key) continue;
+        if (key.startsWith('rlib_w_') && !key.includes('index') && !key.includes('meta')) {
+          const d = key.replace('rlib_w_',''); weeklyDates.push(d);
+        } else if (key.startsWith('rlib_') && !key.startsWith('rlib_w_') && !key.includes('index') && !key.includes('meta')) {
+          const d = key.replace('rlib_',''); dailyDates.push(d);
+        }
+      }
+      dailyDates.sort().reverse();
+      weeklyDates.sort().reverse();
+      localStorage.setItem('rlib_index', JSON.stringify(dailyDates));
+      localStorage.setItem('rlib_w_index', JSON.stringify(weeklyDates));
+
+      renderAll();
+      const parts = [];
+      if (mealsMerged > 0) parts.push(`${mealsMerged} meals`);
+      if (reportsMerged > 0) parts.push(`${reportsMerged} reports`);
+      showToast(parts.length ? `Merged: ${parts.join(', ')}` : 'Already up to date');
+    } catch (err) {
+      console.error(err);
+      showToast('Merge failed — invalid file', true);
+    }
+  };
+  reader.readAsText(file);
+});
+
+// ============================================================
+// REPORTS EXPORT / IMPORT
+// ============================================================
+document.getElementById('exportReportsBtn').addEventListener('click', () => {
+  const bundle = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith('rlib_')) {
+      bundle[key] = localStorage.getItem(key);
+    }
+  }
+  const count = Object.keys(bundle).filter(k => k.startsWith('rlib_') && !k.includes('index') && !k.includes('meta')).length;
+  if (count === 0) { showToast('No reports to export', true); return; }
+  const json = JSON.stringify(bundle);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cf-reports-${todayISO()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast(`Exported ${count} reports`);
+});
+
+document.getElementById('importReportsBtn').addEventListener('click', () => {
+  document.getElementById('importReportsFile').value = '';
+  document.getElementById('importReportsFile').click();
+});
+
+document.getElementById('importReportsFile').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    try {
+      const bundle = JSON.parse(ev.target.result);
+      let count = 0;
+      for (const [key, val] of Object.entries(bundle)) {
+        if (key.startsWith('rlib_')) {
+          localStorage.setItem(key, val);
+          if (!key.includes('index') && !key.includes('meta')) count++;
+        }
+      }
+      showToast(`Imported ${count} reports — tap Reports to view`);
+    } catch (err) {
+      showToast('Import failed — invalid file', true);
+    }
+  };
+  reader.readAsText(file);
+});
+
+// ============================================================
+// RENDER
+// ============================================================
+function renderAll() {
+  document.getElementById('dateLabel').textContent = prettyDate(currentDate);
+  document.getElementById('dateInput').value = currentDate;
+  document.getElementById('dateLabelMeals').textContent = prettyDate(currentDate);
+
+  const g = {
+    protein: state.goals.protein || DEFAULT_GOALS.protein,
+    fiber: state.goals.fiber || DEFAULT_GOALS.fiber,
+    calories: state.goals.calories || DEFAULT_GOALS.calories
+  };
+  document.getElementById('proteinGoal').textContent = g.protein;
+  document.getElementById('fiberGoal').textContent = g.fiber;
+  document.getElementById('calGoal').textContent = g.calories;
+
+  const t = totalsFor(currentDate);
+
+  const fmt = (n) => Number.isInteger(n) ? n : n.toFixed(1).replace(/\.0$/, '');
+  document.getElementById('proteinNow').textContent = fmt(t.protein);
+  document.getElementById('fiberNow').textContent = fmt(t.fiber);
+  document.getElementById('calNow').textContent = Math.round(t.calories);
+
+  setProgress('proteinProg', t.protein, g.protein);
+  setProgress('fiberProg', t.fiber, g.fiber);
+  setProgress('calProg', t.calories, g.calories);
+
+  document.getElementById('carbsNow').textContent = fmt(t.carbs);
+  document.getElementById('netNow').textContent = fmt(t.netCarbs);
+  document.getElementById('fatNow').textContent = fmt(t.fat);
+  document.getElementById('satNow').textContent = fmt(t.satFat);
+  document.getElementById('sodNow').textContent = Math.round(t.sodium);
+  document.getElementById('sugNow').textContent = fmt(t.sugar);
+  document.getElementById('vdNow').textContent = Math.round(t.vitD);
+  document.getElementById('caNow').textContent = Math.round(t.calcium);
+
+  const meals = dayMeals(currentDate);
+  const insulinMeals = meals.filter(m => (m.macros.insulin || 0) > 0).length;
+  document.getElementById('insulinNow').textContent = fmt(t.insulin);
+  document.getElementById('insulinMeals').textContent = insulinMeals;
+
+  renderMealList();
+}
+function setProgress(id, current, goal) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const pct = Math.min(100, (current / goal) * 100);
+  el.querySelector('span').style.width = pct + '%';
+  if (current >= goal) el.classList.add('hit');
+  else el.classList.remove('hit');
+}
+function renderMealList() {
+  const list = document.getElementById('mealList');
+  const meals = dayMeals(currentDate);
+  if (meals.length === 0) {
+    list.innerHTML = '<div class="empty">No meals logged. Use Smart Paste or the form above.</div>';
+    return;
+  }
+  const sorted = [...meals].sort((a,b) => (a.time || '').localeCompare(b.time || ''));
+  list.innerHTML = '';
+  for (const m of sorted) {
+    const row = document.createElement('div');
+    row.className = 'meal-row';
+    const x = m.macros;
+    const insulinHtml = (x.insulin || 0) > 0 ? ` · <span class="i">${x.insulin}u</span>` : '';
+    const bsHtml = (m.doseLog && m.doseLog.bsAtDose) ? ` · <span style="font-family:var(--mono);font-size:10px;color:var(--text-dim);">BS ${m.doseLog.bsAtDose}</span>` : '';
+    row.innerHTML = `
+      <div style="flex:1;min-width:0;">
+        <div class="name">${escapeHtml(m.name)} <span style="font-family:var(--mono);font-size:11px;color:var(--text-faint);">${fmt12(m.time)}</span></div>
+        <div class="macros">
+          <span class="p">${fmtNum(x.protein)}p</span>
+          <span>${fmtNum(x.fiber)}fi</span>
+          <span>${fmtNum(x.carbs)}c</span>
+          <span>${Math.round(x.calories)}cal</span>${insulinHtml}${bsHtml}
+        </div>
+      </div>
+      <button class="icon-btn edit-btn" title="Edit meal">✎</button>
+      <button class="icon-btn star ${m.starred ? 'active' : ''}" title="Star to save as favorite">★</button>
+      <button class="icon-btn delete" title="Delete">×</button>
+    `;
+    row.querySelector('.edit-btn').addEventListener('click', () => openEditModal(m));
+    row.querySelector('.star').addEventListener('click', () => starMeal(m));
+    row.querySelector('.delete').addEventListener('click', () => {
+      if (confirm(`Delete "${m.name}"?`)) {
+        deleteMeal(currentDate, m.id);
+        renderAll();
+      }
+    });
+    list.appendChild(row);
+  }
+}
+function openEditModal(meal) {
+  const x = meal.macros;
+  document.getElementById('edit_name').value = meal.name || '';
+  document.getElementById('edit_protein').value = x.protein || '';
+  document.getElementById('edit_fiber').value = x.fiber || '';
+  document.getElementById('edit_carbs').value = x.carbs || '';
+  document.getElementById('edit_cal').value = x.calories || '';
+  document.getElementById('edit_fat').value = x.fat || '';
+  document.getElementById('edit_sat').value = x.satFat || '';
+  document.getElementById('edit_sod').value = x.sodium || '';
+  document.getElementById('edit_sug').value = x.sugar || '';
+  document.getElementById('edit_vd').value = x.vitD || '';
+  document.getElementById('edit_ca').value = x.calcium || '';
+  document.getElementById('edit_ins').value = x.insulin || '';
+  document.getElementById('edit_time').value = meal.time || '';
+  document.getElementById('editModal').classList.add('show');
+
+  document.getElementById('editSaveBtn').onclick = () => {
+    meal.name = document.getElementById('edit_name').value.trim() || meal.name;
+    meal.macros.protein = parseFloat(document.getElementById('edit_protein').value) || 0;
+    meal.macros.fiber = parseFloat(document.getElementById('edit_fiber').value) || 0;
+    meal.macros.carbs = parseFloat(document.getElementById('edit_carbs').value) || 0;
+    meal.macros.calories = parseFloat(document.getElementById('edit_cal').value) || 0;
+    meal.macros.fat = parseFloat(document.getElementById('edit_fat').value) || 0;
+    meal.macros.satFat = parseFloat(document.getElementById('edit_sat').value) || 0;
+    meal.macros.sodium = parseFloat(document.getElementById('edit_sod').value) || 0;
+    meal.macros.sugar = parseFloat(document.getElementById('edit_sug').value) || 0;
+    meal.macros.vitD = parseFloat(document.getElementById('edit_vd').value) || 0;
+    meal.macros.calcium = parseFloat(document.getElementById('edit_ca').value) || 0;
+    meal.macros.insulin = parseFloat(document.getElementById('edit_ins').value) || 0;
+    meal.time = document.getElementById('edit_time').value || meal.time;
+    saveData();
+    document.getElementById('editModal').classList.remove('show');
+    renderAll();
+    showToast('Meal updated');
+  };
+  document.getElementById('editCancelBtn').onclick = () => {
+    document.getElementById('editModal').classList.remove('show');
+  };
+  document.getElementById('editModal').onclick = (e) => {
+    if (e.target.id === 'editModal') document.getElementById('editModal').classList.remove('show');
+  };
+}
+
+function fmtNum(n) {
+  if (n == null) return '0';
+  const v = Number(n);
+  if (Number.isInteger(v)) return String(v);
+  return v.toFixed(1).replace(/\.0$/, '');
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+// ============================================================
+// MODAL
+// ============================================================
+function showModal(title, text) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalText').value = text;
+  document.getElementById('modalBg').classList.add('show');
+}
+document.getElementById('modalCloseBtn').addEventListener('click', () => {
+  document.getElementById('modalBg').classList.remove('show');
+});
+document.getElementById('modalCopyBtn').addEventListener('click', () => {
+  const text = document.getElementById('modalText').value;
+  copyToClipboard(text).then(() => showToast('Copied'));
+});
+document.getElementById('modalBg').addEventListener('click', (e) => {
+  if (e.target.id === 'modalBg') {
+    document.getElementById('modalBg').classList.remove('show');
+  }
+});
+
+// ============================================================
+// CLIPBOARD + TOAST
+// ============================================================
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+  }
+  return fallbackCopy(text);
+}
+function fallbackCopy(text) {
+  return new Promise(resolve => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    resolve();
+  });
+}
+let toastTimer;
+function showToast(msg, isError) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.toggle('error', !!isError);
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// ============================================================
+// INIT
+// ============================================================
+function updateRestoreBanner() {
+  const hasData = Object.keys(state.meals).length > 0;
+  document.getElementById('restoreBanner').classList.toggle('show', !hasData);
+}
+
+renderAll();
+updateRestoreBanner();
+
+window.__cf = {
+  parseSmartPaste,
+  totalsFor,
+  state,
+  buildDailyReportPrompt,
+  buildWeeklyReportPrompt,
+  chicagoOffsetForDate,
+  chicagoISOAt,
+  toLocalISODate,
+  fromLocalISODate
+};
+
+// ============================================================
+// SETTINGS STORAGE
+// ============================================================
+const SETTINGS_KEY = 'cfTrackerSettings_v1';
+function loadSettings() {
+  try { return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}'); } catch { return {}; }
+}
+function saveSettings(s) {
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify(s));
+}
+let appSettings = loadSettings();
+
+function getAnthropicKey() { return appSettings.anthropicKey || ''; }
+function getGithubUser()   { return appSettings.githubUser || ''; }
+function getGithubPat()    { return appSettings.githubPat || ''; }
+
+// ============================================================
+// SETTINGS TAB UI
+// ============================================================
+function initSettingsTab() {
+  document.getElementById('settingAnthropicKey').value = appSettings.anthropicKey ? '••••••••' : '';
+  document.getElementById('settingGithubUser').value = appSettings.githubUser || '';
+  document.getElementById('settingGithubPat').value = appSettings.githubPat ? '••••••••' : '';
+  document.getElementById('goalProtein').value = state.goals.protein || 200;
+  document.getElementById('goalFiber').value = state.goals.fiber || 30;
+  document.getElementById('goalCalories').value = state.goals.calories || 2800;
+  updateApiStatus();
+  updateSyncStatus('');
+}
+
+function updateApiStatus() {
+  const ak = getAnthropicKey();
+  const gh = getGithubUser() && getGithubPat();
+  document.getElementById('anthropicStatus').innerHTML = ak
+    ? '<span style="color:var(--green-1);">✓ saved</span>'
+    : '<span style="color:var(--text-faint);">not set</span>';
+  document.getElementById('githubStatus').innerHTML = gh
+    ? '<span style="color:var(--green-1);">✓ saved</span>'
+    : '<span style="color:var(--text-faint);">not set</span>';
+}
+
+document.getElementById('saveAnthropicBtn').addEventListener('click', () => {
+  const val = document.getElementById('settingAnthropicKey').value.trim();
+  if (!val || val === '••••••••') { showToast('Paste your API key first', true); return; }
+  appSettings.anthropicKey = val;
+  saveSettings(appSettings);
+  document.getElementById('settingAnthropicKey').value = '••••••••';
+  updateApiStatus();
+  showToast('API key saved');
+});
+
+document.getElementById('saveGithubBtn').addEventListener('click', () => {
+  const user = document.getElementById('settingGithubUser').value.trim();
+  const pat  = document.getElementById('settingGithubPat').value.trim();
+  if (!user) { showToast('Enter your GitHub username', true); return; }
+  if (!pat || pat === '••••••••') { showToast('Paste your GitHub token first', true); return; }
+  appSettings.githubUser = user;
+  appSettings.githubPat = pat;
+  saveSettings(appSettings);
+  document.getElementById('settingGithubPat').value = '••••••••';
+  updateApiStatus();
+  showToast('GitHub settings saved');
+  githubSync();
+});
+
+document.getElementById('saveGoalsBtn').addEventListener('click', () => {
+  state.goals.protein  = parseInt(document.getElementById('goalProtein').value)  || 200;
+  state.goals.fiber    = parseInt(document.getElementById('goalFiber').value)    || 30;
+  state.goals.calories = parseInt(document.getElementById('goalCalories').value) || 2800;
+  saveData();
+  renderAll();
+  showToast('Goals updated');
+});
+
+document.getElementById('syncNowBtn').addEventListener('click', () => {
+  if (!getGithubUser() || !getGithubPat()) {
+    showToast('Add GitHub settings first', true); return;
+  }
+  githubSync(true);
+});
+
+// ============================================================
+// GITHUB AUTO-SYNC
+// ============================================================
+const GH_REPO = 'nutrition-tracker';
+function ghHeaders() {
+  return {
+    'Authorization': 'token ' + getGithubPat(),
+    'Accept': 'application/vnd.github.v3+json',
+    'Content-Type': 'application/json'
+  };
+}
+function ghBase() {
+  return `https://api.github.com/repos/${getGithubUser()}/${GH_REPO}/contents`;
+}
+
+function updateSyncStatus(msg, isErr) {
+  const el = document.getElementById('syncStatus');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = isErr ? 'var(--red)' : 'var(--text-faint)';
+}
+
+async function ghPutFile(path, content, message) {
+  const url = `${ghBase()}/${path}`;
+  // Get existing SHA if file exists
+  let sha;
+  try {
+    const r = await fetch(url, { headers: ghHeaders() });
+    if (r.ok) { const j = await r.json(); sha = j.sha; }
+  } catch {}
+  const body = { message, content: btoa(unescape(encodeURIComponent(content))) };
+  if (sha) body.sha = sha;
+  const resp = await fetch(url, { method: 'PUT', headers: ghHeaders(), body: JSON.stringify(body) });
+  if (!resp.ok) throw new Error(`GitHub PUT failed: ${resp.status}`);
+}
+
+async function ghGetFile(path) {
+  const url = `${ghBase()}/${path}`;
+  const r = await fetch(url, { headers: ghHeaders() });
+  if (!r.ok) return null;
+  const j = await r.json();
+  return decodeURIComponent(escape(atob(j.content.replace(/\n/g, ''))));
+}
+
+let syncInProgress = false;
+async function githubSync(manual = false) {
+  if (!getGithubUser() || !getGithubPat()) return;
+  if (syncInProgress) return;
+  syncInProgress = true;
+  updateSyncStatus('Syncing…');
+  try {
+    // Push meal data
+    const mealJson = JSON.stringify({
+      exported: new Date().toISOString(),
+      version: 'v1',
+      data: state
+    }, null, 2);
+    await ghPutFile('backup/meals.json', mealJson, 'Auto-sync: meal data ' + todayISO());
+
+    // Push any reports not yet on GitHub
+    const dailyIdx = JSON.parse(localStorage.getItem('rlib_index') || '[]');
+    for (const date of dailyIdx.slice(0, 30)) { // limit to last 30
+      const html = localStorage.getItem('rlib_' + date);
+      if (html) {
+        await ghPutFile(`reports/daily-${date}.html`, html, `Report: ${date}`);
+      }
+    }
+    const weeklyIdx = JSON.parse(localStorage.getItem('rlib_w_index') || '[]');
+    for (const date of weeklyIdx.slice(0, 12)) {
+      const html = localStorage.getItem('rlib_w_' + date);
+      if (html) {
+        await ghPutFile(`reports/weekly-${date}.html`, html, `Weekly report: ${date}`);
+      }
+    }
+
+    appSettings.lastSync = new Date().toISOString();
+    saveSettings(appSettings);
+    const t = new Date(appSettings.lastSync).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    updateSyncStatus('Last sync: ' + t);
+    if (manual) showToast('Synced to GitHub ✓');
+  } catch (err) {
+    console.error('GitHub sync error:', err);
+    updateSyncStatus('Sync failed — check token', true);
+    if (manual) showToast('Sync failed — check GitHub settings', true);
+  }
+  syncInProgress = false;
+}
+
+// Auto-sync after each meal save — debounced
+let syncTimer;
+const _origSaveData = saveData;
+// Wrap saveData to trigger sync
+const saveDataWithSync = function() {
+  _origSaveData();
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => githubSync(), 4000);
+};
+
+// ============================================================
+// PHOTO / BARCODE LOGGING
+// ============================================================
+let pendingPhotoBase64 = null;
+let pendingFavMatch = null;
+
+document.getElementById('photoBtn').addEventListener('click', () => {
+  if (!getAnthropicKey()) {
+    showToast('Add Anthropic API key in Settings first', true); return;
+  }
+  document.getElementById('photoFile').value = '';
+  document.getElementById('photoFile').click();
+});
+
+document.getElementById('barcodeBtn').addEventListener('click', () => {
+  document.getElementById('barcodeFile').value = '';
+  document.getElementById('barcodeFile').click();
+});
+
+document.getElementById('photoFile').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('photoDescRow').style.display = 'block';
+  document.getElementById('photoBtn').classList.add('active');
+  showAiStatus('Photo ready — add detail or tap Scan ↓');
+  pendingPhotoBase64 = await fileToBase64(file);
+  // Check for favorite match
+  await checkFavoritePhotoMatch(pendingPhotoBase64);
+  // Auto-scan
+  await scanPhotoMeal();
+});
+
+document.getElementById('barcodeFile').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  document.getElementById('barcodeBtn').classList.add('active');
+  showAiStatus('Reading barcode…');
+  const b64 = await fileToBase64(file);
+  await scanBarcode(b64);
+});
+
+function showAiStatus(msg) {
+  const el = document.getElementById('aiScanStatus');
+  el.textContent = msg;
+  el.style.display = msg ? 'block' : 'none';
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve) => {
+    // Resize before sending to keep tokens low
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const MAX = 768;
+      let w = img.width, h = img.height;
+      if (w > MAX || h > MAX) {
+        if (w > h) { h = Math.round(h * MAX / w); w = MAX; }
+        else { w = Math.round(w * MAX / h); h = MAX; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
+      resolve(dataUrl.split(',')[1]);
+    };
+    img.src = url;
+  });
+}
+
+async function scanPhotoMeal() {
+  if (!pendingPhotoBase64) return;
+  const key = getAnthropicKey();
+  if (!key) return;
+  const desc = document.getElementById('photoDesc').value.trim();
+  const dailyTotals = totalsFor(currentDate);
+  const remaining = {
+    protein: Math.max(0, (state.goals.protein || 200) - dailyTotals.protein),
+    fiber: Math.max(0, (state.goals.fiber || 30) - dailyTotals.fiber),
+    calories: Math.max(0, (state.goals.calories || 2800) - dailyTotals.calories)
+  };
+
+  showAiStatus('Analyzing meal…');
+  try {
+    const systemPrompt = `You are a precise nutrition estimator for a CFRD patient tracking macros on a medical nutrition tracker. 
+Your job: identify the food in the image and estimate macros as accurately as possible.
+Context: Patient goals — Protein ${state.goals.protein}g, Fiber ${state.goals.fiber}g, Calories ${state.goals.calories}. 
+Today remaining: Protein ${remaining.protein}g, Fiber ${remaining.fiber}g, Cal ${remaining.calories}.
+Known favorites for recognition: ${state.favorites.map(f => f.name).join(', ')}.
+Return ONLY valid JSON, no markdown, no explanation:
+{"name":"meal name","protein":0,"fiber":0,"carbs":0,"calories":0,"fat":0,"satFat":0,"sodium":0,"sugar":0,"calcium":0,"vitD":0,"confidence":"high|medium|low","note":"brief sizing note"}`;
+
+    const userContent = [
+      { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: pendingPhotoBase64 } },
+      { type: 'text', text: desc ? `Photo of meal. Additional detail: ${desc}` : 'Estimate the macros for this meal.' }
+    ];
+
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
+    });
+    const data = await resp.json();
+    const text = data.content?.[0]?.text || '';
+    const clean = text.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    showAiStatus('');
+    document.getElementById('photoDescRow').style.display = 'none';
+    document.getElementById('photoBtn').classList.remove('active');
+    pendingPhotoBase64 = null;
+
+    const meal = {
+      name: result.name || 'Photo meal',
+      macros: {
+        protein: result.protein || 0,
+        fiber: result.fiber || 0,
+        carbs: result.carbs || 0,
+        calories: result.calories || 0,
+        fat: result.fat || 0,
+        satFat: result.satFat || 0,
+        sodium: result.sodium || 0,
+        sugar: result.sugar || 0,
+        calcium: result.calcium || 0,
+        vitD: result.vitD || 0,
+        insulin: 0
+      }
+    };
+
+    // Show partial meal option
+    document.getElementById('partialAddBtn').style.display = 'flex';
+
+    if (result.note) showToast(result.note);
+    openDosePanel(meal);
+
+  } catch (err) {
+    console.error('Photo scan error:', err);
+    showAiStatus('');
+    showToast('Photo scan failed — try Smart Paste instead', true);
+  }
+}
+
+async function scanBarcode(b64) {
+  const key = getAnthropicKey();
+  // Try native BarcodeDetector first
+  if ('BarcodeDetector' in window) {
+    try {
+      const detector = new BarcodeDetector();
+      const blob = await fetch(`data:image/jpeg;base64,${b64}`).then(r => r.blob());
+      const bitmap = await createImageBitmap(blob);
+      const codes = await detector.detect(bitmap);
+      if (codes.length > 0) {
+        await fetchOpenFoodFacts(codes[0].rawValue);
+        document.getElementById('barcodeBtn').classList.remove('active');
+        return;
+      }
+    } catch {}
+  }
+  // Fallback: use vision API to read barcode
+  if (!key) { showToast('Add API key in Settings for barcode scanning', true); showAiStatus(''); return; }
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514', max_tokens: 100,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
+          { type: 'text', text: 'Read the barcode/UPC number in this image. Return ONLY the numeric barcode, nothing else.' }
+        ]}]
+      })
+    });
+    const data = await resp.json();
+    const barcode = (data.content?.[0]?.text || '').trim().replace(/\D/g, '');
+    if (barcode.length >= 8) {
+      await fetchOpenFoodFacts(barcode);
+    } else {
+      showToast('Could not read barcode — try again', true);
+      showAiStatus('');
+    }
+  } catch {
+    showToast('Barcode scan failed', true);
+    showAiStatus('');
+  }
+  document.getElementById('barcodeBtn').classList.remove('active');
+}
+
+async function fetchOpenFoodFacts(barcode) {
+  showAiStatus('Looking up product…');
+  try {
+    const r = await fetch(`https://world.openfoodfacts.org/api/v2/product/${barcode}.json`);
+    const data = await r.json();
+    if (data.status !== 1) { showToast('Product not found in database', true); showAiStatus(''); return; }
+    const p = data.product;
+    const n = p.nutriments || {};
+    const serving = p.serving_size ? parseFloat(p.serving_size) || 100 : 100;
+    const name = p.product_name || p.abbreviated_product_name || 'Scanned Product';
+    // Open Food Facts returns per 100g — use serving size
+    const scale = serving / 100;
+    const meal = {
+      name,
+      macros: {
+        protein:  Math.round((n.proteins_100g || 0) * scale * 10) / 10,
+        fiber:    Math.round((n.fiber_100g || 0) * scale * 10) / 10,
+        carbs:    Math.round((n.carbohydrates_100g || 0) * scale * 10) / 10,
+        calories: Math.round((n['energy-kcal_100g'] || 0) * scale),
+        fat:      Math.round((n.fat_100g || 0) * scale * 10) / 10,
+        satFat:   Math.round((n['saturated-fat_100g'] || 0) * scale * 10) / 10,
+        sodium:   Math.round((n.sodium_100g || 0) * scale * 1000),
+        sugar:    Math.round((n.sugars_100g || 0) * scale * 10) / 10,
+        calcium:  Math.round((n.calcium_100g || 0) * scale * 1000),
+        vitD:     Math.round((n['vitamin-d_100g'] || 0) * scale * 1000000),
+        insulin:  0
+      }
+    };
+    showAiStatus('');
+    showToast(`Found: ${name}`);
+    openDosePanel(meal);
+  } catch {
+    showToast('Product lookup failed', true);
+    showAiStatus('');
+  }
+}
+
+async function checkFavoritePhotoMatch(b64) {
+  const key = getAnthropicKey();
+  if (!key || !state.favorites.length) return;
+  try {
+    const favNames = state.favorites.map(f => f.name).join(', ');
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514', max_tokens: 80,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
+          { type: 'text', text: `Does this image match any of these saved meals? List: ${favNames}. If yes, reply with ONLY the exact name from the list. If no match, reply "none".` }
+        ]}]
+      })
+    });
+    const data = await resp.json();
+    const match = (data.content?.[0]?.text || '').trim();
+    if (match && match.toLowerCase() !== 'none') {
+      const fav = state.favorites.find(f => f.name.toLowerCase() === match.toLowerCase());
+      if (fav) {
+        pendingFavMatch = fav;
+        document.getElementById('favMatchName').textContent = fav.name;
+        document.getElementById('favMatchChip').classList.add('show');
+      }
+    }
+  } catch {}
+}
+
+document.getElementById('favMatchUseBtn').addEventListener('click', () => {
+  if (!pendingFavMatch) return;
+  document.getElementById('favMatchChip').classList.remove('show');
+  pendingPhotoBase64 = null;
+  showAiStatus('');
+  document.getElementById('photoDescRow').style.display = 'none';
+  document.getElementById('photoBtn').classList.remove('active');
+  openDosePanel({ name: pendingFavMatch.name, macros: { ...pendingFavMatch.macros } });
+  pendingFavMatch = null;
+});
+
+document.getElementById('favMatchDismissBtn').addEventListener('click', () => {
+  document.getElementById('favMatchChip').classList.remove('show');
+  pendingFavMatch = null;
+  // Continue with photo scan result already in progress
+});
+
+// Partial meal — "Add More" after logging first item
+document.getElementById('partialAddBtn').addEventListener('click', () => {
+  document.getElementById('partialAddBtn').style.display = 'none';
+  showToast('Log next item — dose will account for what you already logged');
+});
+
+// ============================================================
+// RECENTS
+// ============================================================
+function getRecentMeals(limit = 5) {
+  const seen = new Set();
+  const recents = [];
+  const dates = Object.keys(state.meals).sort().reverse();
+  for (const date of dates) {
+    for (const meal of [...(state.meals[date] || [])].reverse()) {
+      const key = meal.name.toLowerCase().trim();
+      if (!seen.has(key) && meal.macros.calories > 0) {
+        seen.add(key);
+        recents.push(meal);
+        if (recents.length >= limit) return recents;
+      }
+    }
+  }
+  return recents;
+}
+
+function renderRecents() {
+  const list = document.getElementById('recentsList');
+  const recents = getRecentMeals(5);
+  if (!recents.length) {
+    list.innerHTML = '<div class="empty" style="padding:12px;">No meals logged yet</div>';
+    return;
+  }
+  list.innerHTML = '';
+  for (const m of recents) {
+    const x = m.macros;
+    const row = document.createElement('div');
+    row.className = 'recent-row';
+    row.innerHTML = `
+      <div style="flex:1;min-width:0;">
+        <div class="recent-name">${escapeHtml(m.name)}</div>
+        <div class="recent-meta">P${fmtNum(x.protein)} · Fi${fmtNum(x.fiber)} · C${fmtNum(x.carbs)} · ${Math.round(x.calories)}cal</div>
+      </div>
+      <button class="primary" style="padding:7px 12px;font-size:12px;flex-shrink:0;">USE</button>
+    `;
+    row.querySelector('button').addEventListener('click', () => {
+      document.querySelector('.tabs button[data-tab="log"]').click();
+      openDosePanel({ name: m.name, macros: { ...m.macros, insulin: 0 } });
+    });
+    list.appendChild(row);
+  }
+}
+
+// ============================================================
+// TAB HANDLER (updated to include settings + recents)
+// ============================================================
+document.querySelectorAll('.tabs button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    if (tab === 'reports') return; // handled by reports library
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-log').style.display      = tab === 'log'      ? '' : 'none';
+    document.getElementById('tab-favs').style.display     = tab === 'favs'     ? '' : 'none';
+    document.getElementById('tab-dose').style.display     = tab === 'dose'     ? '' : 'none';
+    document.getElementById('tab-settings').style.display = tab === 'settings' ? '' : 'none';
+    if (tab === 'favs')     { renderFavorites(); renderRecents(); }
+    if (tab === 'dose')     initScIob();
+    if (tab === 'settings') initSettingsTab();
+  });
+});
+
+// Init sync status display on load
+if (appSettings.lastSync) {
+  const t = new Date(appSettings.lastSync).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+  updateSyncStatus('Last sync: ' + t);
+}
+// Attempt background sync on load (silent)
+setTimeout(() => githubSync(), 3000);
+
+
+(function() {
+'use strict';
+
+function ridxKey(w)  { return w ? 'rlib_w_index' : 'rlib_index'; }
+function rRptKey(d,w){ return (w?'rlib_w_':'rlib_')+d; }
+function rMetKey(d,w){ return (w?'rlib_w_meta_':'rlib_meta_')+d; }
+
+function rLoadIdx(w)    { try{return JSON.parse(localStorage.getItem(ridxKey(w))||'[]');}catch{return[];} }
+function rSaveIdx(a,w)  { localStorage.setItem(ridxKey(w),JSON.stringify(a)); }
+function rLoadRpt(d,w)  { return localStorage.getItem(rRptKey(d,w)); }
+function rLoadMeta(d,w) { try{return JSON.parse(localStorage.getItem(rMetKey(d,w))||'{}');}catch{return{};} }
+function rSaveMeta(d,m,w){ localStorage.setItem(rMetKey(d,w),JSON.stringify(m)); }
+
+function rSaveReport(date,html,isW){
+  localStorage.setItem(rRptKey(date,isW),html);
+  rSaveMeta(date,isW?rExtractWeeklyMeta(html):rExtractMeta(html),isW);
+  const idx=rLoadIdx(isW);
+  if(!idx.includes(date))idx.push(date);
+  idx.sort((a,b)=>b.localeCompare(a));
+  rSaveIdx(idx,isW);
+}
+function rDeleteReport(date,isW){
+  localStorage.removeItem(rRptKey(date,isW));
+  localStorage.removeItem(rMetKey(date,isW));
+  rSaveIdx(rLoadIdx(isW).filter(d=>d!==date),isW);
+}
+
+function rExtractMeta(html){
+  const m={};
+  const t1=html.match(/class="tv"[^>]*>\s*([\d.]+)%[\s\S]{0,80}In Range/);
+  if(t1)m.tir=parseFloat(t1[1]);
+  const pp=html.match(/trf-val[^>]+>\s*(\d+)g/);
+  if(pp)m.protein=parseInt(pp[1]);
+  const ag=html.match(/color:var\(--tx\)">\s*(\d{2,3})\s*<\/div>[\s\S]{0,60}Avg mg/);
+  if(ag)m.avgGlucose=parseInt(ag[1]);
+  const hi=html.match(/color:var\(--or\)">([\d.]+)%<\/div>[\s\S]{0,60}Above 180/);
+  if(hi&&parseFloat(hi[1])>0)m.high=parseFloat(hi[1]);
+  const lo=html.match(/color:var\(--re\)">([\d.]+)%<\/div>[\s\S]{0,60}Below 70/);
+  if(lo&&parseFloat(lo[1])>0)m.low=parseFloat(lo[1]);
+  return m;
+}
+function rExtractWeeklyMeta(html){
+  const m={};
+  const t1=html.match(/Overall TIR[\s\S]{0,200}?([\d.]+)%/i);
+  if(t1)m.tir=parseFloat(t1[1]);
+  const pd=html.match(/(\d+)\s*\/\s*7.*?protein/i);
+  if(pd)m.proteinDays=parseInt(pd[1]);
+  const ag=html.match(/Avg[\s\S]{0,40}?(\d{2,3})\s*mg/i);
+  if(ag)m.avgGlucose=parseInt(ag[1]);
+  const rng=html.match(/(\w+ \d+)\s*[→–-]+\s*(\w+ \d+,?\s*\d{4})/);
+  if(rng)m.range=rng[1]+' → '+rng[2].replace(/,?\s*\d{4}/,'');
+  return m;
+}
+
+function rToISO(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function rTodayISO(){ return rToISO(new Date()); }
+function rPrettyDate(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric',year:'numeric'}); }
+function rShortDate(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
+function rWeekRange(iso){
+  const s=new Date(iso+'T12:00:00'), e=new Date(s); e.setDate(e.getDate()+6);
+  return s.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' – '+e.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+function rDow(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'}); }
+function rMonthLbl(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'long',year:'numeric'}); }
+function rTirColor(t){ if(t==null)return'var(--text-faint)';if(t>=90)return'var(--green-1)';if(t>=70)return'var(--orange)';return'var(--red)'; }
+
+function rExtractDate(html,isW){
+  if(isW){
+    const m1=html.match(/Week of\s+(\d{4}-\d{2}-\d{2})/i);
+    if(m1)return m1[1];
+    const m2=html.match(/([A-Za-z]+ \d+,?\s+\d{4})\s*[→–-]/);
+    if(m2){const d=new Date(m2[1].trim());if(!isNaN(d))return rToISO(d);}
+    return null;
+  }
+  const m1=html.match(/<title[^>]*>Daily Report\s*[—–-]+\s*([^<]+)<\/title>/i);
+  if(m1){const d=new Date(m1[1].trim());if(!isNaN(d))return rToISO(d);}
+  const m2=html.match(/class="sub"[^>]*>\s*([A-Za-z]+day,\s+[A-Za-z]+ \d+,\s+\d{4})/);
+  if(m2){const d=new Date(m2[1].trim());if(!isNaN(d))return rToISO(d);}
+  return null;
+}
+function rIsWeeklyHTML(html){ return /weekly report/i.test(html.slice(0,2000))||/<title[^>]*>Weekly Report/i.test(html); }
+
+let rMode='daily';
+let rDailyCur=0, rWeeklyCur=0;
+let rIndexOpen=false;
+let rIsVisible=false;
+
+function rIsW(){ return rMode==='weekly'; }
+function rGetCur(){ return rIsW()?rWeeklyCur:rDailyCur; }
+function rSetCur(v){ if(rIsW())rWeeklyCur=v; else rDailyCur=v; }
+
+const rUI        = document.getElementById('reports-ui');
+const rFrameWrap = document.getElementById('r-frame-wrap');
+const rFrame     = document.getElementById('r-frame');
+const rEmpty     = document.getElementById('r-empty');
+const rPrevBtn   = document.getElementById('r-prev');
+const rNextBtn   = document.getElementById('r-next');
+const rDateLbl   = document.getElementById('r-date-lbl');
+const rCount     = document.getElementById('r-count');
+const rDelBtn    = document.getElementById('r-del-btn');
+const rIndexBtn  = document.getElementById('r-index-btn');
+const rIndexPanel= document.getElementById('r-index-panel');
+const rIndexList = document.getElementById('r-index-list');
+
+window.addEventListener('message', e=>{
+  if(e.data&&e.data.type==='rlib-height'&&e.data.h>100){
+    rFrame.style.height=e.data.h+'px';
+  }
+});
+const R_HEIGHT_SCRIPT=`<script>(function(){function r(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({type:'rlib-height',h:h},'*');}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(r,200);});}else{setTimeout(r,200);}setTimeout(r,800);setTimeout(r,1800);window.addEventListener('resize',r);})();<\/script>`;
+
+function rRender(dir){
+  const w=rIsW();
+  const dates=rLoadIdx(w);
+  let cur=rGetCur();
+
+  if(!dates.length){
+    rEmpty.style.display='flex';
+    rFrameWrap.classList.remove('show');
+    rPrevBtn.disabled=rNextBtn.disabled=true;
+    rDateLbl.textContent='—'; rCount.textContent='';
+    rDelBtn.style.display='none';
+    document.getElementById('r-empty-title').textContent=w?'No Weekly Reports':'No Daily Reports';
+    return;
+  }
+
+  cur=Math.max(0,Math.min(cur,dates.length-1));
+  rSetCur(cur);
+  const date=dates[cur], html=rLoadRpt(date,w);
+
+  if(dir&&rFrameWrap.classList.contains('show')){
+    rFrameWrap.classList.add(dir==='next'?'r-slide-left':'r-slide-right');
+    setTimeout(()=>{
+      rFrameWrap.classList.remove('r-slide-left','r-slide-right');
+      document.getElementById('r-content').scrollTop=0; rFrame.style.height='600px';
+      rLoadFrame(html);
+    },120);
+  } else {
+    document.getElementById('r-content').scrollTop=0; rFrame.style.height='600px';
+    rLoadFrame(html);
+  }
+
+  rEmpty.style.display='none';
+  rFrameWrap.classList.add('show');
+  rDelBtn.style.display='grid';
+
+  const meta=rLoadMeta(date,w);
+  rDateLbl.textContent=w?(meta.range||rWeekRange(date)):rShortDate(date);
+  rCount.textContent=(cur+1)+' / '+dates.length;
+  rPrevBtn.disabled=cur>=dates.length-1;
+  rNextBtn.disabled=cur<=0;
+}
+
+function rLoadFrame(html){
+  if(!html){
+    rFrame.srcdoc='<body style="background:#0b0d0f;color:#555c66;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;font-size:13px;">No data</body>';
+    return;
+  }
+  let h=html.replace(/<head([^>]*)>/i,'<head$1><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>');
+  h=h.replace(/<\/body>/i,R_HEIGHT_SCRIPT+'</body>');
+  rFrame.srcdoc=h;
+}
+
+function openReports(){
+  rIsVisible=true;
+  rUI.classList.add('show');
+  document.body.style.overflow='hidden';
+  rRender();
+}
+function closeReports(){
+  rIsVisible=false;
+  rUI.classList.remove('show');
+  document.body.style.overflow='';
+  document.querySelectorAll('.tabs button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.tab==='log');
+  });
+  document.getElementById('tab-log').style.display='';
+  document.getElementById('tab-favs').style.display='none';
+  document.getElementById('tab-dose').style.display='none';
+}
+
+document.getElementById('r-back').addEventListener('click', closeReports);
+
+document.querySelectorAll('.r-tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(btn.dataset.rmode===rMode)return;
+    document.querySelectorAll('.r-tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    rMode=btn.dataset.rmode;
+    if(rIndexOpen)rCloseIndex();
+    rFrameWrap.classList.remove('show');
+    rEmpty.style.display='none';
+    rRender();
+  });
+});
+
+rPrevBtn.addEventListener('click',()=>{
+  const cur=rGetCur(),len=rLoadIdx(rIsW()).length;
+  if(cur<len-1){rSetCur(cur+1);rRender('prev');}
+});
+rNextBtn.addEventListener('click',()=>{
+  if(rGetCur()>0){rSetCur(rGetCur()-1);rRender('next');}
+});
+
+function rRenderIndex(q){
+  const w=rIsW(), all=rLoadIdx(w);
+  const filtered=q?all.filter(d=>{
+    if(d.includes(q))return true;
+    return new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toLowerCase().includes(q.toLowerCase());
+  }):all;
+  if(!filtered.length){rIndexList.innerHTML='<div style="padding:40px 20px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-faint);">No reports found</div>';return;}
+  const groups={};
+  for(const d of filtered){const l=rMonthLbl(d);if(!groups[l])groups[l]=[];groups[l].push(d);}
+  let html='';
+  const cur=rGetCur();
+  for(const[month,days]of Object.entries(groups)){
+    html+=`<div class="r-month-label">${month}</div>`;
+    for(const d of days){
+      const meta=rLoadMeta(d,w);
+      const isCur=d===(rLoadIdx(w)[cur]);
+      let pills='';
+      if(w){
+        if(meta.proteinDays!=null)pills+=`<span class="r-pill ${meta.proteinDays>=5?'r-pill-blue':'r-pill-red'}">${meta.proteinDays}/7 protein</span>`;
+        if(meta.avgGlucose)pills+=`<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
+        pills+=`<span class="r-pill r-pill-purple">weekly</span>`;
+      } else {
+        if(meta.protein!=null)pills+=`<span class="r-pill ${meta.protein>=200?'r-pill-blue':'r-pill-red'}">${meta.protein}g P</span>`;
+        if(meta.low>0)pills+=`<span class="r-pill r-pill-red">↓ ${meta.low}% low</span>`;
+        if(meta.high>0)pills+=`<span class="r-pill r-pill-orange">↑ ${meta.high}% high</span>`;
+        if(meta.avgGlucose)pills+=`<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
+      }
+      const lbl=w?(meta.range||rWeekRange(d)):rShortDate(d);
+      const sub=w?('week of '+rDow(d)):rDow(d);
+      html+=`<div class="r-idx-card${w?' r-weekly':''}${isCur?' r-current':''}" data-rdate="${d}">
+        <div>
+          <div class="r-idx-date">${lbl}</div>
+          <div class="r-idx-dow">${sub}</div>
+          ${pills?`<div class="r-idx-meta">${pills}</div>`:''}
+        </div>
+        <div class="r-idx-tir" style="color:${rTirColor(meta.tir)}">${meta.tir!=null?meta.tir.toFixed(1)+'%':'—'}<span class="r-tir-lbl">TIR</span></div>
+      </div>`;
+    }
+  }
+  rIndexList.innerHTML=html;
+  rIndexList.querySelectorAll('.r-idx-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const d=card.dataset.rdate, idx=rLoadIdx(rIsW()).indexOf(d);
+      if(idx!==-1){const was=idx<rGetCur();rSetCur(idx);rCloseIndex();rRender(was?'next':'prev');}
+    });
+  });
+}
+function rOpenIndex(){
+  rIndexOpen=true;rIndexPanel.classList.add('show');rIndexBtn.classList.add('r-active');
+  document.getElementById('r-search').value='';rRenderIndex('');
+  setTimeout(()=>document.getElementById('r-search').focus(),300);
+}
+function rCloseIndex(){rIndexOpen=false;rIndexPanel.classList.remove('show');rIndexBtn.classList.remove('r-active');}
+rIndexBtn.addEventListener('click',()=>rIndexOpen?rCloseIndex():rOpenIndex());
+document.getElementById('r-date-chip').addEventListener('click',()=>{if(rLoadIdx(rIsW()).length)rIndexOpen?rCloseIndex():rOpenIndex();});
+document.getElementById('r-search').addEventListener('input',e=>rRenderIndex(e.target.value.trim()));
+
+function rOpenImport(){
+  const w=rIsW();
+  document.getElementById('r-import-title').textContent=w?'Import Weekly Report':'Import Daily Report';
+  document.getElementById('r-date-lbl2').textContent=w?'Week start':'Date';
+  document.getElementById('r-paste').value='';
+  document.getElementById('r-import-date').value=rTodayISO();
+  document.getElementById('r-overwrite').classList.remove('show');
+  document.getElementById('r-import-modal').classList.add('show');
+}
+[document.getElementById('r-import-btn'),document.getElementById('r-empty-cta')].forEach(el=>el.addEventListener('click',rOpenImport));
+document.getElementById('r-import-cancel').addEventListener('click',()=>document.getElementById('r-import-modal').classList.remove('show'));
+document.getElementById('r-import-modal').addEventListener('click',e=>{if(e.target===document.getElementById('r-import-modal'))document.getElementById('r-import-modal').classList.remove('show');});
+
+document.getElementById('r-paste').addEventListener('input',()=>{
+  const html=document.getElementById('r-paste').value;
+  const w=rIsW()||rIsWeeklyHTML(html);
+  const d=rExtractDate(html,w);
+  if(d){
+    document.getElementById('r-import-date').value=d;
+    document.getElementById('r-overwrite').classList.toggle('show',rLoadIdx(w).includes(d));
+  }
+});
+document.getElementById('r-import-date').addEventListener('change',e=>{
+  document.getElementById('r-overwrite').classList.toggle('show',rLoadIdx(rIsW()).includes(e.target.value));
+});
+
+document.getElementById('r-import-save').addEventListener('click',()=>{
+  const html=document.getElementById('r-paste').value.trim();
+  const date=document.getElementById('r-import-date').value;
+  if(!html){showToast('Paste some HTML first',true);return;}
+  if(!html.includes('<html')&&!html.includes('<!DOCTYPE')){showToast("Doesn't look like HTML",true);return;}
+  if(!date){showToast('Select a date',true);return;}
+  const w=rIsW()||rIsWeeklyHTML(html);
+  if(w&&rMode==='daily'){
+    document.querySelector('.r-tab-btn[data-rmode="weekly"]').click();
+  }
+  rSaveReport(date,html,w);
+  document.getElementById('r-import-modal').classList.remove('show');
+  const idx=rLoadIdx(w).indexOf(date);
+  rSetCur(idx!==-1?idx:0);
+  rRender();
+  showToast('Saved · '+(w?rWeekRange(date):rShortDate(date)));
+});
+
+rDelBtn.addEventListener('click',()=>{
+  const date=rLoadIdx(rIsW())[rGetCur()];
+  document.getElementById('r-del-sub').textContent=`Delete the ${rIsW()?'weekly':'daily'} report for ${rIsW()?rWeekRange(date):rPrettyDate(date)}? This cannot be undone.`;
+  document.getElementById('r-del-modal').classList.add('show');
+});
+document.getElementById('r-del-cancel').addEventListener('click',()=>document.getElementById('r-del-modal').classList.remove('show'));
+document.getElementById('r-del-modal').addEventListener('click',e=>{if(e.target===document.getElementById('r-del-modal'))document.getElementById('r-del-modal').classList.remove('show');});
+document.getElementById('r-del-confirm').addEventListener('click',()=>{
+  const w=rIsW(), date=rLoadIdx(w)[rGetCur()];
+  rDeleteReport(date,w);
+  document.getElementById('r-del-modal').classList.remove('show');
+  const newDates=rLoadIdx(w);
+  rSetCur(Math.min(rGetCur(),Math.max(0,newDates.length-1)));
+  rRender();
+  showToast('Deleted');
+});
+
+document.querySelectorAll('.tabs button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    if(btn.dataset.tab==='reports'){
+      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-log').style.display='none';
+      document.getElementById('tab-favs').style.display='none';
+      document.getElementById('tab-dose').style.display='none';
+      openReports();
+    }
+  });
+});
+
+})();
+</script>
+</body>
+</html>
