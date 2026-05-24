@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-24T19:22:22.481Z",
+  "exported": "2026-05-24T21:40:01.588Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8,7 +8,7 @@
           "id": "m_1779642736737_b5iu8",
           "name": "Pizza favorite",
           "macros": {
-            "protein": 0,
+            "protein": 50,
             "fiber": 0,
             "carbs": 0,
             "calories": 0,
@@ -21,6 +21,63 @@
             "insulin": 12
           },
           "time": "12:12",
+          "starred": false
+        },
+        {
+          "id": "m_1779650564371_x3nw1",
+          "name": "Favorites protein shake",
+          "macros": {
+            "protein": 50,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "14:22",
+          "starred": false
+        },
+        {
+          "id": "m_1779655477874_11b1x",
+          "name": "2 avacado favorite",
+          "macros": {
+            "protein": 5,
+            "fiber": 20,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "15:44",
+          "starred": false
+        },
+        {
+          "id": "m_1779655495197_ugz9z",
+          "name": "6 oz turkey favorite",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "15:44",
           "starred": false
         }
       ]
