@@ -1,8 +1,30 @@
 {
-  "exported": "2026-05-24T16:26:09.761Z",
+  "exported": "2026-05-24T18:25:24.053Z",
   "version": "v1",
   "data": {
-    "meals": {},
+    "meals": {
+      "2026-05-24": [
+        {
+          "id": "m_1779642736737_b5iu8",
+          "name": "Pizza favorite",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 12
+          },
+          "time": "12:12",
+          "starred": false
+        }
+      ]
+    },
     "favorites": [
       {
         "id": "fav_protein_smoothie",
