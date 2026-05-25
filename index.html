@@ -3260,7 +3260,7 @@ Return ONLY valid JSON, no markdown, no explanation:
     const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
+      body: JSON.stringify({ model: 'claude-sonnet-4-5', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
     });
     if (!resp.ok) {
       const errText = await resp.text();
@@ -3302,7 +3302,8 @@ Return ONLY valid JSON, no markdown, no explanation:
   } catch (err) {
     console.error('Photo scan error:', err);
     showAiStatus('');
-    showToast('Error: ' + (err.message || JSON.stringify(err)).slice(0, 80), true);
+    const msg = err?.message || err?.toString() || err?.name || 'unknown error';
+    showToast('Error: ' + msg.slice(0, 100), true);
   }
 }
 
@@ -3329,7 +3330,7 @@ async function scanBarcode(b64) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 100,
+        model: 'claude-sonnet-4-5', max_tokens: 100,
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
           { type: 'text', text: 'Read the barcode/UPC number in this image. Return ONLY the numeric barcode, nothing else.' }
@@ -3397,7 +3398,7 @@ async function checkFavoritePhotoMatch(b64) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 80,
+        model: 'claude-sonnet-4-5', max_tokens: 80,
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
           { type: 'text', text: `Does this image match any of these saved meals? List: ${favNames}. If yes, reply with ONLY the exact name from the list. If no match, reply "none".` }
