@@ -899,7 +899,8 @@
       <!-- Photo description field (shown when photo selected) -->
       <div id="photoDescRow" style="display:none;margin-bottom:8px;">
         <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:4px;">Describe or add detail (optional)</div>
-        <input type="text" id="photoDesc" placeholder="e.g. 6oz chicken, cup of rice, large bowl…" style="font-size:13px;" />
+        <input type="text" id="photoDesc" placeholder="e.g. 6oz chicken, cup of rice, large bowl…" style="font-size:13px;margin-bottom:8px;" />
+        <button class="primary" id="scanSubmitBtn" style="width:100%;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:0.5px;">Analyze Photo →</button>
       </div>
 
       <!-- AI scanning status -->
@@ -3178,18 +3179,24 @@ document.getElementById('barcodeBtn').addEventListener('click', () => {
 document.getElementById('photoFile').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
-  document.getElementById('photoDescRow').style.display = 'block';
   document.getElementById('photoBtn').classList.add('active');
-  showAiStatus('Photo ready — add detail or tap Scan ↓');
   try {
     pendingPhotoBase64 = await fileToBase64(file);
   } catch (err) {
     showToast('Error loading photo: ' + err.message, true);
     return;
   }
-  // Check for favorite match silently — don't block scan if it fails
+  // Show desc row and wait for user to hit Analyze
+  document.getElementById('photoDescRow').style.display = 'block';
+  showAiStatus('');
+  // Check for favorite match silently in background
   try { await checkFavoritePhotoMatch(pendingPhotoBase64); } catch {}
-  // Auto-scan
+  // Focus desc field so keyboard comes up
+  setTimeout(() => document.getElementById('photoDesc').focus(), 100);
+});
+
+document.getElementById('scanSubmitBtn').addEventListener('click', async () => {
+  if (!pendingPhotoBase64) { showToast('No photo selected', true); return; }
   await scanPhotoMeal();
 });
 
@@ -3248,7 +3255,7 @@ async function scanPhotoMeal() {
 Your job: identify the food in the image and estimate macros as accurately as possible.
 Context: Patient goals — Protein ${state.goals.protein}g, Fiber ${state.goals.fiber}g, Calories ${state.goals.calories}. 
 Today remaining: Protein ${remaining.protein}g, Fiber ${remaining.fiber}g, Cal ${remaining.calories}.
-Known favorites for recognition: ${state.favorites.map(f => f.name).join(', ')}.
+Known favorites for recognition: ${state.favorites.map(f => f.name).join(', ')}.${getCorrectionsContext()}
 Return ONLY valid JSON, no markdown, no explanation:
 {"name":"meal name","protein":0,"fiber":0,"carbs":0,"calories":0,"fat":0,"satFat":0,"sodium":0,"sugar":0,"calcium":0,"vitD":0,"confidence":"high|medium|low","note":"brief sizing note"}`;
 
@@ -3290,6 +3297,13 @@ Return ONLY valid JSON, no markdown, no explanation:
         calcium: result.calcium || 0,
         vitD: result.vitD || 0,
         insulin: 0
+      },
+      aiEstimate: { // store original AI estimate for correction learning
+        protein: result.protein || 0,
+        carbs: result.carbs || 0,
+        calories: result.calories || 0,
+        confidence: result.confidence || 'medium',
+        note: result.note || ''
       }
     };
 
@@ -3442,8 +3456,58 @@ document.getElementById('partialAddBtn').addEventListener('click', () => {
 });
 
 // ============================================================
-// RECENTS
+// CORRECTION LEARNING SYSTEM
 // ============================================================
+const CORRECTIONS_KEY = 'cfLearningCorrections_v1';
+
+function loadCorrections() {
+  try { return JSON.parse(localStorage.getItem(CORRECTIONS_KEY) || '[]'); } catch { return []; }
+}
+function saveCorrection(mealName, aiEstimate, userActual) {
+  const corrections = loadCorrections();
+  corrections.push({
+    date: todayISO(),
+    meal: mealName,
+    ai: aiEstimate,
+    actual: userActual,
+    delta: {
+      protein: userActual.protein - aiEstimate.protein,
+      carbs: userActual.carbs - aiEstimate.carbs,
+      calories: userActual.calories - aiEstimate.calories
+    }
+  });
+  // Keep last 50 corrections
+  if (corrections.length > 50) corrections.splice(0, corrections.length - 50);
+  localStorage.setItem(CORRECTIONS_KEY, JSON.stringify(corrections));
+}
+function getCorrectionsContext() {
+  const corrections = loadCorrections();
+  if (!corrections.length) return '';
+  // Build a summary of patterns for the system prompt
+  const recent = corrections.slice(-10);
+  const lines = recent.map(c =>
+    `- ${c.meal}: AI said P${c.ai.protein}g/C${c.ai.carbs}g/${c.ai.calories}cal, actual was P${c.actual.protein}g/C${c.actual.carbs}g/${c.actual.calories}cal`
+  );
+  return `\nPast corrections to learn from:\n${lines.join('\n')}\nUse these to calibrate your estimates for similar foods.`;
+}
+
+// Attach correction handler to doseLogBtn — save correction if meal has aiEstimate
+const _origDoseLogBtn = document.getElementById('doseLogBtn');
+_origDoseLogBtn.addEventListener('click', () => {
+  // After logging, if meal had an AI estimate, offer correction
+  if (dpPendingMeal && dpPendingMeal.aiEstimate) {
+    const est = dpPendingMeal.aiEstimate;
+    const actual = dpPendingMeal.macros;
+    // Only save if user edited macros (difference detected)
+    if (Math.abs(actual.protein - est.protein) > 2 ||
+        Math.abs(actual.carbs - est.carbs) > 3 ||
+        Math.abs(actual.calories - est.calories) > 20) {
+      saveCorrection(dpPendingMeal.name, est, actual);
+    }
+  }
+}, true); // capture phase so it runs before the existing handler
+
+
 function getRecentMeals(limit = 5) {
   const seen = new Set();
   const recents = [];
