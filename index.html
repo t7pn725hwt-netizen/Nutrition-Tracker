@@ -3253,7 +3253,7 @@ Return ONLY valid JSON, no markdown, no explanation:
       { type: 'text', text: desc ? `Photo of meal. Additional detail: ${desc}` : 'Estimate the macros for this meal.' }
     ];
 
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
@@ -3317,7 +3317,7 @@ async function scanBarcode(b64) {
   // Fallback: use vision API to read barcode
   if (!key) { showToast('Add API key in Settings for barcode scanning', true); showAiStatus(''); return; }
   try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
@@ -3346,7 +3346,7 @@ async function scanBarcode(b64) {
 async function fetchOpenFoodFacts(barcode) {
   showAiStatus('Looking up product…');
   try {
-    const r = await fetch(`https://world.openfoodfacts.org/api/v2/product/${barcode}.json`);
+    const r = await fetch(`https://little-fog-50ac.d22f8kg97r.workers.dev/off/api/v2/product/${barcode}.json`);
     const data = await r.json();
     if (data.status !== 1) { showToast('Product not found in database', true); showAiStatus(''); return; }
     const p = data.product;
@@ -3385,7 +3385,7 @@ async function checkFavoritePhotoMatch(b64) {
   if (!key || !state.favorites.length) return;
   try {
     const favNames = state.favorites.map(f => f.name).join(', ');
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
