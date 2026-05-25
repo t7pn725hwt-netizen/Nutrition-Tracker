@@ -3181,9 +3181,14 @@ document.getElementById('photoFile').addEventListener('change', async (e) => {
   document.getElementById('photoDescRow').style.display = 'block';
   document.getElementById('photoBtn').classList.add('active');
   showAiStatus('Photo ready — add detail or tap Scan ↓');
-  pendingPhotoBase64 = await fileToBase64(file);
-  // Check for favorite match
-  await checkFavoritePhotoMatch(pendingPhotoBase64);
+  try {
+    pendingPhotoBase64 = await fileToBase64(file);
+  } catch (err) {
+    showToast('Error loading photo: ' + err.message, true);
+    return;
+  }
+  // Check for favorite match silently — don't block scan if it fails
+  try { await checkFavoritePhotoMatch(pendingPhotoBase64); } catch {}
   // Auto-scan
   await scanPhotoMeal();
 });
@@ -3227,9 +3232,9 @@ function fileToBase64(file) {
 }
 
 async function scanPhotoMeal() {
-  if (!pendingPhotoBase64) return;
+  if (!pendingPhotoBase64) { showToast('Error: no photo data', true); return; }
   const key = getAnthropicKey();
-  if (!key) return;
+  if (!key) { showToast('Error: no API key', true); return; }
   const desc = document.getElementById('photoDesc').value.trim();
   const dailyTotals = totalsFor(currentDate);
   const remaining = {
@@ -3237,7 +3242,6 @@ async function scanPhotoMeal() {
     fiber: Math.max(0, (state.goals.fiber || 30) - dailyTotals.fiber),
     calories: Math.max(0, (state.goals.calories || 2800) - dailyTotals.calories)
   };
-
   showAiStatus('Analyzing meal…');
   try {
     const systemPrompt = `You are a precise nutrition estimator for a CFRD patient tracking macros on a medical nutrition tracker. 
