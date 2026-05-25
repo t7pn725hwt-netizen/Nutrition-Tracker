@@ -916,7 +916,7 @@
 
       <!-- Hidden file inputs -->
       <input type="file" id="photoFile" accept="image/*" style="display:none;" />
-      <input type="file" id="barcodeFile" accept="image/*" style="display:none;" />
+      <input type="file" id="barcodeFile" accept="image/*" capture="environment" style="display:none;" />
 
       <!-- Dose panel (shown after parse) -->
       <div id="spDosePanel" style="display:none;">
@@ -3258,6 +3258,10 @@ Return ONLY valid JSON, no markdown, no explanation:
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
     });
+    if (!resp.ok) {
+      const errText = await resp.text();
+      throw new Error(`API ${resp.status}: ${errText.slice(0, 120)}`);
+    }
     const data = await resp.json();
     const text = data.content?.[0]?.text || '';
     const clean = text.replace(/```json|```/g, '').trim();
@@ -3294,7 +3298,7 @@ Return ONLY valid JSON, no markdown, no explanation:
   } catch (err) {
     console.error('Photo scan error:', err);
     showAiStatus('');
-    showToast('Photo scan failed — try Smart Paste instead', true);
+    showToast('Error: ' + (err.message || JSON.stringify(err)).slice(0, 80), true);
   }
 }
 
