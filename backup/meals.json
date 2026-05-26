@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-26T19:45:13.061Z",
+  "exported": "2026-05-26T21:22:30.255Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -313,6 +313,25 @@
             "iob": 0,
             "bsAtDose": 140
           }
+        },
+        {
+          "id": "m_1779824734451_apmrp",
+          "name": "5 Eggs Over Easy and 2 Medium Avocados",
+          "macros": {
+            "protein": 39,
+            "fiber": 20,
+            "carbs": 29,
+            "calories": 870,
+            "fat": 71,
+            "satFat": 15,
+            "sodium": 365,
+            "sugar": 3,
+            "calcium": 120,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "14:45",
+          "starred": false
         }
       ]
     },
