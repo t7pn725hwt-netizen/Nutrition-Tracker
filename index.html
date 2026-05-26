@@ -870,7 +870,7 @@
   <div class="tabs">
     <button class="active" data-tab="log">Log</button>
     <button data-tab="favs">Favorites</button>
-    <button data-tab="dose">Dose</button>
+    <button data-tab="dose">Insulin</button>
     <button data-tab="reports">⊙ Reports</button>
     <button data-tab="settings">⚙</button>
   </div>
@@ -910,7 +910,7 @@
       <div id="spInputRow">
         <textarea id="smartPaste" placeholder="Paste from Claude — Name, Protein: 50, Carbs: 30, Fat: 20…"></textarea>
         <div class="smart-paste-row">
-          <button class="primary" id="parseBtn">Preview Dose</button>
+          <button class="primary" id="parseBtn">Show Insulin Math</button>
           <button class="ghost" id="parseClearBtn">Clear</button>
         </div>
       </div>
@@ -998,7 +998,7 @@
         </div>
 
         <div class="dose-result-card">
-          <div class="dose-result-lbl">Suggested Humalog</div>
+          <div class="dose-result-lbl">Calculated Units</div>
           <div><span class="dose-result-num" id="dpDoseNum">0</span><span class="dose-result-u"> u</span></div>
           <div class="dose-result-timing" id="dpTiming">5–10 min before eating</div>
         </div>
@@ -1020,16 +1020,16 @@
           <button id="dpActivityToggle" onclick="toggleDpActivity()" style="font-family:var(--mono);font-size:12px;font-weight:700;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text-dim);cursor:pointer;min-width:52px;">No</button>
         </div>
 
-        <div class="dose-calc-toggle" id="dpCalcToggle" onclick="toggleDpCalc()">show calculation ↓</div>
-        <div class="dose-calc-drawer" id="dpCalcDrawer">
-          <div class="dose-calc-row"><span class="dcl" id="dpCarbLbl">Net carb dose</span><span class="dcv" id="dpCarbVal" style="color:var(--green-1)">+0.0u</span></div>
+        <div class="dose-calc-toggle" id="dpCalcToggle" onclick="toggleDpCalc()">hide calculation ↑</div>
+        <div class="dose-calc-drawer open" id="dpCalcDrawer">
+          <div class="dose-calc-row"><span class="dcl" id="dpCarbLbl">Net carb units</span><span class="dcv" id="dpCarbVal" style="color:var(--green-1)">+0.0u</span></div>
           <div class="dose-calc-row"><span class="dcl" id="dpCorrLbl">Correction</span><span class="dcv" id="dpCorrVal" style="color:var(--orange)">0.0u</span></div>
           <div class="dose-calc-row"><span class="dcl">IOB subtract</span><span class="dcv" id="dpIobSubVal" style="color:var(--blue)">−0.0u</span></div>
           <div class="dose-calc-row" id="dpExRow" style="display:none;"><span class="dcl" id="dpExLbl">Exercise</span><span class="dcv" id="dpExVal"></span></div>
-          <div class="dose-calc-row"><span class="dcl" style="color:var(--text);font-weight:700;">Total (rounded 0.5)</span><span class="dcv" id="dpTotalVal" style="color:var(--text);">0u</span></div>
+          <div class="dose-calc-row"><span class="dcl" style="color:var(--text);font-weight:700;">Total</span><span class="dcv" id="dpTotalVal" style="color:var(--text);">0u</span></div>
         </div>
 
-        <button class="primary" id="doseLogBtn" style="width:100%;margin-bottom:6px;">⬡ Dose + Log Meal</button>
+        <button class="primary" id="doseLogBtn" style="width:100%;margin-bottom:6px;">Log Meal + Units</button>
         <button class="ghost" id="doseSkipBtn" style="width:100%;font-size:13px;color:var(--text-dim);">Log without insulin</button>
         <button class="ghost" id="doseCancelBtn" style="width:100%;font-size:12px;color:var(--text-faint);margin-top:2px;">✕ Cancel — don't log this meal</button>
       </div>
@@ -1153,7 +1153,7 @@
   <!-- DOSE TAB -->
   <section id="tab-dose" style="display:none">
     <div class="card">
-      <h2>Dose Calculator</h2>
+      <h2>Insulin Math</h2>
       <div class="dose-iob-block" style="margin-bottom:10px;">
         <div class="dose-iob-top">
           <div>
@@ -1203,12 +1203,12 @@
       </div>
 
       <div class="dose-result-card">
-        <div class="dose-result-lbl" id="scResultLbl">Suggested Humalog</div>
+        <div class="dose-result-lbl" id="scResultLbl">Calculated Units</div>
         <div><span class="dose-result-num" id="scDoseNum">0</span><span class="dose-result-u"> u</span></div>
         <div class="dose-result-timing" id="scTiming">Enter BS and carbs above</div>
       </div>
       <div id="scNightAdvisory" style="display:none;font-family:var(--mono);font-size:10px;color:var(--orange);text-align:center;padding:4px 0 6px;letter-spacing:0.3px;"></div>
-      <p style="font-family:var(--mono);font-size:10px;color:var(--text-faint);text-align:center;margin:0;">For corrections &amp; planning only · log via Smart Paste or Favorites</p>
+      <p style="font-family:var(--mono);font-size:10px;color:var(--text-faint);text-align:center;margin:0;">Personal reference only — you control all inputs and decisions</p>
     </div>
 
     <div class="card">
@@ -1467,9 +1467,9 @@ const DOSE_ISF = { morning: 51, afternoon: 51, evening: 65 };
 const DOSE_TOD_LABELS = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
 const DOSE_TOD_CYCLE = ['morning', 'afternoon', 'evening'];
 const DOSE_TIMING = {
-  standard: '5–10 min before eating', fast_carbs: '10–15 min before eating',
-  pizza: '0–5 min before eating', smoothie: '5–10 min before eating',
-  high_fat: 'With food or a few bites in', protein_only: 'No Humalog needed'
+  standard: 'Timing: 10 min before eating', fast_carbs: 'Timing: 10–15 min before eating',
+  pizza: 'Timing: 0–5 min before eating', smoothie: 'Timing: 10 min before eating',
+  high_fat: 'Timing: with food or first bite', protein_only: 'Timing: no Humalog needed'
 };
 
 // Dose panel state (Smart Paste + Favorites flow)
@@ -1477,7 +1477,7 @@ let dpPendingMeal = null;
 let dpTodState = 'afternoon';
 let dpExState = 'none';
 let dpIobEditOpen = false;
-let dpCalcOpen = false;
+let dpCalcOpen = true;
 let dpPreBolState = '10min';
 let dpActivityOn = false;
 let dpMealEditOpen = false;
@@ -1585,7 +1585,7 @@ const f1 = n => parseFloat(n.toFixed(1));
 function openDosePanel(meal) {
   dpPendingMeal = meal;
   dpExState = 'none';
-  dpCalcOpen = false;
+  dpCalcOpen = true;
   dpIobEditOpen = false;
   dpMealEditOpen = false;
   dpActivityOn = false;
@@ -1605,8 +1605,8 @@ function openDosePanel(meal) {
   document.getElementById('dpEditFiber').value = x.fiber || 0;
   document.getElementById('dpEditFat').value = x.fat || 0;
   document.getElementById('dpTodLabel').textContent = DOSE_TOD_LABELS[dpTodState];
-  document.getElementById('dpCalcDrawer').classList.remove('open');
-  document.getElementById('dpCalcToggle').textContent = 'show calculation ↓';
+  document.getElementById('dpCalcDrawer').classList.add('open');
+  document.getElementById('dpCalcToggle').textContent = 'hide calculation ↑';
   document.getElementById('dpIobEditArea').style.display = 'none';
   document.getElementById('dpIobEditBtn').textContent = 'edit';
   document.getElementById('dpMealEditArea').style.display = 'none';
@@ -1661,9 +1661,9 @@ function recalcDp() {
   document.getElementById('dpDoseNum').textContent = r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1);
   let timing = DOSE_TIMING[r.mt] || DOSE_TIMING.standard;
   if (!r.isProtein && r.mt !== 'high_fat') {
-    if (bs >= 120) timing = '10 min before eating';
-    else if (bs >= 100) timing = 'At first bite (BS a little low)';
-    else timing = 'With food — BS too low to pre-bolus';
+    if (bs >= 120) timing = 'Timing: 10 min before eating';
+    else if (bs >= 100) timing = 'Timing: first bite (BS a little low)';
+    else timing = 'Timing: with food (BS too low to pre-bolus)';
   }
   document.getElementById('dpTiming').textContent = timing;
   document.getElementById('dpCarbLbl').textContent = r.isProtein ? 'Protein-only meal' : `Net carbs (${r.netCarbs}g ÷ ${r.icr})`;
@@ -1792,22 +1792,22 @@ function recalcSc() {
     const corr = (bs - DOSE_TARGET) / isf;
     const raw = corr - iob;
     rec = Math.max(0, Math.round(raw * 2) / 2);
-    label = 'Correction Dose';
+    label = 'Correction Units';
     timing = bs <= DOSE_TARGET ? 'BS at or below target — no correction needed' : `BS ${bs} → 140 · ISF ${isf}`;
   } else {
     // Use shared runDoseCalc engine for parity with Smart Paste panel
     const r = runDoseCalc(carbs, fiber, fat, '', bs, scTodState, scExState, lastDoseVal, hoursAgo);
     rec = r.rec;
-    label = 'Suggested Humalog';
+    label = 'Calculated Units';
     // BS-aware pre-bolus timing (matches Smart Paste flow + patient spec)
     if (r.isHighFat) {
-      timing = 'With food or a few bites in';
+      timing = 'Timing: with food or first bite';
     } else if (bs >= 120) {
-      timing = '10 min before eating';
+      timing = 'Timing: 10 min before eating';
     } else if (bs >= 100) {
-      timing = 'At first bite (BS a little low)';
+      timing = 'Timing: first bite (BS a little low)';
     } else {
-      timing = 'With food — BS too low to pre-bolus';
+      timing = 'Timing: with food (BS too low to pre-bolus)';
     }
   }
 
