@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-25T23:29:54.631Z",
+  "exported": "2026-05-26T02:50:14.218Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -225,6 +225,44 @@
             "insulin": 7
           },
           "time": "15:05",
+          "starred": false
+        },
+        {
+          "id": "m_1779751814253_9r42t",
+          "name": "2 avacado favorites",
+          "macros": {
+            "protein": 0,
+            "fiber": 20,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "18:29",
+          "starred": false
+        },
+        {
+          "id": "m_1779751824924_r7cl4",
+          "name": "8 oz chicken",
+          "macros": {
+            "protein": 50,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "18:30",
           "starred": false
         }
       ]
