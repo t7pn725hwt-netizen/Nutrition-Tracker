@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Weekly Report — Apr 29 – May 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0b0d0f;--sf:#13161a;--s2:#181c21;--bd:#1f242a;--tx:#e6e8eb;--dm:#8b9199;--ft:#555c66;--g1:#4dbb88;--g2:#3a9970;--g3:#2a7055;--g4:#0f2a1e;--bl:#3a8fd4;--or:#d4954a;--pu:#9d6fff;--re:#d44a4a;--mo:'Space Mono',monospace;--bo:'Inter',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--bo);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;max-width:820px;margin:0 auto;padding:18px 14px 48px}
+.lbl{font-family:var(--mo);font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--g2);margin-bottom:10px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--bd);padding-bottom:12px;margin-bottom:14px}
+.hdr h1{font-family:var(--mo);font-size:17px;color:var(--g1)}
+.hdr .sub{font-family:var(--mo);font-size:11px;color:var(--dm);margin-top:3px}
+.hdr .meta{font-family:var(--mo);font-size:11px;color:var(--dm);text-align:right;line-height:1.8}
+.tir4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.tc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:10px;text-align:center}
+.tc .tv{font-family:var(--mo);font-size:22px;font-weight:700;line-height:1}
+.tc .tl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);margin-top:4px}
+.tc .ts{font-family:var(--mo);font-size:9px;color:var(--ft);margin-top:3px}
+.tirbar{display:flex;height:7px;border-radius:4px;overflow:hidden;margin-bottom:6px}
+canvas{display:block;width:100%}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);padding:6px 5px;border-bottom:1px solid var(--bd);text-align:left;font-weight:400;white-space:nowrap}
+th.tight{padding-left:2px;padding-right:2px}
+td{padding:7px 5px;border-bottom:1px solid rgba(31,36,42,0.5);font-size:12px;vertical-align:middle}
+td.tight{padding-left:2px;padding-right:2px;text-align:center}
+tr:last-child td{border-bottom:none}
+.pill{display:inline-block;font-family:var(--mo);font-size:10px;font-weight:700;padding:2px 4px;border-radius:4px;line-height:1.5;white-space:nowrap}
+.pill.hit{background:rgba(58,143,212,0.15);color:var(--bl)}
+.pill.miss{background:rgba(212,68,74,0.15);color:var(--re)}
+.pill.close{background:rgba(212,149,74,0.15);color:var(--or)}
+.day-lbl{font-weight:500;font-size:13px}
+.day-meta{font-family:var(--mo);font-size:10px;color:var(--ft);margin-top:1px}
+.avg-row td{background:rgba(31,36,42,0.4);font-family:var(--mo);font-size:11px;font-weight:700;color:var(--dm)}
+.meal-day{margin-bottom:18px}
+.meal-day-hdr{font-family:var(--mo);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--g2);margin-bottom:6px;padding-bottom:5px;border-bottom:1px solid var(--bd)}
+.meal-item{display:flex;gap:8px;align-items:baseline;padding:4px 0;border-bottom:1px solid rgba(31,36,42,0.4);font-size:12px}
+.meal-item:last-child{border-bottom:none}
+.meal-time{font-family:var(--mo);font-size:10px;color:var(--ft);min-width:36px}
+.meal-name{flex:1;font-weight:500}
+.meal-macros{font-family:var(--mo);font-size:10px;color:var(--dm);white-space:nowrap}
+.meal-macros .p{color:var(--g1)}
+.meal-macros .i{color:var(--bl)}
+.log-block{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:12px;font-family:var(--mo);font-size:11px;color:var(--dm);white-space:pre-wrap;line-height:1.7}
+.footnote{font-size:11px;color:var(--ft);margin-top:8px;font-family:var(--mo)}
+@media(max-width:500px){.tir4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="hdr">
+  <div>
+    <h1>⬡ Weekly Report</h1>
+    <div class="sub">Wed Apr 29 – Tue May 5, 2026 · CDT (UTC−5)</div>
+  </div>
+  <div class="meta">37 meals logged<br>31,797 steps · 3 workouts</div>
+</div>
+
+<!-- ═══ 7-DAY TIR SUMMARY ═══ -->
+<div class="card">
+  <div class="lbl">7-Day Glucose Summary · hourly statistics · 168 periods</div>
+  <div class="tir4">
+    <div class="tc">
+      <div class="tv" style="color:var(--g1)">92.8%</div>
+      <div class="tl">7-Day TIR</div>
+      <div class="ts">target ≥70%</div>
+    </div>
+    <div class="tc">
+      <div class="tv" style="color:var(--tx)">119</div>
+      <div class="tl">Avg mg/dL</div>
+      <div class="ts">min 54 · max 272</div>
+    </div>
+    <div class="tc">
+      <div class="tv" style="color:var(--re)">~1.5%</div>
+      <div class="tl">Below 70</div>
+      <div class="ts">3 low events</div>
+    </div>
+    <div class="tc">
+      <div class="tv" style="color:var(--or)">~3%</div>
+      <div class="tl">Above 180</div>
+      <div class="ts">4 spike events</div>
+    </div>
+  </div>
+  <div class="tirbar">
+    <div style="width:1.5%;background:var(--re)"></div>
+    <div style="width:92.8%;background:var(--g1)"></div>
+    <div style="width:5.7%;background:var(--or)"></div>
+  </div>
+  <div style="font-size:11px;color:var(--ft)">
+    Low events: Apr 30 nadir 54 (post-HIIT) · May 2 nadir 58 (post-smoothie) · May 5 nadir 62 (post-nachos) &nbsp;·&nbsp; High events: Apr 29 peak 246, May 2 peak 272, May 4 peak 219 — all bolus underdoses
+  </div>
+</div>
+
+<!-- ═══ NUTRITION TABLE ═══ -->
+<div class="card">
+  <div class="lbl">Nutrition by Day · Goals: Protein 200g · Fiber 30g · Cal 3,000</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th class="tight">Mx</th>
+        <th>Protein</th>
+        <th>Fiber</th>
+        <th>Cal</th>
+        <th class="tight">Ins</th>
+        <th>Carbs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="day-lbl">Wed Apr 29</div><div class="day-meta">HIIT</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">6</span></td>
+        <td><span class="pill hit">✓ 203g</span></td>
+        <td><span class="pill close">~ 26g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,795</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">14u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">162g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Thu Apr 30</div><div class="day-meta">HIIT</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">5</span></td>
+        <td><span class="pill hit">✓ 200g</span></td>
+        <td><span class="pill close">~ 25.5g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,390</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">22u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">197g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Fri May 1</div><div class="day-meta">&nbsp;</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">4</span></td>
+        <td><span class="pill hit">✓ 211g</span></td>
+        <td><span class="pill close">~ 23g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,500</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">19u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">162g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Sat May 2</div><div class="day-meta">&nbsp;</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">5</span></td>
+        <td><span class="pill hit">✓ 222g</span></td>
+        <td><span class="pill hit">✓ 34g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,715</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">18u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">151g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Sun May 3 *</div><div class="day-meta">HIIT</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">6</span></td>
+        <td><span class="pill close">~ 192g</span></td>
+        <td><span class="pill hit">✓ 33.5g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,030</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">10u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">102g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Mon May 4 *</div><div class="day-meta" style="color:var(--or)">⚠ fiber: 8g</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">5</span></td>
+        <td><span class="pill hit">✓ 200g</span></td>
+        <td><span class="pill miss">✗ 8g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,665</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">18u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">114g</td>
+      </tr>
+      <tr>
+        <td><div class="day-lbl">Tue May 5</div><div class="day-meta">&nbsp;</div></td>
+        <td class="tight"><span style="color:var(--dm);font-family:var(--mo);font-size:11px">6</span></td>
+        <td><span class="pill hit">✓ 200g</span></td>
+        <td><span class="pill close">~ 28.5g</span></td>
+        <td style="font-family:var(--mo);font-size:11px">2,480</td>
+        <td class="tight" style="font-family:var(--mo);font-size:11px;color:var(--bl)">14u</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--dm)">124g</td>
+      </tr>
+      <tr class="avg-row">
+        <td colspan="2">7-Day Avg</td>
+        <td>204g (6/7 ✓)</td>
+        <td>25.5g (2/7 ✓)</td>
+        <td>2,511</td>
+        <td>16.4u</td>
+        <td>145g</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="footnote">~ within 10g of goal &nbsp;·&nbsp; * incomplete macros logged (0-cal entries) &nbsp;·&nbsp; ~ TIR values for May 3–4 estimated from hourly HealthKit statistics</div>
+</div>
+
+<!-- ═══ GLUCOSE TREND CHART ═══ -->
+<div class="card">
+  <div class="lbl">7-Day Glucose Trend · hourly avg ± min/max band · CDT</div>
+  <canvas id="wc" style="margin-top:4px"></canvas>
+</div>
+
+<!-- ═══ ACTIVITY ═══ -->
+<div class="card">
+  <div class="lbl">Activity — Apple Health Recorded Workouts</div>
+  <table>
+    <thead>
+      <tr><th>Date</th><th>Type</th><th>Duration</th><th>Active kcal</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:var(--mo);font-size:11px">Wed Apr 29</td>
+        <td style="font-weight:500">OTF HIIT</td>
+        <td style="font-family:var(--mo);font-size:11px">51 min</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--or)">453 kcal</td>
+        <td style="font-size:11px;color:var(--dm)">14:45–15:35 CDT</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mo);font-size:11px">Thu Apr 30</td>
+        <td style="font-weight:500">OTF HIIT</td>
+        <td style="font-family:var(--mo);font-size:11px">58 min</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--or)">750 kcal</td>
+        <td style="font-size:11px;color:var(--re)">→ post-HIIT hypo 54 at 3:37pm</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mo);font-size:11px">Sun May 3</td>
+        <td style="font-weight:500">OTF HIIT</td>
+        <td style="font-family:var(--mo);font-size:11px">63 min</td>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--or)">854 kcal</td>
+        <td style="font-size:11px;color:var(--dm)">14:30–15:33 CDT</td>
+      </tr>
+      <tr>
+        <td style="font-family:var(--mo);font-size:11px;color:var(--ft)" colspan="5">No workouts recorded: Fri May 1, Sat May 2, Mon May 4, Tue May 5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ MEAL LOG ═══ -->
+<div class="card">
+  <div class="lbl">Meal Log by Day</div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Wednesday, April 29 — HIIT day</div>
+    <div class="meal-item"><span class="meal-time">13:01</span><span class="meal-name">Pepperoni Pizza</span><span class="meal-macros"><span class="p">P39</span> C98 1080cal <span class="i">Ins8u</span></span></div>
+    <div class="meal-item"><span class="meal-time">13:22</span><span class="meal-name">Small Avocado</span><span class="meal-macros"><span class="p">P5</span> F9 C12 220cal</span></div>
+    <div class="meal-item"><span class="meal-time">14:45</span><span class="meal-name">Chicken &amp; Spinach Salad</span><span class="meal-macros"><span class="p">P62</span> C30 860cal <span class="i">Ins6u</span></span></div>
+    <div class="meal-item"><span class="meal-time">16:43</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">18:17</span><span class="meal-name">Sliced Turkey Breast 6oz</span><span class="meal-macros"><span class="p">P44</span> C2 185cal</span></div>
+    <div class="meal-item"><span class="meal-time">18:17</span><span class="meal-name">Small Avocado</span><span class="meal-macros"><span class="p">P5</span> F9 C12 210cal</span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Thursday, April 30 — HIIT day · post-exercise hypo nadir 54</div>
+    <div class="meal-item"><span class="meal-time">13:10</span><span class="meal-name">Blueberry Pancake, Syrup, 4 Eggs, 1.5 Avos</span><span class="meal-macros"><span class="p">P37</span> F15 C133 1140cal <span class="i">Ins12u</span></span></div>
+    <div class="meal-item"><span class="meal-time">15:51</span><span class="meal-name">Fage 2% + Organic PB</span><span class="meal-macros"><span class="p">P37</span> F4.5 C18 450cal</span></div>
+    <div class="meal-item"><span class="meal-time">16:51</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">18:58</span><span class="meal-name">Turkey Kielbasa Bowl</span><span class="meal-macros"><span class="p">P60</span> F6 C38 560cal <span class="i">Ins10u</span></span></div>
+    <div class="meal-item"><span class="meal-time">18:58</span><span class="meal-name">Beef Stick</span><span class="meal-macros"><span class="p">P18</span> 0cal</span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Friday, May 1 — overnight rise 182–205 (Lantus gap)</div>
+    <div class="meal-item"><span class="meal-time">12:09</span><span class="meal-name">4 Eggs, 2 Small Avos, Chicken Sausage</span><span class="meal-macros"><span class="p">P51</span> F14 C18 620cal</span></div>
+    <div class="meal-item"><span class="meal-time">13:54</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">15:58</span><span class="meal-name">Pepperoni Pizza</span><span class="meal-macros"><span class="p">P52</span> C98 1080cal <span class="i">Ins11u</span></span></div>
+    <div class="meal-item"><span class="meal-time">18:06</span><span class="meal-name">Turkey Kielbasa Bowl</span><span class="meal-macros"><span class="p">P60</span> F6 C38 560cal <span class="i">Ins8u</span></span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Saturday, May 2 — smoothie underdose → spike 272 → hypo 58</div>
+    <div class="meal-item"><span class="meal-time">12:01</span><span class="meal-name">Protein Smoothie</span><span class="meal-macros"><span class="p">P57</span> F5 C80 680cal <span class="i">Ins12u</span></span></div>
+    <div class="meal-item"><span class="meal-time">12:34</span><span class="meal-name">Sliced Turkey Breast 6oz</span><span class="meal-macros"><span class="p">P38</span> C2 185cal</span></div>
+    <div class="meal-item"><span class="meal-time">14:35</span><span class="meal-name">Turkey Kielbasa Bowl</span><span class="meal-macros"><span class="p">P60</span> F6 C38 560cal <span class="i">Ins6u</span></span></div>
+    <div class="meal-item"><span class="meal-time">15:43</span><span class="meal-name">2 Small Avocados</span><span class="meal-macros"><span class="p">P5</span> F18 C24 430cal</span></div>
+    <div class="meal-item"><span class="meal-time">17:27</span><span class="meal-name">Chicken &amp; Spinach Salad</span><span class="meal-macros"><span class="p">P62</span> F5 C7 860cal</span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Sunday, May 3 * — HIIT day · post-workout cortisol spike ~10am</div>
+    <div class="meal-item"><span class="meal-time">12:33</span><span class="meal-name">Harvest Bowl (Extra Chicken, Extra Goat Cheese)</span><span class="meal-macros"><span class="p">P68</span> F11 C52 910cal <span class="i">Ins7u</span></span></div>
+    <div class="meal-item"><span class="meal-time">15:18</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">15:20</span><span class="meal-name">Beef Stick</span><span class="meal-macros"><span class="p">P10</span> 0cal</span></div>
+    <div class="meal-item"><span class="meal-time">17:17</span><span class="meal-name">Chicken Sausage with Cheese</span><span class="meal-macros"><span class="p">P24</span> 0cal *</span></div>
+    <div class="meal-item"><span class="meal-time">17:21</span><span class="meal-name">Fage 2% + Organic PB</span><span class="meal-macros"><span class="p">P37</span> F4.5 C18 450cal <span class="i">Ins3u</span></span></div>
+    <div class="meal-item"><span class="meal-time">17:22</span><span class="meal-name">2 Small Avocados</span><span class="meal-macros"><span class="p">P5</span> F18 C24 430cal</span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Monday, May 4 * — pizza spike 219 · fiber 8g (worst day)</div>
+    <div class="meal-item"><span class="meal-time">12:05</span><span class="meal-name">Pepperoni Pizza</span><span class="meal-macros"><span class="p">P52</span> C98 1080cal <span class="i">Ins10u</span></span></div>
+    <div class="meal-item"><span class="meal-time">14:19</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">15:46</span><span class="meal-name">Turtle Cheesecake (1.5 slices)</span><span class="meal-macros">300cal * <span class="i">Ins8u</span></span></div>
+    <div class="meal-item"><span class="meal-time">15:47</span><span class="meal-name">Chicken &amp; Spinach Salad</span><span class="meal-macros"><span class="p">P62</span> F5 C6 860cal</span></div>
+    <div class="meal-item"><span class="meal-time">18:07</span><span class="meal-name">Sliced Turkey Breast 6oz</span><span class="meal-macros"><span class="p">P38</span> C2 185cal</span></div>
+  </div>
+
+  <div class="meal-day">
+    <div class="meal-day-hdr">Tuesday, May 5 — nachos bolus tail → nadir 62 · night rise 179</div>
+    <div class="meal-item"><span class="meal-time">12:26</span><span class="meal-name">Chicken &amp; Spinach Salad</span><span class="meal-macros"><span class="p">P62</span> F5 C13 860cal <span class="i">Ins2u</span></span></div>
+    <div class="meal-item"><span class="meal-time">15:11</span><span class="meal-name">ON Protein Shake</span><span class="meal-macros"><span class="p">P48</span> C8 240cal</span></div>
+    <div class="meal-item"><span class="meal-time">15:13</span><span class="meal-name">2 Small Avocados</span><span class="meal-macros"><span class="p">P5</span> F9 C12 20cal</span></div>
+    <div class="meal-item"><span class="meal-time">16:14</span><span class="meal-name">Steak Nachos &amp; Marg</span><span class="meal-macros"><span class="p">P38</span> F10 C72 810cal <span class="i">Ins12u</span></span></div>
+    <div class="meal-item"><span class="meal-time">17:34</span><span class="meal-name">Fage 2% + Organic PB</span><span class="meal-macros"><span class="p">P37</span> F4.5 C18 450cal</span></div>
+    <div class="meal-item"><span class="meal-time">17:57</span><span class="meal-name">Kirkland Beef Stick</span><span class="meal-macros"><span class="p">P10</span> C1 100cal</span></div>
+  </div>
+  <div class="footnote">* incomplete calorie logging · p = protein · F = fiber</div>
+</div>
+
+<!-- ═══ LOG ENTRY ═══ -->
+<div class="card">
+  <div class="lbl">Log Entry — append to daily report log</div>
+  <div class="log-block">## Week of 2026-04-29 → 2026-05-05
+TIR: 92.8% | Avg: 119 | Low: ~1.5% (Apr 30 nadir 54, May 2 nadir 58, May 5 nadir 62) | High: ~3% (Apr 29 peak 246, May 2 peak 272, May 4 peak 219)
+Protein: 6/7 days ✓ avg 204g | Fiber: 2/7 days ✓ avg 25.5g | Avg cal: 2,511
+Workouts: HIIT Apr 29 (51min 453kcal), HIIT Apr 30 (58min 750kcal), HIIT May 3 (63min 854kcal)
+Lantus: 14u throughout
+Notes: Fiber worst gap — May 4 only 8g, no avos. All 3 lows tied to bolus overcorrection (not fasting). All 3 highs = pizza/smoothie underdoses. Apr 30 post-HIIT hypo to 54 — bolus + exercise combo. May 3 post-workout cortisol spike ~10am CDT briefly hit 206 before first meal. Calories 489 under goal avg. May 3 and May 4 have incomplete macro logging.</div>
+</div>
+
+<script>
+'use strict';
+// Weekly glucose trend: [x_hour, avg, min, max]
+// x = hours since Apr 29 CDT midnight (UTC Apr 29 05:00Z)
+// 168 total periods covering full 7-day CDT window
+const G = [
+[0,126,117,156],[1,107,95,115],[2,106,96,114],[3,97,85,112],[4,108,99,113],
+[5,97,87,107],[6,102,87,109],[7,108,103,112],[8,131,106,154],[9,162,151,183],
+[10,207,184,224],[11,185,166,198],[12,168,156,183],[13,182,151,233],
+[14,200,132,246],[15,136,112,153],[16,129,121,135],[17,99,85,122],
+[18,94,90,102],[19,110,102,117],[20,127,122,135],[21,142,130,155],
+[22,119,105,143],[23,93,83,103],
+// Apr 30 CDT
+[24,78,73,84],[25,70,67,73],[26,70,68,72],[27,76,70,80],[28,79,74,87],
+[29,80,79,83],[30,85,78,93],[31,84,82,89],[32,99,85,109],[33,112,108,122],
+[34,135,118,160],[35,133,121,139],[36,116,103,129],[37,105,85,133],
+[38,152,117,167],[39,77,54,109],[40,70,61,78],[41,83,73,99],
+[42,120,107,143],[43,135,114,161],[44,143,119,156],[45,183,158,201],
+[46,196,183,205],[47,162,152,178],
+// May 1 CDT
+[48,123,111,137],[49,123,107,132],[50,105,101,116],[51,99,92,109],
+[52,87,83,92],[53,93,83,106],[54,86,81,91],[55,89,81,94],[56,90,84,93],
+[57,94,91,104],[58,110,105,115],[59,117,105,129],[60,116,110,119],
+[61,117,114,122],[62,125,121,135],[63,146,139,154],[64,149,138,162],
+[65,155,130,168],[66,123,116,132],[67,88,67,112],[68,72,63,79],
+[69,95,75,119],[70,120,106,143],[71,147,139,157],
+// May 2 CDT
+[72,144,135,152],[73,129,115,135],[74,114,111,118],[75,109,105,112],
+[76,110,103,117],[77,105,104,108],[78,106,100,112],[79,104,101,109],
+[80,113,99,123],[81,127,120,138],[82,132,128,138],[83,134,131,142],
+[84,169,131,248],[85,245,193,272],[86,117,88,175],[87,87,68,98],
+[88,65,58,75],[89,77,74,81],[90,94,83,104],[91,127,113,145],
+[92,154,141,168],[93,157,151,172],[94,149,135,164],[95,132,123,139],
+// May 3 CDT
+[96,115,110,128],[97,107,103,110],[98,106,100,113],[99,98,91,104],
+[100,95,91,102],[101,95,85,99],[102,90,82,96],[103,99,96,101],
+[104,105,98,114],[105,124,113,160],[106,182,163,206],[107,167,151,178],
+[108,147,136,166],[109,166,142,190],[110,140,99,181],[111,86,77,97],
+[112,112,105,126],[113,125,117,135],[114,111,88,137],[115,125,110,136],
+[116,146,133,160],[117,156,154,160],[118,157,146,170],[119,131,123,144],
+// May 4 CDT
+[120,115,106,120],[121,110,104,116],[122,106,103,108],[123,104,98,112],
+[124,103,100,106],[125,105,101,107],[126,104,98,110],[127,107,104,112],
+[128,111,104,119],[129,125,120,131],[130,127,123,130],[131,121,117,124],
+[132,129,117,152],[133,196,157,219],[134,188,160,215],[135,132,118,155],
+[136,103,92,115],[137,78,71,89],[138,94,85,103],[139,111,104,116],
+[140,116,110,123],[141,124,117,139],[142,142,136,148],[143,137,129,149],
+// May 5 CDT
+[144,126,124,130],[145,114,109,123],[146,101,98,106],[147,91,88,98],
+[148,90,88,90],[149,88,84,94],[150,92,90,94],[151,94,92,96],
+[152,105,96,113],[153,117,110,121],[154,143,130,156],[155,138,132,144],
+[156,127,122,133],[157,128,121,137],[158,119,113,123],[159,115,113,117],
+[160,115,106,118],[161,74,62,95],[162,74,66,88],[163,85,82,89],
+[164,111,86,140],[165,149,131,172],[166,167,146,179],[167,130,123,141]
+];
+
+// Day boundaries (x values where new CDT day starts)
+const DAYS = [
+  {x:0,  label:'Apr 29'},
+  {x:24, label:'Apr 30'},
+  {x:48, label:'May 1'},
+  {x:72, label:'May 2'},
+  {x:96, label:'May 3'},
+  {x:120,label:'May 4'},
+  {x:144,label:'May 5'},
+];
+
+function gc(v){return v<70?'#d44a4a':v>180?'#d4954a':'#4dbb88';}
+
+function drawWeekly(){
+  const cv=document.getElementById('wc');
+  if(!cv)return;
+  const dpr=window.devicePixelRatio||1;
+  const W=cv.parentElement.clientWidth-28;
+  const H=220;
+  cv.width=W*dpr; cv.height=H*dpr;
+  cv.style.width=W+'px'; cv.style.height=H+'px';
+  const ctx=cv.getContext('2d');
+  ctx.scale(dpr,dpr);
+
+  const PL=36,PR=8,PT=20,PB=26;
+  const CW=W-PL-PR, CH=H-PT-PB;
+  const X0=0, X1=168;
+  const YN=40, YX=300;
+  const xp=x=>PL+(x-X0)/(X1-X0)*CW;
+  const yp=v=>PT+(1-(v-YN)/(YX-YN))*CH;
+
+  // Background
+  ctx.fillStyle='#13161a'; ctx.fillRect(0,0,W,H);
+
+  // Target band 70-180
+  ctx.fillStyle='rgba(77,187,136,0.05)';
+  ctx.fillRect(xp(0),yp(180),CW,yp(70)-yp(180));
+
+  // Grid lines
+  ctx.setLineDash([3,4]); ctx.lineWidth=0.5;
+  for(const v of[70,100,140,180]){
+    ctx.strokeStyle='#1f242a';
+    ctx.beginPath(); ctx.moveTo(PL,yp(v)); ctx.lineTo(PL+CW,yp(v)); ctx.stroke();
+  }
+  ctx.setLineDash([]);
+
+  // Day dividers
+  for(const d of DAYS){
+    if(d.x===0)continue;
+    ctx.strokeStyle='rgba(31,36,42,0.8)'; ctx.lineWidth=1; ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(xp(d.x),PT); ctx.lineTo(xp(d.x),PT+CH); ctx.stroke();
+  }
+
+  // Day labels at midpoint
+  ctx.font='9px Space Mono,monospace'; ctx.textAlign='center'; ctx.fillStyle='#555c66';
+  for(const d of DAYS){
+    ctx.fillText(d.label, xp(d.x+12), H-6);
+  }
+
+  // Y axis labels
+  ctx.textAlign='right'; ctx.fillStyle='#555c66';
+  for(const v of[70,100,140,180]) ctx.fillText(v, PL-3, yp(v)+3);
+
+  // Min/max band
+  ctx.beginPath();
+  ctx.moveTo(xp(G[0][0]), yp(Math.min(YX-1, G[0][2])));
+  for(const [x,,mn] of G) ctx.lineTo(xp(x), yp(Math.min(YX-1,mn)));
+  for(let i=G.length-1;i>=0;i--){
+    const [x,,, mx]=G[i];
+    ctx.lineTo(xp(x), yp(Math.min(YX-1, mx)));
+  }
+  ctx.closePath();
+  ctx.fillStyle='rgba(77,187,136,0.07)';
+  ctx.fill();
+
+  // Avg line color-coded
+  for(let i=1;i<G.length;i++){
+    const[x0,a0]=G[i-1],[x1,a1]=G[i];
+    const crossings=[];
+    for(const th of[70,180]){
+      if((a0<th&&a1>=th)||(a0>=th&&a1<th)){
+        const t=(th-a0)/(a1-a0);
+        crossings.push({t,x:x0+t*(x1-x0),v:th});
+      }
+    }
+    crossings.sort((a,b)=>a.t-b.t);
+    const pts=[{x:x0,v:a0},...crossings,{x:x1,v:a1}];
+    for(let j=0;j<pts.length-1;j++){
+      const p=pts[j],q=pts[j+1];
+      ctx.strokeStyle=gc((p.v+q.v)/2); ctx.lineWidth=1.5; ctx.lineCap='round';
+      ctx.beginPath(); ctx.moveTo(xp(p.x),yp(p.v)); ctx.lineTo(xp(q.x),yp(q.v)); ctx.stroke();
+    }
+  }
+
+  ctx.strokeStyle='#1f242a'; ctx.lineWidth=1; ctx.setLineDash([]);
+  ctx.strokeRect(PL,PT,CW,CH);
+}
+
+document.readyState==='loading'
+  ?document.addEventListener('DOMContentLoaded',drawWeekly)
+  :drawWeekly();
+window.addEventListener('resize',drawWeekly);
+</script>
+</body>
+</html>
