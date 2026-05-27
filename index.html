@@ -374,7 +374,8 @@
   .dose-ex-btn.active { background: var(--green-4); border-color: var(--green-2); color: var(--green-1); }
   .dose-result-card { background: linear-gradient(180deg, var(--surface) 0%, #0c1b15 100%); border: 1px solid var(--green-3); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; text-align: center; }
   .dose-result-lbl { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 2px; color: var(--green-2); margin-bottom: 6px; }
-  .dose-result-num { font-family: var(--mono); font-size: 56px; font-weight: 700; color: var(--green-1); line-height: 1; }
+  .dose-result-num { font-family: var(--mono); font-size: 36px; font-weight: 500; color: var(--green-1); line-height: 1; }
+  .dose-result-settings-note { font-size: 10px; color: var(--text-faint); margin-top: 6px; }
   .dose-result-u { font-size: 22px; color: var(--text-faint); }
   .dose-result-timing { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; }
   .dose-calc-toggle { font-family: var(--mono); font-size: 10px; color: var(--text-faint); text-align: center; padding: 2px 0 8px; cursor: pointer; letter-spacing: 0.5px; }
@@ -458,6 +459,11 @@
     color: var(--text-dim); font-size: 13px; font-weight: 500;
     border-radius: 7px; font-family: var(--bo);
     transition: all 0.15s;
+  }
+  .tabs button[data-tab="settings"] {
+    font-size: 20px;
+    flex: 0 0 52px;
+    padding: 6px 0;
   }
   .tabs button.active {
     background: var(--green-4); color: var(--green-1);
@@ -998,9 +1004,10 @@
         </div>
 
         <div class="dose-result-card">
-          <div class="dose-result-lbl">Calculated Units</div>
+          <div class="dose-result-lbl">Units from your settings</div>
           <div><span class="dose-result-num" id="dpDoseNum">0</span><span class="dose-result-u"> u</span></div>
-          <div class="dose-result-timing" id="dpTiming">5–10 min before eating</div>
+          <div class="dose-result-timing" id="dpTiming">Pre-bolus window: ~10 min</div>
+          <div class="dose-result-settings-note">This reflects your personal settings — adjust as you see fit.</div>
         </div>
         <div id="dpNightAdvisory" style="display:none;font-family:var(--mono);font-size:10px;color:var(--orange);text-align:center;padding:4px 0 6px;letter-spacing:0.3px;"></div>
 
@@ -1083,8 +1090,6 @@
       <div class="action-grid">
         <button class="report-btn" id="dailyReportBtn">⬡ Daily Report</button>
         <button class="report-btn" id="weeklyReportBtn">⬡ Weekly Report</button>
-        <button id="exportCsvBtn">Export CSV</button>
-        <button id="moveTrackerBtn">Move Tracker</button>
       </div>
       <div id="weeklyDayPicker" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
         <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);margin-bottom:8px;">Select days to include</div>
@@ -1137,6 +1142,39 @@
     </div>
 
     <div class="card">
+      <h2>Insulin Settings</h2>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px;line-height:1.6;">Set these to match what your care team has established. They drive all dose calculations.</div>
+      <div class="dose-two-col" style="margin-bottom:8px;">
+        <div class="dose-field">
+          <label>ICR — Insulin-to-Carb Ratio</label>
+          <input type="number" id="settingIcr" step="0.5" min="1" style="font-family:var(--mono);font-size:20px;font-weight:700;text-align:center;" />
+          <div style="font-size:10px;color:var(--text-faint);margin-top:3px;">1 unit covers X grams of carbs</div>
+        </div>
+        <div class="dose-field">
+          <label>Glucose Target (mg/dL)</label>
+          <input type="number" id="settingTarget" step="1" min="80" max="200" style="font-family:var(--mono);font-size:20px;font-weight:700;text-align:center;" />
+        </div>
+      </div>
+      <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-2);margin:10px 0 7px;">ISF — Insulin Sensitivity Factor</div>
+      <div style="font-size:11px;color:var(--text-dim);margin-bottom:8px;">How many mg/dL one unit lowers your glucose</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px;">
+        <div class="dose-field">
+          <label>Morning</label>
+          <input type="number" id="settingIsfMorning" step="1" min="10" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" />
+        </div>
+        <div class="dose-field">
+          <label>Afternoon</label>
+          <input type="number" id="settingIsfAfternoon" step="1" min="10" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" />
+        </div>
+        <div class="dose-field">
+          <label>Evening</label>
+          <input type="number" id="settingIsfEvening" step="1" min="10" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" />
+        </div>
+      </div>
+      <button class="primary" id="saveDoseSettingsBtn" style="width:100%;">Save Insulin Settings</button>
+    </div>
+
+    <div class="card">
       <h2>Goals</h2>
       <div class="dose-two-col" style="margin-bottom:8px;">
         <div class="dose-field"><label>Protein (g)</label><input type="number" id="goalProtein" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" /></div>
@@ -1147,6 +1185,21 @@
         <input type="number" id="goalCalories" style="font-family:var(--mono);font-size:18px;font-weight:700;text-align:center;" />
       </div>
       <button class="primary" id="saveGoalsBtn" style="width:100%;">Save Goals</button>
+    </div>
+
+    <div class="card">
+      <h2>Data Tools</h2>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px;line-height:1.6;">Backup, restore, and export your data.</div>
+      <div class="action-grid">
+        <button id="exportCsvBtn" style="grid-column: span 2; border-color: var(--green-3); color: var(--green-1);">&#11015; Export CSV</button>
+        <button id="exportFullBtn" style="grid-column: span 2; border-color: var(--green-2); color: var(--green-1);">&#11015; Export Full Backup</button>
+        <button id="mergeImportBtn" style="grid-column: span 2; border-color: var(--green-3); color: var(--green-1);">&#11014; Smart Merge Import</button>
+        <button id="exportReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Export Reports</button>
+        <button id="importReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Import Reports</button>
+        <button id="moveTrackerBtn" style="grid-column: span 2; border-color: var(--border); color: var(--text-dim);">Move Tracker</button>
+        <button class="danger" id="resetDayBtn">Clear Today</button>
+        <button class="danger" id="resetAllBtn">Reset All Data</button>
+      </div>
     </div>
   </section>
 
@@ -1203,9 +1256,10 @@
       </div>
 
       <div class="dose-result-card">
-        <div class="dose-result-lbl" id="scResultLbl">Calculated Units</div>
+        <div class="dose-result-lbl" id="scResultLbl">Units from your settings</div>
         <div><span class="dose-result-num" id="scDoseNum">0</span><span class="dose-result-u"> u</span></div>
         <div class="dose-result-timing" id="scTiming">Enter BS and carbs above</div>
+        <div class="dose-result-settings-note">This reflects your personal settings — adjust as you see fit.</div>
       </div>
       <div id="scNightAdvisory" style="display:none;font-family:var(--mono);font-size:10px;color:var(--orange);text-align:center;padding:4px 0 6px;letter-spacing:0.3px;"></div>
       <p style="font-family:var(--mono);font-size:10px;color:var(--text-faint);text-align:center;margin:0;">Personal reference only — you control all inputs and decisions</p>
@@ -1234,17 +1288,6 @@
       <button class="primary" id="insOnlyLogBtn" style="width:100%;">Log Insulin</button>
     </div>
 
-    <div class="card">
-      <h2>Data Tools</h2>
-      <div class="action-grid">
-        <button id="exportFullBtn" style="grid-column: span 2; border-color: var(--green-2); color: var(--green-1);">&#11015; Export Full Backup</button>
-        <button id="mergeImportBtn" style="grid-column: span 2; border-color: var(--green-3); color: var(--green-1);">&#11014; Smart Merge Import</button>
-        <button id="exportReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Export Reports</button>
-        <button id="importReportsBtn" style="border-color: var(--green-3); color: var(--green-1);">Import Reports</button>
-        <button class="danger" id="resetDayBtn">Clear Today</button>
-        <button class="danger" id="resetAllBtn">Reset All Data</button>
-      </div>
-    </div>
     <input type="file" id="importReportsFile" accept=".json" style="display:none;" />
     <input type="file" id="mergeImportFile" accept=".json" style="display:none;" />
   </section>
@@ -1461,15 +1504,34 @@ let state = loadData();
 // ============================================================
 // DOSE CALCULATOR ENGINE
 // ============================================================
-const DOSE_ICR = 7;
-const DOSE_TARGET = 140;
-const DOSE_ISF = { morning: 51, afternoon: 51, evening: 65 };
+// Dose settings — loaded from user preferences, not hardcoded
+const DOSE_SETTINGS_KEY = 'coimasDoseSettings_v1';
+function loadDoseSettings() {
+  try { return JSON.parse(localStorage.getItem(DOSE_SETTINGS_KEY) || '{}'); } catch { return {}; }
+}
+function saveDoseSettings(s) {
+  localStorage.setItem(DOSE_SETTINGS_KEY, JSON.stringify(s));
+}
+function getDoseSettings() {
+  const s = loadDoseSettings();
+  return {
+    icr:     parseFloat(s.icr)     || 10,
+    target:  parseFloat(s.target)  || 120,
+    isfMorning:   parseFloat(s.isfMorning)   || 50,
+    isfAfternoon: parseFloat(s.isfAfternoon) || 50,
+    isfEvening:   parseFloat(s.isfEvening)   || 50,
+  };
+}
+// Legacy constants removed — all values now come from getDoseSettings()
 const DOSE_TOD_LABELS = { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening' };
 const DOSE_TOD_CYCLE = ['morning', 'afternoon', 'evening'];
 const DOSE_TIMING = {
-  standard: 'Timing: 10 min before eating', fast_carbs: 'Timing: 10–15 min before eating',
-  pizza: 'Timing: 0–5 min before eating', smoothie: 'Timing: 10 min before eating',
-  high_fat: 'Timing: with food or first bite', protein_only: 'Timing: no Humalog needed'
+  standard: 'Pre-bolus window: ~10 min',
+  fast_carbs: 'Pre-bolus window: 10–15 min',
+  pizza: 'Pre-bolus window: 0–5 min (slower absorption)',
+  smoothie: 'Pre-bolus window: ~10 min',
+  high_fat: 'Pre-bolus window: with food or first bite (high fat slows absorption)',
+  protein_only: 'No carb dose from your settings · protein-only meal'
 };
 
 // Dose panel state (Smart Paste + Favorites flow)
@@ -1492,8 +1554,8 @@ let scStackedCount = 0;
 function getNightAdvisory(bs) {
   const h = new Date().getHours();
   if (!bs || bs <= 180) return null;
-  if (h >= 22) return 'After 10pm — max 1u recommended · Lantus active';
-  if (h >= 21) return 'After 9pm — consider capping at 1u · Lantus starting soon';
+  if (h >= 22) return 'After 10pm — Lantus timing may affect this result · review carefully';
+  if (h >= 21) return 'After 9pm — Lantus starting soon · this result may need adjustment';
   return null;
 }
 function doseAutoTod() {
@@ -1560,22 +1622,24 @@ function calcIOB(lastDoseVal, hoursAgo) {
   return Math.max(0, lastDoseVal * (1 - Math.min(hoursAgo, 4) / 4));
 }
 function runDoseCalc(carbs, fiber, fat, name, bs, tod, ex, lastDoseVal, hoursAgo) {
-  const isf = DOSE_ISF[tod] || 51;
+  const ds = getDoseSettings();
+  const isfMap = { morning: ds.isfMorning, afternoon: ds.isfAfternoon, evening: ds.isfEvening };
+  const isf = isfMap[tod] || ds.isfAfternoon;
   const iob = calcIOB(lastDoseVal, hoursAgo);
   const mt = detectMealType(name, fat, carbs);
   const isProtein = mt === 'protein_only';
   const isHighFat = fat >= 30;
   const netCarbs = Math.max(0, carbs - fiber);
-  let carbDose = isProtein ? 0 : netCarbs / DOSE_ICR;
+  let carbDose = isProtein ? 0 : netCarbs / ds.icr;
   let exAdj = 0;
   if (ex === 'hiit_cortisol') { exAdj = 0; }
   else if (ex === 'hiit_active') { exAdj = -(carbDose * 0.25); carbDose *= 0.75; }
   else if (ex === 'hiit_recent') { exAdj = -(carbDose * 0.20); carbDose *= 0.80; }
   else if (ex === 'sedentary' && !isProtein) { exAdj = 1.0; }
-  const corr = (bs - DOSE_TARGET) / isf;
+  const corr = (bs - ds.target) / isf;
   const raw = carbDose + corr - iob + (ex === 'sedentary' ? exAdj : 0);
   const rec = Math.max(0, Math.round(raw * 2) / 2);
-  return { rec, iob, corr, carbDose: isProtein ? 0 : netCarbs / DOSE_ICR, exAdj, isf, mt, isProtein, isHighFat, icr: DOSE_ICR, netCarbs };
+  return { rec, iob, corr, carbDose: isProtein ? 0 : netCarbs / ds.icr, exAdj, isf, mt, isProtein, isHighFat, icr: ds.icr, netCarbs };
 }
 const f1 = n => parseFloat(n.toFixed(1));
 
@@ -1599,7 +1663,7 @@ function openDosePanel(meal) {
   document.getElementById('dpNetCarbs').textContent = 'Net ' + netC + 'g';
   document.getElementById('dpFat').textContent = 'Fat ' + (x.fat || 0) + 'g';
   document.getElementById('dpCal').textContent = (x.calories || 0) + ' cal';
-  document.getElementById('dpHfBadge').innerHTML = (x.fat || 0) >= 30 ? '<div class="dose-hf-badge">High fat · dose with food</div>' : '';
+  document.getElementById('dpHfBadge').innerHTML = (x.fat || 0) >= 30 ? '<div class="dose-hf-badge">High fat · pre-bolus window shifts later</div>' : '';
   document.getElementById('dpEditName').value = meal.name;
   document.getElementById('dpEditCarbs').value = x.carbs || 0;
   document.getElementById('dpEditFiber').value = x.fiber || 0;
@@ -1661,15 +1725,16 @@ function recalcDp() {
   document.getElementById('dpDoseNum').textContent = r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1);
   let timing = DOSE_TIMING[r.mt] || DOSE_TIMING.standard;
   if (!r.isProtein && r.mt !== 'high_fat') {
-    if (bs >= 120) timing = 'Timing: 10 min before eating';
-    else if (bs >= 100) timing = 'Timing: first bite (BS a little low)';
-    else timing = 'Timing: with food (BS too low to pre-bolus)';
+    if (bs >= 120) timing = 'Pre-bolus window: ~10 min';
+    else if (bs >= 100) timing = 'Pre-bolus window: first bite (BS running low)';
+    else timing = 'Pre-bolus window: with food (BS below range for pre-bolus)';
   }
   document.getElementById('dpTiming').textContent = timing;
   document.getElementById('dpCarbLbl').textContent = r.isProtein ? 'Protein-only meal' : `Net carbs (${r.netCarbs}g ÷ ${r.icr})`;
   document.getElementById('dpCarbVal').textContent = '+' + f1(r.carbDose) + 'u';
   const corrSign = r.corr >= 0 ? '+' : '';
-  document.getElementById('dpCorrLbl').textContent = `BS ${bs} → 140 (ISF ${r.isf})`;
+  const _dpTarget = getDoseSettings().target;
+  document.getElementById('dpCorrLbl').textContent = `BS ${bs} → ${_dpTarget} (ISF ${r.isf})`;
   document.getElementById('dpCorrVal').textContent = corrSign + f1(r.corr) + 'u';
   document.getElementById('dpCorrVal').style.color = r.corr > 0 ? 'var(--orange)' : 'var(--green-1)';
   const exRow = document.getElementById('dpExRow');
@@ -1741,7 +1806,7 @@ function applyDpMealEdit() {
   document.getElementById('dpCarbs').textContent = 'C ' + newCarbs + 'g';
   document.getElementById('dpNetCarbs').textContent = 'Net ' + netC + 'g';
   document.getElementById('dpFat').textContent = 'Fat ' + newFat + 'g';
-  document.getElementById('dpHfBadge').innerHTML = newFat >= 30 ? '<div class="dose-hf-badge">High fat · dose with food</div>' : '';
+  document.getElementById('dpHfBadge').innerHTML = newFat >= 30 ? '<div class="dose-hf-badge">High fat · pre-bolus window shifts later</div>' : '';
   recalcDp();
 }
 function toggleManualForm() {
@@ -1777,7 +1842,9 @@ function recalcSc() {
   const lastDoseVal = parseFloat(document.getElementById('scLastDose').value) || 0;
   const hoursAgo = parseFloat(document.getElementById('scHoursAgo').value) || 0;
   const iob = calcIOB(lastDoseVal, hoursAgo);
-  const isf = DOSE_ISF[scTodState] || 51;
+  const _scDoseSettings = getDoseSettings();
+  const _scIsfMap = { morning: _scDoseSettings.isfMorning, afternoon: _scDoseSettings.isfAfternoon, evening: _scDoseSettings.isfEvening };
+  const isf = _scIsfMap[scTodState] || _scDoseSettings.isfAfternoon;
   const correctionOnly = carbs === 0;
 
   document.getElementById('scIobBig').textContent = f1(iob);
@@ -1793,21 +1860,22 @@ function recalcSc() {
     const raw = corr - iob;
     rec = Math.max(0, Math.round(raw * 2) / 2);
     label = 'Correction Units';
-    timing = bs <= DOSE_TARGET ? 'BS at or below target — no correction needed' : `BS ${bs} → 140 · ISF ${isf}`;
+    const _scDs = getDoseSettings();
+    timing = bs <= _scDs.target ? 'BS at or below your target — no correction in your settings' : `BS ${bs} → ${_scDs.target} · ISF ${isf}`;
   } else {
     // Use shared runDoseCalc engine for parity with Smart Paste panel
     const r = runDoseCalc(carbs, fiber, fat, '', bs, scTodState, scExState, lastDoseVal, hoursAgo);
     rec = r.rec;
-    label = 'Calculated Units';
+    label = 'Units from your settings';
     // BS-aware pre-bolus timing (matches Smart Paste flow + patient spec)
     if (r.isHighFat) {
-      timing = 'Timing: with food or first bite';
+      timing = 'Pre-bolus window: with food or first bite (high fat slows absorption)';
     } else if (bs >= 120) {
-      timing = 'Timing: 10 min before eating';
+      timing = 'Pre-bolus window: ~10 min';
     } else if (bs >= 100) {
-      timing = 'Timing: first bite (BS a little low)';
+      timing = 'Pre-bolus window: first bite (BS running low)';
     } else {
-      timing = 'Timing: with food (BS too low to pre-bolus)';
+      timing = 'Pre-bolus window: with food (BS below range for pre-bolus)';
     }
   }
 
@@ -3004,6 +3072,13 @@ function initSettingsTab() {
   document.getElementById('goalProtein').value = state.goals.protein || 200;
   document.getElementById('goalFiber').value = state.goals.fiber || 30;
   document.getElementById('goalCalories').value = state.goals.calories || 2800;
+  // Load insulin settings
+  const ds = getDoseSettings();
+  document.getElementById('settingIcr').value = ds.icr;
+  document.getElementById('settingTarget').value = ds.target;
+  document.getElementById('settingIsfMorning').value = ds.isfMorning;
+  document.getElementById('settingIsfAfternoon').value = ds.isfAfternoon;
+  document.getElementById('settingIsfEvening').value = ds.isfEvening;
   updateApiStatus();
   updateSyncStatus('');
 }
@@ -3050,6 +3125,18 @@ document.getElementById('saveGoalsBtn').addEventListener('click', () => {
   saveData();
   renderAll();
   showToast('Goals updated');
+});
+
+document.getElementById('saveDoseSettingsBtn').addEventListener('click', () => {
+  const ds = {
+    icr:          parseFloat(document.getElementById('settingIcr').value) || 10,
+    target:       parseFloat(document.getElementById('settingTarget').value) || 120,
+    isfMorning:   parseFloat(document.getElementById('settingIsfMorning').value) || 50,
+    isfAfternoon: parseFloat(document.getElementById('settingIsfAfternoon').value) || 50,
+    isfEvening:   parseFloat(document.getElementById('settingIsfEvening').value) || 50,
+  };
+  saveDoseSettings(ds);
+  showToast('Insulin settings saved');
 });
 
 document.getElementById('syncNowBtn').addEventListener('click', () => {
