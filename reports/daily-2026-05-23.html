@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Daily Report — May 23, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0b0d0f;--sf:#13161a;--s2:#181c21;--bd:#1f242a;--tx:#e6e8eb;--dm:#8b9199;--ft:#555c66;--g1:#4dbb88;--g2:#3a9970;--g3:#2a7055;--g4:#0f2a1e;--bl:#3a8fd4;--or:#d4954a;--pu:#9d6fff;--re:#d44a4a;--mo:'Space Mono',monospace;--bo:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--bo);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;max-width:780px;margin:0 auto;padding:18px 14px 48px}
+.lbl{font-family:var(--mo);font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--g2);margin-bottom:10px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--bd);padding-bottom:12px;margin-bottom:14px}
+.hdr h1{font-family:var(--mo);font-size:17px;color:var(--g1)}
+.hdr .sub{font-family:var(--mo);font-size:11px;color:var(--dm);margin-top:3px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.gc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:10px}
+.gc .gl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dm)}
+.gc .gn{font-family:var(--mo);font-size:22px;font-weight:700;line-height:1.15;margin-top:2px}
+.gc .gt{color:var(--ft);font-size:11px;font-weight:400}
+.prog{height:4px;background:var(--g4);border-radius:2px;margin-top:7px;overflow:hidden}
+.prog span{display:block;height:100%}
+.g4g{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.sc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 9px}
+.sc .sl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.sc .sv{font-family:var(--mo);font-size:14px;font-weight:700;color:var(--g1);margin-top:1px}
+.sc .u{color:var(--ft);font-size:10px;font-weight:400}
+.ins-row{background:linear-gradient(180deg,var(--sf) 0%,#0d1b15 100%);border:1px solid var(--g3);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.ins-val{font-family:var(--mo);font-size:22px;font-weight:700;color:var(--bl)}
+.ins-detail{font-family:var(--mo);font-size:10px;color:var(--dm);text-align:right;line-height:1.8}
+.mbar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin:10px 0 5px}
+.mleg{display:flex;gap:12px;font-family:var(--mo);font-size:9px;color:var(--ft)}
+.tir4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.tc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:10px;text-align:center}
+.tc .tv{font-family:var(--mo);font-size:20px;font-weight:700;line-height:1}
+.tc .tl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);margin-top:4px}
+.tc .ts{font-family:var(--mo);font-size:9px;color:var(--ft);margin-top:3px}
+.tirbar{display:flex;height:7px;border-radius:4px;overflow:hidden;margin-bottom:6px}
+canvas{display:block;width:100%}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);padding:5px 6px;border-bottom:1px solid var(--bd);text-align:left;font-weight:400}
+td{padding:8px 6px;border-bottom:1px solid rgba(31,36,42,0.5);font-size:12px;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.mn{font-weight:500;font-size:13px}
+.mt{font-family:var(--mo);font-size:10px;color:var(--ft)}
+.pv{font-family:var(--mo);font-size:12px;font-weight:700;color:var(--g1)}
+.iv{font-family:var(--mo);font-size:12px;font-weight:700;color:var(--bl)}
+.dv{font-family:var(--mo);font-size:12px;color:var(--dm)}
+.totals-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);text-align:center}
+.trf-lbl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.trf-val{font-family:var(--mo);font-size:15px;font-weight:700;margin-top:2px}
+.trf-note{font-size:10px;color:var(--ft);margin-top:1px}
+.log-block{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:12px 14px;font-family:var(--mo);font-size:11px;color:var(--dm);line-height:1.8;white-space:pre-wrap;margin-top:8px}
+@media(max-width:500px){.g3,.tir4{grid-template-columns:1fr 1fr}.g4g{grid-template-columns:repeat(2,1fr)}.totals-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div><h1>&#x2B21; Daily Report</h1><div class="sub">Saturday, May 23, 2026 &middot; CDT (UTC&minus;5) &middot; all windows complete</div></div>
+  <div style="text-align:right;font-family:var(--mo)"><div style="font-size:20px;font-weight:700;color:var(--bl)">100%</div><div style="font-size:9px;color:var(--g2);text-transform:uppercase;letter-spacing:1px">TIR</div></div>
+</div>
+
+<!-- NUTRITION -->
+<div class="card">
+  <div class="lbl">Nutrition</div>
+  <div class="g3">
+    <div class="gc"><div class="gl">Protein</div><div class="gn" style="color:var(--g1)">173<span class="gt"> / 200g</span></div><div class="prog"><span style="width:86.5%;background:var(--g1)"></span></div></div>
+    <div class="gc"><div class="gl">Fiber</div><div class="gn" style="color:var(--bl)">30<span class="gt"> / 30g</span></div><div class="prog"><span style="width:100%;background:var(--bl)"></span></div></div>
+    <div class="gc"><div class="gl">Calories</div><div class="gn" style="color:var(--or)">3600<span class="gt"> / 2800</span></div><div class="prog"><span style="width:100%;background:var(--or)"></span></div></div>
+  </div>
+  <div style="margin-bottom:8px;font-family:var(--mo);font-size:10px;color:var(--ft)">Fiber &#10003; (avocados) &middot; Protein 27g short &middot; +800 kcal over from Burt&rsquo;s + sando</div>
+  <div class="g4g">
+    <div class="sc"><div class="sl">Carbs</div><div class="sv">213<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Net Carb</div><div class="sv">183<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Fat</div><div class="sv">195<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Sat Fat</div><div class="sv">63<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Sodium</div><div class="sv">6614<span class="u">mg</span></div></div>
+    <div class="sc"><div class="sl">Sugar</div><div class="sv">32<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Vit D</div><div class="sv">0<span class="u">IU</span></div></div>
+    <div class="sc"><div class="sl">Calcium</div><div class="sv">866<span class="u">mg</span></div></div>
+  </div>
+  <div class="ins-row">
+    <div><div style="font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);margin-bottom:2px">Humalog</div><span class="ins-val">24</span><span style="font-family:var(--mo);font-size:11px;color:var(--ft);margin-left:3px">u</span></div>
+    <div class="ins-detail">
+      13u @ 12:52pm &mdash; Japanese Sando (88g carbs) &middot; pre-BG 116<br>
+      11u @ 5:50pm &mdash; Deep Dish Pizza + Coors Light (92g carbs) &middot; pre-BG 83
+    </div>
+  </div>
+  <div class="mbar"><div style="width:19.3%;background:var(--g1)"></div><div style="width:23.7%;background:var(--bl)"></div><div style="width:57%;background:var(--or)"></div></div>
+  <div class="mleg"><span style="color:var(--g1)">&#9679; Protein 19.3%</span><span style="color:var(--bl)">&#9679; Carbs 23.7%</span><span style="color:var(--or)">&#9679; Fat 57%</span></div>
+</div>
+
+<!-- TIR -->
+<div class="card">
+  <div class="lbl">Glucose &middot; Time in Range &middot; CDT 5:01 AM&ndash;11:56 PM &middot; 228 samples &middot; all windows complete, no gaps</div>
+  <div class="tir4">
+    <div class="tc"><div class="tv" style="color:var(--g1)">100%</div><div class="tl">In Range</div><div class="ts">70&ndash;180 mg/dL</div></div>
+    <div class="tc"><div class="tv" style="color:var(--g1)">0%</div><div class="tl">Below 70</div><div class="ts">min 83 &mdash; CDT 5:46pm</div></div>
+    <div class="tc"><div class="tv" style="color:var(--g1)">0%</div><div class="tl">Above 180</div><div class="ts">sando pk 161 &middot; pizza pk 163</div></div>
+    <div class="tc"><div class="tv" style="color:var(--tx)">126</div><div class="tl">Avg mg/dL</div><div class="ts">min 83 &middot; max 163</div></div>
+  </div>
+  <div class="tirbar"><div style="width:0%;background:var(--re)"></div><div style="width:100%;background:var(--g1)"></div><div style="width:0%;background:var(--or)"></div></div>
+  <div style="font-size:11px;color:var(--ft)">Sensor CDT 5:01am &middot; 2 doses, 2 large carb meals, 100% TIR &middot; overnight flat confirmed, truncated 2am</div>
+</div>
+
+<!-- DAY CHART -->
+<div class="card"><div class="lbl">Day &middot; 6 AM &ndash; 6 PM CDT &middot; sando peak 161 at CDT 1:31pm &middot; nadir 83 at CDT 5:46pm</div><canvas id="dc"></canvas></div>
+
+<!-- NIGHT CHART -->
+<div class="card"><div class="lbl">Night &middot; 6 PM &ndash; 2 AM CDT &middot; pizza fat rise peak 163 CDT 8:41pm &middot; overnight flat &mdash; truncated 2am</div><canvas id="nc"></canvas></div>
+
+<!-- MEAL LOG -->
+<div class="card">
+  <div class="lbl">Meal Log</div>
+  <table>
+    <thead><tr><th>Time</th><th>Meal</th><th>Protein</th><th>Carbs</th><th>Cal</th><th>Ins</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mt">11:53am</td>
+        <td><div class="mn">ON Protein</div><div style="font-size:11px;color:var(--dm)">Fat 3g &middot; Na 260mg &middot; 8g carbs &middot; pre-BG ~116</div></td>
+        <td class="pv">48g</td><td class="dv">8g</td><td class="dv">240</td><td class="dv">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="mt">12:52pm</td>
+        <td><div class="mn">Japanese Sando &mdash; Fried Chicken, Gochujang, Sweet Potato Chips</div><div style="font-size:11px;color:var(--g1)">Fat 48g &middot; Na 1850mg &middot; pre-BG 116 &middot; peak 161 at CDT 1:31pm (39 min) &#10003;</div></td>
+        <td class="pv">42g</td><td class="dv">88g</td><td class="dv">980</td><td class="iv">13u</td>
+      </tr>
+      <tr>
+        <td class="mt">5:50pm</td>
+        <td><div class="mn">2 Slices Deep Dish Pizza (Burt&rsquo;s) + 1 Pint Coors Light</div><div style="font-size:11px;color:var(--g1)">Fat 96g &middot; Na 4100mg &middot; pre-BG 83 (nadir) &middot; fat rise peak 163 CDT 8:46pm &#10003;</div></td>
+        <td class="pv">68g</td><td class="dv">92g</td><td class="dv">1850</td><td class="iv">11u</td>
+      </tr>
+      <tr>
+        <td class="mt">7:50pm</td>
+        <td><div class="mn">2 Small Avocados + Kirkland Beef Stick</div><div style="font-size:11px;color:var(--dm)">Fat 48g &middot; Na 404mg &middot; 7g net carbs &middot; BG stabilizing ~130</div></td>
+        <td class="pv">15g</td><td class="dv">7g</td><td class="dv">530</td><td class="dv">&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="totals-row">
+    <div><div class="trf-lbl">Protein</div><div class="trf-val" style="color:var(--g1)">173g</div><div class="trf-note">&#8722;27g to goal</div></div>
+    <div><div class="trf-lbl">Fiber</div><div class="trf-val" style="color:var(--bl)">30g</div><div class="trf-note">&#10003; exactly goal</div></div>
+    <div><div class="trf-lbl">Calories</div><div class="trf-val" style="color:var(--or)">3600</div><div class="trf-note">+800 over goal</div></div>
+    <div><div class="trf-lbl">Humalog</div><div class="trf-val" style="color:var(--bl)">24u</div><div class="trf-note">2 doses only</div></div>
+  </div>
+</div>
+
+<!-- LOG ENTRY -->
+<div class="card">
+  <div class="lbl">Log Entry</div>
+  <div class="log-block">## 2026-05-23
+TIR: 100% | Low: 0% (min 83 CDT 5:46pm) | High: 0% (sando peak 161; pizza fat peak 163) | Avg: 126
+Protein: 173g (−27g) | Fiber: 30g ✓ | Calories: 3600 (+800) | Humalog: 24u | Steps: N/A
+Notes: Best dosing day of the log — 100% TIR with two large, high-fat, high-carb restaurant meals. Sando 13u for 88g (sweet potato chips + fried chicken): pre-BG 116, peak 161 at CDT 1:31pm (39 min), rapid descent to 115 by CDT 3pm. Fried chicken fat caused secondary rise CDT 4pm (98→148) then Humalog tail + further fat cleared it to nadir 83 by CDT 5:46pm. Pizza 11u for 92g (Burt's deep dish + Coors Light): dosed at first bite at nadir 83 — risky but worked, BG recovering as carbs hit. Pizza peak only 163 at CDT 8:41pm from fat-delayed rise, never above 180. Overnight descent from 163→117 by midnight, flat 103–115 post-midnight. Pre-bolus at first bite on both meals — consistency mattered. Pull protocol clean, all 4 windows on fixed UTC anchors, no gaps.</div>
+</div>
+
+<script>
+'use strict';
+// CDT_min = UTC_h*60+UTC_m - 300; if <0 add 1440
+// All data extracted from HealthKit samples, newest-first order reversed for plotting
+
+const DAY=[
+  [361,101],[366,103],[371,103],[376,103],[381,103],[386,106],[391,110],[396,110],
+  [401,107],[406,104],[411,104],[416,106],
+  [421,106],[426,109],[431,111],[436,112],[441,113],[446,111],[451,110],[456,110],
+  [461,111],[466,113],[471,116],[476,115],
+  [481,115],[486,117],[491,123],[496,125],[501,125],[506,130],[511,136],[516,138],
+  [521,140],[526,141],[531,143],[536,147],
+  [541,146],[546,148],[551,151],[556,151],[561,151],[566,152],[571,144],[576,143],
+  [581,140],[586,140],[591,143],[596,147],
+  [601,151],[606,142],[611,140],[616,140],[621,141],[626,144],[631,144],[636,144],
+  [641,144],[646,145],[651,143],[656,141],
+  [661,140],[666,142],[671,141],[676,138],[681,137],[686,136],[691,135],[696,134],
+  [701,134],[706,133],[711,130],[716,125],
+  [721,125],[726,123],[731,117],[736,115],[741,115],[746,116],[751,111],[756,111],
+  [761,113],[766,116],[771,116],[776,115],
+  // sando dosed at CDT 12:52pm (min 772) at first bite, pre-BG 116
+  [781,149],[786,149],[791,151],[796,153],[801,155],[806,156],[811,161],[816,159],
+  [821,154],[826,147],[831,139],[836,131],
+  [841,128],[846,127],[851,127],[856,125],[861,125],[866,125],[871,123],[876,119],
+  [881,116],[886,116],[891,120],[896,120],
+  [901,119],[906,118],[911,117],[916,115],[921,114],[926,112],[931,111],[936,109],
+  [941,108],[946,106],[951,102],[956,100],
+  // secondary fried-chicken-fat rise CDT ~4pm
+  [961,98],[966,99],[971,101],[976,106],[981,114],[986,123],[991,139],[996,143],
+  [1001,148],[1006,147],[1011,147],[1016,140],
+  // descent to nadir before pizza
+  [1021,131],[1026,119],[1031,113],[1036,106],[1041,100],[1046,96],[1051,91],[1056,87],
+  [1061,84],[1066,83],[1071,84],[1076,89]
+  // pizza dosed at CDT 5:50pm (min 1070) at first bite, pre-BG 83
+];
+
+const NIGHT=[
+  // Window A tail CDT 6pm-7:56pm (extMin 1081-1196)
+  [1081,95],[1086,99],[1091,106],[1096,119],[1101,135],[1106,144],[1111,155],
+  [1116,153],[1121,146],[1126,138],[1131,132],[1136,131],
+  [1141,135],[1146,140],[1151,141],[1156,138],[1161,133],[1166,130],[1171,126],
+  [1176,126],[1181,126],[1186,120],[1191,114],[1196,110],
+  // B1a CDT 8pm-11:56pm (extMin 1201-1436)
+  [1201,108],[1206,115],[1211,128],[1216,134],[1221,144],[1226,150],[1231,159],
+  [1236,160],[1241,163],[1246,163],[1251,160],[1256,151],
+  [1261,139],[1266,128],[1271,123],[1276,121],[1281,119],[1286,117],[1291,113],
+  [1296,112],[1301,113],[1306,114],[1311,117],[1316,123],
+  [1321,125],[1326,124],[1331,119],[1336,122],[1341,123],[1346,125],[1351,121],
+  [1356,124],[1361,125],[1366,125],[1371,122],[1376,126],
+  [1381,128],[1386,127],[1391,125],[1396,124],[1401,123],[1406,124],[1411,124],
+  [1416,126],[1421,124],[1426,117],[1431,119],[1436,117],
+  // B1b post-midnight CDT (extMin 1441-1556, truncated at 2am=1560)
+  [1441,115],[1446,115],[1451,113],[1456,113],[1461,113],[1466,112],[1471,112],
+  [1476,110],[1481,104],[1486,103],[1491,104],[1496,107],
+  [1501,109],[1506,109],[1511,109],[1516,109],[1521,108],[1526,107],[1531,105],
+  [1536,104],[1541,104],[1546,103],[1551,102],[1556,102]
+];
+
+const DAY_MEALS=[
+  {min:713, carbs:'8g',  color:'#4dbb88'}, // ON protein 11:53am
+  {min:772, carbs:'88g', color:'#4dbb88'}, // sando 12:52pm lunch
+  {min:1070,carbs:'92g', color:'#d4954a'}  // pizza 5:50pm dinner
+];
+const NIGHT_MEALS=[
+  {min:1150,carbs:'7g',  color:'#9d6fff'}  // avocados 7:50pm snack
+];
+
+function gc(v){return v<70?'#d44a4a':v>180?'#d4954a':'#4dbb88';}
+function nearest(data,m){let b=data[0],bd=Infinity;for(const pt of data){const d=Math.abs(pt[0]-m);if(d<bd){bd=d;b=pt;}}return b;}
+function chart(id,data,x0,x1,xlbls,midnight,meals){
+  const cv=document.getElementById(id);if(!cv)return;
+  const dpr=window.devicePixelRatio||1,W=cv.parentElement.clientWidth-28,H=200;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+  const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+  const PL=40,PR=10,PT=40,PB=24,CW=W-PL-PR,CH=H-PT-PB,YN=45,YX=295;
+  const xp=m=>PL+(m-x0)/(x1-x0)*CW,yp=v=>PT+(1-(v-YN)/(YX-YN))*CH;
+  ctx.fillStyle='#13161a';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(77,187,136,0.07)';ctx.fillRect(PL,yp(180),CW,yp(70)-yp(180));
+  for(const v of[70,100,140,180]){ctx.strokeStyle='#1f242a';ctx.lineWidth=0.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(PL,yp(v));ctx.lineTo(PL+CW,yp(v));ctx.stroke();}
+  ctx.setLineDash([]);
+  ctx.fillStyle='#555c66';ctx.font='9px Space Mono,monospace';ctx.textAlign='right';
+  for(const v of[70,100,140,180])ctx.fillText(v,PL-5,yp(v)+3);
+  ctx.textAlign='center';
+  for(const[m,l]of xlbls){if(midnight!==null&&l==='12a')continue;ctx.fillStyle='#555c66';ctx.fillText(l,xp(m),H-6);}
+  if(midnight!==null){ctx.strokeStyle='rgba(139,145,153,0.4)';ctx.setLineDash([4,4]);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(xp(midnight),PT);ctx.lineTo(xp(midnight),PT+CH);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#8b9199';ctx.textAlign='center';ctx.fillText('12a',xp(midnight),H-6);}
+  const seg=data.filter(([m])=>m>=x0&&m<=x1);
+  for(let i=1;i<seg.length;i++){
+    const[m0,v0]=seg[i-1],[m1,v1]=seg[i];
+    if(m1-m0>15)continue;
+    const cx=[];
+    for(const th of[70,180]){if((v0<th&&v1>=th)||(v0>=th&&v1<th)){const t=(th-v0)/(v1-v0);cx.push({t,m:m0+t*(m1-m0),v:th});}}
+    cx.sort((a,b)=>a.t-b.t);
+    const pts=[{m:m0,v:v0},...cx,{m:m1,v:v1}];
+    for(let j=0;j<pts.length-1;j++){const p=pts[j],q=pts[j+1];ctx.strokeStyle=gc((p.v+q.v)/2);ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(xp(p.m),yp(p.v));ctx.lineTo(xp(q.m),yp(q.v));ctx.stroke();}
+  }
+  if(meals&&meals.length){
+    const vm=meals.filter(ml=>ml.min>=x0&&ml.min<=x1);
+    if(!vm.length)return;
+    const sw=CW/(vm.length+1);
+    vm.forEach((ml,i)=>{
+      const px=PL+sw*(i+1),npt=nearest(seg,ml.min);if(!npt)return;
+      const gx=xp(npt[0]),gy=yp(npt[1]);
+      ctx.save();ctx.setLineDash([3,3]);ctx.strokeStyle=ml.color+'99';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(px,PT-12);ctx.lineTo(gx,gy);ctx.stroke();ctx.restore();
+      ctx.beginPath();ctx.arc(gx,gy,4,0,Math.PI*2);ctx.fillStyle=ml.color;ctx.fill();
+      ctx.font='bold 9px Space Mono,monospace';
+      const tw=ctx.measureText(ml.carbs).width+10,bx=px-tw/2,by=PT-24;
+      ctx.fillStyle='#0c0e11';ctx.strokeStyle=ml.color;ctx.lineWidth=1;ctx.beginPath();
+      if(ctx.roundRect)ctx.roundRect(bx,by,tw,14,3);else ctx.rect(bx,by,tw,14);
+      ctx.fill();ctx.stroke();ctx.fillStyle=ml.color;ctx.textAlign='center';ctx.fillText(ml.carbs,px,by+10);
+    });
+  }
+}
+function init(){
+  chart('dc',DAY,360,1080,[[360,'6a'],[480,'8a'],[600,'10a'],[720,'12p'],[840,'2p'],[960,'4p'],[1080,'6p']],null,DAY_MEALS);
+  chart('nc',NIGHT,1080,1560,[[1080,'6p'],[1200,'8p'],[1320,'10p'],[1440,'12a'],[1560,'2a']],1440,NIGHT_MEALS);
+}
+document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+window.addEventListener('resize',init);
+</script>
+</body>
+</html>
