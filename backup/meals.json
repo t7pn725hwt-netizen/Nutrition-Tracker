@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-27T02:01:16.158Z",
+  "exported": "2026-05-27T02:59:54.245Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -401,6 +401,3445 @@
           },
           "time": "18:25",
           "starred": false
+        },
+        {
+          "id": "m_1779847736691_ilij9",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 1
+          },
+          "time": "21:08",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 171
+          }
+        },
+        {
+          "id": "m_1779848395002_23e49",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:19",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 171
+          }
+        }
+      ],
+      "2026-04-26": [
+        {
+          "id": "m_1706279835632_v27io",
+          "name": "Protein Smoothie",
+          "time": "12:28",
+          "starred": false,
+          "macros": {
+            "protein": 57,
+            "fiber": 5,
+            "carbs": 80,
+            "calories": 680,
+            "fat": 16,
+            "satFat": 6,
+            "sodium": 326,
+            "sugar": 31,
+            "calcium": 630,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1799824992926_xyv98",
+          "name": "2 Small Avocados",
+          "time": "13:30",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1743029359966_2cf8v",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "12:45",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1768634140311_bgqvz",
+          "name": "Pepperoni Pizza",
+          "time": "16:05",
+          "starred": false,
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 10
+          }
+        },
+        {
+          "id": "m_1707234487171_hhacw",
+          "name": "Fried Chicken & Spinach Salad",
+          "time": "18:15",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 6
+          }
+        }
+      ],
+      "2026-04-27": [
+        {
+          "id": "m_1716700803507_d4ceb",
+          "name": "Protein Smoothie",
+          "time": "12:37",
+          "starred": false,
+          "macros": {
+            "protein": 57,
+            "fiber": 5,
+            "carbs": 80,
+            "calories": 680,
+            "fat": 16,
+            "satFat": 6,
+            "sodium": 326,
+            "sugar": 31,
+            "calcium": 630,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1764484602072_9s6ct",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "14:16",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1731225335083_mzybp",
+          "name": "2 Small Avocados",
+          "time": "15:08",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1741431862060_z55fz",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "16:43",
+          "starred": false,
+          "macros": {
+            "protein": 44,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 27,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1753058574047_hxmjy",
+          "name": "Chicken & Spinach Salad",
+          "time": "18:15",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 6
+          }
+        }
+      ],
+      "2026-04-28": [
+        {
+          "id": "m_1702989482828_7fcjs",
+          "name": "Sweetgreen Harvest Bowl extra goat cheese",
+          "time": "13:37",
+          "starred": false,
+          "macros": {
+            "protein": 45,
+            "fiber": 10,
+            "carbs": 61,
+            "calories": 840,
+            "fat": 48,
+            "satFat": 13,
+            "sodium": 1430,
+            "sugar": 12,
+            "calcium": 200,
+            "vitD": 0,
+            "insulin": 8
+          }
+        },
+        {
+          "id": "m_1733157043963_hiata",
+          "name": "Optimum Nutrition Whey Protein 2 scoops",
+          "time": "15:27",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1732128631184_3570r",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "time": "16:16",
+          "starred": false,
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1725346575602_qjoem",
+          "name": "2 Small Avocados",
+          "time": "16:20",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1765473140667_1yj4n",
+          "name": "Kirkland Signature Chicken Nuggets (3 oz)",
+          "time": "18:05",
+          "starred": false,
+          "macros": {
+            "protein": 49,
+            "fiber": 0,
+            "carbs": 40,
+            "calories": 450,
+            "fat": 15,
+            "satFat": 1,
+            "sodium": 16,
+            "sugar": 8,
+            "calcium": 8,
+            "vitD": 0,
+            "insulin": 10
+          }
+        }
+      ],
+      "2026-04-29": [
+        {
+          "id": "m_1751352801774_teo17",
+          "name": "Pepperoni Pizza",
+          "time": "13:01",
+          "starred": false,
+          "macros": {
+            "protein": 39,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 8
+          }
+        },
+        {
+          "id": "m_1730378420256_943pu",
+          "name": "Small Avocado",
+          "time": "13:22",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 9,
+            "carbs": 12,
+            "calories": 220,
+            "fat": 20,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1776382234960_326wj",
+          "name": "Chicken & Spinach Salad",
+          "time": "14:45",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 6
+          }
+        },
+        {
+          "id": "m_1767069910393_n6nvc",
+          "name": "Optimum Nutrition Protein",
+          "time": "16:43",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1795467836536_mkt4b",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "18:17",
+          "starred": false,
+          "macros": {
+            "protein": 44,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1772984085339_c47j0",
+          "name": "Small Avocado",
+          "time": "18:17",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 9,
+            "carbs": 12,
+            "calories": 210,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-04-30": [
+        {
+          "id": "m_1707347486035_mtex6",
+          "name": "Blueberry Pancake with Syrup, 4 Eggs, 1.5 Avocados",
+          "time": "13:10",
+          "starred": false,
+          "macros": {
+            "protein": 37,
+            "fiber": 15,
+            "carbs": 133,
+            "calories": 1140,
+            "fat": 55,
+            "satFat": 11,
+            "sodium": 1340,
+            "sugar": 56,
+            "calcium": 286,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1766080693579_c9x7h",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "time": "15:51",
+          "starred": false,
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1715161477073_233ob",
+          "name": "Optimum Nutrition Protein",
+          "time": "16:51",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1717537243302_x8ev4",
+          "name": "Turkey Kielbasa Sausage, Potatoes, Carrots, Green Beans, Bone Broth (~3 cups)",
+          "time": "18:58",
+          "starred": false,
+          "macros": {
+            "protein": 60,
+            "fiber": 6,
+            "carbs": 38,
+            "calories": 560,
+            "fat": 28,
+            "satFat": 7,
+            "sodium": 1500,
+            "sugar": 6,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 10
+          }
+        },
+        {
+          "id": "m_1717912681338_cxz5c",
+          "name": "Beef stick",
+          "time": "18:58",
+          "starred": false,
+          "macros": {
+            "protein": 18,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-01": [
+        {
+          "id": "m_1777846455560_s4tmn",
+          "name": "4 Eggs, 2 Small Avocados, Chicken Sausage",
+          "time": "12:09",
+          "starred": false,
+          "macros": {
+            "protein": 51,
+            "fiber": 14,
+            "carbs": 18,
+            "calories": 620,
+            "fat": 48,
+            "satFat": 12,
+            "sodium": 780,
+            "sugar": 2,
+            "calcium": 120,
+            "vitD": 160,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1724127720110_x789z",
+          "name": "Optimum Nutrition Protein",
+          "time": "13:54",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1769124382725_63a0n",
+          "name": "Pepperoni Pizza",
+          "time": "15:58",
+          "starred": false,
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 11
+          }
+        },
+        {
+          "id": "m_1709410792421_j7wrp",
+          "name": "Turkey Kielbasa Sausage, Potatoes, Carrots, Green Beans, Bone Broth (~3 cups)",
+          "time": "18:06",
+          "starred": false,
+          "macros": {
+            "protein": 60,
+            "fiber": 6,
+            "carbs": 38,
+            "calories": 560,
+            "fat": 28,
+            "satFat": 7,
+            "sodium": 1500,
+            "sugar": 6,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 8
+          }
+        }
+      ],
+      "2026-05-02": [
+        {
+          "id": "m_1770689233305_ryun6",
+          "name": "Protein Smoothie",
+          "time": "12:01",
+          "starred": false,
+          "macros": {
+            "protein": 57,
+            "fiber": 5,
+            "carbs": 80,
+            "calories": 680,
+            "fat": 16,
+            "satFat": 6,
+            "sodium": 326,
+            "sugar": 31,
+            "calcium": 630,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1728324755809_38ca2",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "12:34",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1726541585231_3bioy",
+          "name": "Turkey Kielbasa Sausage, Potatoes, Carrots, Green Beans, Bone Broth (~3 cups)",
+          "time": "14:35",
+          "starred": false,
+          "macros": {
+            "protein": 60,
+            "fiber": 6,
+            "carbs": 38,
+            "calories": 560,
+            "fat": 28,
+            "satFat": 7,
+            "sodium": 1500,
+            "sugar": 6,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 6
+          }
+        },
+        {
+          "id": "m_1715091774115_qaj9q",
+          "name": "2 Small Avocados",
+          "time": "15:43",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1762857335435_5qm6x",
+          "name": "Chicken & Spinach Salad",
+          "time": "17:27",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 7,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-03": [
+        {
+          "id": "m_1750532744088_mrmzv",
+          "name": "Harvest Bowl (Extra Chicken, Extra Goat Cheese)",
+          "time": "12:33",
+          "starred": false,
+          "macros": {
+            "protein": 68,
+            "fiber": 11,
+            "carbs": 52,
+            "calories": 910,
+            "fat": 56,
+            "satFat": 18,
+            "sodium": 1420,
+            "sugar": 14,
+            "calcium": 260,
+            "vitD": 2,
+            "insulin": 7
+          }
+        },
+        {
+          "id": "m_1778552687601_18js4",
+          "name": "Optimum Nutrition Protein",
+          "time": "15:18",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1720949688927_ihlkp",
+          "name": "Beef stick",
+          "time": "15:20",
+          "starred": false,
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1703812923971_t2i9n",
+          "name": "Chicken sausage with cheese",
+          "time": "17:17",
+          "starred": false,
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1770647966341_15flz",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "time": "17:21",
+          "starred": false,
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 3
+          }
+        },
+        {
+          "id": "m_1785172474776_eiook",
+          "name": "2 Small Avocados",
+          "time": "17:22",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-04": [
+        {
+          "id": "m_1765766433562_0e11l",
+          "name": "Pepperoni Pizza",
+          "time": "12:05",
+          "starred": false,
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 10
+          }
+        },
+        {
+          "id": "m_1739658006175_639a7",
+          "name": "Optimum Nutrition Protein",
+          "time": "14:19",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1760227819711_j3et1",
+          "name": "Turtle Cheesecake - 1.5 slices",
+          "time": "15:46",
+          "starred": false,
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 300,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 8
+          }
+        },
+        {
+          "id": "m_1759209957993_iw0r4",
+          "name": "Chicken & Spinach Salad",
+          "time": "15:47",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 6,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1722291922018_0dqkq",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "18:07",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-05": [
+        {
+          "id": "m_1788720522488_s2x9k",
+          "name": "Chicken & Spinach Salad",
+          "time": "12:26",
+          "starred": false,
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 13,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 2
+          }
+        },
+        {
+          "id": "m_1757248450768_zc4pc",
+          "name": "Optimum Nutrition Protein",
+          "time": "15:11",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1798783352803_9jx2w",
+          "name": "2 Small Avocados",
+          "time": "15:13",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 9,
+            "carbs": 12,
+            "calories": 20,
+            "fat": 20,
+            "satFat": 3,
+            "sodium": 7,
+            "sugar": 2,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1720165617775_tklx4",
+          "name": "Steak nachos and marg",
+          "time": "16:14",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 10,
+            "carbs": 72,
+            "calories": 810,
+            "fat": 44,
+            "satFat": 15,
+            "sodium": 950,
+            "sugar": 4,
+            "calcium": 210,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1747056163983_ovkcf",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "time": "17:34",
+          "starred": false,
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1760671719443_x2x60",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "time": "17:57",
+          "starred": false,
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-06": [
+        {
+          "id": "m_1785435666439_n57jd",
+          "name": "Chobani Yogurt, Cheese Stick, Beef Sticks 3oz",
+          "time": "12:00",
+          "starred": false,
+          "macros": {
+            "protein": 46,
+            "fiber": 2,
+            "carbs": 12,
+            "calories": 570,
+            "fat": 31,
+            "satFat": 16,
+            "sodium": 1040,
+            "sugar": 9,
+            "calcium": 560,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1730105350233_lx5lv",
+          "name": "Fairlife Chocolate Milk",
+          "time": "14:13",
+          "starred": false,
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 730,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1702572667849_am69l",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "time": "14:13",
+          "starred": false,
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1717986329286_27yzd",
+          "name": "Optimum Nutrition Protein",
+          "time": "15:58",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1789614982057_qd5y2",
+          "name": "Cashew Chicken half order with rice",
+          "time": "17:34",
+          "starred": false,
+          "macros": {
+            "protein": 45,
+            "fiber": 4,
+            "carbs": 52,
+            "calories": 720,
+            "fat": 32,
+            "satFat": 6,
+            "sodium": 1400,
+            "sugar": 8,
+            "calcium": 60,
+            "vitD": 0,
+            "insulin": 9
+          }
+        },
+        {
+          "id": "m_1755138989339_fmm73",
+          "name": "Supplement",
+          "time": "17:34",
+          "starred": false,
+          "macros": {
+            "protein": 0,
+            "fiber": 6,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1732172461962_dsbdf",
+          "name": "2 Small Avocados",
+          "time": "18:10",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 9,
+            "carbs": 12,
+            "calories": 210,
+            "fat": 20,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        }
+      ],
+      "2026-05-07": [
+        {
+          "id": "m_1733845450828_if0bw",
+          "name": "Cashew Chicken half order with rice",
+          "time": "13:05",
+          "starred": false,
+          "macros": {
+            "protein": 35,
+            "fiber": 4,
+            "carbs": 15,
+            "calories": 720,
+            "fat": 32,
+            "satFat": 6,
+            "sodium": 1400,
+            "sugar": 8,
+            "calcium": 60,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1731741044405_txwo0",
+          "name": "Half Tuna Melt Sourdough with Cheddar",
+          "time": "13:07",
+          "starred": false,
+          "macros": {
+            "protein": 22,
+            "fiber": 1,
+            "carbs": 19,
+            "calories": 320,
+            "fat": 18,
+            "satFat": 5,
+            "sodium": 520,
+            "sugar": 1,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 4
+          }
+        },
+        {
+          "id": "m_1712018204853_1b7nv",
+          "name": "Optimum Nutrition Protein",
+          "time": "14:39",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1755690209380_nir0q",
+          "name": "2 Small Avocados",
+          "time": "17:18",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1718310092397_yi6yr",
+          "name": "Turkey and Cheddar",
+          "time": "17:18",
+          "starred": false,
+          "macros": {
+            "protein": 46,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 370,
+            "fat": 19,
+            "satFat": 12,
+            "sodium": 920,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1794825352449_ych39",
+          "name": "8oz Ribeye Steak Medium Well",
+          "time": "18:19",
+          "starred": false,
+          "macros": {
+            "protein": 54,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 580,
+            "fat": 42,
+            "satFat": 17,
+            "sodium": 140,
+            "sugar": 0,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1758363838142_532lt",
+          "name": "Half Twice Baked Potato and 15 Asparagus Stalks",
+          "time": "18:19",
+          "starred": false,
+          "macros": {
+            "protein": 8,
+            "fiber": 5,
+            "carbs": 28,
+            "calories": 280,
+            "fat": 12,
+            "satFat": 5,
+            "sodium": 520,
+            "sugar": 2,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1777674449644_ppu0n",
+          "name": "Hy-Vee Gourmet Cherry Pie slice 1/8 pie",
+          "time": "18:21",
+          "starred": false,
+          "macros": {
+            "protein": 2,
+            "fiber": 1,
+            "carbs": 55,
+            "calories": 438,
+            "fat": 15,
+            "satFat": 6,
+            "sodium": 300,
+            "sugar": 28,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 8
+          }
+        }
+      ],
+      "2026-05-08": [
+        {
+          "id": "m_1718806790226_ps480",
+          "name": "Optimum Nutrition Protein",
+          "time": "12:05",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1774588546407_s45qg",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "time": "12:23",
+          "starred": false,
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1769922417710_5fln6",
+          "name": "Chicken Bowl Black Beans Spanish Rice Guac",
+          "time": "14:21",
+          "starred": false,
+          "macros": {
+            "protein": 52,
+            "fiber": 14,
+            "carbs": 72,
+            "calories": 820,
+            "fat": 22,
+            "satFat": 4,
+            "sodium": 1380,
+            "sugar": 4,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 8
+          }
+        },
+        {
+          "id": "m_1702477371361_zi0ko",
+          "name": "2 Small Avocados",
+          "time": "16:20",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1769583731156_6qhzm",
+          "name": "THC Beverage Gigli 12oz",
+          "time": "17:15",
+          "starred": false,
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 18,
+            "calories": 70,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 45,
+            "sugar": 18,
+            "calcium": 11,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1748553910024_9t1t7",
+          "name": "Cheeseburger Slider and 6 Buffalo Wings",
+          "time": "17:16",
+          "starred": false,
+          "macros": {
+            "protein": 65,
+            "fiber": 1,
+            "carbs": 28,
+            "calories": 820,
+            "fat": 54,
+            "satFat": 16,
+            "sodium": 1620,
+            "sugar": 4,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 8
+          }
+        }
+      ],
+      "2026-05-09": [
+        {
+          "id": "m_1709370893250_d5l7q",
+          "name": "Garlic Parmesan Boneless Wings",
+          "time": "12:20",
+          "starred": false,
+          "macros": {
+            "protein": 27,
+            "fiber": 0,
+            "carbs": 46,
+            "calories": 940,
+            "fat": 74,
+            "satFat": 13,
+            "sodium": 2840,
+            "sugar": 5,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 8
+          }
+        },
+        {
+          "id": "m_1733039064640_mwftn",
+          "name": "2 Small Avocados",
+          "time": "12:20",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1759157271833_1qji8",
+          "name": "Fairlife Chocolate Milk",
+          "time": "12:20",
+          "starred": false,
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 730,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1727600203262_eelz8",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "time": "12:42",
+          "starred": false,
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1736718939760_oyyax",
+          "name": "Optimum Nutrition Protein",
+          "time": "15:45",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1770379173926_54phs",
+          "name": "Steak potatoes broccoli",
+          "time": "16:41",
+          "starred": false,
+          "macros": {
+            "protein": 64,
+            "fiber": 14,
+            "carbs": 72,
+            "calories": 785,
+            "fat": 30,
+            "satFat": 11,
+            "sodium": 205,
+            "sugar": 10,
+            "calcium": 133,
+            "vitD": 0,
+            "insulin": 7
+          }
+        },
+        {
+          "id": "m_1756240993882_ar6ik",
+          "name": "Hy-Vee Gourmet Cherry Pie slice 1/8 pie",
+          "time": "16:45",
+          "starred": false,
+          "macros": {
+            "protein": 2,
+            "fiber": 1,
+            "carbs": 55,
+            "calories": 438,
+            "fat": 15,
+            "satFat": 6,
+            "sodium": 300,
+            "sugar": 28,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 7
+          }
+        }
+      ],
+      "2026-05-10": [
+        {
+          "id": "m_1770348441485_jq9rq",
+          "name": "Pepperoni Pizza",
+          "time": "11:41",
+          "starred": false,
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          }
+        },
+        {
+          "id": "m_1789647922032_p54u0",
+          "name": "Banana (2 medium)",
+          "time": "14:35",
+          "starred": true,
+          "macros": {
+            "protein": 2.6,
+            "fiber": 6.2,
+            "carbs": 54,
+            "calories": 210,
+            "fat": 0.8,
+            "satFat": 0.3,
+            "sodium": 2,
+            "sugar": 28,
+            "calcium": 12,
+            "vitD": 0,
+            "insulin": 4
+          }
+        },
+        {
+          "id": "m_1785405492832_fycb1",
+          "name": "Optimum Nutrition Protein",
+          "time": "14:35",
+          "starred": false,
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1718191969522_xr0wx",
+          "name": "Sliced Turkey Breast 6oz",
+          "time": "15:37",
+          "starred": false,
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1781090933920_idnrj",
+          "name": "2 Small Avocados",
+          "time": "15:38",
+          "starred": false,
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          }
+        },
+        {
+          "id": "m_1722584187604_4332v",
+          "name": "2 Roughly 5 ounce Fried Chicken Patties",
+          "time": "18:06",
+          "starred": false,
+          "macros": {
+            "protein": 56,
+            "fiber": 2,
+            "carbs": 28,
+            "calories": 840,
+            "fat": 54,
+            "satFat": 12,
+            "sodium": 1800,
+            "sugar": 0,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 2
+          }
+        }
+      ],
+      "2026-05-11": [
+        {
+          "id": "m_1778519366833_jzrd7",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:09",
+          "starred": false
+        },
+        {
+          "id": "m_1778519386023_00duw",
+          "name": "Banana (2 medium)",
+          "macros": {
+            "protein": 2.6,
+            "fiber": 6.2,
+            "carbs": 54,
+            "calories": 210,
+            "fat": 0.8,
+            "satFat": 0.3,
+            "sodium": 2,
+            "sugar": 28,
+            "calcium": 12,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "12:09",
+          "starred": false
+        },
+        {
+          "id": "m_1778530100927_gxjiv",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:21",
+          "starred": false
+        },
+        {
+          "id": "m_1778530113602_5cjf4",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:08",
+          "starred": false
+        },
+        {
+          "id": "m_1778534152073_h54qb",
+          "name": "Sirloin Steak 7oz + Broccoli 4oz",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 8,
+            "calories": 435,
+            "fat": 23,
+            "satFat": 9,
+            "sodium": 148,
+            "sugar": 2,
+            "calcium": 72,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:15",
+          "starred": false
+        },
+        {
+          "id": "m_1778541239820_u2wkc",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "18:13",
+          "starred": false
+        }
+      ],
+      "2026-05-12": [
+        {
+          "id": "m_1778621203281_ekx7b",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:26",
+          "starred": false
+        },
+        {
+          "id": "m_1778621898412_h8ew7",
+          "name": "BBQ Tray Half Portion (ribs, brisket, pastrami, pork belly, elote side, cornbread; no potato salad or BBQ sauce)",
+          "macros": {
+            "protein": 59,
+            "fiber": 4,
+            "carbs": 49,
+            "calories": 1150,
+            "fat": 80,
+            "satFat": 30,
+            "sodium": 2500,
+            "sugar": 12,
+            "calcium": 170,
+            "vitD": 8,
+            "insulin": 8
+          },
+          "time": "14:12",
+          "starred": false
+        },
+        {
+          "id": "m_1778624386420_22pv0",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "macros": {
+            "protein": 44,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "17:19",
+          "starred": false
+        },
+        {
+          "id": "m_1778630320145_g3kfx",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "18:58",
+          "starred": false
+        },
+        {
+          "id": "m_1778630339489_zqxsv",
+          "name": "Fairlife Chocolate Milk",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 730,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:58",
+          "starred": false
+        },
+        {
+          "id": "m_1778630391289_r12kx",
+          "name": "Cheddar Cheese 2oz",
+          "macros": {
+            "protein": 14,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 228,
+            "fat": 19,
+            "satFat": 12,
+            "sodium": 360,
+            "sugar": 0,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:59",
+          "starred": false
+        },
+        {
+          "id": "m_1778639636464_hqrrc",
+          "name": "Humalog",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 2
+          },
+          "time": "21:33",
+          "starred": true
+        }
+      ],
+      "2026-05-13": [
+        {
+          "id": "m_1778690172517_6i7x3",
+          "name": "One medium banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "11:36",
+          "starred": true
+        },
+        {
+          "id": "m_1778690185691_gm4pm",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:36",
+          "starred": false
+        },
+        {
+          "id": "m_1778696428162_6gqqb",
+          "name": "7 Chicken Wings",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 18,
+            "calories": 630,
+            "fat": 42,
+            "satFat": 12,
+            "sodium": 980,
+            "sugar": 0,
+            "calcium": 28,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "13:20",
+          "starred": false
+        },
+        {
+          "id": "m_1778702034742_56auq",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "14:53",
+          "starred": false
+        },
+        {
+          "id": "m_1778710079539_6v6cb",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:50",
+          "starred": false
+        },
+        {
+          "id": "m_1778714644401_v0n6n",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:09",
+          "starred": false
+        },
+        {
+          "id": "m_1778714666879_kbq32",
+          "name": "Humalog for salad bolus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 6
+          },
+          "time": "18:22",
+          "starred": false
+        },
+        {
+          "id": "m_1778726389832_qnrfc",
+          "name": "Humalog",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 2
+          },
+          "time": "21:39",
+          "starred": false
+        }
+      ],
+      "2026-05-14": [
+        {
+          "id": "m_1778775903039_ncwkj",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:10",
+          "starred": false
+        },
+        {
+          "id": "m_1778775940750_renej",
+          "name": "One medium banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "11:10",
+          "starred": false
+        },
+        {
+          "id": "m_1778778200318_qkgnh",
+          "name": "4 Eggs Cheddar 2 Small Avocados",
+          "macros": {
+            "protein": 34,
+            "fiber": 18,
+            "carbs": 19,
+            "calories": 660,
+            "fat": 52,
+            "satFat": 16,
+            "sodium": 480,
+            "sugar": 1,
+            "calcium": 380,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "12:03",
+          "starred": true
+        },
+        {
+          "id": "m_1778779788768_mbjsu",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "12:29",
+          "starred": true
+        },
+        {
+          "id": "m_1778785075014_09vvj",
+          "name": "One half medium banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 16,
+            "calories": 50,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 7,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:57",
+          "starred": true
+        },
+        {
+          "id": "m_1778786711479_csax1",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:15",
+          "starred": false
+        },
+        {
+          "id": "m_1778790023210_ro799",
+          "name": "1 Bag Protein Crisps",
+          "macros": {
+            "protein": 12,
+            "fiber": 1,
+            "carbs": 13,
+            "calories": 150,
+            "fat": 6,
+            "satFat": 0.5,
+            "sodium": 360,
+            "sugar": 2,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:15",
+          "starred": false
+        },
+        {
+          "id": "m_1778795198867_h6vf2",
+          "name": "8 Piece Grilled Chick-fil-A Nuggets",
+          "macros": {
+            "protein": 25,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 130,
+            "fat": 3,
+            "satFat": 0.5,
+            "sodium": 440,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:15",
+          "starred": false
+        },
+        {
+          "id": "m_1778801288364_p33mj",
+          "name": "3 BBQ Chicken Thighs with Mashed Potatoes Corn Butter Sour Cream",
+          "macros": {
+            "protein": 81,
+            "fiber": 4,
+            "carbs": 77,
+            "calories": 1300,
+            "fat": 64,
+            "satFat": 24,
+            "sodium": 1400,
+            "sugar": 14,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "18:28",
+          "starred": true
+        },
+        {
+          "id": "m_1778815717284_7sq4v",
+          "name": "10:28 2 humalog 172 bs sustained",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 2
+          },
+          "time": "22:20",
+          "starred": false
+        }
+      ],
+      "2026-05-15": [
+        {
+          "id": "m_1778863277419_p4ktd",
+          "name": "4 Eggs Cheddar 2 Small Avocados",
+          "macros": {
+            "protein": 55,
+            "fiber": 18,
+            "carbs": 19,
+            "calories": 660,
+            "fat": 52,
+            "satFat": 16,
+            "sodium": 480,
+            "sugar": 1,
+            "calcium": 380,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "11:51",
+          "starred": false
+        },
+        {
+          "id": "m_1778876067049_v18ex",
+          "name": "65g Air-Popped Popcorn",
+          "macros": {
+            "protein": 8,
+            "fiber": 10,
+            "carbs": 50,
+            "calories": 250,
+            "fat": 3,
+            "satFat": 0,
+            "sodium": 5,
+            "sugar": 1,
+            "calcium": 5,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "15:14",
+          "starred": true
+        },
+        {
+          "id": "m_1778877114133_j79gq",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:40",
+          "starred": false
+        },
+        {
+          "id": "m_1778879640761_t9h4u",
+          "name": "190g Yogurt",
+          "macros": {
+            "protein": 20,
+            "fiber": 1,
+            "carbs": 9,
+            "calories": 140,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 115,
+            "sugar": 7,
+            "calcium": 15,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:14",
+          "starred": false
+        },
+        {
+          "id": "m_1778885590840_tw89m",
+          "name": "3 BBQ Chicken Thighs with Mashed Potatoes Corn Butter Sour Cream",
+          "macros": {
+            "protein": 81,
+            "fiber": 4,
+            "carbs": 77,
+            "calories": 1300,
+            "fat": 64,
+            "satFat": 24,
+            "sodium": 1400,
+            "sugar": 14,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "17:53",
+          "starred": false
+        },
+        {
+          "id": "m_1778894691573_7g07q",
+          "name": "Reese’s pieces .5 ounce 63bs",
+          "macros": {
+            "protein": 2,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 7,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "20:24",
+          "starred": false
+        }
+      ],
+      "2026-05-16": [
+        {
+          "id": "m_1778951083674_mrngj",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:04",
+          "starred": false
+        },
+        {
+          "id": "m_1778956595507_vtl8b",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:36",
+          "starred": false
+        },
+        {
+          "id": "m_1778956619772_t9fuv",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:36",
+          "starred": false
+        },
+        {
+          "id": "m_1778963680138_8qpvb",
+          "name": "3 BBQ Chicken Thighs with Mashed Potatoes Corn Butter Sour Cream",
+          "macros": {
+            "protein": 55,
+            "fiber": 4,
+            "carbs": 77,
+            "calories": 1300,
+            "fat": 64,
+            "satFat": 24,
+            "sodium": 1400,
+            "sugar": 14,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "15:34",
+          "starred": false
+        },
+        {
+          "id": "m_1778972337718_9yp2n",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "17:47",
+          "starred": false
+        },
+        {
+          "id": "m_1778978546767_g1k1i",
+          "name": "4 starbursts bs in 60s",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 15,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "19:50",
+          "starred": false
+        }
+      ],
+      "2026-05-17": [
+        {
+          "id": "m_1779033921478_qro40",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:05",
+          "starred": false
+        },
+        {
+          "id": "m_1779033940098_xsium",
+          "name": "One medium banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "11:05",
+          "starred": false
+        },
+        {
+          "id": "m_1779038975870_4kuhd",
+          "name": "4 Eggs, 2 Small Avocados,",
+          "macros": {
+            "protein": 51,
+            "fiber": 14,
+            "carbs": 18,
+            "calories": 620,
+            "fat": 48,
+            "satFat": 12,
+            "sodium": 780,
+            "sugar": 2,
+            "calcium": 120,
+            "vitD": 160,
+            "insulin": 0
+          },
+          "time": "12:29",
+          "starred": false
+        },
+        {
+          "id": "m_1779055340424_59oly",
+          "name": "12 oz Kirkland chicken nuggets",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 36,
+            "calories": 560,
+            "fat": 20,
+            "satFat": 4,
+            "sodium": 2120,
+            "sugar": 4,
+            "calcium": 32,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "17:40",
+          "starred": false
+        },
+        {
+          "id": "m_1779055389335_eh52j",
+          "name": "65g Air-Popped Popcorn",
+          "macros": {
+            "protein": 8,
+            "fiber": 10,
+            "carbs": 50,
+            "calories": 250,
+            "fat": 3,
+            "satFat": 0,
+            "sodium": 5,
+            "sugar": 1,
+            "calcium": 5,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "17:40",
+          "starred": true
+        },
+        {
+          "id": "m_1779114327011_nyw8h",
+          "name": "Humalog bs 210 consistent",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 1
+          },
+          "time": "21:34",
+          "starred": false
+        }
+      ],
+      "2026-05-18": [
+        {
+          "id": "m_1779127586508_ftftt",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:06",
+          "starred": false
+        },
+        {
+          "id": "m_1779129960805_nocfj",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:46",
+          "starred": false
+        },
+        {
+          "id": "m_1779136806903_da52y",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:40",
+          "starred": false
+        },
+        {
+          "id": "m_1779136822041_i2ee3",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:40",
+          "starred": false
+        },
+        {
+          "id": "m_1779144435683_95wse",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "17:47",
+          "starred": false
+        },
+        {
+          "id": "m_1779242834334_lfu1o",
+          "name": "Humalog bs 221",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 1
+          },
+          "time": "20:12",
+          "starred": false
+        }
+      ],
+      "2026-05-19": [
+        {
+          "id": "m_1779208362854_jbudv",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:32",
+          "starred": false
+        },
+        {
+          "id": "m_1779208385372_dnqse",
+          "name": "One medium banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "11:33",
+          "starred": true
+        },
+        {
+          "id": "m_1779217285205_vofnr",
+          "name": "2 Medium Avocados and 5 Eggs with Cheese",
+          "macros": {
+            "protein": 44,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 1120,
+            "fat": 92,
+            "satFat": 23,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 420,
+            "vitD": 5,
+            "insulin": 1
+          },
+          "time": "14:01",
+          "starred": true
+        },
+        {
+          "id": "m_1779226037944_g2n6c",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 1
+          },
+          "time": "16:27",
+          "starred": true
+        },
+        {
+          "id": "m_1779230318728_4e0km",
+          "name": "BBQ Beans (4 oz) + Assorted BBQ Pork (8 oz) + Cornbread (2x2 inch)",
+          "macros": {
+            "protein": 55,
+            "fiber": 8,
+            "carbs": 44,
+            "calories": 910,
+            "fat": 52,
+            "satFat": 18,
+            "sodium": 1850,
+            "sugar": 20,
+            "calcium": 140,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "17:38",
+          "starred": false
+        },
+        {
+          "id": "m_1779244786587_shlyw",
+          "name": "Humalog bs 215",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 1
+          },
+          "time": "21:01",
+          "starred": false
+        },
+        {
+          "id": "m_1779283347748_4o9q8",
+          "name": "Cake bs 82",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 15,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "18:10",
+          "starred": false
+        }
+      ],
+      "2026-05-20": [
+        {
+          "id": "m_1779303540779_3128g",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "13:15",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779312062639_0hwsx",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:45",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 2.7
+          }
+        },
+        {
+          "id": "m_1779312085614_3ep0i",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:21",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.7
+          }
+        },
+        {
+          "id": "m_1779317146529_sub6y",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:45",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779322366300_2zyqv",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "18:53",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "after",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779338462522_2alld",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "22:15",
+          "starred": false
+        }
+      ],
+      "2026-05-21": [
+        {
+          "id": "m_1779380716630_igft9",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779384589978_w0gjc",
+          "name": "2 Medium Avocados and 5 Eggs with Cheese",
+          "macros": {
+            "protein": 44,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 1120,
+            "fat": 92,
+            "satFat": 23,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 420,
+            "vitD": 5,
+            "insulin": 1
+          },
+          "time": "12:29",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779392070827_gwl1m",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "14:34",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": true,
+            "iob": 0.5
+          }
+        },
+        {
+          "id": "m_1779399470445_j7ag7",
+          "name": "Half Pound Double Cheeseburger with Turtle Sundae",
+          "macros": {
+            "protein": 49,
+            "fiber": 3,
+            "carbs": 118,
+            "calories": 1820,
+            "fat": 109,
+            "satFat": 47,
+            "sodium": 1880,
+            "sugar": 84,
+            "calcium": 520,
+            "vitD": 2,
+            "insulin": 17
+          },
+          "time": "16:37",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0.9
+          }
+        },
+        {
+          "id": "m_1779416561455_8tz67",
+          "name": "Humalog Correction 197 bs",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "21:22",
+          "starred": false
+        },
+        {
+          "id": "m_1779416623601_np7c3",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:23",
+          "starred": false
+        }
+      ],
+      "2026-05-22": [
+        {
+          "id": "m_1779474176732_hueik",
+          "name": "Sesame Chicken (578g) with White Rice & Gravy (300g)",
+          "macros": {
+            "protein": 58,
+            "fiber": 3,
+            "carbs": 165,
+            "calories": 1680,
+            "fat": 52,
+            "satFat": 9,
+            "sodium": 3100,
+            "sugar": 42,
+            "calcium": 140,
+            "vitD": 0,
+            "insulin": 18
+          },
+          "time": "12:36",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 14.4
+          }
+        },
+        {
+          "id": "m_1779482436933_gkjsf",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:40",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4
+          }
+        },
+        {
+          "id": "m_1779482907361_isbu1",
+          "name": "2.5 oz Colby Jack Cheese and Yogurt",
+          "macros": {
+            "protein": 38,
+            "fiber": 1,
+            "carbs": 11,
+            "calories": 415,
+            "fat": 26,
+            "satFat": 16,
+            "sodium": 565,
+            "sugar": 7,
+            "calcium": 65,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:48",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.6
+          }
+        },
+        {
+          "id": "m_1779485904306_9phff",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "16:38",
+          "starred": false
+        },
+        {
+          "id": "m_1779489358903_f6w85",
+          "name": "Half Bell Pepper, 2/3 lb Burger on Medium Bun, 2 oz Colby Jack Cheese, 1 oz Wavy Lays, Half Brat",
+          "macros": {
+            "protein": 77,
+            "fiber": 3,
+            "carbs": 46,
+            "calories": 1450,
+            "fat": 102,
+            "satFat": 41,
+            "sodium": 1120,
+            "sugar": 7,
+            "calcium": 405,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "17:35",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 1.5
+          }
+        },
+        {
+          "id": "m_1779501871042_gxct5",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:04",
+          "starred": false
+        }
+      ],
+      "2026-05-23": [
+        {
+          "id": "m_1779555198576_mzwl7",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779558750464_nvrye",
+          "name": "Japanese Sando with Fried Chicken, Gochujang Sauce, and Sweet Potato Chips",
+          "macros": {
+            "protein": 42,
+            "fiber": 6,
+            "carbs": 88,
+            "calories": 980,
+            "fat": 48,
+            "satFat": 10,
+            "sodium": 1850,
+            "sugar": 18,
+            "calcium": 140,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "12:52",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779576600378_01snz",
+          "name": "2 Slices Deep Dish Pepperoni/Sausage Pizza from Burt's Place and 1 Pint of Coors Light",
+          "macros": {
+            "protein": 68,
+            "fiber": 6,
+            "carbs": 92,
+            "calories": 1850,
+            "fat": 96,
+            "satFat": 42,
+            "sodium": 4100,
+            "sugar": 10,
+            "calcium": 420,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "17:50",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0
+          }
+        },
+        {
+          "id": "m_1779583804745_qr0w2",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "19:50",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 5.5
+          }
+        },
+        {
+          "id": "m_1779583842361_mtny8",
+          "name": "Kirkland Grass-Fed Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "19:50",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 5.5
+          }
         }
       ]
     },
@@ -436,6 +3875,159 @@
           "sugar": 0,
           "vitD": 0,
           "calcium": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848070679_n3tkj",
+        "name": "Pepperoni Pizza",
+        "macros": {
+          "protein": 52,
+          "fiber": 3,
+          "carbs": 98,
+          "calories": 1080,
+          "fat": 52,
+          "satFat": 24,
+          "sodium": 2400,
+          "sugar": 10,
+          "calcium": 720,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848073729_yhp7m",
+        "name": "2 Small Avocados",
+        "macros": {
+          "protein": 5,
+          "fiber": 18,
+          "carbs": 24,
+          "calories": 430,
+          "fat": 40,
+          "satFat": 6,
+          "sodium": 14,
+          "sugar": 2,
+          "calcium": 36,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848074563_09eb8",
+        "name": "Optimum Nutrition Protein",
+        "macros": {
+          "protein": 48,
+          "fiber": 0,
+          "carbs": 8,
+          "calories": 240,
+          "fat": 3,
+          "satFat": 2,
+          "sodium": 260,
+          "sugar": 2,
+          "calcium": 260,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848076254_071cf",
+        "name": "Sliced Turkey Breast 6oz",
+        "macros": {
+          "protein": 38,
+          "fiber": 0,
+          "carbs": 2,
+          "calories": 185,
+          "fat": 2,
+          "satFat": 0.5,
+          "sodium": 900,
+          "sugar": 1,
+          "calcium": 20,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848077470_h1mk6",
+        "name": "Chicken & Spinach Salad",
+        "macros": {
+          "protein": 62,
+          "fiber": 5,
+          "carbs": 30,
+          "calories": 860,
+          "fat": 52,
+          "satFat": 15,
+          "sodium": 1660,
+          "sugar": 5,
+          "calcium": 320,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848083075_oa3gg",
+        "name": "One medium banana",
+        "macros": {
+          "protein": 1.3,
+          "fiber": 3.1,
+          "carbs": 27,
+          "calories": 105,
+          "fat": 0.4,
+          "satFat": 0.1,
+          "sodium": 1,
+          "sugar": 14,
+          "calcium": 6,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848086914_1bvtd",
+        "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+        "macros": {
+          "protein": 37,
+          "fiber": 4.5,
+          "carbs": 18,
+          "calories": 450,
+          "fat": 27.5,
+          "satFat": 7,
+          "sodium": 179,
+          "sugar": 9,
+          "calcium": 332,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848100795_8j49i",
+        "name": "65g Air-Popped Popcorn",
+        "macros": {
+          "protein": 8,
+          "fiber": 10,
+          "carbs": 50,
+          "calories": 250,
+          "fat": 3,
+          "satFat": 0,
+          "sodium": 5,
+          "sugar": 1,
+          "calcium": 5,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1779848120403_q9rmw",
+        "name": "Kirkland Grass-Fed Beef Stick",
+        "macros": {
+          "protein": 10,
+          "fiber": 0,
+          "carbs": 1,
+          "calories": 100,
+          "fat": 8,
+          "satFat": 3,
+          "sodium": 390,
+          "sugar": 0,
+          "calcium": 10,
+          "vitD": 0,
           "insulin": 0
         }
       }
