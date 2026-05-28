@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-28T02:12:23.519Z",
+  "exported": "2026-05-28T03:45:48.519Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -302,31 +302,6 @@
       ],
       "2026-05-26": [
         {
-          "id": "m_1779819529684_vjhv7",
-          "name": "Favorite protein shake",
-          "macros": {
-            "protein": 50,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 0
-          },
-          "time": "13:18",
-          "starred": false,
-          "doseLog": {
-            "preBolus": "10min",
-            "activityAfter": false,
-            "iob": 0,
-            "bsAtDose": 140
-          }
-        },
-        {
           "id": "m_1779824734451_apmrp",
           "name": "5 Eggs Over Easy and 2 Medium Avocados",
           "macros": {
@@ -344,31 +319,6 @@
           },
           "time": "14:45",
           "starred": false
-        },
-        {
-          "id": "m_1779832476216_5slf7",
-          "name": "Yogurt and Peanut Butter Mix",
-          "macros": {
-            "protein": 40,
-            "fiber": 2,
-            "carbs": 24,
-            "calories": 320,
-            "fat": 18,
-            "satFat": 4,
-            "sodium": 180,
-            "sugar": 8,
-            "calcium": 200,
-            "vitD": 1,
-            "insulin": 5
-          },
-          "time": "16:54",
-          "starred": false,
-          "doseLog": {
-            "preBolus": "10min",
-            "activityAfter": false,
-            "iob": 0,
-            "bsAtDose": 140
-          }
         },
         {
           "id": "m_1779836017476_whxq5",
@@ -456,6 +406,50 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 171
+          }
+        },
+        {
+          "id": "m_1779938572460_tlclh",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:17",
+          "starred": false
+        },
+        {
+          "id": "m_1779938610487_y01k2",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "16:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.3,
+            "bsAtDose": 140
           }
         }
       ],
@@ -3973,6 +3967,28 @@
             "iob": 0,
             "bsAtDose": 123
           }
+        },
+        {
+          "id": "m_1779936832016_9u324",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:53",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 181
+          }
         }
       ]
     },
@@ -3991,23 +4007,6 @@
           "sugar": 31,
           "calcium": 630,
           "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1779819519010_orl43",
-        "name": "Favorite protein shake",
-        "macros": {
-          "protein": 50,
-          "fiber": 0,
-          "carbs": 0,
-          "calories": 0,
-          "fat": 0,
-          "satFat": 0,
-          "sodium": 0,
-          "sugar": 0,
-          "vitD": 0,
-          "calcium": 0,
           "insulin": 0
         }
       },
