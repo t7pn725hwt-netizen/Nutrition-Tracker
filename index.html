@@ -1091,6 +1091,14 @@
         <button class="report-btn" id="dailyReportBtn">⬡ Daily Report</button>
         <button class="report-btn" id="weeklyReportBtn">⬡ Weekly Report</button>
       </div>
+
+      <!-- Glucose import status -->
+      <div id="glucoseImportRow" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px;">
+        <div id="glucoseStatus" style="font-family:var(--mono);font-size:10px;color:var(--text-faint);flex:1;line-height:1.4;">No glucose — run Shortcut then tap Import</div>
+        <button id="glucoseHelpBtn" style="font-family:var(--mono);font-size:10px;font-weight:700;padding:5px 8px;background:transparent;border:1px solid var(--border);color:var(--text-faint);border-radius:6px;flex-shrink:0;">?</button>
+        <button id="importGlucoseBtn" style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.5px;padding:5px 10px;background:var(--surface-2);border:1px solid var(--border);color:var(--text-dim);border-radius:6px;white-space:nowrap;flex-shrink:0;">📋 Import</button>
+      </div>
+
       <div id="weeklyDayPicker" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
         <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-dim);margin-bottom:8px;">Select days to include</div>
         <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;" id="dayCheckGrid"></div>
@@ -1296,6 +1304,79 @@
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
+
+<!-- Modal: glucose shortcut setup guide -->
+<div class="modal-bg" id="glucoseGuideModal">
+  <div class="modal" style="max-height:85vh;overflow-y:auto;">
+    <h3>Glucose Shortcut Setup</h3>
+    <div style="font-size:12px;color:var(--text-dim);line-height:1.7;margin-top:10px;">
+      <p style="margin:0 0 10px;">Build this once in the <strong style="color:var(--text);">Shortcuts</strong> app. It pulls blood glucose from Apple Health and copies it to your clipboard.</p>
+
+      <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-2);margin:12px 0 6px;">Steps</div>
+
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">1 · Find Health Samples</div>
+          <div style="font-size:11px;color:var(--text-dim);">Type: <strong style="color:var(--text);">Blood Glucose</strong> · Start: Start of Today · End: End of Today</div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">2 · Repeat with Each Item</div>
+          <div style="font-size:11px;color:var(--text-dim);">Loop over the health samples from step 1</div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">3 · Get Start Date → Format Date</div>
+          <div style="font-size:11px;color:var(--text-dim);">Get Details of Health Sample → <strong style="color:var(--text);">Start Date</strong><br/>Format Date → Custom: <span style="font-family:var(--mono);color:var(--orange);font-size:10px;">yyyy-MM-dd'T'HH:mm:ssZZZZZ</span></div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">4 · Get Value</div>
+          <div style="font-size:11px;color:var(--text-dim);">Get Details of Health Sample → <strong style="color:var(--text);">Value</strong></div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">5 · Build text line & Add to List</div>
+          <div style="font-size:11px;color:var(--text-dim);">Text: <span style="font-family:var(--mono);color:var(--orange);font-size:10px;">{"t":"[formatted date]","v":[value]}</span><br/>Add to Variable → <strong style="color:var(--text);">Results</strong></div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">6 · End Repeat</div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">7 · Get Text from Results → Copy to Clipboard</div>
+          <div style="font-size:11px;color:var(--text-dim);">Get Text from the Results variable, then Copy to Clipboard</div>
+        </div>
+        <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--green-1);margin-bottom:3px;">8 · Optional: Open tracker URL</div>
+          <div style="font-size:11px;color:var(--text-dim);">Open URL → your tracker link so it returns here automatically</div>
+        </div>
+      </div>
+
+      <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-2);margin:14px 0 6px;">Daily workflow</div>
+      <div style="font-size:11px;color:var(--text-dim);line-height:1.8;">
+        1. Tap <strong style="color:var(--text);">Glucose Pull</strong> shortcut → copies data<br/>
+        2. Tap <strong style="color:var(--text);">📋 Import</strong> → status turns green<br/>
+        3. Tap <strong style="color:var(--text);">⬡ Daily Report</strong> → JSON prompt copies<br/>
+        4. Paste in Claude → report built from pre-computed data
+      </div>
+
+      <div style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--green-2);margin:14px 0 6px;">Permissions</div>
+      <div style="font-size:11px;color:var(--text-dim);">Settings → Privacy & Security → Health → Shortcuts → Blood Glucose → Read</div>
+    </div>
+    <div class="modal-actions" style="margin-top:16px;">
+      <button class="primary" id="glucoseGuideClose">Got it</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: glucose paste fallback -->
+<div class="modal-bg" id="glucosePasteModal">
+  <div class="modal">
+    <h3>Paste Glucose Data</h3>
+    <div style="font-size:12px;color:var(--text-dim);margin-bottom:10px;line-height:1.5;">Run the Glucose Shortcut, copy the result, then paste it here.</div>
+    <textarea id="glucosePasteInput" placeholder="Paste JSON from Shortcut…" style="min-height:120px;font-size:12px;line-height:1.5;" spellcheck="false" autocorrect="off" autocapitalize="off"></textarea>
+    <div class="modal-actions">
+      <button class="ghost" id="glucosePasteCancel">Cancel</button>
+      <button class="primary" id="glucosePasteImport">Import</button>
+    </div>
+  </div>
+</div>
 
 <!-- Modal: report prompt -->
 <div class="modal-bg" id="modalBg">
@@ -2220,8 +2301,16 @@ function clearForm() {
 // UI: REPORT BUTTONS
 // ============================================================
 document.getElementById('dailyReportBtn').addEventListener('click', () => {
-  const prompt = buildDailyReportPrompt(currentDate);
-  copyToClipboard(prompt).then(() => showToast('Daily report prompt copied — paste in Claude'));
+  const glucose = getStoredGlucose(currentDate);
+  if (glucose && glucose.length > 0) {
+    const report = buildReportJSON(currentDate, glucose, null);
+    const prompt = buildDailyReportPromptV2(currentDate, report);
+    copyToClipboard(prompt).then(() => showToast('JSON report prompt copied ✓'));
+  } else {
+    // No glucose imported yet — fall back to HealthKit pull prompt (legacy)
+    const prompt = buildDailyReportPrompt(currentDate);
+    copyToClipboard(prompt).then(() => showToast('Daily report prompt copied — paste in Claude'));
+  }
 });
 document.getElementById('weeklyReportBtn').addEventListener('click', () => {
   // Build day picker for last 14 days
@@ -2271,6 +2360,397 @@ document.getElementById('moveTrackerBtn').addEventListener('click', () => {
   showModal('Move Tracker — Restoration Prompt', prompt);
   copyToClipboard(prompt).then(() => showToast('Prompt copied — paste in Claude'));
 });
+// ============================================================
+// GLUCOSE PIPELINE
+// ============================================================
+const GLUCOSE_KEY_PREFIX = 'glucose:';
+const REPORT_KEY_PREFIX  = 'report:';
+
+// Parse glucose JSON from clipboard — handles multiple source formats
+function parseGlucoseClipboard(rawText) {
+  if (!rawText || typeof rawText !== 'string') return null;
+  rawText = rawText.trim();
+  if (!rawText) return null;
+
+  function normDate(t) {
+    if (!t) return null;
+    t = String(t).trim();
+    // Shortcuts ISO variant missing colon: "+0000" → "+00:00"
+    t = t.replace(/([+-]\d{2})(\d{2})$/, '$1:$2');
+    // Shortcuts default format: "2026-05-23 05:03:00 +00:00"
+    t = t.replace(/^(\d{4}-\d{2}-\d{2}) /, '$1T');
+    const d = new Date(t);
+    return isNaN(d.getTime()) ? null : d.toISOString();
+  }
+  function normSample(s) {
+    const t = normDate(s.t || s.startDate || s.start_date || s.timestamp);
+    const v = parseFloat(s.v !== undefined ? s.v : s.value);
+    if (!t || isNaN(v) || v < 20 || v > 600) return null;
+    return { t, v };
+  }
+
+  let rawArr = null;
+  try {
+    const parsed = JSON.parse(rawText);
+    if (Array.isArray(parsed)) rawArr = parsed;
+    else if (parsed && Array.isArray(parsed.samples)) rawArr = parsed.samples;
+  } catch (_) {
+    // Try newline-separated JSON objects (Shortcuts "Get Text" from a list of dicts)
+    const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.startsWith('{'));
+    if (lines.length > 0) {
+      rawArr = [];
+      for (const line of lines) { try { rawArr.push(JSON.parse(line)); } catch (_) {} }
+    }
+  }
+
+  if (!rawArr || rawArr.length === 0) return null;
+  const samples = rawArr.map(normSample).filter(Boolean);
+  if (samples.length === 0) return null;
+  samples.sort((a, b) => new Date(a.t) - new Date(b.t));
+  return samples;
+}
+
+// Delta compression: keep only if |Δv| ≥ 3 mg/dL OR ≥ 15 min elapsed.
+// Always keep first and last sample of the array.
+function deltaCompress(samples) {
+  if (!samples || samples.length <= 2) return samples ? [...samples] : [];
+  const out = [samples[0]];
+  let last = samples[0];
+  for (let i = 1; i < samples.length - 1; i++) {
+    const s = samples[i];
+    const dv = Math.abs(s.v - last.v);
+    const dt = (new Date(s.t) - new Date(last.t)) / 60000;
+    if (dv >= 3 || dt >= 15) { out.push(s); last = s; }
+  }
+  out.push(samples[samples.length - 1]);
+  return out;
+}
+
+// Return "YYYY-MM-DD" for an ISO timestamp in Chicago time
+function isoToChicagoDate(isoStr) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago' }).format(new Date(isoStr));
+}
+
+// Compute TIR from samples that fall on iso in Chicago time (00:00–23:59)
+function computeTIR(samples, iso) {
+  const empty = { pct_in_range:null, pct_below_70:null, pct_above_180:null,
+                  avg:null, min:null, max:null, min_time:null, max_time:null };
+  if (!samples || samples.length === 0) return empty;
+  const day = samples.filter(s => isoToChicagoDate(s.t) === iso);
+  if (day.length === 0) return empty;
+  let inR=0, bel=0, abv=0, sum=0, mn=Infinity, mx=-Infinity, mnT=null, mxT=null;
+  for (const s of day) {
+    sum += s.v;
+    if (s.v < 70) bel++; else if (s.v <= 180) inR++; else abv++;
+    if (s.v < mn) { mn=s.v; mnT=s.t; }
+    if (s.v > mx) { mx=s.v; mxT=s.t; }
+  }
+  const n = day.length, r1 = v => Math.round(v*10)/10;
+  return { pct_in_range:r1(inR/n*100), pct_below_70:r1(bel/n*100), pct_above_180:r1(abv/n*100),
+           avg:Math.round(sum/n), min:mn, max:mx, min_time:mnT, max_time:mxT };
+}
+
+// Compute glucose response for a single meal (insulin-dosed)
+function computeGlucoseResponse(meal, samples, reportIso) {
+  const empty = { pre_dose_bg:null, peak_bg:null, peak_time:null, peak_delta:null,
+                  minutes_to_peak:null, resolved_bg:null, resolved_time:null, minutes_to_resolve:null };
+  if (!samples || samples.length === 0 || !(meal.macros.insulin > 0) || !meal.time) return empty;
+  const iso = reportIso || currentDate;
+  const [mh, mm] = meal.time.split(':').map(Number);
+  const mDt = fromLocalISODate(iso); mDt.setHours(mh, mm, 0, 0);
+  const mMs = mDt.getTime();
+  const preArr = samples.filter(s => new Date(s.t).getTime() < mMs);
+  if (!preArr.length) return empty;
+  const preSample = preArr[preArr.length - 1];
+  const preBG = preSample.v;
+  const fourH = 4 * 3600000;
+  const win = samples.filter(s => { const ms=new Date(s.t).getTime(); return ms>=mMs && ms<=mMs+fourH; });
+  if (!win.length) return { ...empty, pre_dose_bg: preBG };
+  const peak = win.reduce((a,b) => b.v > a.v ? b : a);
+  const peakMs = new Date(peak.t).getTime();
+  const resolved = win.find(s => new Date(s.t).getTime() > peakMs && s.v <= preBG * 1.20);
+  return {
+    pre_dose_bg: preBG, peak_bg: peak.v, peak_time: peak.t, peak_delta: peak.v - preBG,
+    minutes_to_peak: Math.round((peakMs - mMs) / 60000),
+    resolved_bg: resolved ? resolved.v : null,
+    resolved_time: resolved ? resolved.t : null,
+    minutes_to_resolve: resolved ? Math.round((new Date(resolved.t).getTime() - mMs) / 60000) : null
+  };
+}
+
+// Compute ICR calibration eligibility for a meal
+function computeICRCalibration(meal, allDayMeals, gr, hasWorkout, reportIso) {
+  const ins  = meal.macros.insulin || 0;
+  const netC = Math.max(0, (meal.macros.carbs||0) - (meal.macros.fiber||0));
+  const noFlags = { high_fat:false, otf_day:false, pre_bg_elevated:false, correction_given:false, stacking_risk:false, response_unresolved:false };
+  if (ins <= 0 || netC <= 0) return { eligible:false, effective_icr:null, exclusion_reason:'no_bolus_carbs', flags:noFlags };
+  const iso = reportIso || currentDate;
+  const [mh, mm] = (meal.time||'00:00').split(':').map(Number);
+  const mDt = fromLocalISODate(iso); mDt.setHours(mh, mm, 0, 0);
+  const mMs = mDt.getTime();
+  const flags = {
+    high_fat:           (meal.macros.fat||0) > 40,
+    otf_day:            !!hasWorkout,
+    pre_bg_elevated:    gr.pre_dose_bg != null ? gr.pre_dose_bg > 140 : false,
+    correction_given:   false,
+    stacking_risk:      false,
+    response_unresolved: gr.peak_bg != null && gr.resolved_bg == null
+  };
+  for (const m of allDayMeals) {
+    if (m.id === meal.id || !(m.macros.insulin > 0)) continue;
+    if ((m.name||'').toLowerCase().includes('lantus')) continue;
+    const [oh, om] = (m.time||'00:00').split(':').map(Number);
+    const oDt = fromLocalISODate(iso); oDt.setHours(oh, om, 0, 0);
+    const diffH = (mMs - oDt.getTime()) / 3600000;
+    if (diffH > 0 && diffH <= 4 && (m.name||'').toLowerCase().includes('correction')) flags.correction_given = true;
+    if (diffH > 0 && diffH <= 3) flags.stacking_risk = true;
+  }
+  const flagList = Object.entries(flags).filter(([,v])=>v).map(([k])=>k);
+  return {
+    eligible: flagList.length === 0,
+    effective_icr: Math.round(netC/ins*10)/10,
+    exclusion_reason: flagList.length > 0 ? flagList.join(',') : null,
+    flags
+  };
+}
+
+// ISO week ref "YYYY-WNN"
+function isoWeekRef(iso) {
+  const d = fromLocalISODate(iso);
+  const thu = new Date(d); thu.setDate(d.getDate() - ((d.getDay()+6)%7) + 3);
+  const jan4 = new Date(thu.getFullYear(), 0, 4);
+  const wk = 1 + Math.round((thu - jan4) / 604800000);
+  return `${thu.getFullYear()}-W${String(wk).padStart(2,'0')}`;
+}
+
+// Infer meal category from logged time string "HH:MM"
+function mealCategory(time) {
+  if (!time) return 'unspecified';
+  const h = parseInt(time.split(':')[0]);
+  if (h < 11) return 'breakfast';
+  if (h < 15) return 'lunch';
+  if (h < 19) return 'dinner';
+  return 'snack';
+}
+
+// Build and store the full daily report JSON
+function buildReportJSON(iso, glucoseSamples, workouts) {
+  const meals  = dayMeals(iso);
+  const totals = totalsFor(iso);
+  const gs     = glucoseSamples || [];
+  const hasW   = !!(workouts && workouts.length > 0);
+
+  const chartSamples = gs.length > 0 ? deltaCompress(gs) : [];
+  const tir          = computeTIR(gs, iso);
+  const sensorGap    = gs.length > 0 && gs.length < 200;
+
+  const sorted = [...meals].sort((a,b) => (a.time||'').localeCompare(b.time||''));
+  const mealsJSON = sorted.map(m => {
+    const x  = m.macros;
+    const gr = computeGlucoseResponse(m, gs, iso);
+    const ic = computeICRCalibration(m, meals, gr, hasW, iso);
+    const nc = Math.max(0, (x.carbs||0)-(x.fiber||0));
+    const [mh,mmm] = (m.time||'00:00').split(':').map(Number);
+    const mDt = fromLocalISODate(iso); mDt.setHours(mh,mmm,0,0);
+    const off = chicagoOffsetForDate(mDt);
+    return {
+      time:        `${iso}T${String(mh).padStart(2,'0')}:${String(mmm).padStart(2,'0')}:00${off}`,
+      name:        m.name,
+      protein_g:   x.protein||0, carbs_g: x.carbs||0, net_carbs_g: nc,
+      calories:    x.calories||0, fat_g: x.fat||0, humalog_u: x.insulin||0,
+      pre_bolus:   !!(m.doseLog && m.doseLog.preBolus && m.doseLog.preBolus !== 'none'),
+      category:    mealCategory(m.time),
+      glucose_response: gr, icr_calibration: ic
+    };
+  });
+
+  const doses = sorted.filter(m => (m.macros.insulin||0) > 0).map(m => {
+    const [mh,mmm] = (m.time||'00:00').split(':').map(Number);
+    const mDt = fromLocalISODate(iso); mDt.setHours(mh,mmm,0,0);
+    const off = chicagoOffsetForDate(mDt);
+    const isL = (m.name||'').toLowerCase().includes('lantus');
+    const isC = (m.name||'').toLowerCase().includes('correction');
+    return { time:`${iso}T${String(mh).padStart(2,'0')}:${String(mmm).padStart(2,'0')}:00${off}`,
+             name:m.name, units:m.macros.insulin, type: isL?'lantus':isC?'correction':'meal' };
+  });
+  const humalogTotal = doses.filter(d=>d.type!=='lantus').reduce((s,d)=>s+d.units,0);
+  const lantusDose   = doses.find(d=>d.type==='lantus');
+
+  const eligible  = mealsJSON.filter(m => m.icr_calibration.eligible);
+  const icrVals   = eligible.map(m => m.icr_calibration.effective_icr).filter(v=>v!=null);
+  const icrAvg    = icrVals.length > 0 ? Math.round(icrVals.reduce((a,b)=>a+b,0)/icrVals.length*10)/10 : null;
+  const icrRange  = icrVals.length > 0 ? [Math.min(...icrVals), Math.max(...icrVals)] : null;
+  const prescribed = getDoseSettings().icr || 10;
+
+  const report = {
+    report_date: iso, timezone: 'America/Chicago',
+    generated_at: new Date().toISOString(), week_ref: isoWeekRef(iso),
+    data_sources: {
+      glucose:  gs.length > 0 ? 'healthkit_shortcut' : 'none',
+      meals: 'manual', insulin: 'manual', workouts: hasW ? 'manual' : 'none'
+    },
+    glucose: {
+      samples_total: gs.length,
+      coverage_start: gs.length > 0 ? gs[0].t : null,
+      coverage_end:   gs.length > 0 ? gs[gs.length-1].t : null,
+      sensor_gaps: [], tir, events: [], chart_samples: chartSamples
+    },
+    nutrition: {
+      protein_g: totals.protein, fiber_g: totals.fiber, calories: totals.calories,
+      carbs_g: totals.carbs, net_carbs_g: totals.netCarbs, fat_g: totals.fat,
+      sat_fat_g: totals.satFat, sodium_mg: totals.sodium, sugar_g: totals.sugar,
+      vit_d_iu: totals.vitD, calcium_mg: totals.calcium,
+      goals: { protein_g: state.goals.protein, fiber_g: state.goals.fiber, calories: state.goals.calories }
+    },
+    meals: mealsJSON,
+    insulin: {
+      humalog_total_u: Math.round(humalogTotal*10)/10,
+      lantus_u:    lantusDose ? lantusDose.units : null,
+      lantus_time: lantusDose ? lantusDose.time  : null,
+      doses
+    },
+    workouts: workouts || [],
+    flags: {
+      sensor_gap:      sensorGap,
+      hypo_event:      tir.pct_below_70  != null && tir.pct_below_70  > 0,
+      hyper_event:     tir.pct_above_180 != null && tir.pct_above_180 > 5,
+      pre_bolus_used:  mealsJSON.some(m => m.pre_bolus),
+      correction_dose: doses.some(d => d.type === 'correction')
+    },
+    icr_analysis: {
+      eligible_meals_count: eligible.length,
+      effective_icr_avg:    icrAvg,
+      effective_icr_range:  icrRange,
+      current_prescribed_icr: prescribed,
+      suggested_review: icrAvg != null && eligible.length >= 10 && Math.abs(icrAvg - prescribed) > 0.5
+    }
+  };
+
+  localStorage.setItem(REPORT_KEY_PREFIX + iso, JSON.stringify(report));
+  return report;
+}
+
+// Retrieve / save raw glucose samples for a date
+function getStoredGlucose(iso) {
+  try { return JSON.parse(localStorage.getItem(GLUCOSE_KEY_PREFIX + iso) || 'null'); } catch { return null; }
+}
+function saveGlucose(iso, samples) {
+  localStorage.setItem(GLUCOSE_KEY_PREFIX + iso, JSON.stringify(samples));
+}
+
+// Build the new JSON-first report prompt (Claude gets structured data, no HealthKit pull)
+function buildDailyReportPromptV2(iso, report) {
+  const mealLines = (() => {
+    const meals = dayMeals(iso);
+    if (!meals.length) return '(no meals logged)';
+    return [...meals].sort((a,b)=>(a.time||'').localeCompare(b.time||'')).map(m => {
+      const x = m.macros, nc = Math.max(0,(x.carbs||0)-(x.fiber||0));
+      return `- ${fmt12(m.time)||''} — ${m.name}: P${x.protein}g · Fi${x.fiber}g · C${x.carbs}g · NC${nc}g · ${x.calories}cal · Fat${x.fat}g · ${x.insulin}u${m.doseLog&&m.doseLog.bsAtDose?' · BS'+m.doseLog.bsAtDose:''}`;
+    }).join('\n');
+  })();
+
+  return `daily report — json pipeline
+
+Date: ${fullPrettyDate(iso)} (${iso})
+
+════════════════════════════════════════
+REPORT JSON
+════════════════════════════════════════
+${JSON.stringify(report, null, 2)}
+
+════════════════════════════════════════
+MEAL LOG (human-readable)
+════════════════════════════════════════
+${mealLines}
+
+════════════════════════════════════════
+BUILD INSTRUCTIONS
+════════════════════════════════════════
+Build the daily report HTML artifact from the JSON above.
+Do not pull HealthKit data — all glucose and nutrition data is pre-computed.
+
+Use glucose.chart_samples for charts (delta-compressed, ~60–90 pts).
+Use glucose.tir for TIR summary cards.
+Use meals[].glucose_response for per-meal glucose overlays.
+Use meals[].icr_calibration.eligible to filter the ICR analysis section.
+
+CHARTS:
+- Day panel: local mins 360–1080 (6am–6pm).
+- Night panel: extended-minute space — 6pm=1080, midnight=1440, 6am=1800.
+  Post-midnight samples: ext_min = 1440 + local_min. NEVER map night to 0–1440.
+- Line color: red <70 · green 70–180 · orange >180. Use crossing detection.
+- Meal pills: dashed leader to glucose dot at meal time.
+
+SECTIONS (in order): nutrition summary | TIR cards | workout card (if present) | day chart | night chart | meal log table | log entry block.`;
+}
+
+// Update glucose status indicator in the action card
+function updateGlucoseStatusUI() {
+  const el = document.getElementById('glucoseStatus');
+  if (!el) return;
+  const samples = getStoredGlucose(currentDate);
+  if (!samples || samples.length === 0) {
+    el.textContent = 'No glucose — run Shortcut then tap Import';
+    el.style.color = 'var(--text-faint)';
+  } else {
+    const last = new Date(samples[samples.length-1].t)
+      .toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit', timeZone:'America/Chicago' });
+    el.textContent = `✓ ${samples.length} pts · last ${last}`;
+    el.style.color = 'var(--green-1)';
+  }
+}
+
+// Glucose setup guide modal
+document.getElementById('glucoseHelpBtn').addEventListener('click', () => {
+  document.getElementById('glucoseGuideModal').classList.add('show');
+});
+document.getElementById('glucoseGuideClose').addEventListener('click', () => {
+  document.getElementById('glucoseGuideModal').classList.remove('show');
+});
+document.getElementById('glucoseGuideModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('glucoseGuideModal'))
+    document.getElementById('glucoseGuideModal').classList.remove('show');
+});
+
+// Glucose paste fallback modal (when clipboard API is blocked)
+function showGlucosePasteModal() {
+  document.getElementById('glucosePasteInput').value = '';
+  document.getElementById('glucosePasteModal').classList.add('show');
+  setTimeout(() => document.getElementById('glucosePasteInput').focus(), 200);
+}
+function hideGlucosePasteModal() {
+  document.getElementById('glucosePasteModal').classList.remove('show');
+}
+
+document.getElementById('glucosePasteCancel').addEventListener('click', hideGlucosePasteModal);
+document.getElementById('glucosePasteModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('glucosePasteModal')) hideGlucosePasteModal();
+});
+document.getElementById('glucosePasteImport').addEventListener('click', () => {
+  const text = document.getElementById('glucosePasteInput').value.trim();
+  if (!text) { showToast('Paste box is empty', true); return; }
+  const samples = parseGlucoseClipboard(text);
+  if (!samples || samples.length === 0) { showToast('No valid glucose data found', true); return; }
+  saveGlucose(currentDate, samples);
+  updateGlucoseStatusUI();
+  hideGlucosePasteModal();
+  showToast(`✓ ${samples.length} glucose samples imported`);
+});
+
+document.getElementById('importGlucoseBtn').addEventListener('click', async () => {
+  try {
+    const text = await navigator.clipboard.readText();
+    if (!text || !text.trim()) { showGlucosePasteModal(); return; }
+    const samples = parseGlucoseClipboard(text);
+    if (!samples || samples.length === 0) { showGlucosePasteModal(); return; }
+    saveGlucose(currentDate, samples);
+    updateGlucoseStatusUI();
+    showToast(`✓ ${samples.length} glucose pts imported`);
+  } catch (_) {
+    showGlucosePasteModal();
+  }
+});
+
 // ============================================================
 // REPORT PROMPT BUILDERS
 // ============================================================
@@ -2867,6 +3347,7 @@ function renderAll() {
   document.getElementById('insulinMeals').textContent = insulinMeals;
 
   renderMealList();
+  updateGlucoseStatusUI();
 }
 function setProgress(id, current, goal) {
   const el = document.getElementById(id);
