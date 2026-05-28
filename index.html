@@ -378,6 +378,10 @@
   .dose-result-settings-note { font-size: 10px; color: var(--text-faint); margin-top: 6px; }
   .dose-result-u { font-size: 22px; color: var(--text-faint); }
   .dose-result-timing { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .dose-stepper { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 4px 0 2px; }
+  .dose-step-btn { font-family: var(--mono); font-size: 22px; font-weight: 700; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--green-3); background: var(--green-4); color: var(--green-1); display: grid; place-items: center; cursor: pointer; line-height: 1; touch-action: manipulation; }
+  .dose-step-btn:active { background: var(--green-3); }
+  .dose-adjusted-lbl { font-family: var(--mono); font-size: 9px; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; min-height: 12px; }
   .dose-calc-toggle { font-family: var(--mono); font-size: 10px; color: var(--text-faint); text-align: center; padding: 2px 0 8px; cursor: pointer; letter-spacing: 0.5px; }
   .dose-calc-drawer { display: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
   .dose-calc-drawer.open { display: block; }
@@ -898,7 +902,6 @@
       <!-- Quick capture row -->
       <div class="capture-row" id="captureRow">
         <button class="capture-btn" id="photoBtn">📷 Photo</button>
-        <button class="capture-btn" id="barcodeBtn">⬛ Barcode</button>
         <button class="capture-btn" id="partialAddBtn" style="display:none;">+ Add More</button>
       </div>
 
@@ -983,7 +986,7 @@
         <div class="dose-two-col">
           <div class="dose-field">
             <label>Current BS</label>
-            <input type="number" id="dpBs" step="1" value="140" oninput="recalcDp()"/>
+            <input type="number" id="dpBs" step="1" value="" oninput="recalcDp()"/>
           </div>
           <div class="dose-field">
             <label>Time of day</label>
@@ -1005,7 +1008,12 @@
 
         <div class="dose-result-card">
           <div class="dose-result-lbl">Units from your settings</div>
-          <div><span class="dose-result-num" id="dpDoseNum">0</span><span class="dose-result-u"> u</span></div>
+          <div class="dose-stepper">
+            <button class="dose-step-btn" id="dpStepDown" onclick="stepDose(-0.5)">−</button>
+            <div><span class="dose-result-num" id="dpDoseNum">0</span><span class="dose-result-u"> u</span></div>
+            <button class="dose-step-btn" id="dpStepUp" onclick="stepDose(0.5)">+</button>
+          </div>
+          <div class="dose-adjusted-lbl" id="dpAdjustedLbl"></div>
           <div class="dose-result-timing" id="dpTiming">Pre-bolus window: ~10 min</div>
           <div class="dose-result-settings-note">This reflects your personal settings — adjust as you see fit.</div>
         </div>
@@ -1235,7 +1243,7 @@
       <div class="dose-two-col">
         <div class="dose-field">
           <label>Current BS</label>
-          <input type="number" id="scBs" step="1" value="140" oninput="recalcSc()"/>
+          <input type="number" id="scBs" step="1" value="" oninput="recalcSc()"/>
         </div>
         <div class="dose-field">
           <label>Carbs (g)</label>
@@ -1615,8 +1623,21 @@ const DOSE_TIMING = {
   protein_only: 'No carb dose from your settings · protein-only meal'
 };
 
+let dpDoseManual = null; // null = use calculated, number = user override
+
 // Dose panel state (Smart Paste + Favorites flow)
 let dpPendingMeal = null;
+
+function stepDose(delta) {
+  const current = dpDoseManual !== null
+    ? dpDoseManual
+    : parseFloat(document.getElementById('dpDoseNum').textContent) || 0;
+  dpDoseManual = Math.max(0, Math.round((current + delta) * 2) / 2);
+  const el = document.getElementById('dpDoseNum');
+  el.textContent = dpDoseManual % 1 === 0 ? dpDoseManual.toFixed(0) : dpDoseManual.toFixed(1);
+  const lbl = document.getElementById('dpAdjustedLbl');
+  lbl.textContent = dpDoseManual !== parseFloat(document.getElementById('dpTotalVal').textContent) ? 'adjusted' : '';
+}
 let dpTodState = 'afternoon';
 let dpExState = 'none';
 let dpIobEditOpen = false;
@@ -1778,12 +1799,16 @@ function openDosePanel(meal) {
     document.getElementById('dpLastDose').value = 0;
     document.getElementById('dpHoursAgo').value = 0;
   }
+  dpDoseManual = null;
+  document.getElementById('dpAdjustedLbl').textContent = '';
   document.getElementById('spInputRow').style.display = 'none';
   document.getElementById('spDosePanel').style.display = 'block';
   recalcDp();
 }
 function closeDosePanel() {
   dpPendingMeal = null;
+  dpDoseManual = null;
+  document.getElementById('dpAdjustedLbl').textContent = '';
   document.getElementById('spInputRow').style.display = '';
   document.getElementById('spDosePanel').style.display = 'none';
   document.getElementById('smartPaste').value = '';
@@ -1803,7 +1828,11 @@ function recalcDp() {
     document.getElementById('dpIobDetail').textContent = lastDoseVal > 0 ? `Last: ${lastDoseVal}u · ${f1(hoursAgo)}hr ago` : 'No recent insulin';
   }
   document.getElementById('dpIobSubVal').textContent = '−' + f1(iob) + 'u';
-  document.getElementById('dpDoseNum').textContent = r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1);
+  // Only update the big dose number if user hasn't manually adjusted it
+  if (dpDoseManual === null) {
+    document.getElementById('dpDoseNum').textContent = r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1);
+  }
+  document.getElementById('dpAdjustedLbl').textContent = dpDoseManual !== null ? 'adjusted' : '';
   let timing = DOSE_TIMING[r.mt] || DOSE_TIMING.standard;
   if (!r.isProtein && r.mt !== 'high_fat') {
     if (bs >= 120) timing = 'Pre-bolus window: ~10 min';
@@ -1896,6 +1925,7 @@ function toggleManualForm() {
   const open = body.style.display === 'block';
   body.style.display = open ? 'none' : 'block';
   toggle.textContent = open ? '+ Log manually' : '− Log manually';
+  if (!open) document.getElementById('m_time').value = nowHHMM();
 }
 
 // ============================================================
@@ -2734,21 +2764,16 @@ document.getElementById('glucosePasteImport').addEventListener('click', () => {
   saveGlucose(currentDate, samples);
   updateGlucoseStatusUI();
   hideGlucosePasteModal();
-  showToast(`✓ ${samples.length} glucose samples imported`);
+  // Use longer toast for import confirmation so user can read it
+  const el = document.getElementById('toast');
+  el.textContent = `✓ ${samples.length} glucose samples imported`;
+  el.className = 'toast show';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 4000);
 });
 
-document.getElementById('importGlucoseBtn').addEventListener('click', async () => {
-  try {
-    const text = await navigator.clipboard.readText();
-    if (!text || !text.trim()) { showGlucosePasteModal(); return; }
-    const samples = parseGlucoseClipboard(text);
-    if (!samples || samples.length === 0) { showGlucosePasteModal(); return; }
-    saveGlucose(currentDate, samples);
-    updateGlucoseStatusUI();
-    showToast(`✓ ${samples.length} glucose pts imported`);
-  } catch (_) {
-    showGlucosePasteModal();
-  }
+document.getElementById('importGlucoseBtn').addEventListener('click', () => {
+  showGlucosePasteModal();
 });
 
 // ============================================================
@@ -3739,27 +3764,40 @@ document.getElementById('photoBtn').addEventListener('click', () => {
   document.getElementById('photoFile').click();
 });
 
-document.getElementById('barcodeBtn').addEventListener('click', () => {
-  document.getElementById('barcodeFile').value = '';
-  document.getElementById('barcodeFile').click();
-});
+// barcodeBtn removed — single camera button handles both photo and barcode
 
 document.getElementById('photoFile').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
   document.getElementById('photoBtn').classList.add('active');
+  let b64;
   try {
-    pendingPhotoBase64 = await fileToBase64(file);
+    b64 = await fileToBase64(file);
   } catch (err) {
     showToast('Error loading photo: ' + err.message, true);
+    document.getElementById('photoBtn').classList.remove('active');
     return;
   }
-  // Show desc row and wait for user to hit Analyze
+  // Try barcode detection first — no AI tokens needed if found
+  if ('BarcodeDetector' in window) {
+    try {
+      const detector = new BarcodeDetector();
+      const blob = await fetch(`data:image/jpeg;base64,${b64}`).then(r => r.blob());
+      const bitmap = await createImageBitmap(blob);
+      const codes = await detector.detect(bitmap);
+      if (codes.length > 0) {
+        showAiStatus('Barcode detected — looking up product…');
+        await fetchOpenFoodFacts(codes[0].rawValue);
+        document.getElementById('photoBtn').classList.remove('active');
+        return;
+      }
+    } catch (_) {}
+  }
+  // No barcode found — proceed with AI photo analysis
+  pendingPhotoBase64 = b64;
   document.getElementById('photoDescRow').style.display = 'block';
   showAiStatus('');
-  // Check for favorite match silently in background
   try { await checkFavoritePhotoMatch(pendingPhotoBase64); } catch {}
-  // Focus desc field so keyboard comes up
   setTimeout(() => document.getElementById('photoDesc').focus(), 100);
 });
 
@@ -3771,7 +3809,7 @@ document.getElementById('scanSubmitBtn').addEventListener('click', async () => {
 document.getElementById('barcodeFile').addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
-  document.getElementById('barcodeBtn').classList.add('active');
+  
   showAiStatus('Reading barcode…');
   const b64 = await fileToBase64(file);
   await scanBarcode(b64);
@@ -3900,7 +3938,7 @@ async function scanBarcode(b64) {
       const codes = await detector.detect(bitmap);
       if (codes.length > 0) {
         await fetchOpenFoodFacts(codes[0].rawValue);
-        document.getElementById('barcodeBtn').classList.remove('active');
+        
         return;
       }
     } catch {}
@@ -3931,7 +3969,7 @@ async function scanBarcode(b64) {
     showToast('Barcode scan failed', true);
     showAiStatus('');
   }
-  document.getElementById('barcodeBtn').classList.remove('active');
+  
 }
 
 async function fetchOpenFoodFacts(barcode) {
