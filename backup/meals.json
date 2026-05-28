@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-27T14:17:08.198Z",
+  "exported": "2026-05-28T02:12:23.519Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -3851,6 +3851,127 @@
             "preBolus": "first_bite",
             "activityAfter": false,
             "iob": 5.5
+          }
+        }
+      ],
+      "2026-05-27": [
+        {
+          "id": "m_1779904889225_d7i3o",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "13:01",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 116
+          }
+        },
+        {
+          "id": "m_1779915249208_brhcj",
+          "name": "Favorite protein shake",
+          "macros": {
+            "protein": 50,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "15:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.1,
+            "bsAtDose": 116
+          }
+        },
+        {
+          "id": "m_1779921430952_llour",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:37",
+          "starred": false
+        },
+        {
+          "id": "m_1779921441265_shnlf",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:37",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 96
+          }
+        },
+        {
+          "id": "m_1779925217378_687j1",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "18:40",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "after",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 123
           }
         }
       ]
