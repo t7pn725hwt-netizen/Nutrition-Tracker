@@ -880,7 +880,7 @@
   <div class="tabs">
     <button class="active" data-tab="log">Log</button>
     <button data-tab="favs">Favorites</button>
-    <button data-tab="dose">Insulin</button>
+    <button data-tab="dose">Calculator</button>
     <button data-tab="reports">⊙ Reports</button>
     <button data-tab="settings">⚙</button>
   </div>
@@ -926,7 +926,6 @@
 
       <!-- Hidden file inputs -->
       <input type="file" id="photoFile" accept="image/*" style="display:none;" />
-      <input type="file" id="barcodeFile" accept="image/*" capture="environment" style="display:none;" />
 
       <!-- Dose panel (shown after parse) -->
       <div id="spDosePanel" style="display:none;">
@@ -1625,9 +1624,6 @@ const DOSE_TIMING = {
 
 let dpDoseManual = null; // null = use calculated, number = user override
 
-// Dose panel state (Smart Paste + Favorites flow)
-let dpPendingMeal = null;
-
 function stepDose(delta) {
   const current = dpDoseManual !== null
     ? dpDoseManual
@@ -1815,7 +1811,7 @@ function closeDosePanel() {
 }
 function recalcDp() {
   if (!dpPendingMeal) return;
-  const bs = parseFloat(document.getElementById('dpBs').value) || DOSE_TARGET;
+  const bs = parseFloat(document.getElementById('dpBs').value) || getDoseSettings().target;
   const lastDoseVal = parseFloat(document.getElementById('dpLastDose').value) || 0;
   const hoursAgo = parseFloat(document.getElementById('dpHoursAgo').value) || 0;
   const x = dpPendingMeal.macros;
@@ -1856,7 +1852,7 @@ function recalcDp() {
   } else { exRow.style.display = 'none'; }
   document.getElementById('dpTotalVal').textContent = (r.rec % 1 === 0 ? r.rec.toFixed(0) : r.rec.toFixed(1)) + 'u';
   // Night advisory
-  const advisory = getNightAdvisory(parseFloat(document.getElementById('dpBs').value) || DOSE_TARGET);
+  const advisory = getNightAdvisory(parseFloat(document.getElementById('dpBs').value) || getDoseSettings().target);
   const advEl = document.getElementById('dpNightAdvisory');
   advEl.textContent = advisory || '';
   advEl.style.display = advisory ? 'block' : 'none';
@@ -1946,7 +1942,7 @@ function initScIob() {
   recalcSc();
 }
 function recalcSc() {
-  const bs = parseFloat(document.getElementById('scBs').value) || DOSE_TARGET;
+  const bs = parseFloat(document.getElementById('scBs').value) || getDoseSettings().target;
   const carbs = parseFloat(document.getElementById('scCarbs').value) || 0;
   const fiber = parseFloat(document.getElementById('scFiber').value) || 0;
   const fat = parseFloat(document.getElementById('scFat').value) || 0;
@@ -1967,7 +1963,7 @@ function recalcSc() {
 
   let rec, timing, label;
   if (correctionOnly) {
-    const corr = (bs - DOSE_TARGET) / isf;
+    const corr = (bs - getDoseSettings().target) / isf;
     const raw = corr - iob;
     rec = Math.max(0, Math.round(raw * 2) / 2);
     label = 'Correction Units';
@@ -3743,8 +3739,9 @@ async function githubSync(manual = false) {
 // Auto-sync after each meal save — debounced
 let syncTimer;
 const _origSaveData = saveData;
-// Wrap saveData to trigger sync
-const saveDataWithSync = function() {
+// Override saveData globally so all callers trigger sync
+// eslint-disable-next-line no-global-assign
+saveData = function() {
   _origSaveData();
   clearTimeout(syncTimer);
   syncTimer = setTimeout(() => githubSync(), 4000);
@@ -3763,8 +3760,6 @@ document.getElementById('photoBtn').addEventListener('click', () => {
   document.getElementById('photoFile').value = '';
   document.getElementById('photoFile').click();
 });
-
-// barcodeBtn removed — single camera button handles both photo and barcode
 
 document.getElementById('photoFile').addEventListener('change', async (e) => {
   const file = e.target.files[0];
@@ -3804,15 +3799,6 @@ document.getElementById('photoFile').addEventListener('change', async (e) => {
 document.getElementById('scanSubmitBtn').addEventListener('click', async () => {
   if (!pendingPhotoBase64) { showToast('No photo selected', true); return; }
   await scanPhotoMeal();
-});
-
-document.getElementById('barcodeFile').addEventListener('change', async (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  
-  showAiStatus('Reading barcode…');
-  const b64 = await fileToBase64(file);
-  await scanBarcode(b64);
 });
 
 function showAiStatus(msg) {
@@ -3873,7 +3859,7 @@ Return ONLY valid JSON, no markdown, no explanation:
     const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
+      body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 400, system: systemPrompt, messages: [{ role: 'user', content: userContent }] })
     });
     if (!resp.ok) {
       const errText = await resp.text();
@@ -3927,50 +3913,7 @@ Return ONLY valid JSON, no markdown, no explanation:
   }
 }
 
-async function scanBarcode(b64) {
-  const key = getAnthropicKey();
-  // Try native BarcodeDetector first
-  if ('BarcodeDetector' in window) {
-    try {
-      const detector = new BarcodeDetector();
-      const blob = await fetch(`data:image/jpeg;base64,${b64}`).then(r => r.blob());
-      const bitmap = await createImageBitmap(blob);
-      const codes = await detector.detect(bitmap);
-      if (codes.length > 0) {
-        await fetchOpenFoodFacts(codes[0].rawValue);
-        
-        return;
-      }
-    } catch {}
-  }
-  // Fallback: use vision API to read barcode
-  if (!key) { showToast('Add API key in Settings for barcode scanning', true); showAiStatus(''); return; }
-  try {
-    const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001', max_tokens: 100,
-        messages: [{ role: 'user', content: [
-          { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } },
-          { type: 'text', text: 'Read the barcode/UPC number in this image. Return ONLY the numeric barcode, nothing else.' }
-        ]}]
-      })
-    });
-    const data = await resp.json();
-    const barcode = (data.content?.[0]?.text || '').trim().replace(/\D/g, '');
-    if (barcode.length >= 8) {
-      await fetchOpenFoodFacts(barcode);
-    } else {
-      showToast('Could not read barcode — try again', true);
-      showAiStatus('');
-    }
-  } catch {
-    showToast('Barcode scan failed', true);
-    showAiStatus('');
-  }
-  
-}
+
 
 async function fetchOpenFoodFacts(barcode) {
   showAiStatus('Looking up product…');
@@ -3982,7 +3925,6 @@ async function fetchOpenFoodFacts(barcode) {
     const n = p.nutriments || {};
     const serving = p.serving_size ? parseFloat(p.serving_size) || 100 : 100;
     const name = p.product_name || p.abbreviated_product_name || 'Scanned Product';
-    // Open Food Facts returns per 100g — use serving size
     const scale = serving / 100;
     const meal = {
       name,
@@ -4487,7 +4429,7 @@ document.getElementById('r-import-save').addEventListener('click',()=>{
   document.getElementById('r-import-modal').classList.remove('show');
   const idx=rLoadIdx(w).indexOf(date);
   rSetCur(idx!==-1?idx:0);
-  rRender();
+  requestAnimationFrame(()=>{ rFrameWrap.classList.remove('show'); requestAnimationFrame(()=>rRender()); });
   showToast('Saved · '+(w?rWeekRange(date):rShortDate(date)));
 });
 
