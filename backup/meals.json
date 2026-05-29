@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-29T16:30:52.018Z",
+  "exported": "2026-05-29T17:21:57.186Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4184,6 +4184,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 151
+          }
+        }
+      ],
+      "2026-05-29": [
+        {
+          "id": "m_1780075277373_eszvp",
+          "name": "Wild Keta Salmon Fillet with Broccoli",
+          "macros": {
+            "protein": 36,
+            "fiber": 4,
+            "carbs": 8,
+            "calories": 295,
+            "fat": 14,
+            "satFat": 1.5,
+            "sodium": 465,
+            "sugar": 2,
+            "calcium": 110,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "12:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
