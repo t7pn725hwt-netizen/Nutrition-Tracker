@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-29T19:13:38.035Z",
+  "exported": "2026-05-29T21:19:02.265Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4236,6 +4236,50 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": 121
+          }
+        },
+        {
+          "id": "m_1780082023603_tfbns",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:13",
+          "starred": false
+        },
+        {
+          "id": "m_1780087874534_x3pb2",
+          "name": "Fage 2% Greek Yogurt with Organic Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "15:51",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 1.7,
+            "bsAtDose": 123
           }
         }
       ]
