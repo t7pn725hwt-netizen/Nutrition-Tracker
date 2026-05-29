@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-28T22:18:55.078Z",
+  "exported": "2026-05-29T02:07:39.589Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4081,6 +4081,81 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": 100
+          }
+        },
+        {
+          "id": "m_1780009087367_p8e5s",
+          "name": "Puppy Chow (Chex Mix)",
+          "macros": {
+            "protein": 3,
+            "fiber": 1,
+            "carbs": 70,
+            "calories": 180,
+            "fat": 9,
+            "satFat": 1.5,
+            "sodium": 340,
+            "sugar": 12,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "17:58",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0.9,
+            "bsAtDose": 182
+          }
+        },
+        {
+          "id": "m_1780009180510_irq1c",
+          "name": "Chicken & Spinach Salad with Yogurt Sauce",
+          "macros": {
+            "protein": 54,
+            "fiber": 4,
+            "carbs": 12,
+            "calories": 380,
+            "fat": 12,
+            "satFat": 3,
+            "sodium": 520,
+            "sugar": 3,
+            "calcium": 280,
+            "vitD": 2,
+            "insulin": 0
+          },
+          "time": "17:59",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 11.8,
+            "bsAtDose": 182
+          }
+        },
+        {
+          "id": "m_1780015486298_nc568",
+          "name": "Oreo Cheesecake with Raspberry Sauce",
+          "macros": {
+            "protein": 8,
+            "fiber": 0,
+            "carbs": 45,
+            "calories": 380,
+            "fat": 22,
+            "satFat": 12,
+            "sodium": 280,
+            "sugar": 38,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "19:44",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 6.1,
+            "bsAtDose": 147
           }
         }
       ]
