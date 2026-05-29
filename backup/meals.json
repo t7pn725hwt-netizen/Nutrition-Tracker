@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-29T04:01:12.903Z",
+  "exported": "2026-05-29T05:01:23.625Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -183,101 +183,6 @@
       ],
       "2026-05-25": [
         {
-          "id": "m_1779733301216_9umbc",
-          "name": "Favorite protein shake",
-          "macros": {
-            "protein": 50,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 0
-          },
-          "time": "13:21",
-          "starred": true
-        },
-        {
-          "id": "m_1779733312373_leuug",
-          "name": "Favorite turkey",
-          "macros": {
-            "protein": 50,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 0
-          },
-          "time": "13:21",
-          "starred": false
-        },
-        {
-          "id": "m_1779739530152_nxapp",
-          "name": "Chicago deep dish",
-          "macros": {
-            "protein": 40,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 7
-          },
-          "time": "15:05",
-          "starred": false
-        },
-        {
-          "id": "m_1779751814253_9r42t",
-          "name": "2 avacado favorites",
-          "macros": {
-            "protein": 0,
-            "fiber": 20,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 0
-          },
-          "time": "18:29",
-          "starred": false
-        },
-        {
-          "id": "m_1779751824924_r7cl4",
-          "name": "8 oz chicken",
-          "macros": {
-            "protein": 50,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "vitD": 0,
-            "calcium": 0,
-            "insulin": 0
-          },
-          "time": "18:30",
-          "starred": false
-        },
-        {
           "id": "m_1779763831196_ogwsb",
           "name": "Lantus",
           "macros": {
@@ -297,6 +202,107 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 148
+          }
+        },
+        {
+          "id": "m_1780029630298_908nl",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:22",
+          "starred": false
+        },
+        {
+          "id": "m_1780029674465_57bz1",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:21",
+          "starred": false
+        },
+        {
+          "id": "m_1780029714134_wrvc3",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:29",
+          "starred": false
+        },
+        {
+          "id": "m_1780029796256_iyj13",
+          "name": "8 oz Grilled Chicken Breast",
+          "macros": {
+            "protein": 70,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 375,
+            "fat": 8,
+            "satFat": 2,
+            "sodium": 170,
+            "sugar": 0,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:30",
+          "starred": false
+        },
+        {
+          "id": "m_1780029874901_u9low",
+          "name": "1 Large Slice Chicago Pepperoni Deep Dish Pizza",
+          "macros": {
+            "protein": 40,
+            "fiber": 3,
+            "carbs": 42,
+            "calories": 620,
+            "fat": 38,
+            "satFat": 16,
+            "sodium": 1350,
+            "sugar": 6,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "15:05",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ],
@@ -4156,6 +4162,28 @@
             "activityAfter": false,
             "iob": 6.1,
             "bsAtDose": 147
+          }
+        },
+        {
+          "id": "m_1780027290291_l4m9w",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "23:01",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 151
           }
         }
       ]
