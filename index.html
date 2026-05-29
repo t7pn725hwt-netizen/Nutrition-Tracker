@@ -473,15 +473,6 @@
     background: var(--green-4); color: var(--green-1);
     border: 1px solid var(--green-3);
   }
-  /* Reports tab button */
-  .tabs button[data-tab="reports"] {
-    border: 1px solid var(--green-3);
-    color: var(--green-1);
-  }
-  .tabs button[data-tab="reports"].active {
-    background: var(--green-4);
-    color: var(--green-1);
-  }
   .restore-banner {
     display: none;
     background: linear-gradient(135deg, #0c1b15 0%, #0f2a1e 100%);
@@ -1289,7 +1280,7 @@
         </div>
         <div class="dose-field">
           <label>Reason</label>
-          <select id="insOnlyReason" style="font-family:var(--mono);font-size:14px;font-weight:600;text-align:center;background:var(--surface-2);color:var(--tx);border:1px solid var(--border);border-radius:8px;padding:10px 8px;outline:none;width:100%;color:var(--text);">
+          <select id="insOnlyReason" style="font-family:var(--mono);font-size:14px;font-weight:600;text-align:center;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:10px 8px;outline:none;width:100%;color:var(--text);">
             <option value="correction">Correction</option>
             <option value="lantus">Lantus</option>
             <option value="other">Other</option>
@@ -2127,13 +2118,13 @@ function dayMeals(iso) {
 function addMeal(iso, meal) {
   if (!state.meals[iso]) state.meals[iso] = [];
   state.meals[iso].push(meal);
-  saveData();
+  saveAndSync();
 }
 function deleteMeal(iso, id) {
   if (!state.meals[iso]) return;
   state.meals[iso] = state.meals[iso].filter(m => m.id !== id);
   if (state.meals[iso].length === 0) delete state.meals[iso];
-  saveData();
+  saveAndSync();
 }
 
 function blankMacros() {
@@ -2213,8 +2204,7 @@ function parseSmartPaste(text) {
   return { name: name || 'Meal', macros };
 }
 
-// Tab switching handled below after all features are initialized
-
+// Tab switching is wired up in the TAB HANDLER section below
 
 // ============================================================
 // UI: DATE NAV
@@ -2253,6 +2243,16 @@ document.getElementById('parseClearBtn').addEventListener('click', () => {
 });
 document.getElementById('doseLogBtn').addEventListener('click', () => {
   if (!dpPendingMeal) return;
+  // Save AI correction learning data before logging
+  if (dpPendingMeal.aiEstimate) {
+    const est = dpPendingMeal.aiEstimate;
+    const actual = dpPendingMeal.macros;
+    if (Math.abs(actual.protein - est.protein) > 2 ||
+        Math.abs(actual.carbs - est.carbs) > 3 ||
+        Math.abs(actual.calories - est.calories) > 20) {
+      saveCorrection(dpPendingMeal.name, est, actual);
+    }
+  }
   const doseText = document.getElementById('dpDoseNum').textContent;
   const dose = parseFloat(doseText) || 0;
   const meal = {
@@ -3086,7 +3086,7 @@ function useFavorite(id) {
   const f = state.favorites.find(x => x.id === id);
   if (!f) return;
   // Switch to Log tab and open dose panel
-  document.querySelector('.tabs button[data-tab="log"]').click();
+  switchTab('log');
   openDosePanel({ name: f.name, macros: { ...f.macros } });
 }
 function renameFavorite(id) {
@@ -3109,7 +3109,7 @@ function openEditFavoriteModal(f) {
     f.macros.fiber = parseFloat(document.getElementById('favEditFiber').value) || 0;
     f.macros.fat = parseFloat(document.getElementById('favEditFat').value) || 0;
     f.macros.calories = parseFloat(document.getElementById('favEditCal').value) || 0;
-    saveData();
+    saveAndSync();
     document.getElementById('favEditModal').classList.remove('show');
     renderFavorites();
     showToast('Favorite updated');
@@ -3121,7 +3121,7 @@ function openEditFavoriteModal(f) {
 function deleteFavorite(id) {
   if (!confirm('Delete this favorite?')) return;
   state.favorites = state.favorites.filter(x => x.id !== id);
-  saveData();
+  saveAndSync();
   renderFavorites();
 }
 function starMeal(meal) {
@@ -3135,18 +3135,17 @@ function starMeal(meal) {
       });
     }
   }
-  saveData();
+  saveAndSync();
   renderAll();
 }
 
-// ============================================================
 // ============================================================
 // DATA TOOLS
 // ============================================================
 document.getElementById('resetDayBtn').addEventListener('click', () => {
   if (!confirm(`Clear all meals for ${prettyDate(currentDate)}?`)) return;
   delete state.meals[currentDate];
-  saveData();
+  saveAndSync();
   renderAll();
   showToast('Day cleared');
 });
@@ -3154,7 +3153,7 @@ document.getElementById('resetAllBtn').addEventListener('click', () => {
   if (!confirm('Reset ALL data including favorites and goals? This cannot be undone.')) return;
   if (!confirm('Really? This will erase your entire history.')) return;
   state = blankData();
-  saveData();
+  saveAndSync();
   renderAll();
   showToast('All data reset');
 });
@@ -3450,7 +3449,7 @@ function openEditModal(meal) {
     meal.macros.calcium = parseFloat(document.getElementById('edit_ca').value) || 0;
     meal.macros.insulin = parseFloat(document.getElementById('edit_ins').value) || 0;
     meal.time = document.getElementById('edit_time').value || meal.time;
-    saveData();
+    saveAndSync();
     document.getElementById('editModal').classList.remove('show');
     renderAll();
     showToast('Meal updated');
@@ -3613,7 +3612,7 @@ document.getElementById('saveGoalsBtn').addEventListener('click', () => {
   state.goals.protein  = parseInt(document.getElementById('goalProtein').value)  || 200;
   state.goals.fiber    = parseInt(document.getElementById('goalFiber').value)    || 30;
   state.goals.calories = parseInt(document.getElementById('goalCalories').value) || 2800;
-  saveData();
+  saveAndSync();
   renderAll();
   showToast('Goals updated');
 });
@@ -3725,16 +3724,13 @@ async function githubSync(manual = false) {
   syncInProgress = false;
 }
 
-// Auto-sync after each meal save — debounced
+// Auto-sync after each meal save — debounced 30s
 let syncTimer;
-const _origSaveData = saveData;
-// Override saveData globally so all callers trigger sync
-// eslint-disable-next-line no-global-assign
-saveData = function() {
-  _origSaveData();
+function saveAndSync() {
+  saveData();
   clearTimeout(syncTimer);
-  syncTimer = setTimeout(() => githubSync(), 4000);
-};
+  syncTimer = setTimeout(() => githubSync(), 30000);
+}
 
 // ============================================================
 // PHOTO / BARCODE LOGGING
@@ -3845,6 +3841,8 @@ Return ONLY valid JSON, no markdown, no explanation:
       { type: 'text', text: desc ? `Photo of meal. Additional detail: ${desc}` : 'Estimate the macros for this meal.' }
     ];
 
+    // Cloudflare Workers proxy — adds CORS headers for browser→Anthropic.
+    // iOS app: call api.anthropic.com directly via the Anthropic iOS SDK instead.
     const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
@@ -3907,7 +3905,8 @@ Return ONLY valid JSON, no markdown, no explanation:
 async function fetchOpenFoodFacts(barcode) {
   showAiStatus('Looking up product…');
   try {
-    const r = await fetch(`https://little-fog-50ac.d22f8kg97r.workers.dev/off/api/v2/product/${barcode}.json`);
+    // Cloudflare Workers proxy rewrites to openfoodfacts.org — call that directly from iOS.
+  const r = await fetch(`https://little-fog-50ac.d22f8kg97r.workers.dev/off/api/v2/product/${barcode}.json`);
     const data = await r.json();
     if (data.status !== 1) { showToast('Product not found in database', true); showAiStatus(''); return; }
     const p = data.product;
@@ -3945,6 +3944,7 @@ async function checkFavoritePhotoMatch(b64) {
   if (!key || !state.favorites.length) return;
   try {
     const favNames = state.favorites.map(f => f.name).join(', ');
+    // Cloudflare Workers proxy — same as above, replace with direct iOS SDK call.
     const resp = await fetch('https://little-fog-50ac.d22f8kg97r.workers.dev/anthropic/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
@@ -4028,22 +4028,6 @@ function getCorrectionsContext() {
   return `\nPast corrections to learn from:\n${lines.join('\n')}\nUse these to calibrate your estimates for similar foods.`;
 }
 
-// Attach correction handler to doseLogBtn — save correction if meal has aiEstimate
-const _origDoseLogBtn = document.getElementById('doseLogBtn');
-_origDoseLogBtn.addEventListener('click', () => {
-  // After logging, if meal had an AI estimate, offer correction
-  if (dpPendingMeal && dpPendingMeal.aiEstimate) {
-    const est = dpPendingMeal.aiEstimate;
-    const actual = dpPendingMeal.macros;
-    // Only save if user edited macros (difference detected)
-    if (Math.abs(actual.protein - est.protein) > 2 ||
-        Math.abs(actual.carbs - est.carbs) > 3 ||
-        Math.abs(actual.calories - est.calories) > 20) {
-      saveCorrection(dpPendingMeal.name, est, actual);
-    }
-  }
-}, true); // capture phase so it runs before the existing handler
-
 
 function getRecentMeals(limit = 5) {
   const seen = new Set();
@@ -4082,7 +4066,7 @@ function renderRecents() {
       <button class="primary" style="padding:7px 12px;font-size:12px;flex-shrink:0;">USE</button>
     `;
     row.querySelector('button').addEventListener('click', () => {
-      document.querySelector('.tabs button[data-tab="log"]').click();
+      switchTab('log');
       openDosePanel({ name: m.name, macros: { ...m.macros, insulin: 0 } });
     });
     list.appendChild(row);
@@ -4092,20 +4076,32 @@ function renderRecents() {
 // ============================================================
 // TAB HANDLER (updated to include settings + recents)
 // ============================================================
-document.querySelectorAll('.tabs button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const tab = btn.dataset.tab;
-    if (tab === 'reports') return; // handled by reports library
-    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-log').style.display      = tab === 'log'      ? '' : 'none';
-    document.getElementById('tab-favs').style.display     = tab === 'favs'     ? '' : 'none';
-    document.getElementById('tab-dose').style.display     = tab === 'dose'     ? '' : 'none';
-    document.getElementById('tab-settings').style.display = tab === 'settings' ? '' : 'none';
-    if (tab === 'favs')     { renderFavorites(); renderRecents(); }
-    if (tab === 'dose')     initScIob();
-    if (tab === 'settings') initSettingsTab();
+function switchTab(tab) {
+  if (tab === 'reports') {
+    // Reports is a full-screen overlay — hide all tab sections, open the reports UI
+    document.querySelectorAll('.tabs button').forEach(b => {
+      b.classList.toggle('active', b.dataset.tab === 'reports');
+    });
+    document.getElementById('tab-log').style.display      = 'none';
+    document.getElementById('tab-favs').style.display     = 'none';
+    document.getElementById('tab-dose').style.display     = 'none';
+    document.getElementById('tab-settings').style.display = 'none';
+    openReports();
+    return;
+  }
+  document.querySelectorAll('.tabs button').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === tab);
   });
+  document.getElementById('tab-log').style.display      = tab === 'log'      ? '' : 'none';
+  document.getElementById('tab-favs').style.display     = tab === 'favs'     ? '' : 'none';
+  document.getElementById('tab-dose').style.display     = tab === 'dose'     ? '' : 'none';
+  document.getElementById('tab-settings').style.display = tab === 'settings' ? '' : 'none';
+  if (tab === 'favs')     { renderFavorites(); renderRecents(); }
+  if (tab === 'dose')     initScIob();
+  if (tab === 'settings') initSettingsTab();
+}
+document.querySelectorAll('.tabs button').forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn.dataset.tab));
 });
 
 // Init sync status display on load
@@ -4117,342 +4113,457 @@ if (appSettings.lastSync) {
 setTimeout(() => githubSync(), 3000);
 
 
-(function() {
-'use strict';
+// ============================================================
+// REPORTS LIBRARY
+// ============================================================
 
-function ridxKey(w)  { return w ? 'rlib_w_index' : 'rlib_index'; }
-function rRptKey(d,w){ return (w?'rlib_w_':'rlib_')+d; }
-function rMetKey(d,w){ return (w?'rlib_w_meta_':'rlib_meta_')+d; }
+// --- Storage key helpers ---
+function reportIndexKey(isWeekly)      { return isWeekly ? 'rlib_w_index' : 'rlib_index'; }
+function reportDataKey(date, isWeekly) { return (isWeekly ? 'rlib_w_' : 'rlib_') + date; }
+function reportMetaKey(date, isWeekly) { return (isWeekly ? 'rlib_w_meta_' : 'rlib_meta_') + date; }
 
-function rLoadIdx(w)    { try{return JSON.parse(localStorage.getItem(ridxKey(w))||'[]');}catch{return[];} }
-function rSaveIdx(a,w)  { localStorage.setItem(ridxKey(w),JSON.stringify(a)); }
-function rLoadRpt(d,w)  { return localStorage.getItem(rRptKey(d,w)); }
-function rLoadMeta(d,w) { try{return JSON.parse(localStorage.getItem(rMetKey(d,w))||'{}');}catch{return{};} }
-function rSaveMeta(d,m,w){ localStorage.setItem(rMetKey(d,w),JSON.stringify(m)); }
-
-function rSaveReport(date,html,isW){
-  localStorage.setItem(rRptKey(date,isW),html);
-  rSaveMeta(date,isW?rExtractWeeklyMeta(html):rExtractMeta(html),isW);
-  const idx=rLoadIdx(isW);
-  if(!idx.includes(date))idx.push(date);
-  idx.sort((a,b)=>b.localeCompare(a));
-  rSaveIdx(idx,isW);
+function loadReportIndex(isWeekly) {
+  try { return JSON.parse(localStorage.getItem(reportIndexKey(isWeekly)) || '[]'); } catch { return []; }
 }
-function rDeleteReport(date,isW){
-  localStorage.removeItem(rRptKey(date,isW));
-  localStorage.removeItem(rMetKey(date,isW));
-  rSaveIdx(rLoadIdx(isW).filter(d=>d!==date),isW);
+function saveReportIndex(arr, isWeekly) {
+  localStorage.setItem(reportIndexKey(isWeekly), JSON.stringify(arr));
+}
+function loadReportHTML(date, isWeekly) {
+  return localStorage.getItem(reportDataKey(date, isWeekly));
+}
+function loadReportMeta(date, isWeekly) {
+  try { return JSON.parse(localStorage.getItem(reportMetaKey(date, isWeekly)) || '{}'); } catch { return {}; }
+}
+function saveReportMeta(date, meta, isWeekly) {
+  localStorage.setItem(reportMetaKey(date, isWeekly), JSON.stringify(meta));
 }
 
-function rExtractMeta(html){
-  const m={};
-  const t1=html.match(/class="tv"[^>]*>\s*([\d.]+)%[\s\S]{0,80}In Range/);
-  if(t1)m.tir=parseFloat(t1[1]);
-  const pp=html.match(/trf-val[^>]+>\s*(\d+)g/);
-  if(pp)m.protein=parseInt(pp[1]);
-  const ag=html.match(/color:var\(--tx\)">\s*(\d{2,3})\s*<\/div>[\s\S]{0,60}Avg mg/);
-  if(ag)m.avgGlucose=parseInt(ag[1]);
-  const hi=html.match(/color:var\(--or\)">([\d.]+)%<\/div>[\s\S]{0,60}Above 180/);
-  if(hi&&parseFloat(hi[1])>0)m.high=parseFloat(hi[1]);
-  const lo=html.match(/color:var\(--re\)">([\d.]+)%<\/div>[\s\S]{0,60}Below 70/);
-  if(lo&&parseFloat(lo[1])>0)m.low=parseFloat(lo[1]);
-  return m;
+function saveReport(date, html, isWeekly) {
+  localStorage.setItem(reportDataKey(date, isWeekly), html);
+  saveReportMeta(date, isWeekly ? extractWeeklyReportMeta(html) : extractDailyReportMeta(html), isWeekly);
+  const index = loadReportIndex(isWeekly);
+  if (!index.includes(date)) index.push(date);
+  index.sort((a, b) => b.localeCompare(a));
+  saveReportIndex(index, isWeekly);
 }
-function rExtractWeeklyMeta(html){
-  const m={};
-  const t1=html.match(/Overall TIR[\s\S]{0,200}?([\d.]+)%/i);
-  if(t1)m.tir=parseFloat(t1[1]);
-  const pd=html.match(/(\d+)\s*\/\s*7.*?protein/i);
-  if(pd)m.proteinDays=parseInt(pd[1]);
-  const ag=html.match(/Avg[\s\S]{0,40}?(\d{2,3})\s*mg/i);
-  if(ag)m.avgGlucose=parseInt(ag[1]);
-  const rng=html.match(/(\w+ \d+)\s*[→–-]+\s*(\w+ \d+,?\s*\d{4})/);
-  if(rng)m.range=rng[1]+' → '+rng[2].replace(/,?\s*\d{4}/,'');
-  return m;
+function deleteReport(date, isWeekly) {
+  localStorage.removeItem(reportDataKey(date, isWeekly));
+  localStorage.removeItem(reportMetaKey(date, isWeekly));
+  saveReportIndex(loadReportIndex(isWeekly).filter(d => d !== date), isWeekly);
 }
 
-function rToISO(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
-function rTodayISO(){ return rToISO(new Date()); }
-function rPrettyDate(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric',year:'numeric'}); }
-function rShortDate(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
-function rWeekRange(iso){
-  const s=new Date(iso+'T12:00:00'), e=new Date(s); e.setDate(e.getDate()+6);
-  return s.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' – '+e.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+// --- Metadata extraction from saved report HTML ---
+// These regex patterns pull key stats out of the Claude-generated report artifacts
+// so they can appear in the index/browse view without re-parsing the full HTML.
+function extractDailyReportMeta(html) {
+  const meta = {};
+  const tirMatch    = html.match(/class="tv"[^>]*>\s*([\d.]+)%[\s\S]{0,80}In Range/);
+  if (tirMatch)  meta.tir        = parseFloat(tirMatch[1]);
+  const proteinMatch = html.match(/trf-val[^>]+>\s*(\d+)g/);
+  if (proteinMatch) meta.protein = parseInt(proteinMatch[1]);
+  const avgMatch    = html.match(/color:var\(--tx\)">\s*(\d{2,3})\s*<\/div>[\s\S]{0,60}Avg mg/);
+  if (avgMatch)  meta.avgGlucose = parseInt(avgMatch[1]);
+  const highMatch   = html.match(/color:var\(--or\)">([ \d.]+)%<\/div>[\s\S]{0,60}Above 180/);
+  if (highMatch && parseFloat(highMatch[1]) > 0) meta.high = parseFloat(highMatch[1]);
+  const lowMatch    = html.match(/color:var\(--re\)">([ \d.]+)%<\/div>[\s\S]{0,60}Below 70/);
+  if (lowMatch  && parseFloat(lowMatch[1])  > 0) meta.low  = parseFloat(lowMatch[1]);
+  return meta;
 }
-function rDow(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{weekday:'long'}); }
-function rMonthLbl(iso){ return new Date(iso+'T12:00:00').toLocaleDateString('en-US',{month:'long',year:'numeric'}); }
-function rTirColor(t){ if(t==null)return'var(--text-faint)';if(t>=90)return'var(--green-1)';if(t>=70)return'var(--orange)';return'var(--red)'; }
+function extractWeeklyReportMeta(html) {
+  const meta = {};
+  const tirMatch         = html.match(/Overall TIR[\s\S]{0,200}?([\d.]+)%/i);
+  if (tirMatch)      meta.tir         = parseFloat(tirMatch[1]);
+  const proteinDaysMatch = html.match(/(\d+)\s*\/\s*7.*?protein/i);
+  if (proteinDaysMatch) meta.proteinDays = parseInt(proteinDaysMatch[1]);
+  const avgMatch         = html.match(/Avg[\s\S]{0,40}?(\d{2,3})\s*mg/i);
+  if (avgMatch)      meta.avgGlucose  = parseInt(avgMatch[1]);
+  const rangeMatch       = html.match(/(\w+ \d+)\s*[→–-]+\s*(\w+ \d+,?\s*\d{4})/);
+  if (rangeMatch)    meta.range = rangeMatch[1] + ' → ' + rangeMatch[2].replace(/,?\s*\d{4}/, '');
+  return meta;
+}
 
-function rExtractDate(html,isW){
-  if(isW){
-    const m1=html.match(/Week of\s+(\d{4}-\d{2}-\d{2})/i);
-    if(m1)return m1[1];
-    const m2=html.match(/([A-Za-z]+ \d+,?\s+\d{4})\s*[→–-]/);
-    if(m2){const d=new Date(m2[1].trim());if(!isNaN(d))return rToISO(d);}
+// --- Date formatting helpers used in the reports UI ---
+function reportLongDate(iso) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' });
+}
+function reportShortDate(iso) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+function reportWeekRange(iso) {
+  const start = new Date(iso + 'T12:00:00');
+  const end   = new Date(start);
+  end.setDate(end.getDate() + 6);
+  return start.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' \u2013 ' +
+           end.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+function reportDayOfWeek(iso) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long' });
+}
+function reportMonthLabel(iso) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+function tirColorForValue(tir) {
+  if (tir == null) return 'var(--text-faint)';
+  if (tir >= 90)   return 'var(--green-1)';
+  if (tir >= 70)   return 'var(--orange)';
+  return 'var(--red)';
+}
+
+// Try to extract the report date from pasted HTML.
+// Looks for patterns in both daily and weekly report artifacts.
+function extractDateFromReportHTML(html, isWeekly) {
+  if (isWeekly) {
+    const m1 = html.match(/Week of\s+(\d{4}-\d{2}-\d{2})/i);
+    if (m1) return m1[1];
+    const m2 = html.match(/([A-Za-z]+ \d+,?\s+\d{4})\s*[→–-]/);
+    if (m2) { const d = new Date(m2[1].trim()); if (!isNaN(d)) return toLocalISODate(d); }
     return null;
   }
-  const m1=html.match(/<title[^>]*>Daily Report\s*[—–-]+\s*([^<]+)<\/title>/i);
-  if(m1){const d=new Date(m1[1].trim());if(!isNaN(d))return rToISO(d);}
-  const m2=html.match(/class="sub"[^>]*>\s*([A-Za-z]+day,\s+[A-Za-z]+ \d+,\s+\d{4})/);
-  if(m2){const d=new Date(m2[1].trim());if(!isNaN(d))return rToISO(d);}
+  const m1 = html.match(/<title[^>]*>Daily Report\s*[—–-]+\s*([^<]+)<\/title>/i);
+  if (m1) { const d = new Date(m1[1].trim()); if (!isNaN(d)) return toLocalISODate(d); }
+  const m2 = html.match(/class="sub"[^>]*>\s*([A-Za-z]+day,\s+[A-Za-z]+ \d+,\s+\d{4})/);
+  if (m2) { const d = new Date(m2[1].trim()); if (!isNaN(d)) return toLocalISODate(d); }
   return null;
 }
-function rIsWeeklyHTML(html){ return /weekly report/i.test(html.slice(0,2000))||/<title[^>]*>Weekly Report/i.test(html); }
+function isWeeklyReportHTML(html) {
+  return /weekly report/i.test(html.slice(0, 2000)) || /<title[^>]*>Weekly Report/i.test(html);
+}
 
-let rMode='daily';
-let rDailyCur=0, rWeeklyCur=0;
-let rIndexOpen=false;
-let rIsVisible=false;
+// --- Reports UI state ---
+let reportMode         = 'daily'; // 'daily' | 'weekly'
+let reportDailyCursor  = 0;        // index into daily report list (0 = most recent)
+let reportWeeklyCursor = 0;        // index into weekly report list
+let reportIndexOpen    = false;    // is the browse/index panel open
+let reportUIVisible    = false;    // is the full-screen reports overlay showing
 
-function rIsW(){ return rMode==='weekly'; }
-function rGetCur(){ return rIsW()?rWeeklyCur:rDailyCur; }
-function rSetCur(v){ if(rIsW())rWeeklyCur=v; else rDailyCur=v; }
+function isWeeklyMode()     { return reportMode === 'weekly'; }
+function getReportCursor()  { return isWeeklyMode() ? reportWeeklyCursor : reportDailyCursor; }
+function setReportCursor(v) { if (isWeeklyMode()) reportWeeklyCursor = v; else reportDailyCursor = v; }
 
-const rUI        = document.getElementById('reports-ui');
-const rFrameWrap = document.getElementById('r-frame-wrap');
-const rFrame     = document.getElementById('r-frame');
-const rEmpty     = document.getElementById('r-empty');
-const rPrevBtn   = document.getElementById('r-prev');
-const rNextBtn   = document.getElementById('r-next');
-const rDateLbl   = document.getElementById('r-date-lbl');
-const rCount     = document.getElementById('r-count');
-const rDelBtn    = document.getElementById('r-del-btn');
-const rIndexBtn  = document.getElementById('r-index-btn');
-const rIndexPanel= document.getElementById('r-index-panel');
-const rIndexList = document.getElementById('r-index-list');
+// --- DOM references for the reports UI ---
+const reportsUI        = document.getElementById('reports-ui');
+const reportFrameWrap  = document.getElementById('r-frame-wrap');
+const reportFrame      = document.getElementById('r-frame');
+const reportEmpty      = document.getElementById('r-empty');
+const reportPrevBtn    = document.getElementById('r-prev');
+const reportNextBtn    = document.getElementById('r-next');
+const reportDateLabel  = document.getElementById('r-date-lbl');
+const reportCountLabel = document.getElementById('r-count');
+const reportDeleteBtn  = document.getElementById('r-del-btn');
+const reportIndexBtn   = document.getElementById('r-index-btn');
+const reportIndexPanel = document.getElementById('r-index-panel');
+const reportIndexList  = document.getElementById('r-index-list');
 
-window.addEventListener('message', e=>{
-  if(e.data&&e.data.type==='rlib-height'&&e.data.h>100){
-    rFrame.style.height=e.data.h+'px';
+// Inject a height-reporting script into report iframes so they auto-resize.
+// The iframe postMessages its scrollHeight back to the parent each time content changes.
+// For iOS: replace this iframe pattern with WKWebView + loadHTMLString(_:baseURL:).
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === 'rlib-height' && e.data.h > 100) {
+    reportFrame.style.height = e.data.h + 'px';
   }
 });
-const R_HEIGHT_SCRIPT=`<script>(function(){function r(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({type:'rlib-height',h:h},'*');}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(r,200);});}else{setTimeout(r,200);}setTimeout(r,800);setTimeout(r,1800);window.addEventListener('resize',r);})();<\/script>`;
+const IFRAME_HEIGHT_SCRIPT = `<script>(function(){function r(){var h=document.documentElement.scrollHeight||document.body.scrollHeight;window.parent.postMessage({type:'rlib-height',h:h},'*');}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(r,200);});}else{setTimeout(r,200);}setTimeout(r,800);setTimeout(r,1800);window.addEventListener('resize',r);})();<\/script>`;
 
-function rRender(dir){
-  const w=rIsW();
-  const dates=rLoadIdx(w);
-  let cur=rGetCur();
+// ============================================================
+// REPORT RENDERING
+// ============================================================
 
-  if(!dates.length){
-    rEmpty.style.display='flex';
-    rFrameWrap.classList.remove('show');
-    rPrevBtn.disabled=rNextBtn.disabled=true;
-    rDateLbl.textContent='—'; rCount.textContent='';
-    rDelBtn.style.display='none';
-    document.getElementById('r-empty-title').textContent=w?'No Weekly Reports':'No Daily Reports';
+function renderCurrentReport(direction) {
+  const isWeekly = isWeeklyMode();
+  const dates    = loadReportIndex(isWeekly);
+  let cursor     = getReportCursor();
+
+  if (!dates.length) {
+    reportEmpty.style.display = 'flex';
+    reportFrameWrap.classList.remove('show');
+    reportPrevBtn.disabled = reportNextBtn.disabled = true;
+    reportDateLabel.textContent  = '—';
+    reportCountLabel.textContent = '';
+    reportDeleteBtn.style.display = 'none';
+    document.getElementById('r-empty-title').textContent = isWeekly ? 'No Weekly Reports' : 'No Daily Reports';
     return;
   }
 
-  cur=Math.max(0,Math.min(cur,dates.length-1));
-  rSetCur(cur);
-  const date=dates[cur], html=rLoadRpt(date,w);
+  cursor = Math.max(0, Math.min(cursor, dates.length - 1));
+  setReportCursor(cursor);
+  const date = dates[cursor];
+  const html = loadReportHTML(date, isWeekly);
 
-  if(dir&&rFrameWrap.classList.contains('show')){
-    rFrameWrap.classList.add(dir==='next'?'r-slide-left':'r-slide-right');
-    setTimeout(()=>{
-      rFrameWrap.classList.remove('r-slide-left','r-slide-right');
-      document.getElementById('r-content').scrollTop=0; rFrame.style.height='600px';
-      rLoadFrame(html);
-    },120);
+  // Animate slide transition when navigating prev/next
+  if (direction && reportFrameWrap.classList.contains('show')) {
+    reportFrameWrap.classList.add(direction === 'next' ? 'r-slide-left' : 'r-slide-right');
+    setTimeout(() => {
+      reportFrameWrap.classList.remove('r-slide-left', 'r-slide-right');
+      document.getElementById('r-content').scrollTop = 0;
+      reportFrame.style.height = '600px';
+      loadReportIntoFrame(html);
+    }, 120);
   } else {
-    document.getElementById('r-content').scrollTop=0; rFrame.style.height='600px';
-    rLoadFrame(html);
+    document.getElementById('r-content').scrollTop = 0;
+    reportFrame.style.height = '600px';
+    loadReportIntoFrame(html);
   }
 
-  rEmpty.style.display='none';
-  rFrameWrap.classList.add('show');
-  rDelBtn.style.display='grid';
+  reportEmpty.style.display = 'none';
+  reportFrameWrap.classList.add('show');
+  reportDeleteBtn.style.display = 'grid';
 
-  const meta=rLoadMeta(date,w);
-  rDateLbl.textContent=w?(meta.range||rWeekRange(date)):rShortDate(date);
-  rCount.textContent=(cur+1)+' / '+dates.length;
-  rPrevBtn.disabled=cur>=dates.length-1;
-  rNextBtn.disabled=cur<=0;
+  const meta = loadReportMeta(date, isWeekly);
+  reportDateLabel.textContent  = isWeekly ? (meta.range || reportWeekRange(date)) : reportShortDate(date);
+  reportCountLabel.textContent = (cursor + 1) + ' / ' + dates.length;
+  reportPrevBtn.disabled = cursor >= dates.length - 1;
+  reportNextBtn.disabled = cursor <= 0;
 }
 
-function rLoadFrame(html){
-  if(!html){
-    rFrame.srcdoc='<body style="background:#0b0d0f;color:#555c66;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;font-size:13px;">No data</body>';
+function loadReportIntoFrame(html) {
+  if (!html) {
+    reportFrame.srcdoc = '<body style="background:#0b0d0f;color:#555c66;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;font-size:13px;">No data</body>';
     return;
   }
-  let h=html.replace(/<head([^>]*)>/i,'<head$1><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>');
-  h=h.replace(/<\/body>/i,R_HEIGHT_SCRIPT+'</body>');
-  rFrame.srcdoc=h;
+  // Inject viewport meta tag and auto-resize script into the saved report HTML
+  let h = html.replace(/<head([^>]*)>/i, '<head$1><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>');
+  h = h.replace(/<\/body>/i, IFRAME_HEIGHT_SCRIPT + '</body>');
+  reportFrame.srcdoc = h;
 }
 
-function openReports(){
-  rIsVisible=true;
-  rUI.classList.add('show');
-  document.body.style.overflow='hidden';
-  rRender();
+// ============================================================
+// OPEN / CLOSE
+// ============================================================
+
+function openReports() {
+  reportUIVisible = true;
+  reportsUI.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  renderCurrentReport();
 }
-function closeReports(){
-  rIsVisible=false;
-  rUI.classList.remove('show');
-  document.body.style.overflow='';
-  document.querySelectorAll('.tabs button').forEach(b=>{
-    b.classList.toggle('active', b.dataset.tab==='log');
-  });
-  document.getElementById('tab-log').style.display='';
-  document.getElementById('tab-favs').style.display='none';
-  document.getElementById('tab-dose').style.display='none';
+function closeReports() {
+  reportUIVisible = false;
+  reportsUI.classList.remove('show');
+  document.body.style.overflow = '';
+  switchTab('log'); // return to Log tab
 }
 
 document.getElementById('r-back').addEventListener('click', closeReports);
 
-document.querySelectorAll('.r-tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    if(btn.dataset.rmode===rMode)return;
-    document.querySelectorAll('.r-tab-btn').forEach(b=>b.classList.remove('active'));
+// ============================================================
+// DAILY / WEEKLY MODE TABS
+// ============================================================
+
+document.querySelectorAll('.r-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.rmode === reportMode) return;
+    document.querySelectorAll('.r-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    rMode=btn.dataset.rmode;
-    if(rIndexOpen)rCloseIndex();
-    rFrameWrap.classList.remove('show');
-    rEmpty.style.display='none';
-    rRender();
+    reportMode = btn.dataset.rmode;
+    if (reportIndexOpen) closeReportIndex();
+    reportFrameWrap.classList.remove('show');
+    reportEmpty.style.display = 'none';
+    renderCurrentReport();
   });
 });
 
-rPrevBtn.addEventListener('click',()=>{
-  const cur=rGetCur(),len=rLoadIdx(rIsW()).length;
-  if(cur<len-1){rSetCur(cur+1);rRender('prev');}
+// ============================================================
+// PREV / NEXT NAVIGATION
+// ============================================================
+
+reportPrevBtn.addEventListener('click', () => {
+  const cursor = getReportCursor();
+  const len    = loadReportIndex(isWeeklyMode()).length;
+  if (cursor < len - 1) { setReportCursor(cursor + 1); renderCurrentReport('prev'); }
 });
-rNextBtn.addEventListener('click',()=>{
-  if(rGetCur()>0){rSetCur(rGetCur()-1);rRender('next');}
+reportNextBtn.addEventListener('click', () => {
+  if (getReportCursor() > 0) { setReportCursor(getReportCursor() - 1); renderCurrentReport('next'); }
 });
 
-function rRenderIndex(q){
-  const w=rIsW(), all=rLoadIdx(w);
-  const filtered=q?all.filter(d=>{
-    if(d.includes(q))return true;
-    return new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toLowerCase().includes(q.toLowerCase());
-  }):all;
-  if(!filtered.length){rIndexList.innerHTML='<div style="padding:40px 20px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-faint);">No reports found</div>';return;}
-  const groups={};
-  for(const d of filtered){const l=rMonthLbl(d);if(!groups[l])groups[l]=[];groups[l].push(d);}
-  let html='';
-  const cur=rGetCur();
-  for(const[month,days]of Object.entries(groups)){
-    html+=`<div class="r-month-label">${month}</div>`;
-    for(const d of days){
-      const meta=rLoadMeta(d,w);
-      const isCur=d===(rLoadIdx(w)[cur]);
-      let pills='';
-      if(w){
-        if(meta.proteinDays!=null)pills+=`<span class="r-pill ${meta.proteinDays>=5?'r-pill-blue':'r-pill-red'}">${meta.proteinDays}/7 protein</span>`;
-        if(meta.avgGlucose)pills+=`<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
-        pills+=`<span class="r-pill r-pill-purple">weekly</span>`;
+// ============================================================
+// INDEX / BROWSE PANEL
+// ============================================================
+
+function renderReportIndex(query) {
+  const isWeekly = isWeeklyMode();
+  const allDates = loadReportIndex(isWeekly);
+  const filtered = query
+    ? allDates.filter(date => {
+        if (date.includes(query)) return true;
+        return new Date(date + 'T12:00:00')
+          .toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+          .toLowerCase().includes(query.toLowerCase());
+      })
+    : allDates;
+
+  if (!filtered.length) {
+    reportIndexList.innerHTML = '<div style="padding:40px 20px;text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-faint);">No reports found</div>';
+    return;
+  }
+
+  // Group by month for display
+  const groups = {};
+  for (const date of filtered) {
+    const month = reportMonthLabel(date);
+    if (!groups[month]) groups[month] = [];
+    groups[month].push(date);
+  }
+
+  let html = '';
+  const currentDate = loadReportIndex(isWeekly)[getReportCursor()];
+
+  for (const [month, dates] of Object.entries(groups)) {
+    html += `<div class="r-month-label">${month}</div>`;
+    for (const date of dates) {
+      const meta      = loadReportMeta(date, isWeekly);
+      const isCurrent = date === currentDate;
+      let pills = '';
+
+      if (isWeekly) {
+        if (meta.proteinDays != null) {
+          pills += `<span class="r-pill ${meta.proteinDays >= 5 ? 'r-pill-blue' : 'r-pill-red'}">${meta.proteinDays}/7 protein</span>`;
+        }
+        if (meta.avgGlucose) pills += `<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
+        pills += `<span class="r-pill r-pill-purple">weekly</span>`;
       } else {
-        if(meta.protein!=null)pills+=`<span class="r-pill ${meta.protein>=200?'r-pill-blue':'r-pill-red'}">${meta.protein}g P</span>`;
-        if(meta.low>0)pills+=`<span class="r-pill r-pill-red">↓ ${meta.low}% low</span>`;
-        if(meta.high>0)pills+=`<span class="r-pill r-pill-orange">↑ ${meta.high}% high</span>`;
-        if(meta.avgGlucose)pills+=`<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
+        if (meta.protein != null) {
+          pills += `<span class="r-pill ${meta.protein >= 200 ? 'r-pill-blue' : 'r-pill-red'}">${meta.protein}g P</span>`;
+        }
+        if (meta.low  > 0) pills += `<span class="r-pill r-pill-red">↓ ${meta.low}% low</span>`;
+        if (meta.high > 0) pills += `<span class="r-pill r-pill-orange">↑ ${meta.high}% high</span>`;
+        if (meta.avgGlucose) pills += `<span class="r-pill r-pill-dim">avg ${meta.avgGlucose}</span>`;
       }
-      const lbl=w?(meta.range||rWeekRange(d)):rShortDate(d);
-      const sub=w?('week of '+rDow(d)):rDow(d);
-      html+=`<div class="r-idx-card${w?' r-weekly':''}${isCur?' r-current':''}" data-rdate="${d}">
+
+      const label = isWeekly ? (meta.range || reportWeekRange(date)) : reportShortDate(date);
+      const sub   = isWeekly ? ('week of ' + reportDayOfWeek(date)) : reportDayOfWeek(date);
+
+      html += `<div class="r-idx-card${isWeekly ? ' r-weekly' : ''}${isCurrent ? ' r-current' : ''}" data-rdate="${date}">
         <div>
-          <div class="r-idx-date">${lbl}</div>
+          <div class="r-idx-date">${label}</div>
           <div class="r-idx-dow">${sub}</div>
-          ${pills?`<div class="r-idx-meta">${pills}</div>`:''}
+          ${pills ? `<div class="r-idx-meta">${pills}</div>` : ''}
         </div>
-        <div class="r-idx-tir" style="color:${rTirColor(meta.tir)}">${meta.tir!=null?meta.tir.toFixed(1)+'%':'—'}<span class="r-tir-lbl">TIR</span></div>
+        <div class="r-idx-tir" style="color:${tirColorForValue(meta.tir)}">${meta.tir != null ? meta.tir.toFixed(1) + '%' : '—'}<span class="r-tir-lbl">TIR</span></div>
       </div>`;
     }
   }
-  rIndexList.innerHTML=html;
-  rIndexList.querySelectorAll('.r-idx-card').forEach(card=>{
-    card.addEventListener('click',()=>{
-      const d=card.dataset.rdate, idx=rLoadIdx(rIsW()).indexOf(d);
-      if(idx!==-1){const was=idx<rGetCur();rSetCur(idx);rCloseIndex();rRender(was?'next':'prev');}
+
+  reportIndexList.innerHTML = html;
+  reportIndexList.querySelectorAll('.r-idx-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const date    = card.dataset.rdate;
+      const idx     = loadReportIndex(isWeeklyMode()).indexOf(date);
+      if (idx !== -1) {
+        const wasOlder = idx < getReportCursor();
+        setReportCursor(idx);
+        closeReportIndex();
+        renderCurrentReport(wasOlder ? 'next' : 'prev');
+      }
     });
   });
 }
-function rOpenIndex(){
-  rIndexOpen=true;rIndexPanel.classList.add('show');rIndexBtn.classList.add('r-active');
-  document.getElementById('r-search').value='';rRenderIndex('');
-  setTimeout(()=>document.getElementById('r-search').focus(),300);
-}
-function rCloseIndex(){rIndexOpen=false;rIndexPanel.classList.remove('show');rIndexBtn.classList.remove('r-active');}
-rIndexBtn.addEventListener('click',()=>rIndexOpen?rCloseIndex():rOpenIndex());
-document.getElementById('r-date-chip').addEventListener('click',()=>{if(rLoadIdx(rIsW()).length)rIndexOpen?rCloseIndex():rOpenIndex();});
-document.getElementById('r-search').addEventListener('input',e=>rRenderIndex(e.target.value.trim()));
 
-function rOpenImport(){
-  const w=rIsW();
-  document.getElementById('r-import-title').textContent=w?'Import Weekly Report':'Import Daily Report';
-  document.getElementById('r-date-lbl2').textContent=w?'Week start':'Date';
-  document.getElementById('r-paste').value='';
-  document.getElementById('r-import-date').value=rTodayISO();
+function openReportIndex() {
+  reportIndexOpen = true;
+  reportIndexPanel.classList.add('show');
+  reportIndexBtn.classList.add('r-active');
+  document.getElementById('r-search').value = '';
+  renderReportIndex('');
+  setTimeout(() => document.getElementById('r-search').focus(), 300);
+}
+function closeReportIndex() {
+  reportIndexOpen = false;
+  reportIndexPanel.classList.remove('show');
+  reportIndexBtn.classList.remove('r-active');
+}
+
+reportIndexBtn.addEventListener('click', () => reportIndexOpen ? closeReportIndex() : openReportIndex());
+document.getElementById('r-date-chip').addEventListener('click', () => {
+  if (loadReportIndex(isWeeklyMode()).length) {
+    reportIndexOpen ? closeReportIndex() : openReportIndex();
+  }
+});
+document.getElementById('r-search').addEventListener('input', e => renderReportIndex(e.target.value.trim()));
+
+// ============================================================
+// IMPORT SHEET
+// ============================================================
+
+function openImportSheet() {
+  const isWeekly = isWeeklyMode();
+  document.getElementById('r-import-title').textContent = isWeekly ? 'Import Weekly Report' : 'Import Daily Report';
+  document.getElementById('r-date-lbl2').textContent    = isWeekly ? 'Week start' : 'Date';
+  document.getElementById('r-paste').value              = '';
+  document.getElementById('r-import-date').value        = todayISO();
   document.getElementById('r-overwrite').classList.remove('show');
   document.getElementById('r-import-modal').classList.add('show');
 }
-[document.getElementById('r-import-btn'),document.getElementById('r-empty-cta')].forEach(el=>el.addEventListener('click',rOpenImport));
-document.getElementById('r-import-cancel').addEventListener('click',()=>document.getElementById('r-import-modal').classList.remove('show'));
-document.getElementById('r-import-modal').addEventListener('click',e=>{if(e.target===document.getElementById('r-import-modal'))document.getElementById('r-import-modal').classList.remove('show');});
+[document.getElementById('r-import-btn'), document.getElementById('r-empty-cta')]
+  .forEach(el => el.addEventListener('click', openImportSheet));
 
-document.getElementById('r-paste').addEventListener('input',()=>{
-  const html=document.getElementById('r-paste').value;
-  const w=rIsW()||rIsWeeklyHTML(html);
-  const d=rExtractDate(html,w);
-  if(d){
-    document.getElementById('r-import-date').value=d;
-    document.getElementById('r-overwrite').classList.toggle('show',rLoadIdx(w).includes(d));
+document.getElementById('r-import-cancel').addEventListener('click', () =>
+  document.getElementById('r-import-modal').classList.remove('show'));
+document.getElementById('r-import-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('r-import-modal'))
+    document.getElementById('r-import-modal').classList.remove('show');
+});
+
+// Auto-detect report date and type as the user pastes HTML
+document.getElementById('r-paste').addEventListener('input', () => {
+  const html     = document.getElementById('r-paste').value;
+  const isWeekly = isWeeklyMode() || isWeeklyReportHTML(html);
+  const date     = extractDateFromReportHTML(html, isWeekly);
+  if (date) {
+    document.getElementById('r-import-date').value = date;
+    document.getElementById('r-overwrite').classList.toggle('show', loadReportIndex(isWeekly).includes(date));
   }
 });
-document.getElementById('r-import-date').addEventListener('change',e=>{
-  document.getElementById('r-overwrite').classList.toggle('show',rLoadIdx(rIsW()).includes(e.target.value));
+document.getElementById('r-import-date').addEventListener('change', e => {
+  document.getElementById('r-overwrite').classList.toggle('show', loadReportIndex(isWeeklyMode()).includes(e.target.value));
 });
 
-document.getElementById('r-import-save').addEventListener('click',()=>{
-  const html=document.getElementById('r-paste').value.trim();
-  const date=document.getElementById('r-import-date').value;
-  if(!html){showToast('Paste some HTML first',true);return;}
-  if(!html.includes('<html')&&!html.includes('<!DOCTYPE')){showToast("Doesn't look like HTML",true);return;}
-  if(!date){showToast('Select a date',true);return;}
-  const w=rIsW()||rIsWeeklyHTML(html);
-  if(w&&rMode==='daily'){
+document.getElementById('r-import-save').addEventListener('click', () => {
+  const html = document.getElementById('r-paste').value.trim();
+  const date = document.getElementById('r-import-date').value;
+  if (!html) { showToast('Paste some HTML first', true); return; }
+  if (!html.includes('<html') && !html.includes('<!DOCTYPE')) { showToast("Doesn't look like HTML", true); return; }
+  if (!date) { showToast('Select a date', true); return; }
+  const isWeekly = isWeeklyMode() || isWeeklyReportHTML(html);
+  if (isWeekly && reportMode === 'daily') {
     document.querySelector('.r-tab-btn[data-rmode="weekly"]').click();
   }
-  rSaveReport(date,html,w);
+  saveReport(date, html, isWeekly);
   document.getElementById('r-import-modal').classList.remove('show');
-  const idx=rLoadIdx(w).indexOf(date);
-  rSetCur(idx!==-1?idx:0);
-  requestAnimationFrame(()=>{ rFrameWrap.classList.remove('show'); requestAnimationFrame(()=>rRender()); });
-  showToast('Saved · '+(w?rWeekRange(date):rShortDate(date)));
+  const idx = loadReportIndex(isWeekly).indexOf(date);
+  setReportCursor(idx !== -1 ? idx : 0);
+  requestAnimationFrame(() => {
+    reportFrameWrap.classList.remove('show');
+    requestAnimationFrame(() => renderCurrentReport());
+  });
+  showToast('Saved · ' + (isWeekly ? reportWeekRange(date) : reportShortDate(date)));
 });
 
-rDelBtn.addEventListener('click',()=>{
-  const date=rLoadIdx(rIsW())[rGetCur()];
-  document.getElementById('r-del-sub').textContent=`Delete the ${rIsW()?'weekly':'daily'} report for ${rIsW()?rWeekRange(date):rPrettyDate(date)}? This cannot be undone.`;
+// ============================================================
+// DELETE REPORT
+// ============================================================
+
+reportDeleteBtn.addEventListener('click', () => {
+  const date = loadReportIndex(isWeeklyMode())[getReportCursor()];
+  document.getElementById('r-del-sub').textContent =
+    `Delete the ${isWeeklyMode() ? 'weekly' : 'daily'} report for ${isWeeklyMode() ? reportWeekRange(date) : reportLongDate(date)}? This cannot be undone.`;
   document.getElementById('r-del-modal').classList.add('show');
 });
-document.getElementById('r-del-cancel').addEventListener('click',()=>document.getElementById('r-del-modal').classList.remove('show'));
-document.getElementById('r-del-modal').addEventListener('click',e=>{if(e.target===document.getElementById('r-del-modal'))document.getElementById('r-del-modal').classList.remove('show');});
-document.getElementById('r-del-confirm').addEventListener('click',()=>{
-  const w=rIsW(), date=rLoadIdx(w)[rGetCur()];
-  rDeleteReport(date,w);
+document.getElementById('r-del-cancel').addEventListener('click', () =>
+  document.getElementById('r-del-modal').classList.remove('show'));
+document.getElementById('r-del-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('r-del-modal'))
+    document.getElementById('r-del-modal').classList.remove('show');
+});
+document.getElementById('r-del-confirm').addEventListener('click', () => {
+  const isWeekly  = isWeeklyMode();
+  const date      = loadReportIndex(isWeekly)[getReportCursor()];
+  deleteReport(date, isWeekly);
   document.getElementById('r-del-modal').classList.remove('show');
-  const newDates=rLoadIdx(w);
-  rSetCur(Math.min(rGetCur(),Math.max(0,newDates.length-1)));
-  rRender();
+  const remaining = loadReportIndex(isWeekly);
+  setReportCursor(Math.min(getReportCursor(), Math.max(0, remaining.length - 1)));
+  renderCurrentReport();
   showToast('Deleted');
 });
-
-document.querySelectorAll('.tabs button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    if(btn.dataset.tab==='reports'){
-      document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('tab-log').style.display='none';
-      document.getElementById('tab-favs').style.display='none';
-      document.getElementById('tab-dose').style.display='none';
-      openReports();
-    }
-  });
-});
-
-})();
 </script>
 </body>
 </html>
