@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-31T02:39:24.832Z",
+  "exported": "2026-05-31T03:11:43.568Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4372,7 +4372,7 @@
             "vitD": 0,
             "insulin": 5
           },
-          "time": "14:12",
+          "time": "17:12",
           "starred": false,
           "doseLog": {
             "preBolus": "after",
@@ -4397,7 +4397,7 @@
             "vitD": 0,
             "insulin": 0
           },
-          "time": "17:11",
+          "time": "14:11",
           "starred": false
         },
         {
