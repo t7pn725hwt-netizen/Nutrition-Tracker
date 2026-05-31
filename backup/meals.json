@@ -1,5 +1,5 @@
 {
-  "exported": "2026-05-31T22:36:29.369Z",
+  "exported": "2026-05-31T22:37:43.252Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4683,7 +4683,7 @@
       },
       {
         "id": "fav_1779848120403_q9rmw",
-        "name": "Kirkland Grass-Fed Beef Stick",
+        "name": "Kirkland Beef Stick",
         "macros": {
           "protein": 10,
           "fiber": 0,
@@ -4717,7 +4717,7 @@
       },
       {
         "id": "fav_1780097136266_yisop",
-        "name": "Kirkland Chicken Breast Chunks (3 servings)",
+        "name": "Kirkland chicken nugs 9oz",
         "macros": {
           "protein": 48,
           "fiber": 0,
