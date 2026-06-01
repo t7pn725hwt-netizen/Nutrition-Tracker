@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-01T22:42:34.174Z",
+  "exported": "2026-06-01T23:43:32.520Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4696,6 +4696,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780356733451_bj1o1",
+          "name": "5 oz Fried Chicken Patty",
+          "macros": {
+            "protein": 28,
+            "fiber": 1,
+            "carbs": 15,
+            "calories": 380,
+            "fat": 22,
+            "satFat": 4,
+            "sodium": 800,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:32",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 5.2,
             "bsAtDose": null
           }
         }
