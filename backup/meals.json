@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-01T21:37:51.503Z",
+  "exported": "2026-06-01T21:38:36.528Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4646,6 +4646,31 @@
             "preBolus": "first_bite",
             "activityAfter": false,
             "iob": 3.6,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780349886523_n2zy0",
+          "name": "Turkey Avocado Grilled Sandwich (7 oz Turkey, 2 Medium Avocados)",
+          "macros": {
+            "protein": 78,
+            "fiber": 20,
+            "carbs": 50,
+            "calories": 1420,
+            "fat": 93,
+            "satFat": 25,
+            "sodium": 2100,
+            "sugar": 4,
+            "calcium": 500,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "16:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
