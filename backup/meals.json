@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-01T21:38:36.528Z",
+  "exported": "2026-06-01T21:42:44.154Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4669,6 +4669,31 @@
           "starred": false,
           "doseLog": {
             "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780349935043_fslwy",
+          "name": "Oreo Cheesecake (Medium Slice)",
+          "macros": {
+            "protein": 8,
+            "fiber": 1,
+            "carbs": 55,
+            "calories": 650,
+            "fat": 45,
+            "satFat": 25,
+            "sodium": 450,
+            "sugar": 42,
+            "calcium": 120,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "16:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
