@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-02T17:06:07.529Z",
+  "exported": "2026-06-02T17:08:21.731Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4744,6 +4744,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 166
+          }
+        }
+      ],
+      "2026-06-02": [
+        {
+          "id": "m_1780420004355_vmvlz",
+          "name": "Sweetgreen Harvest Bowl with Double Goat Cheese",
+          "macros": {
+            "protein": 36,
+            "fiber": 9,
+            "carbs": 60,
+            "calories": 830,
+            "fat": 50,
+            "satFat": 16,
+            "sodium": 1230,
+            "sugar": 10,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "12:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": true,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
