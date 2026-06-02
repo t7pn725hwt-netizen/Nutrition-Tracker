@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-01T23:43:54.349Z",
+  "exported": "2026-06-02T03:59:18.629Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4722,6 +4722,28 @@
             "activityAfter": false,
             "iob": 5.2,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780359553076_ku50e",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "19:19",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 166
           }
         }
       ]
