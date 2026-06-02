@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-02T22:01:03.696Z",
+  "exported": "2026-06-02T22:07:46.958Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4796,6 +4796,56 @@
             "activityAfter": false,
             "iob": 2.1,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780438007375_vqgin",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "17:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 100
+          }
+        },
+        {
+          "id": "m_1780438036952_5mbzm",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "17:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2,
+            "bsAtDose": 100
           }
         }
       ]
