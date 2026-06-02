@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-02T22:07:46.958Z",
+  "exported": "2026-06-02T23:32:02.246Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4837,7 +4837,7 @@
             "sugar": 2,
             "calcium": 36,
             "vitD": 0,
-            "insulin": 2
+            "insulin": 1
           },
           "time": "17:07",
           "starred": false,
@@ -4845,6 +4845,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 2,
+            "bsAtDose": 100
+          }
+        },
+        {
+          "id": "m_1780438128290_rc0l9",
+          "name": "Puppy Chow (Muddy Buddies)",
+          "macros": {
+            "protein": 7,
+            "fiber": 2,
+            "carbs": 68,
+            "calories": 480,
+            "fat": 20,
+            "satFat": 7,
+            "sodium": 210,
+            "sugar": 38,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "17:08",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 4,
             "bsAtDose": 100
           }
         }
