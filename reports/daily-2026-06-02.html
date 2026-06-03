@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Daily Report — June 2, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0b0d0f;--sf:#13161a;--s2:#181c21;--bd:#1f242a;--tx:#e6e8eb;--dm:#8b9199;--ft:#555c66;--g1:#4dbb88;--g2:#3a9970;--g3:#2a7055;--g4:#0f2a1e;--bl:#3a8fd4;--or:#d4954a;--pu:#9d6fff;--re:#d44a4a;--mo:'Space Mono',monospace;--bo:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--bo);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;max-width:780px;margin:0 auto;padding:18px 14px 48px}
+.lbl{font-family:var(--mo);font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--g2);margin-bottom:10px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--bd);padding-bottom:12px;margin-bottom:14px}
+.hdr h1{font-family:var(--mo);font-size:17px;color:var(--g1)}
+.hdr .sub{font-family:var(--mo);font-size:11px;color:var(--dm);margin-top:3px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.gc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:10px}
+.gc .gl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--dm)}
+.gc .gn{font-family:var(--mo);font-size:22px;font-weight:700;line-height:1.15;margin-top:2px}
+.gc .gt{color:var(--ft);font-size:11px;font-weight:400}
+.prog{height:4px;background:var(--g4);border-radius:2px;margin-top:7px;overflow:hidden}
+.prog span{display:block;height:100%}
+.g4g{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.sc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 9px}
+.sc .sl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.sc .sv{font-family:var(--mo);font-size:14px;font-weight:700;color:var(--g1);margin-top:1px}
+.sc .u{color:var(--ft);font-size:10px;font-weight:400}
+.ins-row{background:linear-gradient(180deg,var(--sf) 0%,#0d1b15 100%);border:1px solid var(--g3);border-radius:8px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.ins-val{font-family:var(--mo);font-size:22px;font-weight:700;color:var(--bl)}
+.ins-detail{font-family:var(--mo);font-size:10px;color:var(--dm);text-align:right;line-height:1.8}
+.lantus-row{background:rgba(58,143,212,0.06);border:1px solid rgba(58,143,212,0.2);border-radius:8px;padding:8px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.mbar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin:10px 0 5px}
+.mleg{display:flex;gap:12px;font-family:var(--mo);font-size:9px;color:var(--ft)}
+.tir4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.tc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:10px;text-align:center}
+.tc .tv{font-family:var(--mo);font-size:20px;font-weight:700;line-height:1}
+.tc .tl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);margin-top:4px}
+.tc .ts{font-family:var(--mo);font-size:9px;color:var(--ft);margin-top:3px}
+.tirbar{display:flex;height:7px;border-radius:4px;overflow:hidden;margin-bottom:6px}
+.otf-card{background:linear-gradient(135deg,#0d1a14 0%,#121a12 100%);border:1px solid var(--g3);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:14px;margin-bottom:12px}
+canvas{display:block;width:100%}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);padding:5px 6px;border-bottom:1px solid var(--bd);text-align:left;font-weight:400}
+td{padding:8px 6px;border-bottom:1px solid rgba(31,36,42,0.5);font-size:12px;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.mn{font-weight:500;font-size:13px}
+.mt{font-family:var(--mo);font-size:10px;color:var(--ft)}
+.pv{font-family:var(--mo);font-size:12px;font-weight:700;color:var(--g1)}
+.iv{font-family:var(--mo);font-size:12px;font-weight:700;color:var(--bl)}
+.dv{font-family:var(--mo);font-size:12px;color:var(--dm)}
+.totals-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;padding-top:12px;border-top:1px solid var(--bd);text-align:center}
+.trf-lbl{font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.trf-val{font-family:var(--mo);font-size:15px;font-weight:700;margin-top:2px}
+.trf-note{font-size:10px;color:var(--ft);margin-top:1px}
+.log-block{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:12px 14px;font-family:var(--mo);font-size:11px;color:var(--dm);line-height:1.8;white-space:pre-wrap;margin-top:8px}
+@media(max-width:500px){.g3,.tir4{grid-template-columns:1fr 1fr}.g4g{grid-template-columns:repeat(2,1fr)}.totals-row{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div><h1>&#x2B21; Daily Report</h1><div class="sub">Tuesday, June 2, 2026 &middot; CDT (UTC&minus;5) &middot; OTF day</div></div>
+  <div style="text-align:right;font-family:var(--mo)"><div style="font-size:11px;color:var(--re)">peak 237 &mdash; log record</div></div>
+</div>
+
+<!-- NUTRITION -->
+<div class="card">
+  <div class="lbl">Nutrition</div>
+  <div class="g3">
+    <div class="gc"><div class="gl">Protein</div><div class="gn" style="color:var(--g1)">175<span class="gt"> / 200g</span></div><div class="prog"><span style="width:87.5%;background:var(--g1)"></span></div></div>
+    <div class="gc"><div class="gl">Fiber</div><div class="gn" style="color:var(--bl)">41.5<span class="gt"> / 30g</span></div><div class="prog"><span style="width:100%;background:var(--bl)"></span></div></div>
+    <div class="gc"><div class="gl">Calories</div><div class="gn" style="color:var(--or)">3250<span class="gt"> / 2800</span></div><div class="prog"><span style="width:100%;background:var(--or)"></span></div></div>
+  </div>
+  <div style="margin-bottom:8px;font-family:var(--mo);font-size:10px;color:var(--or)">Fiber &#10003; +11.5g &middot; Calories +450 over &middot; Protein −25g &middot; Sugar 67g (high) &middot; Sat Fat 48g</div>
+  <div class="g4g">
+    <div class="sc"><div class="sl">Carbs</div><div class="sv">250<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Net Carb</div><div class="sv">208.5<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Fat</div><div class="sv">174.5<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Sat Fat</div><div class="sv">48<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Sodium</div><div class="sv">3573<span class="u">mg</span></div></div>
+    <div class="sc"><div class="sl">Sugar</div><div class="sv" style="color:var(--or)">67<span class="u">g</span></div></div>
+    <div class="sc"><div class="sl">Vit D</div><div class="sv">0<span class="u">IU</span></div></div>
+    <div class="sc"><div class="sl">Calcium</div><div class="sv">1238<span class="u">mg</span></div></div>
+  </div>
+  <div class="ins-row">
+    <div><div style="font-family:var(--mo);font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--dm);margin-bottom:2px">Humalog</div><span class="ins-val">22</span><span style="font-family:var(--mo);font-size:11px;color:var(--ft);margin-left:3px">u</span></div>
+    <div class="ins-detail">
+      5u @ 12:06pm &mdash; Sweetgreen (51g net) &middot; ICR6=8.5u needed &rarr; peak 200<br>
+      7u @ 5:06&ndash;5:08pm &mdash; Fage+Avo+Puppy Chow (85.5g net) &middot; ICR6=14.3u &rarr; pre-BG 100 conservative<br>
+      10u @ 8:10pm &mdash; Street Tacos (64g net) &middot; pre-BG 205 &rarr; peak 237 &#9888;
+    </div>
+  </div>
+  <div class="lantus-row">
+    <div style="font-family:var(--mo);font-size:10px;color:var(--bl)">Lantus 15u @ 11:26pm &middot; BS 145</div>
+    <div style="font-family:var(--mo);font-size:9px;color:var(--dm)">dip to 113 at CDT 1:46am &middot; oscillated 113&ndash;152 overnight</div>
+  </div>
+  <div class="mbar"><div style="width:21.5%;background:var(--g1)"></div><div style="width:30.7%;background:var(--bl)"></div><div style="width:47.8%;background:var(--or)"></div></div>
+  <div class="mleg"><span style="color:var(--g1)">&#9679; Protein 21.5%</span><span style="color:var(--bl)">&#9679; Carbs 30.7%</span><span style="color:var(--or)">&#9679; Fat 47.8%</span></div>
+</div>
+
+<!-- TIR -->
+<div class="card">
+  <div class="lbl">Glucose &middot; Time in Range &middot; CDT 5:01 AM&ndash;11:56 PM &middot; 288 samples</div>
+  <div class="tir4">
+    <div class="tc"><div class="tv" style="color:var(--g1)">89.6%</div><div class="tl">In Range</div><div class="ts">70&ndash;180 mg/dL</div></div>
+    <div class="tc"><div class="tv" style="color:var(--g1)">0%</div><div class="tl">Below 70</div><div class="ts">near-low 80 CDT 3:31pm</div></div>
+    <div class="tc"><div class="tv" style="color:var(--re)">10.4%</div><div class="tl">Above 180</div><div class="ts">3 windows &middot; peak 237 &#9888;</div></div>
+    <div class="tc"><div class="tv" style="color:var(--tx)">131</div><div class="tl">Avg mg/dL</div><div class="ts">min 80 &middot; max 237</div></div>
+  </div>
+  <div class="tirbar"><div style="width:0%;background:var(--re)"></div><div style="width:89.6%;background:var(--g1)"></div><div style="width:10.4%;background:var(--or)"></div></div>
+  <div style="font-size:11px;color:var(--ft)">Sweetgreen 5u (needed 8.5u) &rarr; peak 200 &middot; Fage+Avo+Puppy Chow 7u (needed 14.3u) conservative from near-low &rarr; peak 200 &middot; Street tacos 10u from pre-BG 205 (needed ~15u) &rarr; peak 237 log record</div>
+</div>
+
+<!-- OTF -->
+<div class="otf-card">
+  <div style="font-size:22px">&#128293;</div>
+  <div style="flex:1">
+    <div style="font-family:var(--mo);font-size:13px;font-weight:700;color:var(--g1)">OTF HIIT &middot; 55 min</div>
+    <div style="font-family:var(--mo);font-size:10px;color:var(--dm);margin-top:2px">CDT 9:45&ndash;10:40am &middot; 709 kcal active &middot; cortisol peak 148 CDT 10:21am (in range)</div>
+  </div>
+  <div><div style="font-family:var(--mo);font-size:18px;font-weight:700;color:var(--g1);text-align:right">709</div><div style="font-family:var(--mo);font-size:9px;color:var(--dm);text-align:right">kcal</div></div>
+</div>
+
+<!-- DAY CHART -->
+<div class="card"><div class="lbl">Day &middot; 6 AM &ndash; 6 PM CDT &middot; OTF cortisol 148 CDT 10:21am &middot; Sweetgreen peak 200 CDT 1:26pm &middot; near-low 80 CDT 3:31pm</div><canvas id="dc"></canvas></div>
+
+<!-- NIGHT CHART -->
+<div class="card"><div class="lbl">Night &middot; 6 PM &ndash; 6 AM CDT &middot; Puppy Chow rise &rarr; Street tacos peak 237 CDT 8:41pm &middot; oscillated 113&ndash;152 overnight</div><canvas id="nc"></canvas></div>
+
+<!-- MEAL LOG -->
+<div class="card">
+  <div class="lbl">Meal Log</div>
+  <table>
+    <thead><tr><th>Time</th><th>Meal</th><th>Protein</th><th>Carbs</th><th>Cal</th><th>Ins</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="mt">12:06pm</td>
+        <td><div class="mn">Sweetgreen Harvest Bowl + Double Goat Cheese</div><div style="font-size:11px;color:var(--or)">Fat 50g &middot; Na 1230mg &middot; CGM ~123 at dose &middot; 5u for 51g net (ICR6=8.5u) &rarr; peak 200 CDT 1:26pm (80 min)</div></td>
+        <td class="pv">36g</td><td class="dv">51g</td><td class="dv">830</td><td class="iv">5u</td>
+      </tr>
+      <tr>
+        <td class="mt">2:26pm</td>
+        <td><div class="mn">Optimum Nutrition Protein</div><div style="font-size:11px;color:var(--dm)">Fat 3g &middot; Na 260mg &middot; 8g carbs &middot; no Humalog &middot; BG descending from 200</div></td>
+        <td class="pv">48g</td><td class="dv">8g</td><td class="dv">240</td><td class="dv">&mdash;</td>
+      </tr>
+      <tr>
+        <td class="mt">5:06pm</td>
+        <td><div class="mn">Fage 2% + PB</div><div style="font-size:11px;color:var(--g1)">Fat 27.5g &middot; pre-BG 100 &middot; 2u for 13.5g net &middot; pre-bolus &#10003;</div></td>
+        <td class="pv">37g</td><td class="dv">13.5g</td><td class="dv">450</td><td class="iv">2u</td>
+      </tr>
+      <tr>
+        <td class="mt">5:07pm</td>
+        <td><div class="mn">2 Small Avocados</div><div style="font-size:11px;color:var(--dm)">Fat 40g &middot; 6g net &middot; 1u</div></td>
+        <td class="pv">5g</td><td class="dv">6g</td><td class="dv">430</td><td class="iv">1u</td>
+      </tr>
+      <tr>
+        <td class="mt">5:08pm</td>
+        <td><div class="mn">Puppy Chow (Muddy Buddies)</div><div style="font-size:11px;color:var(--re)">Fat 20g &middot; Na 210mg &middot; pre-BG 100 (post near-low recovery, OTF day) &middot; 4u for 66g net (ICR6=11u) &rarr; critically underdosed &middot; drove BG 101&rarr;200 by CDT 7:56pm</div></td>
+        <td class="pv">7g</td><td class="dv">66g</td><td class="dv">480</td><td class="iv">4u</td>
+      </tr>
+      <tr>
+        <td class="mt" style="color:var(--re)">8:10pm</td>
+        <td><div class="mn">3 Street Tacos (Chicken, Fish, Beef) + Refried Beans</div><div style="font-size:11px;color:var(--re)">Fat 34g &middot; Na 1680mg &middot; pre-BG 205 &middot; 10u for 64g net (ICR6=10.7u, but needed +4u correction = ~15u) &rarr; peak 237 CDT 8:41pm &#9888; LOG RECORD</div></td>
+        <td class="pv">42g</td><td class="dv">64g</td><td class="dv">820</td><td class="iv">10u</td>
+      </tr>
+      <tr>
+        <td class="mt" style="color:var(--bl)">11:26pm</td>
+        <td><div class="mn">Lantus &mdash; basal</div><div style="font-size:11px;color:var(--dm)">15u &middot; BS 145 &middot; BG 149 at dose time &middot; dip to 113 at CDT 1:46am &middot; oscillated 113&ndash;152 overnight</div></td>
+        <td class="dv">&mdash;</td><td class="dv">&mdash;</td><td class="dv">&mdash;</td><td style="font-family:var(--mo);font-size:12px;color:var(--bl)">15u&#x24C1;</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="totals-row">
+    <div><div class="trf-lbl">Protein</div><div class="trf-val" style="color:var(--g1)">175g</div><div class="trf-note">&#8722;25g to goal</div></div>
+    <div><div class="trf-lbl">Fiber</div><div class="trf-val" style="color:var(--bl)">41.5g</div><div class="trf-note">&#10003; +11.5g over</div></div>
+    <div><div class="trf-lbl">Calories</div><div class="trf-val" style="color:var(--or)">3250</div><div class="trf-note">+450 over goal</div></div>
+    <div><div class="trf-lbl">Humalog</div><div class="trf-val" style="color:var(--bl)">22u</div><div class="trf-note">+ 15u Lantus</div></div>
+  </div>
+</div>
+
+<!-- LOG ENTRY -->
+<div class="card">
+  <div class="lbl">Log Entry</div>
+  <div class="log-block">## 2026-06-02
+OTF: HIIT 55min · CDT 9:45–10:40am · 709 kcal · cortisol peak 148 CDT 10:21am (in range)
+TIR: 89.6% | Low: 0% (near-low 80 CDT 3:31–3:36pm) | High: 10.4% (3 windows, peak 237 — log record) | Avg: 131
+Protein: 175g (−25g) | Fiber: 41.5g ✓ | Calories: 3250 (+450) | Humalog: 22u | Lantus: 15u @ BS 145
+Notes: OTF cortisol peak 148 CDT 10:21am, in range. Sweetgreen 5u for 51g net — ICR6 = 8.5u needed, underdosed 3.5u → peak 200 CDT 1:26pm (80 min post-dose), 9 above-180 samples. Humalog descent then near-low 80 CDT 3:31–3:36pm. Fage 2u + avo 1u + Puppy Chow 4u = 7u total for 85.5g net (ICR6 = 14.3u needed) — conservative: pre-BG 100 recovering from near-low on OTF day. BG 101→200 by CDT 7:56pm from Puppy Chow 66g fast carbs (essentially underdosed ~7u). Street tacos 10u from pre-BG 205: ICR6 = 10.7u for food + ~4u correction = 15u needed, gave 10u → peak 237 CDT 8:41pm (LOG RECORD, exceeds prior high of 218). On OTF days: Sweetgreen dosing gap + conservative Puppy Chow dose + no correction component at tacos compounded. Lantus 15u CDT 11:26pm at BS 145. Overnight: Lantus dip to 113 at CDT 1:46am, oscillated 113–152, never cleanly below 130 until CDT 4:56am (127). No hypos.</div>
+</div>
+
+<script>
+'use strict';
+const DAY=[
+  [361,109],[366,110],[371,108],[376,106],[381,104],[386,106],[391,106],[396,106],
+  [401,104],[406,104],[411,104],[416,104],[421,105],[426,105],[431,105],[436,105],
+  [441,105],[446,105],[451,105],[456,105],[461,104],[466,105],[471,106],[476,106],
+  [481,106],[486,106],[491,106],[496,107],[501,108],[506,108],[511,107],[516,109],
+  [521,112],[526,116],[531,119],[536,121],[541,122],[546,122],[551,123],[556,125],
+  [561,127],[566,130],[571,130],[576,132],[581,132],[586,132],[591,134],[596,132],
+  [601,131],[606,136],[611,141],[616,145],[621,148],[626,147],[631,143],[636,141],
+  [641,141],[646,142],[651,141],[656,136],[661,131],[666,128],[671,126],[676,126],
+  [681,128],[686,129],[691,129],[696,134],[701,130],[706,120],[711,122],[716,127],
+  [721,127],[726,123],[731,120],[736,120],[741,121],[746,122],[751,128],[756,137],
+  [761,149],[766,157],[771,167],[776,179],
+  [781,187],[786,190],[791,187],[796,187],[801,192],[806,200],[811,199],[816,189],[821,184],
+  [826,173],[831,161],[836,147],[841,135],[846,126],[851,119],[856,114],[861,111],
+  [866,108],[871,108],[876,106],[881,103],[886,97],[891,89],[896,83],[901,82],
+  [906,82],[911,84],[916,84],[921,83],[926,82],[931,80],[936,80],[941,84],
+  [946,85],[951,86],[956,88],[961,88],[966,85],[971,85],[976,87],[981,86],
+  [986,86],[991,88],[996,93],[1001,93],[1006,92],[1011,92],[1016,96],[1021,100],
+  [1026,101],[1031,103],[1036,103],[1041,102],[1046,103],[1051,107],[1056,109],
+  [1061,109],[1066,108],[1071,110],[1076,111]
+];
+const NIGHT=[
+  [1081,108],[1086,105],[1091,108],[1096,110],[1101,114],[1106,115],[1111,118],
+  [1116,118],[1121,119],[1126,121],[1131,124],[1136,128],
+  [1141,133],[1146,137],[1151,145],[1156,154],[1161,164],[1166,172],[1171,178],
+  [1176,186],[1181,193],[1186,195],[1191,196],[1196,200],
+  [1201,205],[1206,209],[1211,215],[1216,217],[1221,220],[1226,224],[1231,228],
+  [1236,231],[1241,237],[1246,236],[1251,234],[1256,232],[1261,226],[1266,218],
+  [1271,204],[1276,182],[1281,164],[1286,156],[1291,153],[1296,152],[1301,141],
+  [1306,140],[1311,142],[1316,144],[1321,146],[1326,143],[1331,137],[1336,131],
+  [1341,127],[1346,122],[1351,117],[1356,112],[1361,116],[1366,122],[1371,129],
+  [1376,138],[1381,141],[1386,141],[1391,141],[1396,142],[1401,145],[1406,146],
+  [1411,150],[1416,152],[1421,153],[1426,152],[1431,151],[1436,149],
+  [1441,146],[1446,150],[1451,152],[1456,151],[1461,150],[1466,149],[1471,146],
+  [1476,141],[1481,137],[1486,133],[1491,131],[1496,129],[1501,128],[1506,127],
+  [1511,127],[1516,128],[1521,129],[1526,131],[1531,132],[1536,124],[1541,116],
+  [1546,113],[1551,115],[1556,124],[1561,131],[1566,130],[1571,128],[1576,126],
+  [1581,124],[1586,124],[1591,125],[1596,127],[1601,129],[1606,131],[1611,128],
+  [1616,126],[1621,125],[1626,127],[1631,129],[1636,132],[1641,134],[1646,138],
+  [1651,140],[1656,139],[1661,137],[1666,135],[1671,134],[1676,132],[1681,130],
+  [1686,129],[1691,128],[1696,128],[1701,129],[1706,129],[1711,129],[1716,128],
+  [1721,126],[1726,128],[1731,129],[1736,127]
+];
+const DAY_MEALS=[
+  {min:726, carbs:'51g', color:'#4dbb88'},
+  {min:866, carbs:'8g',  color:'#9d6fff'},
+  {min:1027,carbs:'86g', color:'#d4954a'},
+];
+const NIGHT_MEALS=[
+  {min:1210,carbs:'64g', color:'#d44a4a'},
+];
+function gc(v){return v<70?'#d44a4a':v>180?'#d4954a':'#4dbb88';}
+function nearest(data,m){let b=data[0],bd=Infinity;for(const pt of data){const d=Math.abs(pt[0]-m);if(d<bd){bd=d;b=pt;}}return b;}
+function chart(id,data,x0,x1,xlbls,midnight,meals){
+  const cv=document.getElementById(id);if(!cv)return;
+  const dpr=window.devicePixelRatio||1,W=cv.parentElement.clientWidth-28,H=220;
+  cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+  const ctx=cv.getContext('2d');ctx.scale(dpr,dpr);
+  const PL=40,PR=10,PT=40,PB=24,CW=W-PL-PR,CH=H-PT-PB,YN=45,YX=310;
+  const xp=m=>PL+(m-x0)/(x1-x0)*CW,yp=v=>PT+(1-(v-YN)/(YX-YN))*CH;
+  ctx.fillStyle='#13161a';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='rgba(77,187,136,0.07)';ctx.fillRect(PL,yp(180),CW,yp(70)-yp(180));
+  for(const v of[70,100,140,180,220]){ctx.strokeStyle='#1f242a';ctx.lineWidth=0.5;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(PL,yp(v));ctx.lineTo(PL+CW,yp(v));ctx.stroke();}
+  ctx.setLineDash([]);
+  if(id==='dc'){
+    ctx.fillStyle='rgba(77,187,136,0.05)';ctx.fillRect(xp(585),PT,xp(640)-xp(585),CH);
+    ctx.fillStyle='#3a9970';ctx.font='8px Space Mono,monospace';ctx.textAlign='center';
+    ctx.fillText('OTF',xp(612),PT+10);
+  }
+  ctx.fillStyle='#555c66';ctx.font='9px Space Mono,monospace';ctx.textAlign='right';
+  for(const v of[70,100,140,180,220])ctx.fillText(v,PL-5,yp(v)+3);
+  ctx.textAlign='center';
+  for(const[m,l]of xlbls){if(midnight!==null&&l==='12a')continue;ctx.fillStyle='#555c66';ctx.fillText(l,xp(m),H-6);}
+  if(midnight!==null){ctx.strokeStyle='rgba(139,145,153,0.4)';ctx.setLineDash([4,4]);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(xp(midnight),PT);ctx.lineTo(xp(midnight),PT+CH);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#8b9199';ctx.textAlign='center';ctx.fillText('12a',xp(midnight),H-6);}
+  const seg=data.filter(([m])=>m>=x0&&m<=x1);
+  for(let i=1;i<seg.length;i++){
+    const[m0,v0]=seg[i-1],[m1,v1]=seg[i];
+    if(m1-m0>15)continue;
+    const cx=[];
+    for(const th of[70,180]){if((v0<th&&v1>=th)||(v0>=th&&v1<th)){const t=(th-v0)/(v1-v0);cx.push({t,m:m0+t*(m1-m0),v:th});}}
+    cx.sort((a,b)=>a.t-b.t);
+    const pts=[{m:m0,v:v0},...cx,{m:m1,v:v1}];
+    for(let j=0;j<pts.length-1;j++){const p=pts[j],q=pts[j+1];ctx.strokeStyle=gc((p.v+q.v)/2);ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(xp(p.m),yp(p.v));ctx.lineTo(xp(q.m),yp(q.v));ctx.stroke();}
+  }
+  if(meals&&meals.length){
+    const vm=meals.filter(ml=>ml.min>=x0&&ml.min<=x1);
+    if(!vm.length)return;
+    const sw=CW/(vm.length+1);
+    vm.forEach((ml,i)=>{
+      const px=PL+sw*(i+1),npt=nearest(seg,ml.min);if(!npt)return;
+      const gx=xp(npt[0]),gy=yp(npt[1]);
+      ctx.save();ctx.setLineDash([3,3]);ctx.strokeStyle=ml.color+'99';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(px,PT-12);ctx.lineTo(gx,gy);ctx.stroke();ctx.restore();
+      ctx.beginPath();ctx.arc(gx,gy,4,0,Math.PI*2);ctx.fillStyle=ml.color;ctx.fill();
+      ctx.font='bold 9px Space Mono,monospace';
+      const tw=ctx.measureText(ml.carbs).width+10,bx=px-tw/2,by=PT-24;
+      ctx.fillStyle='#0c0e11';ctx.strokeStyle=ml.color;ctx.lineWidth=1;ctx.beginPath();
+      if(ctx.roundRect)ctx.roundRect(bx,by,tw,14,3);else ctx.rect(bx,by,tw,14);
+      ctx.fill();ctx.stroke();ctx.fillStyle=ml.color;ctx.textAlign='center';ctx.fillText(ml.carbs,px,by+10);
+    });
+  }
+}
+function init(){
+  chart('dc',DAY,360,1080,[[360,'6a'],[480,'8a'],[600,'10a'],[720,'12p'],[840,'2p'],[960,'4p'],[1080,'6p']],null,DAY_MEALS);
+  chart('nc',NIGHT,1080,1800,[[1080,'6p'],[1200,'8p'],[1320,'10p'],[1440,'12a'],[1560,'2a'],[1680,'4a'],[1800,'6a']],1440,NIGHT_MEALS);
+}
+document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+window.addEventListener('resize',init);
+</script>
+</body>
+</html>
