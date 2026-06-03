@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-03T22:01:33.955Z",
+  "exported": "2026-06-03T23:40:48.488Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4716,7 +4716,7 @@
             "insulin": 0
           },
           "time": "18:32",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "first_bite",
             "activityAfter": false,
@@ -4965,6 +4965,44 @@
           },
           "time": "14:57",
           "starred": false
+        },
+        {
+          "id": "m_1780525688666_fdw09",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:28",
+          "starred": false
+        },
+        {
+          "id": "m_1780525695740_qc23p",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:28",
+          "starred": false
         }
       ]
     },
@@ -5169,6 +5207,23 @@
           "sodium": 1770,
           "sugar": 6,
           "calcium": 0,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1780529769684_ppb7c",
+        "name": "5 oz Fried Chicken Patty",
+        "macros": {
+          "protein": 28,
+          "fiber": 1,
+          "carbs": 15,
+          "calories": 380,
+          "fat": 22,
+          "satFat": 4,
+          "sodium": 800,
+          "sugar": 1,
+          "calcium": 20,
           "vitD": 0,
           "insulin": 0
         }
