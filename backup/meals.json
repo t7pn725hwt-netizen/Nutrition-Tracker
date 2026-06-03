@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-03T01:08:51.347Z",
+  "exported": "2026-06-03T01:11:00.504Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4892,6 +4892,31 @@
           "time": "20:05",
           "starred": false,
           "doseLog": {
+            "bsAtDose": 205
+          }
+        },
+        {
+          "id": "m_1780449030500_m96hf",
+          "name": "3 Street Tacos (Chicken, Fish, Beef) + Refried Beans",
+          "macros": {
+            "protein": 42,
+            "fiber": 8,
+            "carbs": 72,
+            "calories": 820,
+            "fat": 34,
+            "satFat": 10,
+            "sodium": 1680,
+            "sugar": 6,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "20:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 3.7,
             "bsAtDose": 205
           }
         }
