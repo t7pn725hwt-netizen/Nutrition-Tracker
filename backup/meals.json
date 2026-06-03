@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-03T02:42:27.459Z",
+  "exported": "2026-06-03T04:26:41.435Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -4874,28 +4874,6 @@
           }
         },
         {
-          "id": "m_1780448755722_hq5nm",
-          "name": "Humalog Correction",
-          "macros": {
-            "protein": 0,
-            "fiber": 0,
-            "carbs": 0,
-            "calories": 0,
-            "fat": 0,
-            "satFat": 0,
-            "sodium": 0,
-            "sugar": 0,
-            "calcium": 0,
-            "vitD": 0,
-            "insulin": 2
-          },
-          "time": "20:05",
-          "starred": false,
-          "doseLog": {
-            "bsAtDose": 205
-          }
-        },
-        {
           "id": "m_1780449030500_m96hf",
           "name": "3 Street Tacos (Chicken, Fish, Beef) + Refried Beans",
           "macros": {
@@ -4909,7 +4887,7 @@
             "sugar": 6,
             "calcium": 220,
             "vitD": 0,
-            "insulin": 8
+            "insulin": 10
           },
           "time": "20:10",
           "starred": false,
