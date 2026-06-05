@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-05T22:26:12.444Z",
+  "exported": "2026-06-05T23:04:02.101Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5241,6 +5241,31 @@
             "activityAfter": false,
             "iob": 0.2,
             "bsAtDose": 121
+          }
+        },
+        {
+          "id": "m_1780700561810_l6fi5",
+          "name": "65g Popcorn",
+          "macros": {
+            "protein": 8,
+            "fiber": 10,
+            "carbs": 50,
+            "calories": 250,
+            "fat": 3,
+            "satFat": 0,
+            "sodium": 5,
+            "sugar": 1,
+            "calcium": 5,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "18:02",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
+            "bsAtDose": null
           }
         }
       ]
