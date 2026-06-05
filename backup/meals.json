@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-05T23:04:02.101Z",
+  "exported": "2026-06-05T23:04:42.788Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5267,6 +5267,25 @@
             "iob": 1,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1780700652784_d12u6",
+          "name": "7 oz Grilled Chicken Breast",
+          "macros": {
+            "protein": 62,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 327,
+            "fat": 7,
+            "satFat": 2,
+            "sodium": 185,
+            "sugar": 0,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:04",
+          "starred": false
         }
       ]
     },
