@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-04T23:47:45.208Z",
+  "exported": "2026-06-05T01:08:26.862Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5145,6 +5145,31 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1780616892019_jh074",
+          "name": "Pasta + 1 Cup Broccoli + 7oz Grilled Chicken Breast",
+          "macros": {
+            "protein": 80,
+            "fiber": 12,
+            "carbs": 62,
+            "calories": 775,
+            "fat": 19,
+            "satFat": 6,
+            "sodium": 790,
+            "sugar": 10,
+            "calcium": 221,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "18:48",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 1.2,
+            "bsAtDose": 115
           }
         }
       ]
