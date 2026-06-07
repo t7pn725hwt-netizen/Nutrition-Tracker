@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-07T22:50:15.875Z",
+  "exported": "2026-06-07T23:05:52.454Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5444,6 +5444,31 @@
           },
           "time": "17:04",
           "starred": false
+        },
+        {
+          "id": "m_1780873522451_6ud6v",
+          "name": "Kirkland chicken nugs 12",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 33,
+            "calories": 480,
+            "fat": 18,
+            "satFat": 3,
+            "sodium": 1770,
+            "sugar": 6,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "18:05",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
+            "bsAtDose": null
+          }
         }
       ]
     },
