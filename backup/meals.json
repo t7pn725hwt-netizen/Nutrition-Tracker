@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-08T20:52:03.668Z",
+  "exported": "2026-06-08T20:55:58.715Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5581,6 +5581,44 @@
             "iob": 0,
             "bsAtDose": 100
           }
+        },
+        {
+          "id": "m_1780951936245_p3cmw",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:13",
+          "starred": false
+        },
+        {
+          "id": "m_1780952026621_01edj",
+          "name": "6 BBQ Chicken Wings",
+          "macros": {
+            "protein": 54,
+            "fiber": 0,
+            "carbs": 12,
+            "calories": 480,
+            "fat": 28,
+            "satFat": 8,
+            "sodium": 820,
+            "sugar": 9,
+            "calcium": 40,
+            "vitD": 12,
+            "insulin": 0
+          },
+          "time": "15:53",
+          "starred": false
         }
       ]
     },
