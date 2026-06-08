@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-08T09:52:46.148Z",
+  "exported": "2026-06-08T13:05:07.746Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5526,6 +5526,25 @@
             "protein": 0,
             "fiber": 0,
             "carbs": 10,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "03:59",
+          "starred": false
+        },
+        {
+          "id": "m_1780912377639_iyjy3",
+          "name": "Skittles",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
             "calories": 0,
             "fat": 0,
             "satFat": 0,
