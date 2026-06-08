@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-08T01:46:01.705Z",
+  "exported": "2026-06-08T08:59:35.600Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5493,6 +5493,28 @@
             "activityAfter": false,
             "iob": 6.1,
             "bsAtDose": 112
+          }
+        },
+        {
+          "id": "m_1780884846779_qo9fi",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:14",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 198
           }
         }
       ]
