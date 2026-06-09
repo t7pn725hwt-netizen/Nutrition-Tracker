@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-09T17:11:20.012Z",
+  "exported": "2026-06-09T18:45:13.853Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5685,9 +5685,11 @@
           "doseLog": {
             "bsAtDose": 171
           }
-        },
+        }
+      ],
+      "2026-06-09": [
         {
-          "id": "m_1781025033068_g7fk2",
+          "id": "m_1781025108367_gybnc",
           "name": "Culver’s Double Deluxe Burger with Basket Fries",
           "macros": {
             "protein": 46,
@@ -5702,10 +5704,10 @@
             "vitD": 0,
             "insulin": 14
           },
-          "time": "12:10",
+          "time": "12:11",
           "starred": false,
           "doseLog": {
-            "preBolus": "first_bite",
+            "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": 107
