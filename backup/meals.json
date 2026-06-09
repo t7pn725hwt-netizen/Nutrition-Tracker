@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-09T19:48:08.327Z",
+  "exported": "2026-06-09T23:31:16.665Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5730,6 +5730,25 @@
             "insulin": 0
           },
           "time": "13:45",
+          "starred": false
+        },
+        {
+          "id": "m_1781047846659_og2wb",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 10,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:30",
           "starred": false
         }
       ]
