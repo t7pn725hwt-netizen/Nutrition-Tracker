@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-10T22:32:13.728Z",
+  "exported": "2026-06-10T22:35:58.582Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5886,6 +5886,31 @@
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1781130811145_xmv2f",
+          "name": "Fried Cod Fillets 5 pieces",
+          "macros": {
+            "protein": 53,
+            "fiber": 1,
+            "carbs": 28,
+            "calories": 620,
+            "fat": 28,
+            "satFat": 5,
+            "sodium": 980,
+            "sugar": 1,
+            "calcium": 80,
+            "vitD": 120,
+            "insulin": 6
+          },
+          "time": "17:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
