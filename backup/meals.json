@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-10T18:00:31.276Z",
+  "exported": "2026-06-10T19:09:55.225Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5819,6 +5819,52 @@
           "doseLog": {
             "bsAtDose": 168
           }
+        }
+      ],
+      "2026-06-10": [
+        {
+          "id": "m_1781114448880_p633s",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "13:00",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": true,
+            "iob": 0,
+            "bsAtDose": 111
+          }
+        },
+        {
+          "id": "m_1781118260235_fkabq",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:04",
+          "starred": false
         }
       ]
     },
