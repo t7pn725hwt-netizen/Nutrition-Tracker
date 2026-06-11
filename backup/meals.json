@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-11T21:12:44.697Z",
+  "exported": "2026-06-11T23:25:53.904Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5983,6 +5983,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1781212443569_gfsk4",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:14",
+          "starred": false
         }
       ]
     },
