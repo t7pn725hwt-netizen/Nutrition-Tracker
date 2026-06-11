@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-11T21:11:38.223Z",
+  "exported": "2026-06-11T21:12:44.697Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5958,6 +5958,31 @@
           },
           "time": "12:34",
           "starred": false
+        },
+        {
+          "id": "m_1781212317356_22rbt",
+          "name": "Breaded Chinese Chicken with a Little Rice",
+          "macros": {
+            "protein": 30,
+            "fiber": 2,
+            "carbs": 30,
+            "calories": 500,
+            "fat": 22,
+            "satFat": 4,
+            "sodium": 900,
+            "sugar": 12,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "16:11",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
