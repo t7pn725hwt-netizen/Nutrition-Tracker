@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-11T23:25:53.904Z",
+  "exported": "2026-06-11T23:55:23.228Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6001,6 +6001,25 @@
             "insulin": 0
           },
           "time": "14:14",
+          "starred": false
+        },
+        {
+          "id": "m_1781220361704_tdf4i",
+          "name": "1 Protein Shake Bottle (340mL)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 730,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "18:26",
           "starred": false
         }
       ]
