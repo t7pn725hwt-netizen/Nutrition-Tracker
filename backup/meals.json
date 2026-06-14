@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-14T17:29:31.618Z",
+  "exported": "2026-06-14T20:37:42.539Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6411,6 +6411,56 @@
             "preBolus": "first_bite",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": 145
+          }
+        },
+        {
+          "id": "m_1781458171627_kioeq",
+          "name": "One banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "12:29",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 145
+          }
+        },
+        {
+          "id": "m_1781458228644_wf6rm",
+          "name": "Wenzel's Farm PRO Original Meat Stick",
+          "macros": {
+            "protein": 16,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 130,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 590,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "12:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 5,
             "bsAtDose": 145
           }
         }
