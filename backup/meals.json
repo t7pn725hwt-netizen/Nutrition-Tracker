@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-14T02:16:48.644Z",
+  "exported": "2026-06-14T04:41:14.067Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6344,6 +6344,28 @@
             "activityAfter": false,
             "iob": 0.6,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1781403419778_zfzsq",
+          "name": "Insulin",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "21:16",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 115
           }
         }
       ]
