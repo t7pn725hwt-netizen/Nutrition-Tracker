@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-14T20:37:42.539Z",
+  "exported": "2026-06-14T20:39:19.111Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6462,6 +6462,50 @@
             "activityAfter": false,
             "iob": 5,
             "bsAtDose": 145
+          }
+        },
+        {
+          "id": "m_1781469468813_v5rar",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:37",
+          "starred": false
+        },
+        {
+          "id": "m_1781469523651_cm7w4",
+          "name": "6 BBQ Chicken Drumsticks, 300g Baked Potato with Butter and Sour Cream",
+          "macros": {
+            "protein": 76,
+            "fiber": 8,
+            "carbs": 71,
+            "calories": 1410,
+            "fat": 77,
+            "satFat": 30,
+            "sodium": 1160,
+            "sugar": 6,
+            "calcium": 130,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "15:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "after",
+            "activityAfter": false,
+            "iob": 1.1,
+            "bsAtDose": 72
           }
         }
       ]
