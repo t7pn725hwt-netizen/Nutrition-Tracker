@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-15T20:58:41.757Z",
+  "exported": "2026-06-15T23:01:23.515Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6594,6 +6594,31 @@
           },
           "time": "13:53",
           "starred": false
+        },
+        {
+          "id": "m_1781557161640_azkar",
+          "name": "BBQ Chicken (2 Drumsticks + 1 Thigh)",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 480,
+            "fat": 22,
+            "satFat": 6,
+            "sodium": 620,
+            "sugar": 10,
+            "calcium": 30,
+            "vitD": 12,
+            "insulin": 0
+          },
+          "time": "15:59",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0.2,
+            "bsAtDose": null
+          }
         }
       ]
     },
