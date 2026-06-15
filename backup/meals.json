@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-15T23:01:23.515Z",
+  "exported": "2026-06-15T23:11:33.161Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6618,6 +6618,31 @@
             "activityAfter": false,
             "iob": 0.2,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1781564511105_csjta",
+          "name": "Chicken & Spinach Salad",
+          "macros": {
+            "protein": 62,
+            "fiber": 5,
+            "carbs": 30,
+            "calories": 860,
+            "fat": 52,
+            "satFat": 15,
+            "sodium": 1660,
+            "sugar": 5,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "18:01",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "after",
+            "activityAfter": true,
+            "iob": 0,
+            "bsAtDose": 101
           }
         }
       ]
