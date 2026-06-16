@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-16T18:32:06.584Z",
+  "exported": "2026-06-16T18:38:35.022Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6683,7 +6683,7 @@
             "sugar": 7,
             "calcium": 300,
             "vitD": 0,
-            "insulin": 7
+            "insulin": 8
           },
           "time": "11:57",
           "starred": false,
@@ -6711,6 +6711,25 @@
             "insulin": 0
           },
           "time": "12:55",
+          "starred": false
+        },
+        {
+          "id": "m_1781635056218_a3otg",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:37",
           "starred": false
         }
       ]
