@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-16T22:55:43.253Z",
+  "exported": "2026-06-16T22:57:35.876Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6731,6 +6731,69 @@
           },
           "time": "13:37",
           "starred": false
+        },
+        {
+          "id": "m_1781650560351_52nhs",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:56",
+          "starred": false
+        },
+        {
+          "id": "m_1781650579742_zq7hu",
+          "name": "One banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:56",
+          "starred": false
+        },
+        {
+          "id": "m_1781650601891_v0qqz",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "17:56",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 101
+          }
         }
       ]
     },
