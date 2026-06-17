@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-17T18:24:03.669Z",
+  "exported": "2026-06-17T23:02:18.337Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6887,6 +6887,44 @@
             "iob": 0,
             "bsAtDose": 140
           }
+        },
+        {
+          "id": "m_1781725886484_xmf0j",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:51",
+          "starred": false
+        },
+        {
+          "id": "m_1781725901560_v1u72",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:51",
+          "starred": false
         }
       ]
     },
