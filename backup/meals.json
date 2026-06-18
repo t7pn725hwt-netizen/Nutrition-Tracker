@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-18T16:23:05.920Z",
+  "exported": "2026-06-18T19:48:34.745Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -6972,6 +6972,27 @@
           "doseLog": {
             "bsAtDose": 163
           }
+        }
+      ],
+      "2026-06-18": [
+        {
+          "id": "m_1781799808198_ng65t",
+          "name": "2 Avocados, 5 Eggs w/ Cheese",
+          "macros": {
+            "protein": 44,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 1120,
+            "fat": 92,
+            "satFat": 23,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 420,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "11:23",
+          "starred": false
         }
       ]
     },
