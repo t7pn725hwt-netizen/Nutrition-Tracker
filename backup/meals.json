@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-18T23:27:46.940Z",
+  "exported": "2026-06-19T00:13:49.432Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7018,6 +7018,44 @@
             "iob": 0,
             "bsAtDose": 125
           }
+        },
+        {
+          "id": "m_1781825273621_915mz",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:46",
+          "starred": false
+        },
+        {
+          "id": "m_1781827899365_enhxv",
+          "name": "Fairlife Protein Shake (Chocolate, 340mL)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 700,
+            "vitD": 4,
+            "insulin": 0
+          },
+          "time": "19:11",
+          "starred": false
         }
       ]
     },
