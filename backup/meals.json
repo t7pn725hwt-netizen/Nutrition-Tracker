@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-19T18:57:22.117Z",
+  "exported": "2026-06-19T18:58:13.483Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7077,6 +7077,31 @@
           },
           "time": "11:53",
           "starred": false
+        },
+        {
+          "id": "m_1781895463480_qyy9t",
+          "name": "Fried Turkey Mashed Potato Croquettes with Gravy",
+          "macros": {
+            "protein": 26,
+            "fiber": 4,
+            "carbs": 88,
+            "calories": 880,
+            "fat": 42,
+            "satFat": 16,
+            "sodium": 1750,
+            "sugar": 7,
+            "calcium": 160,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "13:57",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
