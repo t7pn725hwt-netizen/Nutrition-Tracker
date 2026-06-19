@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-19T21:03:55.271Z",
+  "exported": "2026-06-19T21:25:15.511Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7101,6 +7101,50 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1781903039522_59nhb",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:03",
+          "starred": false
+        },
+        {
+          "id": "m_1781903418382_19xpo",
+          "name": "Kirkland chicken nugs 12",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 33,
+            "calories": 480,
+            "fat": 18,
+            "satFat": 3,
+            "sodium": 1770,
+            "sugar": 6,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "16:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 4.5,
+            "bsAtDose": 102
           }
         }
       ]
