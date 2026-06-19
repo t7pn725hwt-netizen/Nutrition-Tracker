@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-19T16:52:37.953Z",
+  "exported": "2026-06-19T17:45:24.465Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -5957,7 +5957,7 @@
             "insulin": 0
           },
           "time": "12:34",
-          "starred": false
+          "starred": true
         },
         {
           "id": "m_1781212317356_22rbt",
@@ -7057,6 +7057,27 @@
           "time": "19:11",
           "starred": false
         }
+      ],
+      "2026-06-19": [
+        {
+          "id": "m_1781887993193_gi7ci",
+          "name": "5 Cooked Eggs and 2 Medium Avocados",
+          "macros": {
+            "protein": 38,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 840,
+            "fat": 68,
+            "satFat": 15,
+            "sodium": 360,
+            "sugar": 3,
+            "calcium": 180,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "11:53",
+          "starred": false
+        }
       ]
     },
     "favorites": [
@@ -7312,6 +7333,23 @@
           "sugar": 1,
           "calcium": 80,
           "vitD": 120,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1781887984150_dopqb",
+        "name": "5 Cooked Eggs and 2 Medium Avocados",
+        "macros": {
+          "protein": 38,
+          "fiber": 20,
+          "carbs": 26,
+          "calories": 840,
+          "fat": 68,
+          "satFat": 15,
+          "sodium": 360,
+          "sugar": 3,
+          "calcium": 180,
+          "vitD": 205,
           "insulin": 0
         }
       }
