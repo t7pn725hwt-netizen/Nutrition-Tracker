@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-21T08:22:30.983Z",
+  "exported": "2026-06-21T08:46:17.205Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7299,6 +7299,27 @@
           "doseLog": {
             "bsAtDose": 140
           }
+        }
+      ],
+      "2026-06-21": [
+        {
+          "id": "m_1782030187858_vk5i0",
+          "name": "5 skittles",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 10,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "vitD": 0,
+            "calcium": 0,
+            "insulin": 0
+          },
+          "time": "03:22",
+          "starred": false
         }
       ]
     },
