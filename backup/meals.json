@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-21T20:51:32.180Z",
+  "exported": "2026-06-21T23:45:06.425Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7401,6 +7401,82 @@
             "insulin": 0
           },
           "time": "15:00",
+          "starred": false
+        },
+        {
+          "id": "m_1782075102005_xo51q",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:51",
+          "starred": false
+        },
+        {
+          "id": "m_1782075109852_emuae",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:51",
+          "starred": false
+        },
+        {
+          "id": "m_1782084455348_5li1o",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:27",
+          "starred": false
+        },
+        {
+          "id": "m_1782085249152_h7hhh",
+          "name": "Fried Chicken Patty 3oz",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 11,
+            "calories": 230,
+            "fat": 13,
+            "satFat": 3,
+            "sodium": 480,
+            "sugar": 0,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:40",
           "starred": false
         }
       ]
