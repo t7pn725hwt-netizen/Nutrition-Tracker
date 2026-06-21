@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-20T21:44:25.429Z",
+  "exported": "2026-06-21T02:39:22.996Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7257,6 +7257,25 @@
             "insulin": 0
           },
           "time": "15:58",
+          "starred": false
+        },
+        {
+          "id": "m_1781991884507_f5891",
+          "name": "4 Kirkland Egg Bites",
+          "macros": {
+            "protein": 34,
+            "fiber": 2,
+            "carbs": 18,
+            "calories": 500,
+            "fat": 32,
+            "satFat": 18,
+            "sodium": 1360,
+            "sugar": 4,
+            "calcium": 440,
+            "vitD": 2,
+            "insulin": 0
+          },
+          "time": "16:44",
           "starred": false
         }
       ]
