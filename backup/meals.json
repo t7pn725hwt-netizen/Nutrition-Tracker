@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-22T20:00:04.174Z",
+  "exported": "2026-06-22T20:55:50.066Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7527,6 +7527,44 @@
             "iob": 0,
             "bsAtDose": 152
           }
+        },
+        {
+          "id": "m_1782158511796_bfh66",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:01",
+          "starred": false
+        },
+        {
+          "id": "m_1782161720060_g7q1x",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:55",
+          "starred": false
         }
       ]
     },
