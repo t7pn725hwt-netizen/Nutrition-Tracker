@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-23T17:54:40.599Z",
+  "exported": "2026-06-23T17:56:49.967Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7630,6 +7630,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 172
+          }
+        }
+      ],
+      "2026-06-23": [
+        {
+          "id": "m_1782237379964_jci2f",
+          "name": "1 Banana and Costco Food Court Hot Dog with Bun",
+          "macros": {
+            "protein": 26,
+            "fiber": 4,
+            "carbs": 50,
+            "calories": 690,
+            "fat": 33,
+            "satFat": 12,
+            "sodium": 1790,
+            "sugar": 16,
+            "calcium": 110,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "12:56",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 134
           }
         }
       ]
