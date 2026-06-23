@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-23T22:16:31.667Z",
+  "exported": "2026-06-23T23:38:44.261Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7696,6 +7696,50 @@
           },
           "time": "15:05",
           "starred": false
+        },
+        {
+          "id": "m_1782257813141_7h56j",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 47,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:36",
+          "starred": false
+        },
+        {
+          "id": "m_1782257847715_3kpm5",
+          "name": "One banana",
+          "macros": {
+            "protein": 1.3,
+            "fiber": 3.1,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0.4,
+            "satFat": 0.1,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "18:37",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 139
+          }
         }
       ]
     },
