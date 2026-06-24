@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-24T18:30:53.813Z",
+  "exported": "2026-06-24T23:28:13.820Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7781,6 +7781,90 @@
           "doseLog": {
             "bsAtDose": 206
           }
+        }
+      ],
+      "2026-06-24": [
+        {
+          "id": "m_1782325861608_86vna",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "13:31",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1782334515071_jykx4",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:55",
+          "starred": false
+        },
+        {
+          "id": "m_1782337480179_dv8m9",
+          "name": "Sliced Turkey Breast 8oz",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:44",
+          "starred": false
+        },
+        {
+          "id": "m_1782337540212_ch04v",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:45",
+          "starred": false
         }
       ]
     },
