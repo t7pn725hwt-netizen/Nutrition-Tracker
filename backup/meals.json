@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-25T13:17:25.902Z",
+  "exported": "2026-06-25T20:50:28.737Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7910,6 +7910,52 @@
           "time": "22:28",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-06-25": [
+        {
+          "id": "m_1782411939439_01de1",
+          "name": "5 Cooked Eggs and 2 Medium Avocados",
+          "macros": {
+            "protein": 38,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 840,
+            "fat": 68,
+            "satFat": 15,
+            "sodium": 360,
+            "sugar": 3,
+            "calcium": 180,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "10:12",
+          "starred": false
+        },
+        {
+          "id": "m_1782411961822_ylhbc",
+          "name": "Sweetgreen Harvest Bowl with Extra Goat Cheese and 3 oz Grilled Chicken",
+          "macros": {
+            "protein": 62,
+            "fiber": 10,
+            "carbs": 60,
+            "calories": 970,
+            "fat": 52,
+            "satFat": 14,
+            "sodium": 1450,
+            "sugar": 11,
+            "calcium": 430,
+            "vitD": 1,
+            "insulin": 8
+          },
+          "time": "13:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
