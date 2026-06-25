@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-25T22:08:54.716Z",
+  "exported": "2026-06-25T23:33:30.629Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7920,7 +7920,7 @@
           "name": "5 Cooked Eggs and 2 Medium Avocados",
           "macros": {
             "protein": 38,
-            "fiber": 20,
+            "fiber": 12,
             "carbs": 26,
             "calories": 840,
             "fat": 68,
