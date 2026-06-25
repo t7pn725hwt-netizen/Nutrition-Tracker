@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-25T20:50:28.737Z",
+  "exported": "2026-06-25T22:08:54.716Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -7957,6 +7957,50 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1782420633516_us9bc",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:50",
+          "starred": false
+        },
+        {
+          "id": "m_1782425212240_6avuq",
+          "name": "Steak Nachos with Queso, Avocado, Black Beans and Pinto Beans",
+          "macros": {
+            "protein": 48,
+            "fiber": 15,
+            "carbs": 90,
+            "calories": 1380,
+            "fat": 82,
+            "satFat": 24,
+            "sodium": 2450,
+            "sugar": 6,
+            "calcium": 650,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "17:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": true,
+            "iob": 0.6,
+            "bsAtDose": 114
           }
         }
       ]
