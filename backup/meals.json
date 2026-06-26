@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-26T23:10:48.541Z",
+  "exported": "2026-06-26T23:31:15.245Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8113,6 +8113,31 @@
             "activityAfter": false,
             "iob": 3.7,
             "bsAtDose": 141
+          }
+        },
+        {
+          "id": "m_1782515864024_fqqsk",
+          "name": "1/2 lb Grilled Chicken Breast, 1/2 lb Broccoli, 1 oz Chick-fil-A Polynesian Sauce",
+          "macros": {
+            "protein": 83,
+            "fiber": 11,
+            "carbs": 35,
+            "calories": 680,
+            "fat": 11,
+            "satFat": 2,
+            "sodium": 1010,
+            "sugar": 17,
+            "calcium": 210,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "18:17",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
+            "bsAtDose": 139
           }
         }
       ]
