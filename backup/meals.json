@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-27T17:27:01.341Z",
+  "exported": "2026-06-27T17:28:22.829Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8132,7 +8132,7 @@
             "insulin": 4
           },
           "time": "18:17",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -8161,6 +8161,52 @@
           "doseLog": {
             "bsAtDose": 178
           }
+        }
+      ],
+      "2026-06-27": [
+        {
+          "id": "m_1782581266410_zkd2e",
+          "name": "1/2 lb Grilled Chicken Breast, 1/2 lb Broccoli, 1 oz Chick-fil-A Polynesian Sauce",
+          "macros": {
+            "protein": 83,
+            "fiber": 11,
+            "carbs": 35,
+            "calories": 680,
+            "fat": 11,
+            "satFat": 2,
+            "sodium": 1010,
+            "sugar": 17,
+            "calcium": 210,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "12:27",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1782581272825_1rzfa",
+          "name": "2 Small Avocados",
+          "macros": {
+            "protein": 5,
+            "fiber": 18,
+            "carbs": 24,
+            "calories": 430,
+            "fat": 40,
+            "satFat": 6,
+            "sodium": 14,
+            "sugar": 2,
+            "calcium": 36,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "12:27",
+          "starred": false
         }
       ]
     },
@@ -8450,6 +8496,23 @@
           "sodium": 11,
           "sugar": 1,
           "calcium": 18,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1782581225382_0vbl7",
+        "name": "1/2 lb Grilled Chicken Breast, 1/2 lb Broccoli, 1 oz Chick-fil-A Polynesian Sauce",
+        "macros": {
+          "protein": 83,
+          "fiber": 11,
+          "carbs": 35,
+          "calories": 680,
+          "fat": 11,
+          "satFat": 2,
+          "sodium": 1010,
+          "sugar": 17,
+          "calcium": 210,
           "vitD": 0,
           "insulin": 0
         }
