@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-28T15:31:15.428Z",
+  "exported": "2026-06-28T15:34:31.877Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8270,11 +8270,30 @@
             "vitD": 0,
             "insulin": 12
           },
-          "time": "00:09",
+          "time": "00:02",
           "starred": false,
           "doseLog": {
             "bsAtDose": 110
           }
+        },
+        {
+          "id": "m_1782660698522_3kg5p",
+          "name": "5 Eggs w/ Cheese",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 3,
+            "calories": 520,
+            "fat": 38,
+            "satFat": 14,
+            "sodium": 480,
+            "sugar": 1,
+            "calcium": 280,
+            "vitD": 4,
+            "insulin": 0
+          },
+          "time": "11:31",
+          "starred": false
         }
       ]
     },
