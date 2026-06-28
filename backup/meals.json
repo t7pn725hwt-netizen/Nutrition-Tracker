@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-28T22:14:17.773Z",
+  "exported": "2026-06-28T23:04:16.271Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8351,6 +8351,50 @@
           },
           "time": "17:14",
           "starred": true
+        },
+        {
+          "id": "m_1782684869208_h0gg4",
+          "name": "Shrimp & Avocado Ceviche (1 cup)",
+          "macros": {
+            "protein": 22,
+            "fiber": 5,
+            "carbs": 12,
+            "calories": 280,
+            "fat": 14,
+            "satFat": 2,
+            "sodium": 620,
+            "sugar": 3,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:14",
+          "starred": false
+        },
+        {
+          "id": "m_1782686565792_16suk",
+          "name": "Cheeseburger with Brioche Bun & Potato Chips",
+          "macros": {
+            "protein": 32,
+            "fiber": 2,
+            "carbs": 52,
+            "calories": 720,
+            "fat": 38,
+            "satFat": 15,
+            "sodium": 980,
+            "sugar": 8,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "18:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
