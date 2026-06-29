@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-29T16:14:55.147Z",
+  "exported": "2026-06-29T16:15:56.924Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8442,6 +8442,27 @@
           "doseLog": {
             "bsAtDose": 138
           }
+        }
+      ],
+      "2026-06-29": [
+        {
+          "id": "m_1782749726920_34uk2",
+          "name": "5 Eggs w/ Cheese & 2 Sausage Patties",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 680,
+            "fat": 50,
+            "satFat": 20,
+            "sodium": 1050,
+            "sugar": 1,
+            "calcium": 350,
+            "vitD": 3.5,
+            "insulin": 0
+          },
+          "time": "12:15",
+          "starred": false
         }
       ]
     },
