@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-28T23:30:35.414Z",
+  "exported": "2026-06-29T01:27:10.559Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8393,6 +8393,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1782689455059_kpwsd",
+          "name": "2.5 Small Cheesecake Bars",
+          "macros": {
+            "protein": 6,
+            "fiber": 0.5,
+            "carbs": 30,
+            "calories": 425,
+            "fat": 28,
+            "satFat": 16,
+            "sodium": 250,
+            "sugar": 21,
+            "calcium": 90,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "19:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 6.4,
             "bsAtDose": null
           }
         }
