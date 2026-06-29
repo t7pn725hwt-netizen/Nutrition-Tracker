@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-29T20:44:42.176Z",
+  "exported": "2026-06-29T20:50:25.502Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8531,6 +8531,31 @@
             "activityAfter": false,
             "iob": 5,
             "bsAtDose": 142
+          }
+        },
+        {
+          "id": "m_1782766183124_eiwjb",
+          "name": "Costco Food Court Hot Dog with Bun",
+          "macros": {
+            "protein": 24,
+            "fiber": 2,
+            "carbs": 46,
+            "calories": 580,
+            "fat": 32,
+            "satFat": 12,
+            "sodium": 1790,
+            "sugar": 9,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "16:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 5,
+            "bsAtDose": 148
           }
         }
       ]
