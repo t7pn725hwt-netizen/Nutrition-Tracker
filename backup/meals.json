@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-30T12:55:01.470Z",
+  "exported": "2026-06-30T13:20:31.780Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8602,6 +8602,33 @@
           "time": "22:39",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-06-30": [
+        {
+          "id": "m_1782825581419_0qkep",
+          "name": "2 Slices Egg Bake with Bread, Cheese and Bacon",
+          "macros": {
+            "protein": 40,
+            "fiber": 2,
+            "carbs": 36,
+            "calories": 740,
+            "fat": 50,
+            "satFat": 20,
+            "sodium": 1440,
+            "sugar": 6,
+            "calcium": 500,
+            "vitD": 2,
+            "insulin": 5
+          },
+          "time": "09:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
