@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-30T21:35:19.515Z",
+  "exported": "2026-06-30T21:37:06.348Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8631,6 +8631,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1782855325480_uv3oi",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:35",
+          "starred": false
+        },
+        {
+          "id": "m_1782855396344_mxulo",
+          "name": "Kirkland Chicken Sausage 2 Links",
+          "macros": {
+            "protein": 28,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 300,
+            "fat": 20,
+            "satFat": 6,
+            "sodium": 1280,
+            "sugar": 0,
+            "calcium": 180,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:36",
+          "starred": false
         }
       ]
     },
