@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-30T13:20:31.780Z",
+  "exported": "2026-06-30T15:53:35.953Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8621,7 +8621,7 @@
             "sugar": 6,
             "calcium": 500,
             "vitD": 2,
-            "insulin": 5
+            "insulin": 6
           },
           "time": "09:19",
           "starred": false,
