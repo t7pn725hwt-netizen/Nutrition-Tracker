@@ -1,5 +1,5 @@
 {
-  "exported": "2026-06-29T23:32:30.215Z",
+  "exported": "2026-06-30T02:39:14.515Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8556,6 +8556,31 @@
             "activityAfter": false,
             "iob": 5,
             "bsAtDose": 148
+          }
+        },
+        {
+          "id": "m_1782775972569_xm0fr",
+          "name": "2 Costco Stuffed Peppers",
+          "macros": {
+            "protein": 58,
+            "fiber": 4,
+            "carbs": 30,
+            "calories": 760,
+            "fat": 38,
+            "satFat": 14,
+            "sodium": 1720,
+            "sugar": 10,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "19:32",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.6,
+            "bsAtDose": 156
           }
         }
       ]
