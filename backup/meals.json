@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-01T17:42:35.118Z",
+  "exported": "2026-07-01T17:43:14.091Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8714,6 +8714,33 @@
           "time": "21:54",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-01": [
+        {
+          "id": "m_1782927764088_dxiwx",
+          "name": "1.5 Cups Pasta with Alfredo and Spaghetti Sauce, 8 oz Grilled Chicken",
+          "macros": {
+            "protein": 82,
+            "fiber": 4,
+            "carbs": 74,
+            "calories": 980,
+            "fat": 24,
+            "satFat": 8,
+            "sodium": 1120,
+            "sugar": 8,
+            "calcium": 180,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "12:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
