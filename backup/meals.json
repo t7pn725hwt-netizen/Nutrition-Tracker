@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-03T23:25:56.389Z",
+  "exported": "2026-07-03T23:42:38.820Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9065,6 +9065,50 @@
             "iob": 0.8,
             "bsAtDose": 116
           }
+        },
+        {
+          "id": "m_1783122073513_11ini",
+          "name": "Kirkland Chicken Nugs (12), 3 Cups SkinnyPop, 4 Tbsp Sweet Chili Sauce",
+          "macros": {
+            "protein": 51,
+            "fiber": 5,
+            "carbs": 68,
+            "calories": 690,
+            "fat": 27,
+            "satFat": 3,
+            "sodium": 1090,
+            "sugar": 22,
+            "calcium": 30,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "19:01",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.7,
+            "bsAtDose": 173
+          }
+        },
+        {
+          "id": "m_1783122091703_avwm1",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:41",
+          "starred": false
         }
       ]
     },
