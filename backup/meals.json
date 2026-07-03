@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-03T18:35:14.965Z",
+  "exported": "2026-07-03T19:22:45.054Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9000,6 +9000,27 @@
           "doseLog": {
             "bsAtDose": 208
           }
+        }
+      ],
+      "2026-07-03": [
+        {
+          "id": "m_1783103718920_p6qum",
+          "name": "2 Medium Avocados, 5 Eggs, 1 Chicken Sausage",
+          "macros": {
+            "protein": 48,
+            "fiber": 20,
+            "carbs": 28,
+            "calories": 980,
+            "fat": 80,
+            "satFat": 18,
+            "sodium": 860,
+            "sugar": 3,
+            "calcium": 220,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "13:35",
+          "starred": false
         }
       ]
     },
