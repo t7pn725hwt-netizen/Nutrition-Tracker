@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-02T22:44:41.041Z",
+  "exported": "2026-07-03T03:11:29.795Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8931,6 +8931,31 @@
           },
           "time": "15:52",
           "starred": false
+        },
+        {
+          "id": "m_1783032331105_0sv4o",
+          "name": "Massaman Curry with 1/2 Rice",
+          "macros": {
+            "protein": 34,
+            "fiber": 4,
+            "carbs": 54,
+            "calories": 690,
+            "fat": 36,
+            "satFat": 15,
+            "sodium": 1180,
+            "sugar": 8,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "17:45",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
