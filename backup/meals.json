@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-03T03:11:29.795Z",
+  "exported": "2026-07-03T04:53:49.712Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -8955,6 +8955,50 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783048304085_rav25",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "22:11",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783049063399_qr2yi",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "22:24",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 208
           }
         }
       ]
