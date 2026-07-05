@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-05T01:09:04.884Z",
+  "exported": "2026-07-05T02:49:23.251Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9176,6 +9176,69 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": 154
+          }
+        },
+        {
+          "id": "m_1783213832889_bb4g0",
+          "name": "2 Avocados, 5 Eggs w/ Cheese",
+          "macros": {
+            "protein": 44,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 1120,
+            "fat": 92,
+            "satFat": 23,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 420,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "20:10",
+          "starred": false
+        },
+        {
+          "id": "m_1783217534706_hhod1",
+          "name": "Lantus",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "21:12",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783217612231_mu65l",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "21:13",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 204
           }
         }
       ]
