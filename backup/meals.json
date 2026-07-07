@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-07T18:19:16.591Z",
+  "exported": "2026-07-07T22:01:35.385Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9506,6 +9506,33 @@
           "time": "21:29",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-07": [
+        {
+          "id": "m_1783448368783_ujbpa",
+          "name": "Chipotle Chicken Burrito Bowl (White Rice, Black Beans, Pinto Beans, Double Pico, Double Corn, Fajita Veggies, Sour Cream)",
+          "macros": {
+            "protein": 46,
+            "fiber": 17,
+            "carbs": 88,
+            "calories": 835,
+            "fat": 24,
+            "satFat": 8,
+            "sodium": 2030,
+            "sugar": 12,
+            "calcium": 180,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "13:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
