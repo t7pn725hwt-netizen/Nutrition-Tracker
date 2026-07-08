@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-08T17:25:54.776Z",
+  "exported": "2026-07-08T17:47:22.595Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9619,6 +9619,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 149
+          }
+        }
+      ],
+      "2026-07-08": [
+        {
+          "id": "m_1783532714746_h7fhv",
+          "name": "General Tso Chicken with Broccoli",
+          "macros": {
+            "protein": 42,
+            "fiber": 4,
+            "carbs": 58,
+            "calories": 670,
+            "fat": 25,
+            "satFat": 5,
+            "sodium": 1550,
+            "sugar": 24,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "12:45",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
