@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-08T19:00:59.092Z",
+  "exported": "2026-07-08T20:21:47.748Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9647,6 +9647,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1783537275730_h92wd",
+          "name": "Dry Rub Baked Chicken Wings (5 pieces)",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 520,
+            "fat": 34,
+            "satFat": 9,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 30,
+            "vitD": 8,
+            "insulin": 0
+          },
+          "time": "14:01",
+          "starred": false
         }
       ]
     },
