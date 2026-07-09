@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-09T02:54:25.492Z",
+  "exported": "2026-07-09T20:34:27.848Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9730,6 +9730,33 @@
           "time": "21:53",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-09": [
+        {
+          "id": "m_1783614998335_6jrz3",
+          "name": "Sesame Chicken with Broccoli",
+          "macros": {
+            "protein": 38,
+            "fiber": 4,
+            "carbs": 48,
+            "calories": 620,
+            "fat": 22,
+            "satFat": 4,
+            "sodium": 1400,
+            "sugar": 28,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "11:36",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
