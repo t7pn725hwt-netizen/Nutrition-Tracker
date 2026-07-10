@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-10T19:11:51.865Z",
+  "exported": "2026-07-10T21:32:53.861Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9855,6 +9855,50 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1783710722339_65zix",
+          "name": "Naf Naf Grill Bowl with Rice, Hummus, Tzatziki, Chicken Shawarma, Garlic Sauce and Cucumber Salad",
+          "macros": {
+            "protein": 58,
+            "fiber": 9,
+            "carbs": 68,
+            "calories": 980,
+            "fat": 42,
+            "satFat": 8,
+            "sodium": 1850,
+            "sugar": 8,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "14:12",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.2,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783710780171_6qafc",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:13",
+          "starred": false
         }
       ]
     },
