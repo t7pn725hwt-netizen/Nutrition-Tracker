@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-11T01:18:55.060Z",
+  "exported": "2026-07-11T03:18:06.098Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9899,6 +9899,31 @@
           },
           "time": "11:13",
           "starred": false
+        },
+        {
+          "id": "m_1783732743463_fig80",
+          "name": "BBQ Pulled Pork Plate with Mac & Cheese and Cornbread Muffin",
+          "macros": {
+            "protein": 63,
+            "fiber": 3,
+            "carbs": 62,
+            "calories": 1180,
+            "fat": 63,
+            "satFat": 23,
+            "sodium": 1780,
+            "sugar": 18,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "20:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
