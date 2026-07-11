@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-11T19:46:40.169Z",
+  "exported": "2026-07-11T19:48:18.542Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9951,6 +9951,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1783799268537_ylopq",
+          "name": "6 oz BBQ Pulled Pork",
+          "macros": {
+            "protein": 42,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 420,
+            "fat": 26,
+            "satFat": 9,
+            "sodium": 820,
+            "sugar": 4,
+            "calcium": 30,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:47",
+          "starred": false
         }
       ]
     },
