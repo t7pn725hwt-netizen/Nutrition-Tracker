@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-11T19:48:18.542Z",
+  "exported": "2026-07-11T20:28:02.356Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -9969,6 +9969,25 @@
             "insulin": 0
           },
           "time": "14:47",
+          "starred": false
+        },
+        {
+          "id": "m_1783801566701_8rhj9",
+          "name": "Chobani Greek Yogurt with Fruit (190g container)",
+          "macros": {
+            "protein": 20,
+            "fiber": 1,
+            "carbs": 9,
+            "calories": 140,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 115,
+            "sugar": 7,
+            "calcium": 180,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:26",
           "starred": false
         }
       ]
