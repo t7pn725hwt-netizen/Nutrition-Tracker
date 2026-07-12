@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-12T17:29:01.054Z",
+  "exported": "2026-07-12T19:55:24.381Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10036,6 +10036,27 @@
           "doseLog": {
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-07-12": [
+        {
+          "id": "m_1783877347618_63t2w",
+          "name": "5 Cooked Eggs and 2 Medium Avocados",
+          "macros": {
+            "protein": 38,
+            "fiber": 20,
+            "carbs": 26,
+            "calories": 840,
+            "fat": 68,
+            "satFat": 15,
+            "sodium": 360,
+            "sugar": 3,
+            "calcium": 180,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "12:29",
+          "starred": false
         }
       ]
     },
