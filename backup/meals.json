@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-12T19:55:24.381Z",
+  "exported": "2026-07-12T20:01:07.824Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10057,6 +10057,50 @@
           },
           "time": "12:29",
           "starred": false
+        },
+        {
+          "id": "m_1783886127479_kh2ew",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:55",
+          "starred": false
+        },
+        {
+          "id": "m_1783886437820_anlmp",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "15:00",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
