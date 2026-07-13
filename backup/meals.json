@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-12T20:01:07.824Z",
+  "exported": "2026-07-13T00:09:57.012Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10099,6 +10099,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783886492230_tu019",
+          "name": "Wheat Crackers with Cheddar Cheese (2 servings crackers + 4oz cheddar)",
+          "macros": {
+            "protein": 30,
+            "fiber": 6,
+            "carbs": 44,
+            "calories": 730,
+            "fat": 42,
+            "satFat": 24,
+            "sodium": 1060,
+            "sugar": 10,
+            "calcium": 860,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "15:01",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3,
             "bsAtDose": null
           }
         }
