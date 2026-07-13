@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-13T00:09:57.012Z",
+  "exported": "2026-07-13T04:11:19.663Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10124,6 +10124,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 3,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1783901402733_w4936",
+          "name": "8oz Teriyaki Chicken, 2 Large Glazed Carrots, and Large Slice of Cherry Pie",
+          "macros": {
+            "protein": 63,
+            "fiber": 6,
+            "carbs": 102,
+            "calories": 1120,
+            "fat": 34,
+            "satFat": 8,
+            "sodium": 1420,
+            "sugar": 58,
+            "calcium": 90,
+            "vitD": 0,
+            "insulin": 16
+          },
+          "time": "19:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
