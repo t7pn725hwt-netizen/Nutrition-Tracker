@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-13T20:17:58.110Z",
+  "exported": "2026-07-13T20:49:21.837Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10200,6 +10200,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1783973907512_5mut3",
+          "name": "Fried Fish Fillets 4 pieces",
+          "macros": {
+            "protein": 36,
+            "fiber": 1,
+            "carbs": 24,
+            "calories": 520,
+            "fat": 28,
+            "satFat": 6,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 60,
+            "vitD": 120,
+            "insulin": 0
+          },
+          "time": "15:18",
+          "starred": false
         }
       ]
     },
