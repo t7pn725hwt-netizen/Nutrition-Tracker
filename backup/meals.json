@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-14T22:49:56.905Z",
+  "exported": "2026-07-14T22:51:32.171Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10353,6 +10353,31 @@
           },
           "time": "14:38",
           "starred": false
+        },
+        {
+          "id": "m_1784069462157_62nfq",
+          "name": "22 Wheat Thins, 6oz Cheddar Cheese Spread, 2 Chicken Sausages, and 1 Slice Chocolate Cake",
+          "macros": {
+            "protein": 55,
+            "fiber": 6,
+            "carbs": 86,
+            "calories": 1320,
+            "fat": 84,
+            "satFat": 36,
+            "sodium": 2480,
+            "sugar": 29,
+            "calcium": 620,
+            "vitD": 0,
+            "insulin": 13
+          },
+          "time": "17:51",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
