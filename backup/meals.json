@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-14T19:35:35.978Z",
+  "exported": "2026-07-14T20:51:08.594Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10315,6 +10315,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1784057739132_hnwwc",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:35",
+          "starred": false
+        },
+        {
+          "id": "m_1784057886359_w03o6",
+          "name": "Charcuterie Bowl (Coppa/Capicola, Hard Salami, Brie, Cheddar)",
+          "macros": {
+            "protein": 32,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 580,
+            "fat": 47,
+            "satFat": 20,
+            "sodium": 1650,
+            "sugar": 1,
+            "calcium": 220,
+            "vitD": 12,
+            "insulin": 0
+          },
+          "time": "14:38",
+          "starred": false
         }
       ]
     },
