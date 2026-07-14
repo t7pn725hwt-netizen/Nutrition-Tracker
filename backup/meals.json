@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-13T22:24:48.514Z",
+  "exported": "2026-07-14T00:16:41.448Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10215,7 +10215,7 @@
             "sugar": 1,
             "calcium": 60,
             "vitD": 120,
-            "insulin": 0
+            "insulin": 4
           },
           "time": "15:18",
           "starred": false
@@ -10238,6 +10238,31 @@
           },
           "time": "12:49",
           "starred": false
+        },
+        {
+          "id": "m_1783988171444_wj1tn",
+          "name": "Fried Cheese Curds",
+          "macros": {
+            "protein": 18,
+            "fiber": 0,
+            "carbs": 22,
+            "calories": 420,
+            "fat": 28,
+            "satFat": 14,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "19:16",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
