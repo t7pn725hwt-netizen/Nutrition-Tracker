@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-15T20:18:47.682Z",
+  "exported": "2026-07-15T23:30:42.055Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10256,7 +10256,7 @@
             "insulin": 4
           },
           "time": "19:16",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -10378,6 +10378,52 @@
             "iob": 0,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-07-15": [
+        {
+          "id": "m_1784146737140_ms22v",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "13:18",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784149699407_ebhbx",
+          "name": "Fried Cheese Curds",
+          "macros": {
+            "protein": 18,
+            "fiber": 0,
+            "carbs": 22,
+            "calories": 420,
+            "fat": 28,
+            "satFat": 14,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:08",
+          "starred": false
         }
       ]
     },
@@ -10701,6 +10747,23 @@
           "sodium": 620,
           "sugar": 3,
           "calcium": 80,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1784149691175_wvj45",
+        "name": "Fried Cheese Curds",
+        "macros": {
+          "protein": 18,
+          "fiber": 0,
+          "carbs": 22,
+          "calories": 420,
+          "fat": 28,
+          "satFat": 14,
+          "sodium": 820,
+          "sugar": 1,
+          "calcium": 350,
           "vitD": 0,
           "insulin": 0
         }
