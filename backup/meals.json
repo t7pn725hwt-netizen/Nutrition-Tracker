@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-16T19:53:37.004Z",
+  "exported": "2026-07-16T22:10:28.079Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10568,6 +10568,31 @@
           },
           "time": "13:55",
           "starred": false
+        },
+        {
+          "id": "m_1784231667424_hua3u",
+          "name": "Specialty Sushi Roll - 25 Pieces (Spicy Crab/Shrimp Roll with Crispy Onion & Sauce)",
+          "macros": {
+            "protein": 35,
+            "fiber": 3,
+            "carbs": 120,
+            "calories": 980,
+            "fat": 32,
+            "satFat": 5,
+            "sodium": 1800,
+            "sugar": 18,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "14:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
