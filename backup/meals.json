@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-16T16:42:54.259Z",
+  "exported": "2026-07-16T18:55:20.067Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10520,6 +10520,33 @@
           "time": "22:07",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-16": [
+        {
+          "id": "m_1784220244933_2rfrk",
+          "name": "5 Cooked Eggs and 2 Chicken Sausages",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 690,
+            "fat": 46,
+            "satFat": 14,
+            "sodium": 980,
+            "sugar": 2,
+            "calcium": 140,
+            "vitD": 205,
+            "insulin": 0
+          },
+          "time": "11:44",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
