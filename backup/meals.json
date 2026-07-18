@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-18T19:44:39.382Z",
+  "exported": "2026-07-18T19:45:17.234Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10717,6 +10717,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1784403887140_ccnls",
+          "name": "Meal",
+          "macros": {
+            "protein": 42,
+            "fiber": 1,
+            "carbs": 22,
+            "calories": 560,
+            "fat": 24,
+            "satFat": 4,
+            "sodium": 1100,
+            "sugar": 1,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:44",
+          "starred": false
         }
       ]
     },
