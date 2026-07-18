@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-17T21:01:32.437Z",
+  "exported": "2026-07-18T09:43:36.833Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10651,6 +10651,44 @@
             "insulin": 0
           },
           "time": "15:08",
+          "starred": false
+        },
+        {
+          "id": "m_1784334163473_jqjk8",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:22",
+          "starred": false
+        },
+        {
+          "id": "m_1784334247630_nwug4",
+          "name": "Fairlife Chocolate Milk (340mL Bottle)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 730,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "18:24",
           "starred": false
         }
       ]
