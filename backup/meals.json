@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-19T19:25:33.832Z",
+  "exported": "2026-07-19T20:49:37.339Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10851,6 +10851,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1784489139210_beinh",
+          "name": "3 Pork Tenderloin Medallions (~8 oz cooked)",
+          "macros": {
+            "protein": 56,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 390,
+            "fat": 16,
+            "satFat": 5,
+            "sodium": 520,
+            "sugar": 0,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:25",
+          "starred": false
         }
       ]
     },
