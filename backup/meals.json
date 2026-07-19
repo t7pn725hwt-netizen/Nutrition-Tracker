@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-19T18:08:11.848Z",
+  "exported": "2026-07-19T19:25:33.832Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10822,6 +10822,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 1,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-19": [
+        {
+          "id": "m_1784484500691_m38hv",
+          "name": "8 oz BBQ Pulled Pork + 5 oz Baked Beans",
+          "macros": {
+            "protein": 52,
+            "fiber": 8,
+            "carbs": 42,
+            "calories": 730,
+            "fat": 30,
+            "satFat": 10,
+            "sodium": 1350,
+            "sugar": 20,
+            "calcium": 110,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "13:08",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
