@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-19T02:28:34.955Z",
+  "exported": "2026-07-19T08:11:47.134Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10797,6 +10797,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784428529628_fuovf",
+          "name": "24 Wheat Thins + ~2 oz Cheddar Cheese Spread",
+          "macros": {
+            "protein": 12,
+            "fiber": 7,
+            "carbs": 51,
+            "calories": 520,
+            "fat": 31,
+            "satFat": 10,
+            "sodium": 630,
+            "sugar": 11,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "21:35",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
             "bsAtDose": null
           }
         }
