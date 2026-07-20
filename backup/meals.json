@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-19T23:56:07.288Z",
+  "exported": "2026-07-20T01:51:55.622Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10651,7 +10651,7 @@
             "insulin": 0
           },
           "time": "15:08",
-          "starred": false
+          "starred": true
         },
         {
           "id": "m_1784334163473_jqjk8",
@@ -10817,11 +10817,36 @@
             "insulin": 7
           },
           "time": "21:35",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 1,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784505413732_mjlra",
+          "name": "24 Wheat Thins + ~2 oz Cheddar Cheese Spread",
+          "macros": {
+            "protein": 12,
+            "fiber": 7,
+            "carbs": 51,
+            "calories": 520,
+            "fat": 31,
+            "satFat": 10,
+            "sodium": 630,
+            "sugar": 11,
+            "calcium": 220,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:56",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 10,
             "bsAtDose": null
           }
         }
@@ -10889,6 +10914,31 @@
           },
           "time": "15:49",
           "starred": false
+        },
+        {
+          "id": "m_1784505398688_9zqj5",
+          "name": "14 Chicken Meatballs and Green Beans",
+          "macros": {
+            "protein": 61,
+            "fiber": 8,
+            "carbs": 29,
+            "calories": 690,
+            "fat": 33,
+            "satFat": 9,
+            "sodium": 1960,
+            "sugar": 6,
+            "calcium": 140,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "18:56",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -11229,6 +11279,40 @@
           "sodium": 820,
           "sugar": 1,
           "calcium": 350,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1784505370824_beslz",
+        "name": "14 Chicken Meatballs and Green Beans",
+        "macros": {
+          "protein": 61,
+          "fiber": 8,
+          "carbs": 29,
+          "calories": 690,
+          "fat": 33,
+          "satFat": 9,
+          "sodium": 1960,
+          "sugar": 6,
+          "calcium": 140,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1784505405539_ifrmn",
+        "name": "24 Wheat Thins + ~2 oz Cheddar Cheese Spread",
+        "macros": {
+          "protein": 12,
+          "fiber": 7,
+          "carbs": 51,
+          "calories": 520,
+          "fat": 31,
+          "satFat": 10,
+          "sodium": 630,
+          "sugar": 11,
+          "calcium": 220,
           "vitD": 0,
           "insulin": 0
         }
