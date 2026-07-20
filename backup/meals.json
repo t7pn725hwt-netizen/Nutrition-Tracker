@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-20T21:52:30.425Z",
+  "exported": "2026-07-20T23:28:16.454Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11004,6 +11004,31 @@
           },
           "time": "14:41",
           "starred": false
+        },
+        {
+          "id": "m_1784584387812_ornzg",
+          "name": "Penne Pasta with Sausage in Marinara Alfredo Sauce",
+          "macros": {
+            "protein": 38,
+            "fiber": 5,
+            "carbs": 72,
+            "calories": 920,
+            "fat": 38,
+            "satFat": 14,
+            "sodium": 1850,
+            "sugar": 12,
+            "calcium": 180,
+            "vitD": 0,
+            "insulin": 14
+          },
+          "time": "16:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
