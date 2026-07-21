@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-21T20:09:34.954Z",
+  "exported": "2026-07-21T22:28:37.047Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11075,6 +11075,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1784664664414_u9hqa",
+          "name": "5 Eggs + 2 oz Parmesan Cheese + 2 Chicken Sausages",
+          "macros": {
+            "protein": 73,
+            "fiber": 0,
+            "carbs": 7,
+            "calories": 800,
+            "fat": 58,
+            "satFat": 23,
+            "sodium": 1700,
+            "sugar": 2,
+            "calcium": 750,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "14:40",
+          "starred": false
         }
       ]
     },
