@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-21T17:41:50.508Z",
+  "exported": "2026-07-21T20:09:34.954Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11048,6 +11048,33 @@
           },
           "time": "18:30",
           "starred": false
+        }
+      ],
+      "2026-07-21": [
+        {
+          "id": "m_1784655736239_jvtt7",
+          "name": "Honey and Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 45,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "12:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
