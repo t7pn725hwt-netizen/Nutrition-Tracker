@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-21T22:28:37.047Z",
+  "exported": "2026-07-21T23:54:28.459Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11094,6 +11094,31 @@
           },
           "time": "14:40",
           "starred": false
+        },
+        {
+          "id": "m_1784676814005_1xae3",
+          "name": "3 Grilled/Baked Chicken Drumsticks (Spice Rubbed)",
+          "macros": {
+            "protein": 57,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 510,
+            "fat": 28,
+            "satFat": 8,
+            "sodium": 420,
+            "sugar": 0,
+            "calcium": 28,
+            "vitD": 0.3,
+            "insulin": 0
+          },
+          "time": "18:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
