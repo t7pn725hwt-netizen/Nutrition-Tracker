@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-20T23:28:16.454Z",
+  "exported": "2026-07-21T00:17:50.258Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -10218,7 +10218,7 @@
             "insulin": 4
           },
           "time": "15:18",
-          "starred": false
+          "starred": true
         },
         {
           "id": "m_1783975769137_8get5",
@@ -11029,6 +11029,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1784590214594_jze4f",
+          "name": "Fried Fish Fillets 4 pieces",
+          "macros": {
+            "protein": 36,
+            "fiber": 1,
+            "carbs": 24,
+            "calories": 520,
+            "fat": 28,
+            "satFat": 6,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 60,
+            "vitD": 120,
+            "insulin": 0
+          },
+          "time": "18:30",
+          "starred": false
         }
       ]
     },
@@ -11404,6 +11423,23 @@
           "sugar": 11,
           "calcium": 220,
           "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1784590198647_86u7j",
+        "name": "Fried Fish Fillets 4 pieces",
+        "macros": {
+          "protein": 36,
+          "fiber": 1,
+          "carbs": 24,
+          "calories": 520,
+          "fat": 28,
+          "satFat": 6,
+          "sodium": 820,
+          "sugar": 1,
+          "calcium": 60,
+          "vitD": 120,
           "insulin": 0
         }
       }
