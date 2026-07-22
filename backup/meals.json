@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-22T21:30:00.407Z",
+  "exported": "2026-07-22T22:16:00.741Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11190,6 +11190,56 @@
           },
           "time": "14:51",
           "starred": false
+        },
+        {
+          "id": "m_1784758435495_gq8gc",
+          "name": "5 Pieces Lightly Breaded Fried Cod",
+          "macros": {
+            "protein": 52,
+            "fiber": 1,
+            "carbs": 26,
+            "calories": 560,
+            "fat": 24,
+            "satFat": 4,
+            "sodium": 1150,
+            "sugar": 1,
+            "calcium": 50,
+            "vitD": 1,
+            "insulin": 4
+          },
+          "time": "17:13",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.4,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784758446588_i6g5e",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:14",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.4,
+            "bsAtDose": null
+          }
         }
       ]
     },
