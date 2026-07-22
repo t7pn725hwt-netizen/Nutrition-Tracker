@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-21T23:54:28.459Z",
+  "exported": "2026-07-22T01:35:14.613Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11112,6 +11112,31 @@
             "insulin": 0
           },
           "time": "18:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784678251617_12vz1",
+          "name": "Corn Kernels (3 Ears, Cut Off Cob)",
+          "macros": {
+            "protein": 9,
+            "fiber": 8,
+            "carbs": 75,
+            "calories": 330,
+            "fat": 4,
+            "satFat": 0.5,
+            "sodium": 30,
+            "sugar": 12,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "18:57",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
