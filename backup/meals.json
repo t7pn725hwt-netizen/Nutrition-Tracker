@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-23T19:18:52.050Z",
+  "exported": "2026-07-23T22:58:57.855Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11280,6 +11280,56 @@
           },
           "time": "11:03",
           "starred": false
+        },
+        {
+          "id": "m_1784834355524_exm2s",
+          "name": "Club Sub Sandwich",
+          "macros": {
+            "protein": 28,
+            "fiber": 3,
+            "carbs": 58,
+            "calories": 620,
+            "fat": 28,
+            "satFat": 10,
+            "sodium": 1800,
+            "sugar": 4,
+            "calcium": 150,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "14:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784841612309_zscat",
+          "name": "Nutty Bar + 12 Club Crackers + 4 oz Cheese Spread + 5 oz Shredded Beef",
+          "macros": {
+            "protein": 49,
+            "fiber": 2,
+            "carbs": 49,
+            "calories": 910,
+            "fat": 65,
+            "satFat": 29,
+            "sodium": 1440,
+            "sugar": 10,
+            "calcium": 500,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "16:20",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.5,
+            "bsAtDose": null
+          }
         }
       ]
     },
