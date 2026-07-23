@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-23T22:58:57.855Z",
+  "exported": "2026-07-23T23:39:10.714Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11328,6 +11328,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 4.5,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784847966059_uo0j1",
+          "name": "Volcano Chicken Bowl",
+          "macros": {
+            "protein": 45,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 820,
+            "fat": 28,
+            "satFat": 7,
+            "sodium": 1400,
+            "sugar": 18,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "18:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.4,
             "bsAtDose": null
           }
         }
