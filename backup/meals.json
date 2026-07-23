@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-23T16:02:39.982Z",
+  "exported": "2026-07-23T19:18:52.050Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11258,6 +11258,27 @@
             "insulin": 0
           },
           "time": "18:40",
+          "starred": false
+        }
+      ],
+      "2026-07-23": [
+        {
+          "id": "m_1784822606038_zv9jx",
+          "name": "5 Eggs w/ Parm & 2 Medium Avocados",
+          "macros": {
+            "protein": 43,
+            "fiber": 18,
+            "carbs": 18,
+            "calories": 760,
+            "fat": 58,
+            "satFat": 16,
+            "sodium": 620,
+            "sugar": 1,
+            "calcium": 380,
+            "vitD": 3.5,
+            "insulin": 0
+          },
+          "time": "11:03",
           "starred": false
         }
       ]
