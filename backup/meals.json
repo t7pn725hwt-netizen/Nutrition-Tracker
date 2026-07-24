@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-24T17:17:13.992Z",
+  "exported": "2026-07-24T19:28:29.991Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11353,6 +11353,58 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 4.4,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-07-24": [
+        {
+          "id": "m_1784913441529_5bjn4",
+          "name": "Kopp’s Double Cheeseburger + Full Turtle Sundae",
+          "macros": {
+            "protein": 57,
+            "fiber": 3,
+            "carbs": 108,
+            "calories": 1630,
+            "fat": 104,
+            "satFat": 46,
+            "sodium": 1620,
+            "sugar": 77,
+            "calcium": 700,
+            "vitD": 3,
+            "insulin": 15
+          },
+          "time": "12:17",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1784921163791_kszjm",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 6.9,
             "bsAtDose": null
           }
         }
