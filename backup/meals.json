@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-26T19:57:12.671Z",
+  "exported": "2026-07-26T21:21:55.359Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11528,6 +11528,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785095934596_qeivy",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "14:58",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.4,
             "bsAtDose": null
           }
         }
