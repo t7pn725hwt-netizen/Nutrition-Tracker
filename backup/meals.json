@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-26T00:03:15.312Z",
+  "exported": "2026-07-26T05:40:37.546Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11478,6 +11478,31 @@
           },
           "time": "14:49",
           "starred": false
+        },
+        {
+          "id": "m_1785024221375_yqh4m",
+          "name": "Grilled Chicken with Mashed Potatoes, Roasted Carrots & Pesto",
+          "macros": {
+            "protein": 38,
+            "fiber": 4,
+            "carbs": 28,
+            "calories": 480,
+            "fat": 18,
+            "satFat": 5,
+            "sodium": 620,
+            "sugar": 6,
+            "calcium": 60,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "19:03",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
