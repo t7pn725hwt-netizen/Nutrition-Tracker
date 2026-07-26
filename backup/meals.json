@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-25T19:14:46.498Z",
+  "exported": "2026-07-26T00:03:15.312Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11434,6 +11434,50 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1785006901797_6qmtc",
+          "name": "Ham & American Swiss Croissant",
+          "macros": {
+            "protein": 16,
+            "fiber": 1,
+            "carbs": 28,
+            "calories": 300,
+            "fat": 14,
+            "satFat": 7,
+            "sodium": 920,
+            "sugar": 5,
+            "calcium": 160,
+            "vitD": 1.2,
+            "insulin": 5
+          },
+          "time": "14:15",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785008986356_uw0r6",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:49",
+          "starred": false
         }
       ]
     },
