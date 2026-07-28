@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-27T22:51:05.937Z",
+  "exported": "2026-07-28T07:59:29.236Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11548,7 +11548,7 @@
             "insulin": 7
           },
           "time": "14:58",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -11658,6 +11658,69 @@
           },
           "time": "16:26",
           "starred": false
+        },
+        {
+          "id": "m_1785192669292_6mqt1",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:51",
+          "starred": false
+        },
+        {
+          "id": "m_1785192687237_1kkxn",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:51",
+          "starred": false
+        },
+        {
+          "id": "m_1785199454610_tdk87",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "19:44",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -12050,6 +12113,23 @@
           "sugar": 1,
           "calcium": 60,
           "vitD": 120,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1785199434519_6c40b",
+        "name": "2 Cheeseburger Patties with Fries (no bun)",
+        "macros": {
+          "protein": 62,
+          "fiber": 4,
+          "carbs": 65,
+          "calories": 1050,
+          "fat": 62,
+          "satFat": 24,
+          "sodium": 1200,
+          "sugar": 3,
+          "calcium": 400,
+          "vitD": 0,
           "insulin": 0
         }
       }
