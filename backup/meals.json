@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-30T18:18:17.605Z",
+  "exported": "2026-07-30T23:30:37.187Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11952,6 +11952,50 @@
             "insulin": 0
           },
           "time": "12:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785435499932_bupjc",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:18",
+          "starred": false
+        },
+        {
+          "id": "m_1785437517090_xi7dw",
+          "name": "Jimmy John’s Ultimate Italian (#9, regular 8”)",
+          "macros": {
+            "protein": 43,
+            "fiber": 5,
+            "carbs": 76,
+            "calories": 960,
+            "fat": 50,
+            "satFat": 15,
+            "sodium": 2540,
+            "sugar": 6,
+            "calcium": 420,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "13:51",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
