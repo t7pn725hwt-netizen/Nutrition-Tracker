@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-30T17:06:47.057Z",
+  "exported": "2026-07-30T18:18:17.605Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11931,6 +11931,33 @@
             "activityAfter": false,
             "iob": 4.3,
             "bsAtDose": 83
+          }
+        }
+      ],
+      "2026-07-30": [
+        {
+          "id": "m_1785431233377_26eha",
+          "name": "5 Eggs Over Easy",
+          "macros": {
+            "protein": 30,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 395,
+            "fat": 28,
+            "satFat": 8,
+            "sodium": 370,
+            "sugar": 1,
+            "calcium": 180,
+            "vitD": 82,
+            "insulin": 0
+          },
+          "time": "12:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
