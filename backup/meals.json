@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-30T23:30:37.187Z",
+  "exported": "2026-07-31T01:45:57.254Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -11996,6 +11996,31 @@
             "insulin": 10
           },
           "time": "13:51",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785454262199_xgrls",
+          "name": "14 Chicken Meatballs and Green Beans",
+          "macros": {
+            "protein": 61,
+            "fiber": 8,
+            "carbs": 29,
+            "calories": 690,
+            "fat": 33,
+            "satFat": 9,
+            "sodium": 1960,
+            "sugar": 6,
+            "calcium": 140,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "18:31",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
