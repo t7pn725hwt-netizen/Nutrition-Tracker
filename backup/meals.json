@@ -1,5 +1,5 @@
 {
-  "exported": "2026-07-31T23:06:52.361Z",
+  "exported": "2026-07-31T23:10:07.156Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12098,6 +12098,50 @@
             "activityAfter": false,
             "iob": 1,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785539218380_wrvn7",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:06",
+          "starred": false
+        },
+        {
+          "id": "m_1785539240456_y8gjg",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "18:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "after",
+            "activityAfter": false,
+            "iob": 4.4,
+            "bsAtDose": 63
           }
         }
       ]
