@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-01T21:00:22.258Z",
+  "exported": "2026-08-02T02:51:07.595Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12250,6 +12250,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785626035723_xos7d",
+          "name": "4 Medium Chicken Drummies + Loaded Baked Potato Bowl",
+          "macros": {
+            "protein": 43,
+            "fiber": 5,
+            "carbs": 53,
+            "calories": 800,
+            "fat": 45,
+            "satFat": 14,
+            "sodium": 1000,
+            "sugar": 5,
+            "calcium": 120,
+            "vitD": 1,
+            "insulin": 8
+          },
+          "time": "18:13",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.1,
             "bsAtDose": null
           }
         }
