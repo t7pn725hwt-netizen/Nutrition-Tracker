@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-02T23:36:25.159Z",
+  "exported": "2026-08-03T20:01:27.120Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12386,6 +12386,31 @@
           },
           "time": "18:31",
           "starred": false
+        },
+        {
+          "id": "m_1785718781160_dfjej",
+          "name": "6 oz Watermelon",
+          "macros": {
+            "protein": 1,
+            "fiber": 1,
+            "carbs": 14,
+            "calories": 51,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 2,
+            "sugar": 11,
+            "calcium": 11,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "19:59",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
+            "bsAtDose": null
+          }
         }
       ]
     },
