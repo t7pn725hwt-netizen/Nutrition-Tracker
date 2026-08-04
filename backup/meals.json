@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-04T18:58:33.332Z",
+  "exported": "2026-08-04T20:01:45.156Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12506,6 +12506,33 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-04": [
+        {
+          "id": "m_1785869991316_fja2t",
+          "name": "3 Piece Fried Chicken Tenders",
+          "macros": {
+            "protein": 75,
+            "fiber": 0,
+            "carbs": 30,
+            "calories": 720,
+            "fat": 33,
+            "satFat": 6,
+            "sodium": 1380,
+            "sugar": 3,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "13:59",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 134
           }
         }
       ]
