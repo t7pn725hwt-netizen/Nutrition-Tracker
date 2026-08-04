@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-04T21:34:30.017Z",
+  "exported": "2026-08-04T23:38:23.701Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12552,6 +12552,25 @@
             "insulin": 0
           },
           "time": "15:01",
+          "starred": false
+        },
+        {
+          "id": "m_1785879282908_k0h3j",
+          "name": "Core Power Protein Shake (414mL)",
+          "macros": {
+            "protein": 42,
+            "fiber": 2,
+            "carbs": 9,
+            "calories": 230,
+            "fat": 3.5,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 7,
+            "calcium": 900,
+            "vitD": 10,
+            "insulin": 0
+          },
+          "time": "16:34",
           "starred": false
         }
       ]
