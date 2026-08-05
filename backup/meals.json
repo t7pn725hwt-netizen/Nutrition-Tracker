@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-05T17:30:10.507Z",
+  "exported": "2026-08-05T21:57:28.321Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12597,6 +12597,71 @@
             "iob": 0,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-08-05": [
+        {
+          "id": "m_1785951014808_nx861",
+          "name": "8-inch French Bread Ham & Cheese Sub",
+          "macros": {
+            "protein": 30,
+            "fiber": 2,
+            "carbs": 55,
+            "calories": 520,
+            "fat": 20,
+            "satFat": 8,
+            "sodium": 1500,
+            "sugar": 5,
+            "calcium": 250,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "12:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785956212801_5frsa",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:56",
+          "starred": false
+        },
+        {
+          "id": "m_1785959111160_qikv5",
+          "name": "3 Eggs + 1 Medium Avocado + 6 oz Cheddar",
+          "macros": {
+            "protein": 66,
+            "fiber": 10,
+            "carbs": 14,
+            "calories": 1020,
+            "fat": 82,
+            "satFat": 43,
+            "sodium": 1130,
+            "sugar": 2,
+            "calcium": 1370,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "14:45",
+          "starred": false
         }
       ]
     },
