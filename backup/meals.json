@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-04T23:38:23.701Z",
+  "exported": "2026-08-05T02:28:43.169Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12572,6 +12572,31 @@
           },
           "time": "16:34",
           "starred": false
+        },
+        {
+          "id": "m_1785886713198_u3ulm",
+          "name": "2 Bowls Chicken Curry + Rice",
+          "macros": {
+            "protein": 72,
+            "fiber": 5,
+            "carbs": 90,
+            "calories": 1000,
+            "fat": 34,
+            "satFat": 10,
+            "sodium": 1400,
+            "sugar": 7,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 14
+          },
+          "time": "18:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
