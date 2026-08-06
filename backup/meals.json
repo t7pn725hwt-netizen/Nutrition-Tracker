@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-05T23:21:24.217Z",
+  "exported": "2026-08-06T00:32:03.518Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12662,6 +12662,56 @@
           },
           "time": "14:45",
           "starred": false
+        },
+        {
+          "id": "m_1785972089153_1pw7g",
+          "name": "1.5 Bowls Chicken Stuffing Casserole",
+          "macros": {
+            "protein": 55,
+            "fiber": 5,
+            "carbs": 75,
+            "calories": 900,
+            "fat": 42,
+            "satFat": 15,
+            "sodium": 1800,
+            "sugar": 6,
+            "calcium": 150,
+            "vitD": 1,
+            "insulin": 11
+          },
+          "time": "18:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1785976293511_lq07c",
+          "name": "8-oz Cup Chocolate + Birthday Cake Ice Cream",
+          "macros": {
+            "protein": 7,
+            "fiber": 1,
+            "carbs": 49,
+            "calories": 413,
+            "fat": 21,
+            "satFat": 13,
+            "sodium": 150,
+            "sugar": 38,
+            "calcium": 220,
+            "vitD": 0.4,
+            "insulin": 4
+          },
+          "time": "19:31",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 7.8,
+            "bsAtDose": null
+          }
         }
       ]
     },
