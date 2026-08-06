@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-06T16:03:47.825Z",
+  "exported": "2026-08-06T17:14:34.348Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12710,6 +12710,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 7.8,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-06": [
+        {
+          "id": "m_1786032301183_9az35",
+          "name": "½ Strawberry Cream Croissant + Breakfast Sandwich on Fresh Croissant",
+          "macros": {
+            "protein": 25,
+            "fiber": 2,
+            "carbs": 58,
+            "calories": 610,
+            "fat": 35,
+            "satFat": 19,
+            "sodium": 850,
+            "sugar": 18,
+            "calcium": 220,
+            "vitD": 1,
+            "insulin": 10
+          },
+          "time": "11:05",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
