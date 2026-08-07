@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-06T22:33:41.830Z",
+  "exported": "2026-08-07T18:30:04.368Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12802,6 +12802,31 @@
           },
           "time": "14:55",
           "starred": false
+        },
+        {
+          "id": "m_1786055629689_6vb8a",
+          "name": "Freddy’s Turtle Sundae + Double Burger",
+          "macros": {
+            "protein": 48,
+            "fiber": 3,
+            "carbs": 105,
+            "calories": 1150,
+            "fat": 68,
+            "satFat": 27,
+            "sodium": 1650,
+            "sugar": 68,
+            "calcium": 450,
+            "vitD": 1,
+            "insulin": 14
+          },
+          "time": "17:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.9,
+            "bsAtDose": null
+          }
         }
       ]
     },
