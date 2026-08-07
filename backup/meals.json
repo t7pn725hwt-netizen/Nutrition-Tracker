@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-07T20:42:44.285Z",
+  "exported": "2026-08-07T22:19:08.921Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12854,6 +12854,107 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1786135375583_fpera",
+          "name": "2 Krispy Kreme Original Glazed Donuts",
+          "macros": {
+            "protein": 6,
+            "fiber": 1,
+            "carbs": 48,
+            "calories": 380,
+            "fat": 20,
+            "satFat": 10,
+            "sodium": 160,
+            "sugar": 24,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "15:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.5,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1786140801764_fqexo",
+          "name": "Chobani Greek Yogurt Protein Drink (Strawberry)",
+          "macros": {
+            "protein": 20,
+            "fiber": 0,
+            "carbs": 14,
+            "calories": 170,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 115,
+            "sugar": 11,
+            "calcium": 320,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:13",
+          "starred": false
+        },
+        {
+          "id": "m_1786140816367_qnwgs",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:13",
+          "starred": false
+        },
+        {
+          "id": "m_1786140828228_yg760",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:13",
+          "starred": false
+        },
+        {
+          "id": "m_1786140839512_uc6oq",
+          "name": "5 oz cheddar",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:13",
+          "starred": false
         }
       ]
     },
