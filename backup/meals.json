@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-07T18:30:04.368Z",
+  "exported": "2026-08-07T20:42:44.285Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12825,6 +12825,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0.9,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-07": [
+        {
+          "id": "m_1786127409170_miwdb",
+          "name": "Jersey Mike’s Italian Sub — Extra Meat",
+          "macros": {
+            "protein": 65,
+            "fiber": 5,
+            "carbs": 72,
+            "calories": 1050,
+            "fat": 57,
+            "satFat": 20,
+            "sodium": 2700,
+            "sugar": 9,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "13:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
