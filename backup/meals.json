@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-08T15:38:19.490Z",
+  "exported": "2026-08-08T15:55:19.624Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -12980,6 +12980,52 @@
             "iob": 0,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-08-08": [
+        {
+          "id": "m_1786203504632_izjsj",
+          "name": "Sausage, Egg & Cheese McGriddle",
+          "macros": {
+            "protein": 19,
+            "fiber": 2,
+            "carbs": 56,
+            "calories": 550,
+            "fat": 32,
+            "satFat": 13,
+            "sodium": 1290,
+            "sugar": 15,
+            "calcium": 180,
+            "vitD": 0.5,
+            "insulin": 9
+          },
+          "time": "10:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1786203513053_fo990",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "10:38",
+          "starred": false
         }
       ]
     },
