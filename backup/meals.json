@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-08T15:55:19.624Z",
+  "exported": "2026-08-08T16:41:40.817Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13026,6 +13026,31 @@
           },
           "time": "10:38",
           "starred": false
+        },
+        {
+          "id": "m_1786207228445_ie6dc",
+          "name": "Sausage, Egg & Cheese Maple Waffle",
+          "macros": {
+            "protein": 19,
+            "fiber": 1,
+            "carbs": 43,
+            "calories": 600,
+            "fat": 40,
+            "satFat": 15,
+            "sodium": 1080,
+            "sugar": 14,
+            "calcium": 100,
+            "vitD": 0.4,
+            "insulin": 5
+          },
+          "time": "11:40",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
