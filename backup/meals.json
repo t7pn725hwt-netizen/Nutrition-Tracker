@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-08T21:43:47.753Z",
+  "exported": "2026-08-08T22:03:01.742Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13070,6 +13070,50 @@
           },
           "time": "13:16",
           "starred": false
+        },
+        {
+          "id": "m_1786225432759_tvbcm",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:43",
+          "starred": false
+        },
+        {
+          "id": "m_1786225666495_ordgp",
+          "name": "**Kirkland Pepperoni Pizza (1/2 of 4-pack pizza)**",
+          "macros": {
+            "protein": 34,
+            "fiber": 2,
+            "carbs": 58,
+            "calories": 720,
+            "fat": 40,
+            "satFat": 16,
+            "sodium": 1880,
+            "sugar": 8,
+            "calcium": 520,
+            "vitD": 2,
+            "insulin": 9
+          },
+          "time": "16:47",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
