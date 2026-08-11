@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-11T17:39:38.875Z",
+  "exported": "2026-08-11T18:27:14.896Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13405,6 +13405,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 1.1,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-11": [
+        {
+          "id": "m_1786469987798_uaokz",
+          "name": "BBQ Full Rack of Ribs + Mac & Cheese + Cornbread",
+          "macros": {
+            "protein": 129,
+            "fiber": 2,
+            "carbs": 88,
+            "calories": 2485,
+            "fat": 161,
+            "satFat": 55,
+            "sodium": 3200,
+            "sugar": 25,
+            "calcium": 300,
+            "vitD": 0.5,
+            "insulin": 12
+          },
+          "time": "12:39",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
