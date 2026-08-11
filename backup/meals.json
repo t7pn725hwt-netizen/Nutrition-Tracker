@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-11T18:27:14.896Z",
+  "exported": "2026-08-11T19:42:58.589Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13414,7 +13414,7 @@
           "id": "m_1786469987798_uaokz",
           "name": "BBQ Full Rack of Ribs + Mac & Cheese + Cornbread",
           "macros": {
-            "protein": 129,
+            "protein": 69,
             "fiber": 2,
             "carbs": 88,
             "calories": 2485,
