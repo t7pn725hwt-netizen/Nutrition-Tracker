@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-11T20:38:19.379Z",
+  "exported": "2026-08-11T22:11:15.146Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13417,7 +13417,7 @@
             "protein": 69,
             "fiber": 2,
             "carbs": 88,
-            "calories": 2485,
+            "calories": 1200,
             "fat": 161,
             "satFat": 55,
             "sodium": 3200,
