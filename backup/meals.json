@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-13T21:02:25.336Z",
+  "exported": "2026-08-13T22:28:37.149Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13671,6 +13671,56 @@
           },
           "time": "14:34",
           "starred": false
+        },
+        {
+          "id": "m_1786654965423_b6pz2",
+          "name": "Loaded Baked Potato Half with Eggs, Bacon & Cheese",
+          "macros": {
+            "protein": 22,
+            "fiber": 3,
+            "carbs": 28,
+            "calories": 480,
+            "fat": 28,
+            "satFat": 12,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 180,
+            "vitD": 30,
+            "insulin": 4
+          },
+          "time": "16:02",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.8,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1786658650604_j3yy4",
+          "name": "1/3 Large Smoked Turkey Leg",
+          "macros": {
+            "protein": 60,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 280,
+            "fat": 14,
+            "satFat": 4,
+            "sodium": 820,
+            "sugar": 1,
+            "calcium": 30,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:04",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.7,
+            "bsAtDose": null
+          }
         }
       ]
     },
