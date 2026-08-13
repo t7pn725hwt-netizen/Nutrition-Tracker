@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-13T18:26:09.924Z",
+  "exported": "2026-08-13T19:33:31.805Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13606,6 +13606,33 @@
           },
           "time": "19:54",
           "starred": false
+        }
+      ],
+      "2026-08-13": [
+        {
+          "id": "m_1786645599654_hyuvz",
+          "name": "Focaccia Deli Sandwich (Ham, Turkey, Egg, Arugula)",
+          "macros": {
+            "protein": 28,
+            "fiber": 2,
+            "carbs": 48,
+            "calories": 580,
+            "fat": 22,
+            "satFat": 7,
+            "sodium": 1450,
+            "sugar": 4,
+            "calcium": 120,
+            "vitD": 0.6,
+            "insulin": 8
+          },
+          "time": "13:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
