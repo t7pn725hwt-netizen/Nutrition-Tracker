@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-13T19:34:30.857Z",
+  "exported": "2026-08-13T21:02:25.336Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13646,6 +13646,25 @@
             "satFat": 0,
             "sodium": 65,
             "sugar": 9,
+            "calcium": 150,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:34",
+          "starred": false
+        },
+        {
+          "id": "m_1786649675365_6lpks",
+          "name": "Kirkland Chocolate Peanut Butter Chunk Protein Bar",
+          "macros": {
+            "protein": 21,
+            "fiber": 10,
+            "carbs": 25,
+            "calories": 290,
+            "fat": 12,
+            "satFat": 4,
+            "sodium": 200,
+            "sugar": 2,
             "calcium": 150,
             "vitD": 0,
             "insulin": 0
