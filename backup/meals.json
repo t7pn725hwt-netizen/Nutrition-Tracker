@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-13T19:33:31.805Z",
+  "exported": "2026-08-13T19:34:30.857Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13633,6 +13633,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1786649640854_233e8",
+          "name": "Oikos Triple Zero Strawberry Greek Yogurt",
+          "macros": {
+            "protein": 15,
+            "fiber": 3,
+            "carbs": 14,
+            "calories": 120,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 65,
+            "sugar": 9,
+            "calcium": 150,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:34",
+          "starred": false
         }
       ]
     },
