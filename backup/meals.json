@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-14T18:07:48.120Z",
+  "exported": "2026-08-14T19:49:01.661Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13753,7 +13753,7 @@
           "id": "m_1786730838115_bhqx2",
           "name": "3 Fried Eggs + Pancake (under, w/ syrup) + 3oz Gyro Meat",
           "macros": {
-            "protein": 43,
+            "protein": 55,
             "fiber": 1,
             "carbs": 80,
             "calories": 780,
@@ -13773,6 +13773,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1786731396257_h4omm",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:45",
+          "starred": false
         }
       ]
     },
