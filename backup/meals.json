@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-14T00:00:47.548Z",
+  "exported": "2026-08-14T02:08:56.552Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13724,7 +13724,7 @@
         },
         {
           "id": "m_1786660124830_5u2nh",
-          "name": "Yeah — 50g carbs is probably a little high for the Wisconsin State Fair Original Cream Puff.\n\nI found a nutrition chart from Froedtert that lists a cream puff at 18g carbs, but that appears to be a much smaller/older nutrition reference and doesn’t line up with the Fair’s famously large puff.  The Fair’s current puff is still described as about 550 calories and 45g fat, so the fat/calorie estimate is solid. \n\nFor your tracking, I’d use ~40g carbs rather than 50g:\n\nWisconsin State Fair Original Cream Puff",
+          "name": "State fair cream puff",
           "macros": {
             "protein": 8,
             "fiber": 1,
