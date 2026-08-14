@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-14T18:06:51.470Z",
+  "exported": "2026-08-14T18:07:48.120Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13744,6 +13744,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 2.6,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-14": [
+        {
+          "id": "m_1786730838115_bhqx2",
+          "name": "3 Fried Eggs + Pancake (under, w/ syrup) + 3oz Gyro Meat",
+          "macros": {
+            "protein": 43,
+            "fiber": 1,
+            "carbs": 80,
+            "calories": 780,
+            "fat": 37,
+            "satFat": 12,
+            "sodium": 950,
+            "sugar": 41,
+            "calcium": 120,
+            "vitD": 2,
+            "insulin": 12
+          },
+          "time": "13:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
