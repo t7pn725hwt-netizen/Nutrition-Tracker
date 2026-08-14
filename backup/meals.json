@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-14T22:49:07.520Z",
+  "exported": "2026-08-14T23:22:04.761Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13811,6 +13811,31 @@
           },
           "time": "15:08",
           "starred": false
+        },
+        {
+          "id": "m_1786749694754_cpim5",
+          "name": "½ Loaded Nachos",
+          "macros": {
+            "protein": 28,
+            "fiber": 5,
+            "carbs": 55,
+            "calories": 700,
+            "fat": 40,
+            "satFat": 12,
+            "sodium": 1300,
+            "sugar": 6,
+            "calcium": 250,
+            "vitD": 0.5,
+            "insulin": 8
+          },
+          "time": "18:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
