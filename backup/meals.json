@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-16T17:22:00.724Z",
+  "exported": "2026-08-16T19:01:47.470Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13947,6 +13947,31 @@
           },
           "time": "11:29",
           "starred": false
+        },
+        {
+          "id": "m_1786900931431_687pj",
+          "name": "Stone Creek Sausage, Egg & Cheese Sandwich",
+          "macros": {
+            "protein": 25,
+            "fiber": 2,
+            "carbs": 43,
+            "calories": 560,
+            "fat": 34,
+            "satFat": 14,
+            "sodium": 1150,
+            "sugar": 3,
+            "calcium": 220,
+            "vitD": 1,
+            "insulin": 6
+          },
+          "time": "12:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
