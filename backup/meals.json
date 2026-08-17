@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-16T22:30:55.798Z",
+  "exported": "2026-08-17T00:31:33.212Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -13991,6 +13991,31 @@
           },
           "time": "14:01",
           "starred": false
+        },
+        {
+          "id": "m_1786919462875_lq79c",
+          "name": "2 Bowls Sweet & Sour Chicken with Rice",
+          "macros": {
+            "protein": 75,
+            "fiber": 3,
+            "carbs": 125,
+            "calories": 1450,
+            "fat": 65,
+            "satFat": 11,
+            "sodium": 2400,
+            "sugar": 45,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 16
+          },
+          "time": "17:31",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
