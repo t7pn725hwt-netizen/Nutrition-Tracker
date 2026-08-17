@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-17T19:51:53.657Z",
+  "exported": "2026-08-17T23:37:49.019Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14042,6 +14042,50 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1786996322791_it1q3",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:52",
+          "starred": false
+        },
+        {
+          "id": "m_1787001141593_t8m2t",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "16:12",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.7,
+            "bsAtDose": 75
           }
         }
       ]
