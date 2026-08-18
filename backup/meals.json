@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-18T20:24:08.511Z",
+  "exported": "2026-08-18T21:39:20.407Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14133,6 +14133,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1787084657945_tsa86",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:24",
+          "starred": false
         }
       ]
     },
