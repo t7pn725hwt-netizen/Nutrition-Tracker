@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-19T19:40:58.474Z",
+  "exported": "2026-08-19T22:41:48.035Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14223,6 +14223,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1787170509423_kus6u",
+          "name": "2× Chicken Curry with Onions & Peppers — Mostly Chicken",
+          "macros": {
+            "protein": 84,
+            "fiber": 5,
+            "carbs": 45,
+            "calories": 750,
+            "fat": 30,
+            "satFat": 7,
+            "sodium": 1250,
+            "sugar": 9,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:45",
+          "starred": false
         }
       ]
     },
