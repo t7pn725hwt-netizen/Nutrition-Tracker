@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-20T20:24:00.602Z",
+  "exported": "2026-08-20T20:51:01.902Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14313,6 +14313,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1787258406762_ys6qs",
+          "name": "Kopp’s Double Cheeseburger (no sundae)",
+          "macros": {
+            "protein": 45,
+            "fiber": 1,
+            "carbs": 28,
+            "calories": 820,
+            "fat": 55,
+            "satFat": 24,
+            "sodium": 1400,
+            "sugar": 6,
+            "calcium": 350,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "15:40",
+          "starred": false
         }
       ]
     },
