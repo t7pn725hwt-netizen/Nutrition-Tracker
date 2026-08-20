@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-20T17:21:04.721Z",
+  "exported": "2026-08-20T18:17:23.492Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14286,6 +14286,33 @@
           },
           "time": "15:52",
           "starred": false
+        }
+      ],
+      "2026-08-20": [
+        {
+          "id": "m_1787246472811_pwb0z",
+          "name": "American Chinese Sesame Chicken + 1 Scoop White Rice",
+          "macros": {
+            "protein": 50,
+            "fiber": 3,
+            "carbs": 115,
+            "calories": 1050,
+            "fat": 48,
+            "satFat": 8,
+            "sodium": 2100,
+            "sugar": 35,
+            "calcium": 70,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "12:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
