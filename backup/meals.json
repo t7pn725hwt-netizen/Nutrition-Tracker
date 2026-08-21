@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-21T17:01:40.191Z",
+  "exported": "2026-08-21T20:22:35.492Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14451,6 +14451,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1787331709850_bwjic",
+          "name": "Kopp’s 16oz Root Beer Malt (Sprecher Lo Cal Root Beer)",
+          "macros": {
+            "protein": 14,
+            "fiber": 0,
+            "carbs": 68,
+            "calories": 650,
+            "fat": 35,
+            "satFat": 22,
+            "sodium": 320,
+            "sugar": 52,
+            "calcium": 450,
+            "vitD": 2,
+            "insulin": 0
+          },
+          "time": "12:01",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 11.7,
             "bsAtDose": null
           }
         }
