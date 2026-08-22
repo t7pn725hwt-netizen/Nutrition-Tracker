@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-22T19:14:04.501Z",
+  "exported": "2026-08-22T23:14:35.141Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14591,6 +14591,50 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0.2,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1787431740988_cl7xz",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:49",
+          "starred": false
+        },
+        {
+          "id": "m_1787440224558_dihko",
+          "name": "20 Tortellini + 6 oz Chicken + Pesto + Baby Tomatoes",
+          "macros": {
+            "protein": 75,
+            "fiber": 5,
+            "carbs": 68,
+            "calories": 850,
+            "fat": 34,
+            "satFat": 8,
+            "sodium": 1000,
+            "sugar": 5,
+            "calcium": 150,
+            "vitD": 0.5,
+            "insulin": 7
+          },
+          "time": "18:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
