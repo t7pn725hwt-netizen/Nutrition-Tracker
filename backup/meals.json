@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-22T16:47:12.801Z",
+  "exported": "2026-08-22T19:11:59.060Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14547,6 +14547,50 @@
             "preBolus": "10min",
             "activityAfter": true,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1787417252174_gonaf",
+          "name": "Magic Spoon Protein Treats Bar - Marshmallow",
+          "macros": {
+            "protein": 12,
+            "fiber": 2,
+            "carbs": 14,
+            "calories": 160,
+            "fat": 7,
+            "satFat": 3,
+            "sodium": 170,
+            "sugar": 1,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:47",
+          "starred": false
+        },
+        {
+          "id": "m_1787425692475_lg9fg",
+          "name": "Costco Food Court Hot Dog + Pepperoni Pizza Slice",
+          "macros": {
+            "protein": 58,
+            "fiber": 5,
+            "carbs": 118,
+            "calories": 1240,
+            "fat": 63,
+            "satFat": 25,
+            "sodium": 3060,
+            "sugar": 11,
+            "calcium": 520,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "14:08",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.2,
             "bsAtDose": null
           }
         }
