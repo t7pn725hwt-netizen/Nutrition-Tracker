@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-22T19:11:59.060Z",
+  "exported": "2026-08-22T19:14:04.501Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14573,7 +14573,7 @@
           "id": "m_1787425692475_lg9fg",
           "name": "Costco Food Court Hot Dog + Pepperoni Pizza Slice",
           "macros": {
-            "protein": 58,
+            "protein": 70,
             "fiber": 5,
             "carbs": 118,
             "calories": 1240,
