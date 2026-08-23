@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-23T19:23:29.552Z",
+  "exported": "2026-08-23T21:31:45.923Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14633,6 +14633,77 @@
           "starred": false,
           "doseLog": {
             "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-23": [
+        {
+          "id": "m_1787513011274_06q3t",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:23",
+          "starred": false
+        },
+        {
+          "id": "m_1787513026584_xxq7k",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:17",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1787520431043_vpk88",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "16:27",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
