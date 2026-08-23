@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-23T21:31:45.923Z",
+  "exported": "2026-08-23T23:19:47.976Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14708,6 +14708,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1787526919216_mp4hv",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:15",
+          "starred": false
         }
       ]
     },
