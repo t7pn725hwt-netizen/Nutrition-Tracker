@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-25T18:25:38.114Z",
+  "exported": "2026-08-25T20:52:50.610Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14838,6 +14838,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 212
+          }
+        }
+      ],
+      "2026-08-25": [
+        {
+          "id": "m_1787682355938_ey4ph",
+          "name": "½ Chipotle Double Chicken Bowl + 20 Tortilla Chips",
+          "macros": {
+            "protein": 45,
+            "fiber": 10,
+            "carbs": 73,
+            "calories": 640,
+            "fat": 28,
+            "satFat": 11,
+            "sodium": 1250,
+            "sugar": 7,
+            "calcium": 230,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "13:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": 122
           }
         }
       ]
