@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-26T07:19:15.895Z",
+  "exported": "2026-08-26T20:05:27.776Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14935,6 +14935,27 @@
             "iob": 1.4,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-08-26": [
+        {
+          "id": "m_1787771195658_4symb",
+          "name": "8 Medium Chicken Wings (plain, cooked, bone-in; sauce not included)",
+          "macros": {
+            "protein": 50,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 650,
+            "fat": 47,
+            "satFat": 13,
+            "sodium": 500,
+            "sugar": 0,
+            "calcium": 35,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:06",
+          "starred": false
         }
       ]
     },
