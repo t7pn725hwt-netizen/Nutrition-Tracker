@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-25T21:09:18.753Z",
+  "exported": "2026-08-26T00:02:36.985Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -14884,7 +14884,32 @@
             "insulin": 0
           },
           "time": "16:04",
-          "starred": false
+          "starred": true
+        },
+        {
+          "id": "m_1787692621534_66izf",
+          "name": "½ Chipotle Steak Burrito Bowl + 15 Tortilla Chips",
+          "macros": {
+            "protein": 44,
+            "fiber": 11,
+            "carbs": 83,
+            "calories": 700,
+            "fat": 30,
+            "satFat": 10,
+            "sodium": 1400,
+            "sugar": 7,
+            "calcium": 180,
+            "vitD": 0.5,
+            "insulin": 9
+          },
+          "time": "16:17",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.3,
+            "bsAtDose": null
+          }
         }
       ]
     },
