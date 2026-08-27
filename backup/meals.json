@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-27T00:09:20.208Z",
+  "exported": "2026-08-27T18:44:42.423Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15000,6 +15000,31 @@
           },
           "time": "17:25",
           "starred": false
+        },
+        {
+          "id": "m_1787790930492_apvnm",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "19:35",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -15409,23 +15434,6 @@
           "sugar": 3,
           "calcium": 400,
           "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1787079896364_em8tk",
-        "name": "½ Chipotle Steak Burrito Bowl + 15 Tortilla Chips",
-        "macros": {
-          "protein": 44,
-          "fiber": 11,
-          "carbs": 83,
-          "calories": 700,
-          "fat": 30,
-          "satFat": 10,
-          "sodium": 1400,
-          "sugar": 7,
-          "calcium": 180,
-          "vitD": 0.5,
           "insulin": 0
         }
       }
