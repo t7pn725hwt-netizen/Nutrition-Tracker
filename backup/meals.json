@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-29T15:33:49.582Z",
+  "exported": "2026-08-29T15:37:16.606Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15184,6 +15184,33 @@
             "preBolus": "first_bite",
             "activityAfter": false,
             "iob": 7.2,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-08-29": [
+        {
+          "id": "m_1788017637352_cnani",
+          "name": "Kwik Trip Sausage, Egg & Cheese Maple Waffle Sandwich",
+          "macros": {
+            "protein": 19,
+            "fiber": 1,
+            "carbs": 43,
+            "calories": 600,
+            "fat": 40,
+            "satFat": 15,
+            "sodium": 1080,
+            "sugar": 14,
+            "calcium": 150,
+            "vitD": 1,
+            "insulin": 8
+          },
+          "time": "10:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
