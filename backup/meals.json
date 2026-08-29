@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-29T19:32:55.570Z",
+  "exported": "2026-08-29T21:29:36.667Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15257,6 +15257,44 @@
             "iob": 2.5,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788031984981_ocd0w",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:33",
+          "starred": false
+        },
+        {
+          "id": "m_1788038858640_78d5o",
+          "name": "6oz Teriyaki Salmon + Broccoli (no rice)",
+          "macros": {
+            "protein": 40,
+            "fiber": 3,
+            "carbs": 15,
+            "calories": 380,
+            "fat": 16,
+            "satFat": 3,
+            "sodium": 650,
+            "sugar": 8,
+            "calcium": 60,
+            "vitD": 3,
+            "insulin": 0
+          },
+          "time": "16:27",
+          "starred": false
         }
       ]
     },
