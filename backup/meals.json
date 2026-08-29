@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-28T20:45:06.754Z",
+  "exported": "2026-08-29T00:43:24.002Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15116,6 +15116,25 @@
             "insulin": 0
           },
           "time": "12:30",
+          "starred": false
+        },
+        {
+          "id": "m_1787949948697_xegwi",
+          "name": "Smoked Beef Sticks & Baby Cheese",
+          "macros": {
+            "protein": 21,
+            "fiber": 0,
+            "carbs": 3,
+            "calories": 330,
+            "fat": 26,
+            "satFat": 13,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 300,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:45",
           "starred": false
         }
       ]
