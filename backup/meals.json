@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-30T17:12:36.129Z",
+  "exported": "2026-08-30T17:14:00.062Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15091,7 +15091,7 @@
             "insulin": 6
           },
           "time": "10:45",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
