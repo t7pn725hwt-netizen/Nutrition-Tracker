@@ -1,5 +1,5 @@
 {
-  "exported": "2026-08-30T21:52:23.822Z",
+  "exported": "2026-08-31T00:18:27.295Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15322,6 +15322,75 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788126750251_g9ebx",
+          "name": "Grimaldi’s Sausage & Pepperoni Pizza (3 slices) + 1/2 Slice Oreo Cheesecake",
+          "macros": {
+            "protein": 37,
+            "fiber": 4,
+            "carbs": 91,
+            "calories": 1180,
+            "fat": 76,
+            "satFat": 36,
+            "sodium": 1750,
+            "sugar": 36,
+            "calcium": 410,
+            "vitD": 0.5,
+            "insulin": 12
+          },
+          "time": "16:52",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788129841910_vgcbv",
+          "name": "Grimaldi’s Oreo Cheesecake (1/2 slice)",
+          "macros": {
+            "protein": 5.5,
+            "fiber": 1,
+            "carbs": 37.5,
+            "calories": 465,
+            "fat": 33.5,
+            "satFat": 18,
+            "sodium": 250,
+            "sugar": 27,
+            "calcium": 60,
+            "vitD": 0.3,
+            "insulin": 5
+          },
+          "time": "17:44",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 9.4,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788130789601_iaw01",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:59",
+          "starred": false
         }
       ]
     },
