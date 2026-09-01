@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-01T19:26:07.655Z",
+  "exported": "2026-09-01T21:35:04.868Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15483,6 +15483,31 @@
           },
           "time": "12:13",
           "starred": false
+        },
+        {
+          "id": "m_1788290775886_xu5qa",
+          "name": "**Chipotle Burrito Bowl (half) + 15 Tortilla Chips**",
+          "macros": {
+            "protein": 51,
+            "fiber": 21,
+            "carbs": 105,
+            "calories": 998,
+            "fat": 33,
+            "satFat": 8,
+            "sodium": 1665,
+            "sugar": 6,
+            "calcium": 250,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "14:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
