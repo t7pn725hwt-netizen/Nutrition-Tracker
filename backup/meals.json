@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-01T21:35:04.868Z",
+  "exported": "2026-09-01T23:14:50.788Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15315,7 +15315,7 @@
             "insulin": 2
           },
           "time": "12:14",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -15508,6 +15508,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788304460779_uy1fq",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "18:14",
+          "starred": false
         }
       ]
     },
@@ -15917,6 +15936,23 @@
           "sugar": 3,
           "calcium": 400,
           "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1788304439330_ta1h4",
+        "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+        "macros": {
+          "protein": 59,
+          "fiber": 2,
+          "carbs": 10,
+          "calories": 845,
+          "fat": 63,
+          "satFat": 32,
+          "sodium": 1050,
+          "sugar": 4,
+          "calcium": 934,
+          "vitD": 1,
           "insulin": 0
         }
       }
