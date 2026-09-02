@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-01T23:14:50.788Z",
+  "exported": "2026-09-02T02:04:39.774Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15501,7 +15501,7 @@
             "insulin": 10
           },
           "time": "14:26",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -15527,6 +15527,31 @@
           },
           "time": "18:14",
           "starred": false
+        },
+        {
+          "id": "m_1788308024582_ndlgb",
+          "name": "**Chipotle Burrito Bowl (half) + 15 Tortilla Chips**",
+          "macros": {
+            "protein": 51,
+            "fiber": 21,
+            "carbs": 105,
+            "calories": 998,
+            "fat": 33,
+            "satFat": 8,
+            "sodium": 1665,
+            "sugar": 6,
+            "calcium": 250,
+            "vitD": 0,
+            "insulin": 10
+          },
+          "time": "19:13",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -15953,6 +15978,23 @@
           "sugar": 4,
           "calcium": 934,
           "vitD": 1,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1788308007982_2klpv",
+        "name": "**Chipotle Burrito Bowl (half) + 15 Tortilla Chips**",
+        "macros": {
+          "protein": 51,
+          "fiber": 21,
+          "carbs": 105,
+          "calories": 998,
+          "fat": 33,
+          "satFat": 8,
+          "sodium": 1665,
+          "sugar": 6,
+          "calcium": 250,
+          "vitD": 0,
           "insulin": 0
         }
       }
