@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-03T01:37:41.095Z",
+  "exported": "2026-09-03T22:09:16.085Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15590,7 +15590,7 @@
             "vitD": 0,
             "insulin": 12
           },
-          "time": "17:27",
+          "time": "14:27",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
@@ -15616,6 +15616,52 @@
             "insulin": 0
           },
           "time": "17:27",
+          "starred": false
+        },
+        {
+          "id": "m_1788399481821_ag81d",
+          "name": "2 Cheeseburger Patties with Fries (no bun)",
+          "macros": {
+            "protein": 62,
+            "fiber": 4,
+            "carbs": 65,
+            "calories": 1050,
+            "fat": 62,
+            "satFat": 24,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "18:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.5,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-09-03": [
+        {
+          "id": "m_1788451043989_89fc0",
+          "name": "4 Eggs with Cheese (2oz) + 1 Avocado",
+          "macros": {
+            "protein": 42,
+            "fiber": 10,
+            "carbs": 15,
+            "calories": 855,
+            "fat": 69,
+            "satFat": 23,
+            "sodium": 660,
+            "sugar": 2,
+            "calcium": 600,
+            "vitD": 3.5,
+            "insulin": 0
+          },
+          "time": "10:57",
           "starred": false
         }
       ]
