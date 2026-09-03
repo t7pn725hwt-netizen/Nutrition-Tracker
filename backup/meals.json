@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-02T22:26:52.906Z",
+  "exported": "2026-09-03T01:37:41.095Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15552,6 +15552,71 @@
             "iob": 0,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-09-02": [
+        {
+          "id": "m_1788388020035_9xjo7",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "14:30",
+          "starred": false
+        },
+        {
+          "id": "m_1788388037067_jtck9",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "17:27",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788388055577_26ks2",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:27",
+          "starred": false
         }
       ]
     },
