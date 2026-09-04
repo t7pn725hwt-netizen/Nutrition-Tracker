@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-04T18:25:31.490Z",
+  "exported": "2026-09-04T20:46:28.413Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15731,6 +15731,58 @@
             "activityAfter": false,
             "iob": 3.6,
             "bsAtDose": 185
+          }
+        }
+      ],
+      "2026-09-04": [
+        {
+          "id": "m_1788546351751_ht1jl",
+          "name": "Ian’s Pizza BBQ Chicken (2 large slices)",
+          "macros": {
+            "protein": 34,
+            "fiber": 3,
+            "carbs": 78,
+            "calories": 760,
+            "fat": 30,
+            "satFat": 13,
+            "sodium": 1600,
+            "sugar": 14,
+            "calcium": 400,
+            "vitD": 0.5,
+            "insulin": 12
+          },
+          "time": "13:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788546372704_qtzkr",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "11:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 11.9,
+            "bsAtDose": null
           }
         }
       ]
