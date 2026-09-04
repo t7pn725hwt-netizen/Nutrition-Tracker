@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-03T22:09:16.085Z",
+  "exported": "2026-09-04T00:06:39.723Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15663,6 +15663,31 @@
           },
           "time": "10:57",
           "starred": false
+        },
+        {
+          "id": "m_1788473361121_w0wim",
+          "name": "BBQ Pork Nachos with Haystack Onions & Queso",
+          "macros": {
+            "protein": 42,
+            "fiber": 6,
+            "carbs": 92,
+            "calories": 1320,
+            "fat": 76,
+            "satFat": 26,
+            "sodium": 2400,
+            "sugar": 28,
+            "calcium": 500,
+            "vitD": 0.5,
+            "insulin": 13
+          },
+          "time": "17:09",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
