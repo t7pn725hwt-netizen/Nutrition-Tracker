@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-04T00:06:39.723Z",
+  "exported": "2026-09-04T00:26:46.379Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15688,6 +15688,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788480421427_c8b6j",
+          "name": "Fairlife Nutrition Plan Chocolate Protein Shake",
+          "macros": {
+            "protein": 30,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 0.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 500,
+            "vitD": 3,
+            "insulin": 0
+          },
+          "time": "19:07",
+          "starred": false
         }
       ]
     },
