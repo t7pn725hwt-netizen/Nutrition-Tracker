@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-05T17:46:43.629Z",
+  "exported": "2026-09-05T20:40:55.062Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15876,6 +15876,31 @@
           "starred": false,
           "doseLog": {
             "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788630414651_0iz57",
+          "name": "Firehouse Subs Turkey Bacon Ranch (Medium)",
+          "macros": {
+            "protein": 40,
+            "fiber": 4,
+            "carbs": 61,
+            "calories": 830,
+            "fat": 48,
+            "satFat": 11,
+            "sodium": 2270,
+            "sugar": 10,
+            "calcium": 300,
+            "vitD": 0,
+            "insulin": 9
+          },
+          "time": "12:46",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
