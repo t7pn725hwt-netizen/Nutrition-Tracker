@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-06T21:37:54.825Z",
+  "exported": "2026-09-06T23:35:45.776Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16013,6 +16013,44 @@
             "insulin": 0
           },
           "time": "15:53",
+          "starred": false
+        },
+        {
+          "id": "m_1788730682784_7bw5p",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "16:38",
+          "starred": false
+        },
+        {
+          "id": "m_1788730696056_vz2dj",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:38",
           "starred": false
         }
       ]
