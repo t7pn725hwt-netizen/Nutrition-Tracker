@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-05T23:41:58.316Z",
+  "exported": "2026-09-06T03:24:03.802Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -15923,6 +15923,50 @@
             "insulin": 0
           },
           "time": "15:40",
+          "starred": false
+        },
+        {
+          "id": "m_1788651724490_n9ujg",
+          "name": "Sam’s Club Birthday Cake (1 slice)",
+          "macros": {
+            "protein": 3,
+            "fiber": 0,
+            "carbs": 62,
+            "calories": 470,
+            "fat": 23,
+            "satFat": 11,
+            "sodium": 300,
+            "sugar": 48,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "18:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788651762599_b8ruh",
+          "name": "4 Chicken Drumsticks (extra thick/jumbo, roasted, skin-on)",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 640,
+            "fat": 41,
+            "satFat": 11,
+            "sodium": 520,
+            "sugar": 0,
+            "calcium": 50,
+            "vitD": 0.3,
+            "insulin": 0
+          },
+          "time": "18:42",
           "starred": false
         }
       ]
