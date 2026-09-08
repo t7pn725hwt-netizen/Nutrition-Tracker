@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-07T21:07:38.707Z",
+  "exported": "2026-09-08T18:05:50.079Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16098,6 +16098,88 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788815263103_fuqzg",
+          "name": "BBQ Chicken (1 Thigh + 2 Drumsticks)",
+          "macros": {
+            "protein": 52,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 480,
+            "fat": 28,
+            "satFat": 8,
+            "sodium": 620,
+            "sugar": 3,
+            "calcium": 30,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "16:07",
+          "starred": false
+        },
+        {
+          "id": "m_1788824436673_zio1r",
+          "name": "Little Debbie Nutty Buddy (2-bar pack, 57g)",
+          "macros": {
+            "protein": 4,
+            "fiber": 1,
+            "carbs": 32,
+            "calories": 320,
+            "fat": 19,
+            "satFat": 8,
+            "sodium": 100,
+            "sugar": 20,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "18:40",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788824445961_mbwet",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "18:40",
+          "starred": false
+        },
+        {
+          "id": "m_1788824451616_2s6hy",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:40",
+          "starred": false
         }
       ]
     },
