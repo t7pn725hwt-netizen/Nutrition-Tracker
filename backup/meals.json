@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-08T18:05:50.079Z",
+  "exported": "2026-09-08T20:21:17.385Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16180,6 +16180,58 @@
           },
           "time": "18:40",
           "starred": false
+        }
+      ],
+      "2026-09-08": [
+        {
+          "id": "m_1788890759982_79796",
+          "name": "Kopp's Grilled Chicken Sandwich (large) + Vanilla Custard Scoop",
+          "macros": {
+            "protein": 50,
+            "fiber": 2,
+            "carbs": 70,
+            "calories": 1000,
+            "fat": 47,
+            "satFat": 20,
+            "sodium": 1400,
+            "sugar": 28,
+            "calcium": 350,
+            "vitD": 1.5,
+            "insulin": 10
+          },
+          "time": "13:05",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1788890771010_yu730",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 1
+          },
+          "time": "11:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 10,
+            "bsAtDose": null
+          }
         }
       ]
     },
