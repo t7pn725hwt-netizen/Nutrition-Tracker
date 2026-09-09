@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-08T20:21:17.385Z",
+  "exported": "2026-09-09T00:06:45.315Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16232,6 +16232,44 @@
             "iob": 10,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1788898884943_y4uwt",
+          "name": "Kirkland Signature Protein Bar — Chocolate Peanut Butter Chunk (1 bar, 60g)",
+          "macros": {
+            "protein": 21,
+            "fiber": 10,
+            "carbs": 22,
+            "calories": 190,
+            "fat": 7,
+            "satFat": 3,
+            "sodium": 150,
+            "sugar": 2,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:21",
+          "starred": false
+        },
+        {
+          "id": "m_1788901302145_02kzv",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:01",
+          "starred": false
         }
       ]
     },
