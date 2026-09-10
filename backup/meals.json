@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-10T18:36:17.718Z",
+  "exported": "2026-09-10T18:41:44.476Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16425,6 +16425,31 @@
           },
           "time": "09:55",
           "starred": false
+        },
+        {
+          "id": "m_1789065425827_d8arx",
+          "name": "Chipotle Chicken Burrito Bowl + Potato Chips (~1oz)",
+          "macros": {
+            "protein": 67,
+            "fiber": 27,
+            "carbs": 124,
+            "calories": 1125,
+            "fat": 42,
+            "satFat": 16,
+            "sodium": 2270,
+            "sugar": 6,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 14
+          },
+          "time": "13:37",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
