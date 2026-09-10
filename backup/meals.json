@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-10T00:38:24.470Z",
+  "exported": "2026-09-10T03:42:28.138Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16135,7 +16135,7 @@
             "insulin": 6
           },
           "time": "18:40",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -16360,6 +16360,50 @@
           },
           "time": "17:18",
           "starred": false
+        },
+        {
+          "id": "m_1789000708456_ufbk5",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "19:38",
+          "starred": false
+        },
+        {
+          "id": "m_1789000734866_rgxle",
+          "name": "Little Debbie Nutty Buddy (2-bar pack, 57g)",
+          "macros": {
+            "protein": 4,
+            "fiber": 1,
+            "carbs": 32,
+            "calories": 320,
+            "fat": 19,
+            "satFat": 8,
+            "sodium": 100,
+            "sugar": 20,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "19:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -16820,6 +16864,23 @@
           "sugar": 0,
           "calcium": 400,
           "vitD": 0.4,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1789000715863_4i533",
+        "name": "Little Debbie Nutty Buddy (2-bar pack, 57g)",
+        "macros": {
+          "protein": 4,
+          "fiber": 1,
+          "carbs": 32,
+          "calories": 320,
+          "fat": 19,
+          "satFat": 8,
+          "sodium": 100,
+          "sugar": 20,
+          "calcium": 10,
+          "vitD": 0,
           "insulin": 0
         }
       }
