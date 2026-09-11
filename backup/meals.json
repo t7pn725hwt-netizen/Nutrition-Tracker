@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-10T23:36:37.489Z",
+  "exported": "2026-09-11T00:34:36.087Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16469,6 +16469,31 @@
           },
           "time": "17:03",
           "starred": false
+        },
+        {
+          "id": "m_1789083502103_c07o7",
+          "name": "Orange Chicken + White Rice (2 plates) and pie",
+          "macros": {
+            "protein": 52,
+            "fiber": 2,
+            "carbs": 135,
+            "calories": 1050,
+            "fat": 46,
+            "satFat": 10,
+            "sodium": 1750,
+            "sugar": 40,
+            "calcium": 50,
+            "vitD": 0,
+            "insulin": 20
+          },
+          "time": "18:38",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
