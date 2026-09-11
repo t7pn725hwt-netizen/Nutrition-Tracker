@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-11T19:30:31.169Z",
+  "exported": "2026-09-11T21:55:03.275Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16540,6 +16540,56 @@
           },
           "time": "10:27",
           "starred": false
+        },
+        {
+          "id": "m_1789155040923_z86cm",
+          "name": "Orange Chicken only (2 plates, no rice)",
+          "macros": {
+            "protein": 50,
+            "fiber": 1,
+            "carbs": 58,
+            "calories": 880,
+            "fat": 45,
+            "satFat": 10,
+            "sodium": 1700,
+            "sugar": 38,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "14:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1789157571884_2yb13",
+          "name": "Little Debbie Nutty Buddy (2-bar pack, 57g)",
+          "macros": {
+            "protein": 4,
+            "fiber": 1,
+            "carbs": 32,
+            "calories": 320,
+            "fat": 19,
+            "satFat": 8,
+            "sodium": 100,
+            "sugar": 20,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "15:12",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 9.9,
+            "bsAtDose": null
+          }
         }
       ]
     },
