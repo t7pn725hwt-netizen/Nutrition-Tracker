@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-11T21:55:03.275Z",
+  "exported": "2026-09-12T02:29:25.184Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16588,6 +16588,50 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 9.9,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1789163710499_d14ek",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:55",
+          "starred": false
+        },
+        {
+          "id": "m_1789168966646_idb65",
+          "name": "2 Bratwurst + 1.5 Ball Park Buns",
+          "macros": {
+            "protein": 27,
+            "fiber": 3,
+            "carbs": 43,
+            "calories": 750,
+            "fat": 52,
+            "satFat": 19,
+            "sodium": 1700,
+            "sugar": 8,
+            "calcium": 125,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "18:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.6,
             "bsAtDose": null
           }
         }
