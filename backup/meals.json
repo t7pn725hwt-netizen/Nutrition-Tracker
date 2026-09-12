@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-12T19:25:57.417Z",
+  "exported": "2026-09-12T23:41:51.301Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16684,6 +16684,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 3.6,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1789256439348_dfw02",
+          "name": "8oz Steak + 2 Medium Baked Potatoes (sour cream, butter) + 1 Corn Cob",
+          "macros": {
+            "protein": 66,
+            "fiber": 11,
+            "carbs": 96,
+            "calories": 1240,
+            "fat": 60,
+            "satFat": 26,
+            "sodium": 800,
+            "sugar": 10,
+            "calcium": 180,
+            "vitD": 0.5,
+            "insulin": 14
+          },
+          "time": "18:40",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
