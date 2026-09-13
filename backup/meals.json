@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-12T23:41:51.301Z",
+  "exported": "2026-09-13T17:13:31.322Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16701,7 +16701,7 @@
             "sugar": 10,
             "calcium": 180,
             "vitD": 0.5,
-            "insulin": 14
+            "insulin": 13
           },
           "time": "18:40",
           "starred": false,
@@ -16711,6 +16711,47 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1789256534942_wludl",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 2
+          },
+          "time": "18:18",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 252
+          }
+        },
+        {
+          "id": "m_1789260646438_jz9g9",
+          "name": "Birthday Cake Slice (white cake, buttercream, sprinkles)",
+          "macros": {
+            "protein": 3,
+            "fiber": 0,
+            "carbs": 55,
+            "calories": 410,
+            "fat": 19,
+            "satFat": 9,
+            "sodium": 280,
+            "sugar": 43,
+            "calcium": 35,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "19:50",
+          "starred": false
         }
       ]
     },
