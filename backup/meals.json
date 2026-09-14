@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-13T22:39:17.274Z",
+  "exported": "2026-09-14T18:02:11.442Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16816,6 +16816,44 @@
             "insulin": 0
           },
           "time": "16:32",
+          "starred": false
+        },
+        {
+          "id": "m_1789339169379_mrovj",
+          "name": "Medium Red Bell Pepper",
+          "macros": {
+            "protein": 1,
+            "fiber": 3,
+            "carbs": 9,
+            "calories": 37,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 5,
+            "sugar": 6,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:39",
+          "starred": false
+        },
+        {
+          "id": "m_1789339179973_jqmah",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:39",
           "starred": false
         }
       ]
