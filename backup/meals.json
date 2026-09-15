@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-15T22:46:21.708Z",
+  "exported": "2026-09-15T22:47:02.984Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16922,6 +16922,31 @@
           },
           "time": "11:44",
           "starred": false
+        },
+        {
+          "id": "m_1789512392978_s6hjl",
+          "name": "Chili (beef, beans, corn, red pepper) + 3oz Cheddar + Sour Cream",
+          "macros": {
+            "protein": 63,
+            "fiber": 15,
+            "carbs": 65,
+            "calories": 1010,
+            "fat": 55,
+            "satFat": 27,
+            "sodium": 1750,
+            "sugar": 12,
+            "calcium": 750,
+            "vitD": 0.5,
+            "insulin": 10
+          },
+          "time": "17:46",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
