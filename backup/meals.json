@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-16T17:24:25.509Z",
+  "exported": "2026-09-16T19:45:07.641Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16970,6 +16970,33 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 9.9,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-09-16": [
+        {
+          "id": "m_1789579474561_ttv9a",
+          "name": "Sweetgreen Autumn Harvest Bowl",
+          "macros": {
+            "protein": 39,
+            "fiber": 11,
+            "carbs": 71,
+            "calories": 900,
+            "fat": 51,
+            "satFat": 11,
+            "sodium": 1400,
+            "sugar": 24,
+            "calcium": 250,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "12:24",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
