@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-17T23:26:52.384Z",
+  "exported": "2026-09-18T02:34:38.697Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -16288,7 +16288,7 @@
             "insulin": 8
           },
           "time": "19:06",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -17634,6 +17634,23 @@
           "sodium": 100,
           "sugar": 20,
           "calcium": 10,
+          "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1789687639009_2mqt4",
+        "name": "Pasta (20 pcs) + 2 Chicken Sausage Links + Half Bag Broccoli",
+        "macros": {
+          "protein": 49,
+          "fiber": 8,
+          "carbs": 50,
+          "calories": 637,
+          "fat": 28,
+          "satFat": 11,
+          "sodium": 1858,
+          "sugar": 6,
+          "calcium": 466,
           "vitD": 0,
           "insulin": 0
         }
