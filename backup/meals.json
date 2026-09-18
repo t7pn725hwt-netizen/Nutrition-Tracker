@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-18T17:21:24.585Z",
+  "exported": "2026-09-18T19:10:01.177Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17176,6 +17176,33 @@
             "insulin": 16
           },
           "time": "18:35",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-09-18": [
+        {
+          "id": "m_1789752090020_79ql7",
+          "name": "Chipotle Bowl — pollo asado, 1 scoop white rice, double black + pinto beans, sour cream, cheese, corn salsa, pico",
+          "macros": {
+            "protein": 68,
+            "fiber": 32,
+            "carbs": 121,
+            "calories": 1010,
+            "fat": 31,
+            "satFat": 13,
+            "sodium": 2250,
+            "sugar": 8,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "12:21",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
