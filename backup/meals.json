@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-22T00:09:47.178Z",
+  "exported": "2026-09-22T02:51:37.105Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17549,6 +17549,31 @@
           },
           "time": "17:47",
           "starred": false
+        },
+        {
+          "id": "m_1790035800892_xb36y",
+          "name": "Spinach Salad + Bleu Cheese + Olive Oil + Breaded Chicken (30g protein)",
+          "macros": {
+            "protein": 49,
+            "fiber": 4,
+            "carbs": 22,
+            "calories": 735,
+            "fat": 50,
+            "satFat": 18,
+            "sodium": 1800,
+            "sugar": 1,
+            "calcium": 540,
+            "vitD": 0.3,
+            "insulin": 2
+          },
+          "time": "19:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
