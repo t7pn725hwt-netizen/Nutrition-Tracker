@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-23T23:20:30.191Z",
+  "exported": "2026-09-23T23:57:56.812Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17776,6 +17776,31 @@
           },
           "time": "16:49",
           "starred": false
+        },
+        {
+          "id": "m_1790205637896_7wmba",
+          "name": "NY Style Sausage & Pepperoni Pizza (3 large slices)",
+          "macros": {
+            "protein": 51,
+            "fiber": 6,
+            "carbs": 111,
+            "calories": 1140,
+            "fat": 54,
+            "satFat": 22,
+            "sodium": 2700,
+            "sugar": 9,
+            "calcium": 600,
+            "vitD": 0.5,
+            "insulin": 14
+          },
+          "time": "18:20",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.5,
+            "bsAtDose": null
+          }
         }
       ]
     },
