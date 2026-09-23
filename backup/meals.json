@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-23T14:56:30.439Z",
+  "exported": "2026-09-23T18:42:29.896Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17657,6 +17657,33 @@
             "insulin": 15
           },
           "time": "17:55",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-09-23": [
+        {
+          "id": "m_1790175397304_uqwyw",
+          "name": "Sausage, Egg & Cheese McGriddle",
+          "macros": {
+            "protein": 19,
+            "fiber": 2,
+            "carbs": 56,
+            "calories": 550,
+            "fat": 32,
+            "satFat": 13,
+            "sodium": 1290,
+            "sugar": 15,
+            "calcium": 180,
+            "vitD": 0.5,
+            "insulin": 8
+          },
+          "time": "09:56",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
