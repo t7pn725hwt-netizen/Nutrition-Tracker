@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-23T18:42:29.896Z",
+  "exported": "2026-09-23T20:15:06.063Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17689,6 +17689,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790188960152_79lws",
+          "name": "Jersey Mike's Ham & Provolone Sub (Regular, 7\")",
+          "macros": {
+            "protein": 32,
+            "fiber": 3,
+            "carbs": 58,
+            "calories": 640,
+            "fat": 30,
+            "satFat": 11,
+            "sodium": 1900,
+            "sugar": 6,
+            "calcium": 350,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "13:42",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "first_bite",
+            "activityAfter": false,
+            "iob": 0.4,
             "bsAtDose": null
           }
         }
