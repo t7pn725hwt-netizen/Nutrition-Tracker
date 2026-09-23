@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-22T22:55:23.025Z",
+  "exported": "2026-09-23T03:23:20.918Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17639,6 +17639,31 @@
           },
           "time": "14:45",
           "starred": false
+        },
+        {
+          "id": "m_1790117729945_llhnh",
+          "name": "Sesame Chicken + Small Rice (Chinese takeout entrée)",
+          "macros": {
+            "protein": 38,
+            "fiber": 2,
+            "carbs": 95,
+            "calories": 900,
+            "fat": 38,
+            "satFat": 7,
+            "sodium": 1500,
+            "sugar": 32,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "17:55",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
