@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-24T00:50:56.099Z",
+  "exported": "2026-09-24T01:55:54.595Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17800,6 +17800,47 @@
             "activityAfter": false,
             "iob": 0.5,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790211371499_40mlf",
+          "name": "Culver's Kids Scoop Vanilla + Hot Fudge",
+          "macros": {
+            "protein": 4,
+            "fiber": 1,
+            "carbs": 40,
+            "calories": 330,
+            "fat": 15,
+            "satFat": 10,
+            "sodium": 120,
+            "sugar": 34,
+            "calcium": 110,
+            "vitD": 0.3,
+            "insulin": 0
+          },
+          "time": "18:56",
+          "starred": false
+        },
+        {
+          "id": "m_1790211390201_40n01",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "19:56",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 139
           }
         }
       ]
