@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-24T17:34:11.761Z",
+  "exported": "2026-09-24T18:45:50.234Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17841,6 +17841,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 139
+          }
+        }
+      ],
+      "2026-09-24": [
+        {
+          "id": "m_1790271255807_clqe5",
+          "name": "5 Eggs + 2oz Cheddar + 1 Avocado",
+          "macros": {
+            "protein": 47,
+            "fiber": 10,
+            "carbs": 15,
+            "calories": 810,
+            "fat": 64,
+            "satFat": 22,
+            "sodium": 720,
+            "sugar": 3,
+            "calcium": 560,
+            "vitD": 4,
+            "insulin": 2
+          },
+          "time": "12:34",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
