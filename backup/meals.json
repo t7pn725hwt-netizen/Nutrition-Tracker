@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-24T18:45:50.234Z",
+  "exported": "2026-09-24T22:09:52.438Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17867,6 +17867,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790275556788_3s645",
+          "name": "Double Bacon Burger (crispy onions, white spread, arugula, brioche) + Kettle Chips",
+          "macros": {
+            "protein": 66,
+            "fiber": 5,
+            "carbs": 80,
+            "calories": 1420,
+            "fat": 90,
+            "satFat": 32,
+            "sodium": 2300,
+            "sugar": 9,
+            "calcium": 200,
+            "vitD": 0.5,
+            "insulin": 12
+          },
+          "time": "13:45",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.4,
             "bsAtDose": null
           }
         }
