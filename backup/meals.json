@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-25T23:52:25.881Z",
+  "exported": "2026-09-25T23:54:26.906Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18026,6 +18026,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790380436900_hgm6m",
+          "name": "1.5 Baked Potatoes (mashed w/ butter) + Corn + 1/2 lb Beef",
+          "macros": {
+            "protein": 68,
+            "fiber": 8,
+            "carbs": 71,
+            "calories": 1020,
+            "fat": 51,
+            "satFat": 25,
+            "sodium": 450,
+            "sugar": 5,
+            "calcium": 60,
+            "vitD": 0.2,
+            "insulin": 11
+          },
+          "time": "18:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.9,
             "bsAtDose": null
           }
         }
