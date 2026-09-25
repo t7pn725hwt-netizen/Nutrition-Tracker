@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-24T22:53:04.663Z",
+  "exported": "2026-09-25T00:51:01.199Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17913,6 +17913,31 @@
           },
           "time": "17:09",
           "starred": false
+        },
+        {
+          "id": "m_1790290393113_054xt",
+          "name": "4 Pieces Fried Chicken + 2 Medium Slices Marble Cake",
+          "macros": {
+            "protein": 76,
+            "fiber": 3,
+            "carbs": 123,
+            "calories": 1580,
+            "fat": 84,
+            "satFat": 26,
+            "sodium": 2000,
+            "sugar": 72,
+            "calcium": 150,
+            "vitD": 0.5,
+            "insulin": 12
+          },
+          "time": "17:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
