@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-25T16:13:26.313Z",
+  "exported": "2026-09-25T18:02:11.350Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -17931,6 +17931,33 @@
             "insulin": 12
           },
           "time": "17:53",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-09-25": [
+        {
+          "id": "m_1790352811853_zhxfr",
+          "name": "Jimmy John's Ultimate Italian (#9, 8\" French bread)",
+          "macros": {
+            "protein": 48,
+            "fiber": 6,
+            "carbs": 77,
+            "calories": 930,
+            "fat": 46,
+            "satFat": 14,
+            "sodium": 2850,
+            "sugar": 5,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 11
+          },
+          "time": "11:13",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
