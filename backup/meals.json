@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-26T20:05:04.073Z",
+  "exported": "2026-09-27T01:30:37.002Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18074,6 +18074,56 @@
           },
           "time": "10:52",
           "starred": false
+        },
+        {
+          "id": "m_1790453110871_rwi8z",
+          "name": "Fil Fil Gyro (standard pita gyro)",
+          "macros": {
+            "protein": 34,
+            "fiber": 3,
+            "carbs": 55,
+            "calories": 720,
+            "fat": 38,
+            "satFat": 14,
+            "sodium": 1500,
+            "sugar": 5,
+            "calcium": 150,
+            "vitD": 0.2,
+            "insulin": 8
+          },
+          "time": "15:05",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790461504735_q7wdi",
+          "name": "Chicken Malabar (coconut curry) + Basmati Rice",
+          "macros": {
+            "protein": 49,
+            "fiber": 4,
+            "carbs": 61,
+            "calories": 860,
+            "fat": 46,
+            "satFat": 31,
+            "sodium": 1150,
+            "sugar": 8,
+            "calcium": 80,
+            "vitD": 0.2,
+            "insulin": 9
+          },
+          "time": "17:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.3,
+            "bsAtDose": null
+          }
         }
       ]
     },
