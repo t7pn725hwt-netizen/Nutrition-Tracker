@@ -1,5 +1,5 @@
 {
-  "exported": "2026-09-27T18:58:21.642Z",
+  "exported": "2026-09-27T21:11:20.752Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18117,7 +18117,7 @@
             "insulin": 9
           },
           "time": "17:25",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -18149,6 +18149,50 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790542229674_nc82h",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:50",
+          "starred": false
+        },
+        {
+          "id": "m_1790542251146_744fb",
+          "name": "Chicken Malabar (coconut curry) + Basmati Rice",
+          "macros": {
+            "protein": 49,
+            "fiber": 4,
+            "carbs": 61,
+            "calories": 860,
+            "fat": 46,
+            "satFat": 31,
+            "sodium": 1150,
+            "sugar": 8,
+            "calcium": 80,
+            "vitD": 0.2,
+            "insulin": 9
+          },
+          "time": "15:50",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
             "bsAtDose": null
           }
         }
@@ -18645,6 +18689,23 @@
           "sugar": 6,
           "calcium": 466,
           "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1790542238677_g0qwd",
+        "name": "Chicken Malabar (coconut curry) + Basmati Rice",
+        "macros": {
+          "protein": 49,
+          "fiber": 4,
+          "carbs": 61,
+          "calories": 860,
+          "fat": 46,
+          "satFat": 31,
+          "sodium": 1150,
+          "sugar": 8,
+          "calcium": 80,
+          "vitD": 0.2,
           "insulin": 0
         }
       }
