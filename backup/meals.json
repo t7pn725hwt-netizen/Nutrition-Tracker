@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-01T23:32:52.922Z",
+  "exported": "2026-10-02T00:36:17.457Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18611,6 +18611,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790901347452_xeggx",
+          "name": "Chocolate Chip Cookie (4\" bakery-style)",
+          "macros": {
+            "protein": 3,
+            "fiber": 1,
+            "carbs": 36,
+            "calories": 260,
+            "fat": 13,
+            "satFat": 7,
+            "sodium": 180,
+            "sugar": 22,
+            "calcium": 15,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "19:35",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
             "bsAtDose": null
           }
         }
