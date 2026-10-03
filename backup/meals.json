@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-02T23:22:07.923Z",
+  "exported": "2026-10-03T00:33:04.201Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18728,6 +18728,50 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1790983338915_ohmdc",
+          "name": "1 Chicken Sausage + 4oz Potato-Corn Mix",
+          "macros": {
+            "protein": 17,
+            "fiber": 3,
+            "carbs": 25,
+            "calories": 305,
+            "fat": 16,
+            "satFat": 7,
+            "sodium": 690,
+            "sugar": 2,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "18:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.6,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1790985119331_8rxgo",
+          "name": "Fairlife Nutrition Plan Chocolate Protein Shake",
+          "macros": {
+            "protein": 30,
+            "fiber": 0,
+            "carbs": 5,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 500,
+            "vitD": 3,
+            "insulin": 0
+          },
+          "time": "18:51",
+          "starred": false
         }
       ]
     },
