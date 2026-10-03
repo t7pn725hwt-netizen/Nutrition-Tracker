@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-03T14:54:03.555Z",
+  "exported": "2026-10-03T18:20:21.774Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18772,6 +18772,58 @@
           },
           "time": "18:51",
           "starred": false
+        }
+      ],
+      "2026-10-03": [
+        {
+          "id": "m_1791039248470_729py",
+          "name": "Sausage, Egg & Cheese McGriddle",
+          "macros": {
+            "protein": 19,
+            "fiber": 2,
+            "carbs": 56,
+            "calories": 550,
+            "fat": 32,
+            "satFat": 13,
+            "sodium": 1290,
+            "sugar": 15,
+            "calcium": 180,
+            "vitD": 0.5,
+            "insulin": 8
+          },
+          "time": "09:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791051591766_pgrqq",
+          "name": "Thin Crust Pepperoni Pizza (5 tavern-cut squares)",
+          "macros": {
+            "protein": 25,
+            "fiber": 2,
+            "carbs": 50,
+            "calories": 560,
+            "fat": 28,
+            "satFat": 12,
+            "sodium": 1200,
+            "sugar": 4,
+            "calcium": 350,
+            "vitD": 0.3,
+            "insulin": 6
+          },
+          "time": "13:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
+            "bsAtDose": null
+          }
         }
       ]
     },
