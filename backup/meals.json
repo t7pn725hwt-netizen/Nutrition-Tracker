@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-04T00:49:56.425Z",
+  "exported": "2026-10-04T19:42:01.305Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18804,7 +18804,7 @@
           "id": "m_1791051591766_pgrqq",
           "name": "Thin Crust Pepperoni Pizza (5 tavern-cut squares)",
           "macros": {
-            "protein": 25,
+            "protein": 35,
             "fiber": 2,
             "carbs": 50,
             "calories": 560,
@@ -18829,7 +18829,7 @@
           "id": "m_1791069010376_ysxgd",
           "name": "Chicken & Dumpling Soup (big bowl, ~2.5 cups)",
           "macros": {
-            "protein": 30,
+            "protein": 60,
             "fiber": 3,
             "carbs": 50,
             "calories": 500,
