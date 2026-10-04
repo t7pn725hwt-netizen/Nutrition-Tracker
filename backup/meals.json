@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-04T19:42:01.305Z",
+  "exported": "2026-10-04T19:42:41.149Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18842,6 +18842,33 @@
             "insulin": 9
           },
           "time": "18:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-04": [
+        {
+          "id": "m_1791142926067_7bcd7",
+          "name": "3 Meatballs (3oz each, 9oz total)",
+          "macros": {
+            "protein": 39,
+            "fiber": 1,
+            "carbs": 18,
+            "calories": 600,
+            "fat": 42,
+            "satFat": 15,
+            "sodium": 1200,
+            "sugar": 3,
+            "calcium": 120,
+            "vitD": 0.3,
+            "insulin": 3
+          },
+          "time": "12:42",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
