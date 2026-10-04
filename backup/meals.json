@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-04T19:42:41.149Z",
+  "exported": "2026-10-04T22:23:36.758Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18876,6 +18876,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1791142978347_5wo36",
+          "name": "Sausage Pizza (2 small slices)",
+          "macros": {
+            "protein": 20,
+            "fiber": 2,
+            "carbs": 44,
+            "calories": 440,
+            "fat": 20,
+            "satFat": 8,
+            "sodium": 1000,
+            "sugar": 4,
+            "calcium": 250,
+            "vitD": 0.2,
+            "insulin": 0
+          },
+          "time": "13:42",
+          "starred": false
+        },
+        {
+          "id": "m_1791143008260_9ctum",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:43",
+          "starred": false
         }
       ]
     },
