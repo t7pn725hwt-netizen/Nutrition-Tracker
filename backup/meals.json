@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-03T23:05:22.753Z",
+  "exported": "2026-10-04T00:49:56.425Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18822,6 +18822,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 1.1,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791069010376_ysxgd",
+          "name": "Chicken & Dumpling Soup (big bowl, ~2.5 cups)",
+          "macros": {
+            "protein": 30,
+            "fiber": 3,
+            "carbs": 50,
+            "calories": 500,
+            "fat": 20,
+            "satFat": 7,
+            "sodium": 2000,
+            "sugar": 5,
+            "calcium": 80,
+            "vitD": 0.2,
+            "insulin": 9
+          },
+          "time": "18:10",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
             "bsAtDose": null
           }
         }
