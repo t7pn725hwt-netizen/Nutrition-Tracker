@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-05T22:12:30.391Z",
+  "exported": "2026-10-05T23:21:32.675Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19009,7 +19009,7 @@
           "id": "m_1791238089811_5hj0p",
           "name": "1/3 lb Burger Patty with Cheddar (no bun)",
           "macros": {
-            "protein": 32,
+            "protein": 42,
             "fiber": 0,
             "carbs": 1,
             "calories": 440,
