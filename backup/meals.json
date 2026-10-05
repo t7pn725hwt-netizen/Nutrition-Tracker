@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-05T21:17:11.261Z",
+  "exported": "2026-10-05T22:12:30.391Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18985,6 +18985,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1791235039421_doi1s",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:17",
+          "starred": false
+        },
+        {
+          "id": "m_1791238089811_5hj0p",
+          "name": "1/3 lb Burger Patty with Cheddar (no bun)",
+          "macros": {
+            "protein": 32,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 440,
+            "fat": 34,
+            "satFat": 15,
+            "sodium": 400,
+            "sugar": 0,
+            "calcium": 200,
+            "vitD": 0.2,
+            "insulin": 0
+          },
+          "time": "17:08",
+          "starred": false
         }
       ]
     },
