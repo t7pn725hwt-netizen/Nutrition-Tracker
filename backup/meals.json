@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-04T22:23:36.758Z",
+  "exported": "2026-10-05T01:55:07.101Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -18842,6 +18842,31 @@
             "insulin": 9
           },
           "time": "18:10",
+          "starred": true,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791155089428_z064w",
+          "name": "Chicken & Dumpling Soup (big bowl, ~2.5 cups)",
+          "macros": {
+            "protein": 60,
+            "fiber": 3,
+            "carbs": 50,
+            "calories": 500,
+            "fat": 20,
+            "satFat": 7,
+            "sodium": 2000,
+            "sugar": 5,
+            "calcium": 80,
+            "vitD": 0.2,
+            "insulin": 8
+          },
+          "time": "18:04",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
@@ -18913,6 +18938,25 @@
             "insulin": 0
           },
           "time": "14:43",
+          "starred": false
+        },
+        {
+          "id": "m_1791152641956_plg0q",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:24",
           "starred": false
         }
       ]
@@ -19423,6 +19467,23 @@
           "satFat": 31,
           "sodium": 1150,
           "sugar": 8,
+          "calcium": 80,
+          "vitD": 0.2,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1791155079918_jqfpk",
+        "name": "Chicken & Dumpling Soup (big bowl, ~2.5 cups)",
+        "macros": {
+          "protein": 60,
+          "fiber": 3,
+          "carbs": 50,
+          "calories": 500,
+          "fat": 20,
+          "satFat": 7,
+          "sodium": 2000,
+          "sugar": 5,
           "calcium": 80,
           "vitD": 0.2,
           "insulin": 0
