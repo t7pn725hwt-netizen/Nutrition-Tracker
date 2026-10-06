@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-06T18:08:28.100Z",
+  "exported": "2026-10-06T20:55:42.962Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19041,6 +19041,52 @@
             "insulin": 5
           },
           "time": "18:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-06": [
+        {
+          "id": "m_1791310120040_ndwxs",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "13:08",
+          "starred": false
+        },
+        {
+          "id": "m_1791311207478_j6w7o",
+          "name": "Pumpkin Bread (3 small pieces, ~2\" each)",
+          "macros": {
+            "protein": 5,
+            "fiber": 2,
+            "carbs": 45,
+            "calories": 300,
+            "fat": 12,
+            "satFat": 2,
+            "sodium": 270,
+            "sugar": 27,
+            "calcium": 30,
+            "vitD": 0.2,
+            "insulin": 5
+          },
+          "time": "13:26",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
