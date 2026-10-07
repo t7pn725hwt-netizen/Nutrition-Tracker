@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-07T01:22:27.255Z",
+  "exported": "2026-10-07T17:52:27.300Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19151,6 +19151,31 @@
           },
           "time": "19:23",
           "starred": false
+        },
+        {
+          "id": "m_1791336150200_62df3",
+          "name": "Brisket Sandwich (half bun, pickles, BBQ sauce)",
+          "macros": {
+            "protein": 38,
+            "fiber": 1,
+            "carbs": 25,
+            "calories": 530,
+            "fat": 30,
+            "satFat": 11,
+            "sodium": 1100,
+            "sugar": 9,
+            "calcium": 50,
+            "vitD": 0.1,
+            "insulin": 4
+          },
+          "time": "20:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
