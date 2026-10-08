@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-08T21:20:48.756Z",
+  "exported": "2026-10-08T21:26:26.839Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19331,6 +19331,50 @@
           },
           "time": "10:45",
           "starred": false
+        },
+        {
+          "id": "m_1791494454326_yw1mh",
+          "name": "4oz Cheddar Cheese",
+          "macros": {
+            "protein": 28,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 460,
+            "fat": 38,
+            "satFat": 22,
+            "sodium": 720,
+            "sugar": 0,
+            "calcium": 800,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "16:20",
+          "starred": false
+        },
+        {
+          "id": "m_1791494597447_5dqbf",
+          "name": "Bean & Ground Beef Chili (2 cups)",
+          "macros": {
+            "protein": 41,
+            "fiber": 15,
+            "carbs": 63,
+            "calories": 605,
+            "fat": 21,
+            "satFat": 8,
+            "sodium": 1200,
+            "sugar": 11,
+            "calcium": 130,
+            "vitD": 0.2,
+            "insulin": 7
+          },
+          "time": "16:23",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
