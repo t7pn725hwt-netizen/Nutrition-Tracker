@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-08T18:45:23.535Z",
+  "exported": "2026-10-08T21:20:48.756Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19291,6 +19291,46 @@
             "iob": 4,
             "bsAtDose": null
           }
+        }
+      ],
+      "2026-10-08": [
+        {
+          "id": "m_1791485125703_cni5h",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:45",
+          "starred": false
+        },
+        {
+          "id": "m_1791485133438_b6ucn",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "10:45",
+          "starred": false
         }
       ]
     },
