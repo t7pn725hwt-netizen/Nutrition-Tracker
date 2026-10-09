@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-09T21:46:34.932Z",
+  "exported": "2026-10-09T23:40:36.386Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19493,6 +19493,31 @@
           },
           "time": "16:37",
           "starred": false
+        },
+        {
+          "id": "m_1791582403325_8ug59",
+          "name": "Chipotle Bowl (half)",
+          "macros": {
+            "protein": 31,
+            "fiber": 16,
+            "carbs": 60,
+            "calories": 450,
+            "fat": 12,
+            "satFat": 4,
+            "sodium": 1030,
+            "sugar": 4,
+            "calcium": 75,
+            "vitD": 0,
+            "insulin": 7
+          },
+          "time": "16:46",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.4,
+            "bsAtDose": null
+          }
         }
       ]
     },
