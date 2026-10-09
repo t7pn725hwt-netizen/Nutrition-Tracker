@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-09T17:34:39.786Z",
+  "exported": "2026-10-09T19:37:10.819Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19420,6 +19420,58 @@
           "time": "21:01",
           "starred": false,
           "doseLog": {
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-09": [
+        {
+          "id": "m_1791567289266_u1hlc",
+          "name": "Chipotle Bowl (half)",
+          "macros": {
+            "protein": 31,
+            "fiber": 16,
+            "carbs": 60,
+            "calories": 450,
+            "fat": 12,
+            "satFat": 4,
+            "sodium": 1030,
+            "sugar": 4,
+            "calcium": 75,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "12:34",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791569323700_5wicl",
+          "name": "Banana Cake with Cream Cheese Frosting (1 slice)",
+          "macros": {
+            "protein": 5,
+            "fiber": 2,
+            "carbs": 62,
+            "calories": 450,
+            "fat": 21,
+            "satFat": 9,
+            "sodium": 300,
+            "sugar": 45,
+            "calcium": 40,
+            "vitD": 0.2,
+            "insulin": 5
+          },
+          "time": "13:08",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.3,
             "bsAtDose": null
           }
         }
