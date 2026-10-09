@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-08T21:26:26.839Z",
+  "exported": "2026-10-09T02:02:29.217Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19373,6 +19373,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791496268744_nkmvt",
+          "name": "Banana Cake with Cream Cheese Frosting (1 slice)",
+          "macros": {
+            "protein": 5,
+            "fiber": 2,
+            "carbs": 62,
+            "calories": 450,
+            "fat": 21,
+            "satFat": 9,
+            "sodium": 300,
+            "sugar": 45,
+            "calcium": 40,
+            "vitD": 0.2,
+            "insulin": 5
+          },
+          "time": "16:51",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 6.2,
             "bsAtDose": null
           }
         }
