@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-10T20:54:02.780Z",
+  "exported": "2026-10-10T22:24:05.382Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19620,6 +19620,50 @@
             "insulin": 0
           },
           "time": "13:52",
+          "starred": false
+        },
+        {
+          "id": "m_1791665648792_qxbmw",
+          "name": "Banana Cake with Cream Cheese Frosting (1 slice)",
+          "macros": {
+            "protein": 5,
+            "fiber": 2,
+            "carbs": 62,
+            "calories": 450,
+            "fat": 21,
+            "satFat": 9,
+            "sodium": 300,
+            "sugar": 45,
+            "calcium": 40,
+            "vitD": 0.2,
+            "insulin": 6
+          },
+          "time": "15:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791665742407_rzsxl",
+          "name": "1/3 lb Burger Patty with Cheddar (no bun)",
+          "macros": {
+            "protein": 32,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 440,
+            "fat": 34,
+            "satFat": 15,
+            "sodium": 400,
+            "sugar": 0,
+            "calcium": 200,
+            "vitD": 0.2,
+            "insulin": 0
+          },
+          "time": "15:55",
           "starred": false
         }
       ]
