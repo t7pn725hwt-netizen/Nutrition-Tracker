@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-09T23:40:36.386Z",
+  "exported": "2026-10-10T00:53:25.046Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19518,6 +19518,50 @@
             "iob": 0.4,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1791590083026_7euuu",
+          "name": "Kielbasa Boil with Potatoes, Green Beans & Onion (2 bowls, 2 potatoes total)",
+          "macros": {
+            "protein": 37,
+            "fiber": 12,
+            "carbs": 63,
+            "calories": 1040,
+            "fat": 72,
+            "satFat": 24,
+            "sodium": 2390,
+            "sugar": 13,
+            "calcium": 135,
+            "vitD": 0.6,
+            "insulin": 12
+          },
+          "time": "18:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.2,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791590098067_inqyx",
+          "name": "Brown Butter Chocolate Chip Cookie (medium, ~3\")",
+          "macros": {
+            "protein": 3,
+            "fiber": 1,
+            "carbs": 32,
+            "calories": 250,
+            "fat": 13,
+            "satFat": 7,
+            "sodium": 170,
+            "sugar": 20,
+            "calcium": 15,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:54",
+          "starred": false
         }
       ]
     },
