@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-11T17:27:39.104Z",
+  "exported": "2026-10-11T19:47:52.748Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19691,6 +19691,46 @@
             "bsAtDose": null
           }
         }
+      ],
+      "2026-10-11": [
+        {
+          "id": "m_1791739670380_clw0i",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 2
+          },
+          "time": "12:27",
+          "starred": false
+        },
+        {
+          "id": "m_1791743692200_q3sbt",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "13:34",
+          "starred": false
+        }
       ]
     },
     "favorites": [
@@ -20184,23 +20224,6 @@
           "sugar": 6,
           "calcium": 466,
           "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1790542238677_g0qwd",
-        "name": "Chicken Malabar (coconut curry) + Basmati Rice",
-        "macros": {
-          "protein": 49,
-          "fiber": 4,
-          "carbs": 61,
-          "calories": 860,
-          "fat": 46,
-          "satFat": 31,
-          "sodium": 1150,
-          "sugar": 8,
-          "calcium": 80,
-          "vitD": 0.2,
           "insulin": 0
         }
       },
