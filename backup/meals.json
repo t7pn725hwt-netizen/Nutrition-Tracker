@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-11T19:47:52.748Z",
+  "exported": "2026-10-11T21:00:31.944Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19730,6 +19730,31 @@
           },
           "time": "13:34",
           "starred": false
+        },
+        {
+          "id": "m_1791748082981_252od",
+          "name": "Kielbasa Boil with Potatoes, Green Beans & Onion (2 bowls, 2 potatoes total)",
+          "macros": {
+            "protein": 37,
+            "fiber": 12,
+            "carbs": 63,
+            "calories": 1040,
+            "fat": 72,
+            "satFat": 24,
+            "sodium": 2390,
+            "sugar": 13,
+            "calcium": 135,
+            "vitD": 0.6,
+            "insulin": 9
+          },
+          "time": "14:48",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.8,
+            "bsAtDose": null
+          }
         }
       ]
     },
