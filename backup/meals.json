@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-11T21:00:31.944Z",
+  "exported": "2026-10-11T21:58:47.358Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19753,6 +19753,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0.8,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791755463612_ve5pc",
+          "name": "Bratwurst with Pretzel Bun",
+          "macros": {
+            "protein": 22,
+            "fiber": 2,
+            "carbs": 38,
+            "calories": 580,
+            "fat": 34,
+            "satFat": 12,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:51",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.4,
             "bsAtDose": null
           }
         }
