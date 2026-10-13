@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-12T19:51:18.891Z",
+  "exported": "2026-10-13T00:38:00.693Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19807,6 +19807,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1791834680337_40be6",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:51",
+          "starred": false
+        },
+        {
+          "id": "m_1791851651862_wz7al",
+          "name": "1/3 lb Burger Patty with Cheddar (no bun)",
+          "macros": {
+            "protein": 32,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 440,
+            "fat": 34,
+            "satFat": 15,
+            "sodium": 400,
+            "sugar": 0,
+            "calcium": 200,
+            "vitD": 0.2,
+            "insulin": 0
+          },
+          "time": "19:34",
+          "starred": true
         }
       ]
     },
@@ -20352,6 +20390,23 @@
           "sugar": 13,
           "calcium": 135,
           "vitD": 0.6,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1791851653104_viflm",
+        "name": "1/3 lb Burger Patty with Cheddar (no bun)",
+        "macros": {
+          "protein": 32,
+          "fiber": 0,
+          "carbs": 1,
+          "calories": 440,
+          "fat": 34,
+          "satFat": 15,
+          "sodium": 400,
+          "sugar": 0,
+          "calcium": 200,
+          "vitD": 0.2,
           "insulin": 0
         }
       }
