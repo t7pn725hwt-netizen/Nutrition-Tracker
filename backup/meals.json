@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-13T18:53:08.822Z",
+  "exported": "2026-10-13T20:27:26.732Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19870,6 +19870,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1791917686408_v5bmm",
+          "name": "Deli Reuben + Rice Krispie Treat (regular size)",
+          "macros": {
+            "protein": 47,
+            "fiber": 4,
+            "carbs": 85,
+            "calories": 1000,
+            "fat": 53,
+            "satFat": 21,
+            "sodium": 2675,
+            "sugar": 28,
+            "calcium": 450,
+            "vitD": 0.5,
+            "insulin": 13
+          },
+          "time": "13:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.5,
             "bsAtDose": null
           }
         }
