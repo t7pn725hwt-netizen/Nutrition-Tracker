@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-14T19:40:37.083Z",
+  "exported": "2026-10-14T20:09:06.429Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19959,6 +19959,71 @@
             "insulin": 0
           },
           "time": "21:12",
+          "starred": false
+        }
+      ],
+      "2026-10-14": [
+        {
+          "id": "m_1792006846667_y9iud",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:21",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1792006858170_cljnp",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:40",
+          "starred": false
+        },
+        {
+          "id": "m_1792008506319_xg9mi",
+          "name": "Thin Crust Supreme Pizza (3 small slices)",
+          "macros": {
+            "protein": 30,
+            "fiber": 3,
+            "carbs": 54,
+            "calories": 600,
+            "fat": 30,
+            "satFat": 12,
+            "sodium": 1500,
+            "sugar": 6,
+            "calcium": 450,
+            "vitD": 0.3,
+            "insulin": 0
+          },
+          "time": "15:08",
           "starred": false
         }
       ]
