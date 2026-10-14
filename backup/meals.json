@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-14T02:02:28.336Z",
+  "exported": "2026-10-14T03:23:18.202Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -19941,6 +19941,25 @@
             "iob": 0,
             "bsAtDose": 145
           }
+        },
+        {
+          "id": "m_1791943965229_kv2b5",
+          "name": "Fairlife Nutrition Plan Chocolate Shake (11.5 fl oz)",
+          "macros": {
+            "protein": 30,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 500,
+            "vitD": 3,
+            "insulin": 0
+          },
+          "time": "21:12",
+          "starred": false
         }
       ]
     },
