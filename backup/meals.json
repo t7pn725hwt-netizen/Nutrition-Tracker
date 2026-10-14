@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-14T22:25:33.135Z",
+  "exported": "2026-10-14T23:59:06.204Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20024,6 +20024,25 @@
             "insulin": 0
           },
           "time": "15:08",
+          "starred": false
+        },
+        {
+          "id": "m_1792016772899_pgf5s",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "17:26",
           "starred": false
         }
       ]
