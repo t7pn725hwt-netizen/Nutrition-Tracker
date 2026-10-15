@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-15T20:41:04.896Z",
+  "exported": "2026-10-15T22:49:08.193Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20064,6 +20064,25 @@
             "insulin": 0
           },
           "time": "12:54",
+          "starred": false
+        },
+        {
+          "id": "m_1792096875313_wqdm7",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "15:41",
           "starred": false
         }
       ]
