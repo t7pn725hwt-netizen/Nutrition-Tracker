@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-16T15:58:53.360Z",
+  "exported": "2026-10-16T18:09:18.331Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20102,6 +20102,52 @@
             "insulin": 12
           },
           "time": "17:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-16": [
+        {
+          "id": "m_1792166335540_be9v4",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "10:58",
+          "starred": false
+        },
+        {
+          "id": "m_1792166342271_nippb",
+          "name": "Chocolate Layer Cake (ganache, mousse filling, buttercream trim — 1 slice)",
+          "macros": {
+            "protein": 5,
+            "fiber": 3,
+            "carbs": 65,
+            "calories": 500,
+            "fat": 26,
+            "satFat": 12,
+            "sodium": 350,
+            "sugar": 50,
+            "calcium": 40,
+            "vitD": 0.2,
+            "insulin": 10
+          },
+          "time": "10:59",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
