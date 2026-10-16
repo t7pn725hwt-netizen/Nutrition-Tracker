@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-15T22:49:08.193Z",
+  "exported": "2026-10-16T15:58:53.360Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20084,6 +20084,31 @@
           },
           "time": "15:41",
           "starred": false
+        },
+        {
+          "id": "m_1792104561621_0jg44",
+          "name": "Brat + Hot Dog (no buns) + 2 Cups Puppy Chow",
+          "macros": {
+            "protein": 39,
+            "fiber": 6,
+            "carbs": 116,
+            "calories": 1380,
+            "fat": 89,
+            "satFat": 27,
+            "sodium": 1810,
+            "sugar": 74,
+            "calcium": 230,
+            "vitD": 2.4,
+            "insulin": 12
+          },
+          "time": "17:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
