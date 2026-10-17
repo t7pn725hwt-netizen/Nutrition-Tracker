@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-17T16:21:53.697Z",
+  "exported": "2026-10-17T22:29:03.380Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20258,6 +20258,77 @@
             "activityAfter": false,
             "iob": 0.2,
             "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-17": [
+        {
+          "id": "m_1792254130961_i7dhe",
+          "name": "Large Ham, Egg & Cheese Breakfast Sandwich",
+          "macros": {
+            "protein": 42,
+            "fiber": 2,
+            "carbs": 42,
+            "calories": 560,
+            "fat": 26,
+            "satFat": 12,
+            "sodium": 1450,
+            "sugar": 5,
+            "calcium": 300,
+            "vitD": 1.5,
+            "insulin": 7
+          },
+          "time": "11:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1792254268370_r5sgy",
+          "name": "Fairlife Nutrition Plan Shake (11.5oz, 30g protein)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 650,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "11:24",
+          "starred": false
+        },
+        {
+          "id": "m_1792264310085_unthx",
+          "name": "Sweetgreen Autumn Harvest Bowl",
+          "macros": {
+            "protein": 39,
+            "fiber": 11,
+            "carbs": 71,
+            "calories": 900,
+            "fat": 51,
+            "satFat": 11,
+            "sodium": 1400,
+            "sugar": 24,
+            "calcium": 250,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "14:11",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.1,
+            "bsAtDose": 80
           }
         }
       ]
