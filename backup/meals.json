@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-18T16:13:13.947Z",
+  "exported": "2026-10-18T20:24:49.222Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20389,6 +20389,31 @@
           },
           "time": "09:54",
           "starred": false
+        },
+        {
+          "id": "m_1792340002071_6x5ze",
+          "name": "Party Sub, Ham/Salami/Cheese (2 chunks) + Small Slice Birthday Cake",
+          "macros": {
+            "protein": 47,
+            "fiber": 4,
+            "carbs": 112,
+            "calories": 1200,
+            "fat": 54,
+            "satFat": 22,
+            "sodium": 2600,
+            "sugar": 34,
+            "calcium": 420,
+            "vitD": 0.4,
+            "insulin": 16
+          },
+          "time": "11:00",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
