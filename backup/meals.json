@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-17T22:29:03.380Z",
+  "exported": "2026-10-18T14:54:49.576Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20330,6 +20330,44 @@
             "iob": 2.1,
             "bsAtDose": 80
           }
+        },
+        {
+          "id": "m_1792276158548_ayoad",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:29",
+          "starred": false
+        },
+        {
+          "id": "m_1792276263633_4gnvb",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:31",
+          "starred": false
         }
       ]
     },
