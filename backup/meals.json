@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-19T22:15:58.484Z",
+  "exported": "2026-10-19T23:50:54.729Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20504,6 +20504,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1792448162179_i3pb0",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:16",
+          "starred": false
+        },
+        {
+          "id": "m_1792448170388_lrn5i",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 2
+          },
+          "time": "17:16",
+          "starred": false
         }
       ]
     },
