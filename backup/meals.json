@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-20T18:03:32.337Z",
+  "exported": "2026-10-20T21:00:20.082Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20561,6 +20561,33 @@
           },
           "time": "18:51",
           "starred": false
+        }
+      ],
+      "2026-10-20": [
+        {
+          "id": "m_1792519420052_8ib44",
+          "name": "Corned Beef (~10oz) + Mashed Red Potatoes + Cornbread Muffin w/ Butter",
+          "macros": {
+            "protein": 60,
+            "fiber": 5,
+            "carbs": 82,
+            "calories": 1330,
+            "fat": 85,
+            "satFat": 34,
+            "sodium": 3700,
+            "sugar": 16,
+            "calcium": 150,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "13:03",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
