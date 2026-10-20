@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-19T23:50:54.729Z",
+  "exported": "2026-10-20T18:03:32.337Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20542,6 +20542,25 @@
           },
           "time": "17:16",
           "starred": false
+        },
+        {
+          "id": "m_1792453865983_se78x",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:51",
+          "starred": false
         }
       ]
     },
@@ -20848,23 +20867,6 @@
           "sodium": 1010,
           "sugar": 17,
           "calcium": 210,
-          "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1782682001028_ks1ve",
-        "name": "Shrimp & Avocado Ceviche (1 cup)",
-        "macros": {
-          "protein": 22,
-          "fiber": 5,
-          "carbs": 12,
-          "calories": 280,
-          "fat": 14,
-          "satFat": 2,
-          "sodium": 620,
-          "sugar": 3,
-          "calcium": 80,
           "vitD": 0,
           "insulin": 0
         }
