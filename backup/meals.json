@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-21T22:13:23.559Z",
+  "exported": "2026-10-22T17:17:59.432Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20696,6 +20696,44 @@
             "insulin": 0
           },
           "time": "14:53",
+          "starred": false
+        },
+        {
+          "id": "m_1792620811934_c69at",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "17:13",
+          "starred": false
+        },
+        {
+          "id": "m_1792627022926_t1xxp",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:57",
           "starred": false
         }
       ]
