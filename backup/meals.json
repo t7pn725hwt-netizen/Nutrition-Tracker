@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-22T17:17:59.432Z",
+  "exported": "2026-10-22T18:58:44.218Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20735,6 +20735,33 @@
           },
           "time": "18:57",
           "starred": false
+        }
+      ],
+      "2026-10-22": [
+        {
+          "id": "m_1792689483998_uqxur",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:18",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
