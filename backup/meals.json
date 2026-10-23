@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-23T20:07:51.163Z",
+  "exported": "2026-10-23T20:34:04.053Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20388,7 +20388,7 @@
             "insulin": 0
           },
           "time": "09:54",
-          "starred": false
+          "starred": true
         },
         {
           "id": "m_1792340002071_6x5ze",
@@ -20864,6 +20864,44 @@
             "insulin": 0
           },
           "time": "12:36",
+          "starred": false
+        },
+        {
+          "id": "m_1792786103483_rba4y",
+          "name": "Fairlife Nutrition Plan Shake (11.5oz, 30g protein)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 650,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "15:08",
+          "starred": false
+        },
+        {
+          "id": "m_1792786199014_7lm45",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:09",
           "starred": false
         }
       ]
@@ -21410,6 +21448,23 @@
           "sugar": 0,
           "calcium": 200,
           "vitD": 0.2,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1792786094824_x8t1s",
+        "name": "Fairlife Nutrition Plan Shake (11.5oz, 30g protein)",
+        "macros": {
+          "protein": 30,
+          "fiber": 1,
+          "carbs": 4,
+          "calories": 150,
+          "fat": 2.5,
+          "satFat": 1.5,
+          "sodium": 230,
+          "sugar": 2,
+          "calcium": 650,
+          "vitD": 5,
           "insulin": 0
         }
       }
