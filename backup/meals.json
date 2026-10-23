@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-22T22:47:19.707Z",
+  "exported": "2026-10-23T00:12:46.174Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20819,6 +20819,31 @@
           },
           "time": "15:24",
           "starred": false
+        },
+        {
+          "id": "m_1792709245846_o8ar6",
+          "name": "Chili's Honey-Chipotle Crispers (3 pc) + Cup of Chicken Enchilada Soup",
+          "macros": {
+            "protein": 44,
+            "fiber": 2,
+            "carbs": 88,
+            "calories": 983,
+            "fat": 50,
+            "satFat": 13,
+            "sodium": 3100,
+            "sugar": 26,
+            "calcium": 200,
+            "vitD": 0.2,
+            "insulin": 13
+          },
+          "time": "17:47",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
