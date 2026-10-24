@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-24T20:58:09.782Z",
+  "exported": "2026-10-24T21:02:42.597Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21012,6 +21012,31 @@
           },
           "time": "15:55",
           "starred": false
+        },
+        {
+          "id": "m_1792875523725_5394h",
+          "name": "Chipotle Bowl (half): chicken, white rice, double black and pinto, sour cream, cheese, pico",
+          "macros": {
+            "protein": 38,
+            "fiber": 16,
+            "carbs": 67,
+            "calories": 578,
+            "fat": 20,
+            "satFat": 8,
+            "sodium": 965,
+            "sugar": 3,
+            "calcium": 175,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "15:58",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.4,
+            "bsAtDose": 80
+          }
         }
       ]
     },
