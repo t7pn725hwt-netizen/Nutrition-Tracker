@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-23T23:00:40.761Z",
+  "exported": "2026-10-24T17:12:38.311Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -20903,6 +20903,31 @@
           },
           "time": "15:09",
           "starred": false
+        },
+        {
+          "id": "m_1792797104506_388sz",
+          "name": "Sweetgreen Autumn Harvest Bowl + Extra Blackened Chicken",
+          "macros": {
+            "protein": 59,
+            "fiber": 13,
+            "carbs": 72,
+            "calories": 1050,
+            "fat": 57,
+            "satFat": 14,
+            "sodium": 2075,
+            "sugar": 17,
+            "calcium": 255,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "18:11",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
