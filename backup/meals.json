@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-24T22:18:40.980Z",
+  "exported": "2026-10-25T18:06:41.137Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21036,6 +21036,33 @@
             "activityAfter": false,
             "iob": 0.4,
             "bsAtDose": 80
+          }
+        }
+      ],
+      "2026-10-25": [
+        {
+          "id": "m_1792943676472_xnrke",
+          "name": "Kwik Trip Sausage, Egg & Cheese Croissant + 3 Eggs",
+          "macros": {
+            "protein": 34,
+            "fiber": 1,
+            "carbs": 31,
+            "calories": 670,
+            "fat": 46,
+            "satFat": 18,
+            "sodium": 1020,
+            "sugar": 4,
+            "calcium": 175,
+            "vitD": 2.8,
+            "insulin": 5
+          },
+          "time": "10:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
