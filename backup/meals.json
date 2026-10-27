@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-27T20:30:07.198Z",
+  "exported": "2026-10-27T20:49:43.800Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21342,6 +21342,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1793133008270_8mw89",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:30",
+          "starred": false
         }
       ]
     },
@@ -21631,40 +21650,6 @@
           "sodium": 11,
           "sugar": 1,
           "calcium": 18,
-          "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1782581225382_0vbl7",
-        "name": "1/2 lb Grilled Chicken Breast, 1/2 lb Broccoli, 1 oz Chick-fil-A Polynesian Sauce",
-        "macros": {
-          "protein": 83,
-          "fiber": 11,
-          "carbs": 35,
-          "calories": 680,
-          "fat": 11,
-          "satFat": 2,
-          "sodium": 1010,
-          "sugar": 17,
-          "calcium": 210,
-          "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1784149691175_wvj45",
-        "name": "Fried Cheese Curds",
-        "macros": {
-          "protein": 18,
-          "fiber": 0,
-          "carbs": 22,
-          "calories": 420,
-          "fat": 28,
-          "satFat": 14,
-          "sodium": 820,
-          "sugar": 1,
-          "calcium": 350,
           "vitD": 0,
           "insulin": 0
         }
