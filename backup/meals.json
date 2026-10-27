@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-27T23:31:41.588Z",
+  "exported": "2026-10-27T23:33:40.781Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21404,6 +21404,31 @@
             "activityAfter": false,
             "iob": 0.5,
             "bsAtDose": 82
+          }
+        },
+        {
+          "id": "m_1793143971046_wupup",
+          "name": "Jimmy John's Italian Night Club (#9, 8\" French bread)",
+          "macros": {
+            "protein": 48,
+            "fiber": 6,
+            "carbs": 77,
+            "calories": 930,
+            "fat": 46,
+            "satFat": 14,
+            "sodium": 2850,
+            "sugar": 5,
+            "calcium": 400,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "18:32",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.5,
+            "bsAtDose": null
           }
         }
       ]
