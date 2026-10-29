@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-28T21:51:03.245Z",
+  "exported": "2026-10-29T18:49:03.096Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21527,6 +21527,31 @@
           },
           "time": "14:15",
           "starred": false
+        },
+        {
+          "id": "m_1793229887499_9py45",
+          "name": "Fried Chicken Patty, Lightly Breaded (5oz)",
+          "macros": {
+            "protein": 36,
+            "fiber": 0,
+            "carbs": 10,
+            "calories": 350,
+            "fat": 17,
+            "satFat": 4,
+            "sodium": 650,
+            "sugar": 0,
+            "calcium": 20,
+            "vitD": 0.2,
+            "insulin": 3
+          },
+          "time": "18:24",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
