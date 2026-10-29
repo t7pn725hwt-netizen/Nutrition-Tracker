@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-29T18:49:03.096Z",
+  "exported": "2026-10-29T20:11:16.283Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21545,6 +21545,33 @@
             "insulin": 3
           },
           "time": "18:24",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-10-29": [
+        {
+          "id": "m_1793299749513_n7sfk",
+          "name": "Chipotle Bowl (half) + 1 Whole Avocado (log this once for each portion)",
+          "macros": {
+            "protein": 37,
+            "fiber": 28,
+            "carbs": 90,
+            "calories": 855,
+            "fat": 40,
+            "satFat": 11,
+            "sodium": 1255,
+            "sugar": 6,
+            "calcium": 193,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "13:49",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
