@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-29T20:11:16.283Z",
+  "exported": "2026-10-30T02:33:27.957Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21572,6 +21572,88 @@
             "insulin": 8
           },
           "time": "13:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1793304682104_4nzdg",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "15:11",
+          "starred": false
+        },
+        {
+          "id": "m_1793311056456_p9a9f",
+          "name": "Fairlife Nutrition Plan Shake (11.5oz, 30g protein)",
+          "macros": {
+            "protein": 30,
+            "fiber": 1,
+            "carbs": 4,
+            "calories": 150,
+            "fat": 2.5,
+            "satFat": 1.5,
+            "sodium": 230,
+            "sugar": 2,
+            "calcium": 650,
+            "vitD": 5,
+            "insulin": 0
+          },
+          "time": "16:57",
+          "starred": false
+        },
+        {
+          "id": "m_1793311071466_5vkq8",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:57",
+          "starred": false
+        },
+        {
+          "id": "m_1793316979496_bucaz",
+          "name": "Chipotle Bowl (half, no avocado): steak, white rice, double black + pinto beans, double pico, corn, sour cream, cheese",
+          "macros": {
+            "protein": 34,
+            "fiber": 18,
+            "carbs": 77,
+            "calories": 615,
+            "fat": 18,
+            "satFat": 8,
+            "sodium": 1245,
+            "sugar": 5,
+            "calcium": 175,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "18:36",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
