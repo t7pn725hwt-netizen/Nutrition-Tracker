@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-30T02:33:27.957Z",
+  "exported": "2026-10-30T02:38:47.532Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21661,6 +21661,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1793327644638_rx7zm",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "21:34",
+          "starred": false
         }
       ]
     },
@@ -21955,23 +21974,6 @@
         }
       },
       {
-        "id": "fav_1784505370824_beslz",
-        "name": "14 Chicken Meatballs and Green Beans",
-        "macros": {
-          "protein": 61,
-          "fiber": 8,
-          "carbs": 29,
-          "calories": 690,
-          "fat": 33,
-          "satFat": 9,
-          "sodium": 1960,
-          "sugar": 6,
-          "calcium": 140,
-          "vitD": 0,
-          "insulin": 0
-        }
-      },
-      {
         "id": "fav_1784505405539_ifrmn",
         "name": "24 Wheat Thins + ~2 oz Cheddar Cheese Spread",
         "macros": {
@@ -22070,23 +22072,6 @@
           "sugar": 0,
           "calcium": 400,
           "vitD": 0.4,
-          "insulin": 0
-        }
-      },
-      {
-        "id": "fav_1789000715863_4i533",
-        "name": "Little Debbie Nutty Buddy (2-bar pack, 57g)",
-        "macros": {
-          "protein": 4,
-          "fiber": 1,
-          "carbs": 32,
-          "calories": 320,
-          "fat": 19,
-          "satFat": 8,
-          "sodium": 100,
-          "sugar": 20,
-          "calcium": 10,
-          "vitD": 0,
           "insulin": 0
         }
       },
