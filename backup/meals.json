@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-31T01:11:21.261Z",
+  "exported": "2026-10-31T02:50:05.757Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21751,6 +21751,69 @@
           },
           "time": "17:50",
           "starred": false
+        },
+        {
+          "id": "m_1793409391138_tej80",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "20:16",
+          "starred": false
+        },
+        {
+          "id": "m_1793409400200_2ogp1",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "20:16",
+          "starred": false
+        },
+        {
+          "id": "m_1793409449172_x32ow",
+          "name": "Cashews (4oz, roasted & salted)",
+          "macros": {
+            "protein": 21,
+            "fiber": 4,
+            "carbs": 34,
+            "calories": 630,
+            "fat": 50,
+            "satFat": 9,
+            "sodium": 360,
+            "sugar": 7,
+            "calcium": 40,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "20:17",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
