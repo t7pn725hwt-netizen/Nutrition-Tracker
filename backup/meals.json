@@ -1,5 +1,5 @@
 {
-  "exported": "2026-10-31T22:21:32.266Z",
+  "exported": "2026-11-01T17:57:47.135Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21860,6 +21860,63 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1793485298833_72bpq",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "17:21",
+          "starred": false
+        },
+        {
+          "id": "m_1793485306518_p2tnp",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:21",
+          "starred": false
+        },
+        {
+          "id": "m_1793489689186_ec85z",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:34",
+          "starred": false
         }
       ]
     },
