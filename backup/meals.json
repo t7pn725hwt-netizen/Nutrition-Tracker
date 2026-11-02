@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-02T20:27:34.940Z",
+  "exported": "2026-11-02T22:20:51.795Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22047,6 +22047,82 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1793651257197_q71k3",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:27",
+          "starred": false
+        },
+        {
+          "id": "m_1793657766092_tuuo0",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:16",
+          "starred": false
+        },
+        {
+          "id": "m_1793657773175_axaqd",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "16:16",
+          "starred": false
+        },
+        {
+          "id": "m_1793657781726_i424k",
+          "name": "2 Third-Pound Burger Patties with Cheese (no bun)",
+          "macros": {
+            "protein": 64,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 880,
+            "fat": 68,
+            "satFat": 30,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 400,
+            "vitD": 0.4,
+            "insulin": 0
+          },
+          "time": "16:16",
+          "starred": false
         }
       ]
     },
