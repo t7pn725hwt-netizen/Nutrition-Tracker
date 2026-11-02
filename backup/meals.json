@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-02T17:59:56.569Z",
+  "exported": "2026-11-02T20:27:34.940Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22020,6 +22020,33 @@
           },
           "time": "20:16",
           "starred": false
+        }
+      ],
+      "2026-11-02": [
+        {
+          "id": "m_1793642405220_b968b",
+          "name": "Mostaccioli (medium) with 8oz Chicken, Alfredo + Tomato Sauce",
+          "macros": {
+            "protein": 92,
+            "fiber": 7,
+            "carbs": 99,
+            "calories": 1100,
+            "fat": 34,
+            "satFat": 15,
+            "sodium": 1500,
+            "sugar": 9,
+            "calcium": 200,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "12:00",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
