@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-01T17:57:47.135Z",
+  "exported": "2026-11-02T02:16:02.987Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -21917,6 +21917,71 @@
           },
           "time": "18:34",
           "starred": false
+        }
+      ],
+      "2026-11-01": [
+        {
+          "id": "m_1793555869532_h8m1b",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "11:57",
+          "starred": false
+        },
+        {
+          "id": "m_1793555884956_wgnjs",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 0
+          },
+          "time": "11:58",
+          "starred": false
+        },
+        {
+          "id": "m_1793575360020_gx8l6",
+          "name": "Kopp's KRK Burger + Junior Turtle Sundae",
+          "macros": {
+            "protein": 61,
+            "fiber": 2,
+            "carbs": 99,
+            "calories": 1750,
+            "fat": 108,
+            "satFat": 42,
+            "sodium": 2080,
+            "sugar": 50,
+            "calcium": 620,
+            "vitD": 2,
+            "insulin": 16
+          },
+          "time": "17:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
