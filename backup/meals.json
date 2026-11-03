@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-02T22:20:51.795Z",
+  "exported": "2026-11-03T00:20:37.049Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22027,7 +22027,7 @@
           "id": "m_1793642405220_b968b",
           "name": "Mostaccioli (medium) with 8oz Chicken, Alfredo + Tomato Sauce",
           "macros": {
-            "protein": 92,
+            "protein": 62,
             "fiber": 7,
             "carbs": 99,
             "calories": 1100,
