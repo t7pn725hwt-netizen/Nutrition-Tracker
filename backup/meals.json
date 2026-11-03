@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-03T00:20:37.049Z",
+  "exported": "2026-11-03T17:54:38.359Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22123,6 +22123,31 @@
           },
           "time": "16:16",
           "starred": false
+        },
+        {
+          "id": "m_1793665255511_vx4i1",
+          "name": "One banana",
+          "macros": {
+            "protein": 1,
+            "fiber": 3,
+            "carbs": 27,
+            "calories": 105,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 1,
+            "sugar": 14,
+            "calcium": 6,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "18:20",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
