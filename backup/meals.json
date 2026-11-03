@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-03T18:50:56.827Z",
+  "exported": "2026-11-03T21:20:59.408Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22146,6 +22146,58 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-11-03": [
+        {
+          "id": "m_1793732136295_1d8ga",
+          "name": "Costco Food Court Hot Dog (¼ lb beef, with bun)",
+          "macros": {
+            "protein": 22,
+            "fiber": 2,
+            "carbs": 43,
+            "calories": 570,
+            "fat": 34,
+            "satFat": 14,
+            "sodium": 1600,
+            "sugar": 6,
+            "calcium": 100,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "12:55",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1793737680979_ibmug",
+          "name": "Costco Food Court Pepperoni Slice",
+          "macros": {
+            "protein": 36,
+            "fiber": 4,
+            "carbs": 72,
+            "calories": 680,
+            "fat": 28,
+            "satFat": 13,
+            "sodium": 1800,
+            "sugar": 8,
+            "calcium": 500,
+            "vitD": 0.3,
+            "insulin": 9
+          },
+          "time": "14:28",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 2.5,
             "bsAtDose": null
           }
         }
