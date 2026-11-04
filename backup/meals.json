@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-03T21:20:59.408Z",
+  "exported": "2026-11-04T00:24:12.125Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22180,7 +22180,7 @@
           "id": "m_1793737680979_ibmug",
           "name": "Costco Food Court Pepperoni Slice",
           "macros": {
-            "protein": 36,
+            "protein": 48,
             "fiber": 4,
             "carbs": 72,
             "calories": 680,
