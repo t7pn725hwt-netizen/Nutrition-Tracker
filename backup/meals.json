@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-04T18:24:59.431Z",
+  "exported": "2026-11-04T20:37:48.342Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22263,6 +22263,33 @@
           },
           "time": "20:58",
           "starred": false
+        }
+      ],
+      "2026-11-04": [
+        {
+          "id": "m_1793816712481_y4bcq",
+          "name": "Spaghetti with Beef Tomato Sauce + 1oz Parmesan",
+          "macros": {
+            "protein": 51,
+            "fiber": 6,
+            "carbs": 76,
+            "calories": 800,
+            "fat": 30,
+            "satFat": 13,
+            "sodium": 1350,
+            "sugar": 8,
+            "calcium": 400,
+            "vitD": 0.3,
+            "insulin": 9
+          },
+          "time": "12:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
