@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-04T01:54:22.691Z",
+  "exported": "2026-11-04T02:27:00.726Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22200,6 +22200,50 @@
             "iob": 2.5,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1793757267507_9ih2t",
+          "name": "Spaghetti with Beef Tomato Sauce + 1oz Parmesan",
+          "macros": {
+            "protein": 51,
+            "fiber": 6,
+            "carbs": 76,
+            "calories": 800,
+            "fat": 30,
+            "satFat": 13,
+            "sodium": 1350,
+            "sugar": 8,
+            "calcium": 400,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "19:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1793757357490_9u0vq",
+          "name": "Optimum Nutrition Protein half",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "19:55",
+          "starred": true
         }
       ]
     },
@@ -22694,6 +22738,23 @@
           "sugar": 2,
           "calcium": 650,
           "vitD": 5,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1793757368138_ku3b3",
+        "name": "Optimum Nutrition Protein half",
+        "macros": {
+          "protein": 24,
+          "fiber": 0,
+          "carbs": 8,
+          "calories": 240,
+          "fat": 3,
+          "satFat": 2,
+          "sodium": 260,
+          "sugar": 2,
+          "calcium": 260,
+          "vitD": 0,
           "insulin": 0
         }
       }
