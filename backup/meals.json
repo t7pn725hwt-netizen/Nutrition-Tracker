@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-06T01:16:09.668Z",
+  "exported": "2026-11-06T04:13:39.020Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22283,7 +22283,7 @@
             "insulin": 9
           },
           "time": "12:25",
-          "starred": false,
+          "starred": true,
           "doseLog": {
             "preBolus": "10min",
             "activityAfter": false,
@@ -22475,6 +22475,31 @@
           },
           "time": "15:40",
           "starred": false
+        },
+        {
+          "id": "m_1793927802867_sndvt",
+          "name": "Spaghetti with Beef Tomato Sauce + 1oz Parmesan",
+          "macros": {
+            "protein": 51,
+            "fiber": 6,
+            "carbs": 76,
+            "calories": 800,
+            "fat": 30,
+            "satFat": 13,
+            "sodium": 1350,
+            "sugar": 8,
+            "calcium": 400,
+            "vitD": 0.3,
+            "insulin": 8
+          },
+          "time": "19:16",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
@@ -22986,6 +23011,23 @@
           "sugar": 2,
           "calcium": 260,
           "vitD": 0,
+          "insulin": 0
+        }
+      },
+      {
+        "id": "fav_1793927784290_b8401",
+        "name": "Spaghetti with Beef Tomato Sauce + 1oz Parmesan",
+        "macros": {
+          "protein": 51,
+          "fiber": 6,
+          "carbs": 76,
+          "calories": 800,
+          "fat": 30,
+          "satFat": 13,
+          "sodium": 1350,
+          "sugar": 8,
+          "calcium": 400,
+          "vitD": 0.3,
           "insulin": 0
         }
       }
