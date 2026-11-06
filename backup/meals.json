@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-06T18:10:50.686Z",
+  "exported": "2026-11-06T19:34:20.283Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22493,6 +22493,33 @@
             "insulin": 8
           },
           "time": "19:16",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-11-06": [
+        {
+          "id": "m_1793988715814_x3ego",
+          "name": "Massaman Curry with Chicken, Sweet Potato & Rice (restaurant bowl)",
+          "macros": {
+            "protein": 32,
+            "fiber": 4,
+            "carbs": 90,
+            "calories": 620,
+            "fat": 52,
+            "satFat": 16,
+            "sodium": 1100,
+            "sugar": 10,
+            "calcium": 80,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "12:00",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
