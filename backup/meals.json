@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-07T01:41:07.195Z",
+  "exported": "2026-11-07T02:30:02.466Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22574,6 +22574,44 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1794018358568_hpdz5",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "20:25",
+          "starred": false
+        },
+        {
+          "id": "m_1794018365698_jdj9n",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "20:26",
+          "starred": false
         }
       ]
     },
