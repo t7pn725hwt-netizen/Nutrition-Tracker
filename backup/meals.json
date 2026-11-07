@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-07T18:18:58.677Z",
+  "exported": "2026-11-07T22:52:24.446Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22612,6 +22612,33 @@
           },
           "time": "20:26",
           "starred": false
+        }
+      ],
+      "2026-11-07": [
+        {
+          "id": "m_1794075542929_s5vu4",
+          "name": "Gyro Sandwich + Half Order of Fries",
+          "macros": {
+            "protein": 45,
+            "fiber": 6,
+            "carbs": 83,
+            "calories": 935,
+            "fat": 49,
+            "satFat": 16,
+            "sodium": 1700,
+            "sugar": 5,
+            "calcium": 160,
+            "vitD": 0.2,
+            "insulin": 13
+          },
+          "time": "12:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
