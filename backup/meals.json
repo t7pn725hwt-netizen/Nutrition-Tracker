@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-07T00:07:12.252Z",
+  "exported": "2026-11-07T01:41:07.195Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22507,7 +22507,7 @@
           "id": "m_1793988715814_x3ego",
           "name": "Massaman Curry with Chicken, Sweet Potato & Rice (restaurant bowl)",
           "macros": {
-            "protein": 32,
+            "protein": 58,
             "fiber": 4,
             "carbs": 90,
             "calories": 620,
@@ -22548,6 +22548,31 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 280
+          }
+        },
+        {
+          "id": "m_1794010049061_5dz1a",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 48,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "18:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
