@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-08T01:33:45.079Z",
+  "exported": "2026-11-08T02:02:25.443Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22682,6 +22682,31 @@
             "activityAfter": false,
             "iob": 0,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794101638814_t8fgn",
+          "name": "Meal",
+          "macros": {
+            "protein": 37,
+            "fiber": 12,
+            "carbs": 63,
+            "calories": 1040,
+            "fat": 72,
+            "satFat": 24,
+            "sodium": 2390,
+            "sugar": 13,
+            "calcium": 135,
+            "vitD": 0.6,
+            "insulin": 9
+          },
+          "time": "19:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
+            "bsAtDose": 166
           }
         }
       ]
