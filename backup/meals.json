@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-08T20:00:27.221Z",
+  "exported": "2026-11-08T23:07:41.504Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22708,6 +22708,52 @@
             "iob": 1,
             "bsAtDose": 166
           }
+        }
+      ],
+      "2026-11-08": [
+        {
+          "id": "m_1794168033879_r82z8",
+          "name": "Pepperoni Pizza",
+          "macros": {
+            "protein": 52,
+            "fiber": 3,
+            "carbs": 98,
+            "calories": 1080,
+            "fat": 52,
+            "satFat": 24,
+            "sodium": 2400,
+            "sugar": 10,
+            "calcium": 720,
+            "vitD": 0,
+            "insulin": 12
+          },
+          "time": "12:08",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794168776286_l2r41",
+          "name": "Optimum Nutrition Protein half",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:12",
+          "starred": false
         }
       ]
     },
