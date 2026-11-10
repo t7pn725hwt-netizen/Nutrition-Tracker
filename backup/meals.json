@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-09T22:40:48.352Z",
+  "exported": "2026-11-10T00:48:09.565Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22888,6 +22888,63 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1794270714533_geit8",
+          "name": "1 Medium Avocado",
+          "macros": {
+            "protein": 3,
+            "fiber": 10,
+            "carbs": 12,
+            "calories": 240,
+            "fat": 22,
+            "satFat": 3,
+            "sodium": 11,
+            "sugar": 1,
+            "calcium": 18,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:31",
+          "starred": false
+        },
+        {
+          "id": "m_1794270726573_xzr2f",
+          "name": "Sliced Turkey Breast 6oz",
+          "macros": {
+            "protein": 38,
+            "fiber": 0,
+            "carbs": 2,
+            "calories": 185,
+            "fat": 2,
+            "satFat": 0.5,
+            "sodium": 900,
+            "sugar": 1,
+            "calcium": 20,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "18:32",
+          "starred": false
+        },
+        {
+          "id": "m_1794270741092_ptp0k",
+          "name": "Kielbasa Boil with Potatoes, Green Beans & Onion (2 bowls, 2 potatoes total)",
+          "macros": {
+            "protein": 37,
+            "fiber": 12,
+            "carbs": 63,
+            "calories": 1040,
+            "fat": 72,
+            "satFat": 24,
+            "sodium": 2390,
+            "sugar": 13,
+            "calcium": 135,
+            "vitD": 0.6,
+            "insulin": 0
+          },
+          "time": "18:32",
+          "starred": false
         }
       ]
     },
