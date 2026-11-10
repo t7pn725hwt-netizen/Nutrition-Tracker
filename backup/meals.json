@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-10T21:06:05.806Z",
+  "exported": "2026-11-10T21:12:08.750Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22952,7 +22952,7 @@
           "id": "m_1794331378957_8ej8q",
           "name": "Wheat Thins (25) + Cheddar (~3oz) + Summer Sausage (~3oz)",
           "macros": {
-            "protein": 41,
+            "protein": 60,
             "fiber": 7,
             "carbs": 54,
             "calories": 963,
