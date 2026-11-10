@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-10T17:21:09.993Z",
+  "exported": "2026-11-10T21:06:05.806Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22945,6 +22945,33 @@
           },
           "time": "18:46",
           "starred": false
+        }
+      ],
+      "2026-11-10": [
+        {
+          "id": "m_1794331378957_8ej8q",
+          "name": "Wheat Thins (25) + Cheddar (~3oz) + Summer Sausage (~3oz)",
+          "macros": {
+            "protein": 41,
+            "fiber": 7,
+            "carbs": 54,
+            "calories": 963,
+            "fat": 65,
+            "satFat": 27,
+            "sodium": 2070,
+            "sugar": 12,
+            "calcium": 675,
+            "vitD": 0.4,
+            "insulin": 8
+          },
+          "time": "11:22",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
