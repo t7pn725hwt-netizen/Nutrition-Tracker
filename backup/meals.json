@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-11T00:25:50.886Z",
+  "exported": "2026-11-11T02:21:10.069Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -22991,6 +22991,31 @@
           },
           "time": "15:12",
           "starred": false
+        },
+        {
+          "id": "m_1794356761630_srux2",
+          "name": "Stuffed Pork Chop + Twice-Baked Potato + Green Beans + Tiny Slice Pumpkin Pie",
+          "macros": {
+            "protein": 64,
+            "fiber": 8,
+            "carbs": 82,
+            "calories": 1000,
+            "fat": 46,
+            "satFat": 18,
+            "sodium": 1540,
+            "sugar": 22,
+            "calcium": 310,
+            "vitD": 0.8,
+            "insulin": 13
+          },
+          "time": "18:26",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
+            "bsAtDose": null
+          }
         }
       ]
     },
