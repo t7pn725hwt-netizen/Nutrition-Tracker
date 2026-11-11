@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-11T18:36:52.414Z",
+  "exported": "2026-11-11T21:08:29.804Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23014,6 +23014,58 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 1,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-11-11": [
+        {
+          "id": "m_1794422216823_t3om3",
+          "name": "Chicken Bacon Ciabatta + Fries (revised)",
+          "macros": {
+            "protein": 55,
+            "fiber": 6,
+            "carbs": 83,
+            "calories": 960,
+            "fat": 42,
+            "satFat": 13,
+            "sodium": 1760,
+            "sugar": 5,
+            "calcium": 315,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "12:36",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794431279798_amzeh",
+          "name": "Chipotle Bowl: chicken, 1 scoop white rice, double black and pinto, sour cream, cheese, pico, corn salsa, plus a whole avocado",
+          "macros": {
+            "protein": 82,
+            "fiber": 45,
+            "carbs": 162,
+            "calories": 1475,
+            "fat": 64,
+            "satFat": 18,
+            "sodium": 2270,
+            "sugar": 11,
+            "calcium": 370,
+            "vitD": 0,
+            "insulin": 15
+          },
+          "time": "15:07",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.4,
             "bsAtDose": null
           }
         }
