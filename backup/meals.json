@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-12T19:35:01.168Z",
+  "exported": "2026-11-12T21:33:46.166Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23118,6 +23118,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794519184476_ibksm",
+          "name": "Campbell's Chunky Chicken Noodle Soup (full can)",
+          "macros": {
+            "protein": 19,
+            "fiber": 2,
+            "carbs": 30,
+            "calories": 260,
+            "fat": 7,
+            "satFat": 1.5,
+            "sodium": 1690,
+            "sugar": 3,
+            "calcium": 50,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "14:00",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0.4,
             "bsAtDose": null
           }
         }
