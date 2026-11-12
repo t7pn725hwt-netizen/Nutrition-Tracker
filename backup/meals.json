@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-12T21:33:46.166Z",
+  "exported": "2026-11-12T22:40:01.296Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23144,6 +23144,31 @@
             "activityAfter": false,
             "iob": 0.4,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794519226804_7bqwt",
+          "name": "Wheat Thins (25 crackers) + Cheese Spread (3oz)",
+          "macros": {
+            "protein": 18,
+            "fiber": 7,
+            "carbs": 58,
+            "calories": 584,
+            "fat": 32,
+            "satFat": 13,
+            "sodium": 1117,
+            "sugar": 16,
+            "calcium": 468,
+            "vitD": 0.1,
+            "insulin": 7
+          },
+          "time": "15:33",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 5.3,
+            "bsAtDose": 235
           }
         }
       ]
