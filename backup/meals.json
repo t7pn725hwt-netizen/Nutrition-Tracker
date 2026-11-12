@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-12T00:48:41.963Z",
+  "exported": "2026-11-12T01:01:30.861Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23066,6 +23066,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 4.4,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1794444562814_s7wmb",
+          "name": "Chicken Kiev + Baked Potato with Butter + Small Piece Pumpkin Pie",
+          "macros": {
+            "protein": 47,
+            "fiber": 6,
+            "carbs": 79,
+            "calories": 970,
+            "fat": 53,
+            "satFat": 27,
+            "sodium": 990,
+            "sugar": 18,
+            "calcium": 100,
+            "vitD": 0.4,
+            "insulin": 14
+          },
+          "time": "18:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.1,
             "bsAtDose": null
           }
         }
