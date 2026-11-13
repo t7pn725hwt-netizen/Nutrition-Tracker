@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-13T19:22:12.507Z",
+  "exported": "2026-11-13T22:00:34.353Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23266,6 +23266,25 @@
             "iob": 0,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1794598049409_lwpsa",
+          "name": "Smoked Beef Sticks & Bacon Cheddar Pack (1 package, 85g)",
+          "macros": {
+            "protein": 22,
+            "fiber": 0,
+            "carbs": 3,
+            "calories": 320,
+            "fat": 26,
+            "satFat": 14,
+            "sodium": 940,
+            "sugar": 1,
+            "calcium": 300,
+            "vitD": 0.1,
+            "insulin": 0
+          },
+          "time": "13:27",
+          "starred": false
         }
       ]
     },
