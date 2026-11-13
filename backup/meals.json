@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-13T01:20:18.571Z",
+  "exported": "2026-11-13T08:55:29.908Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23191,6 +23191,31 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 273
+          }
+        },
+        {
+          "id": "m_1794534573816_q5i8p",
+          "name": "Pot Roast + Mashed Potatoes + Cooked Carrots (3 servings)",
+          "macros": {
+            "protein": 110,
+            "fiber": 12,
+            "carbs": 78,
+            "calories": 1560,
+            "fat": 75,
+            "satFat": 33,
+            "sodium": 2250,
+            "sugar": 15,
+            "calcium": 120,
+            "vitD": 0.6,
+            "insulin": 10
+          },
+          "time": "19:49",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1,
+            "bsAtDose": null
           }
         }
       ]
