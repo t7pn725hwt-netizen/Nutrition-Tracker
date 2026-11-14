@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-14T23:55:05.339Z",
+  "exported": "2026-11-14T23:55:48.654Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23416,6 +23416,31 @@
           },
           "time": "16:15",
           "starred": false
+        },
+        {
+          "id": "m_1794700518649_jk8n2",
+          "name": "Pot Roast + Mashed Potatoes + Carrots (1 bowl)",
+          "macros": {
+            "protein": 69,
+            "fiber": 7,
+            "carbs": 48,
+            "calories": 880,
+            "fat": 43,
+            "satFat": 18,
+            "sodium": 1400,
+            "sugar": 8,
+            "calcium": 80,
+            "vitD": 0.4,
+            "insulin": 12
+          },
+          "time": "17:55",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
