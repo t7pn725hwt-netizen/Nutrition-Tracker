@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-16T21:49:57.909Z",
+  "exported": "2026-11-16T22:32:58.874Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23566,6 +23566,50 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 307
+          }
+        },
+        {
+          "id": "m_1794865811770_m5q6j",
+          "name": "Optimum Nutrition Protein half",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "15:50",
+          "starred": false
+        },
+        {
+          "id": "m_1794868316748_4uvjr",
+          "name": "Pot Roast + Mashed Potatoes + Carrots (1 bowl)",
+          "macros": {
+            "protein": 69,
+            "fiber": 7,
+            "carbs": 48,
+            "calories": 880,
+            "fat": 43,
+            "satFat": 18,
+            "sodium": 1400,
+            "sugar": 8,
+            "calcium": 80,
+            "vitD": 0.4,
+            "insulin": 10
+          },
+          "time": "16:31",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.4,
+            "bsAtDose": null
           }
         }
       ]
