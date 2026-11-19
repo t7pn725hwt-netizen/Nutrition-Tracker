@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-19T20:11:17.316Z",
+  "exported": "2026-11-19T23:04:44.419Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23839,6 +23839,50 @@
             "insulin": 7
           },
           "time": "10:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795119087846_xi3aj",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "14:11",
+          "starred": false
+        },
+        {
+          "id": "m_1795119846344_3nn14",
+          "name": "Culver's Deluxe Double + Medium Crinkle Cut Fries",
+          "macros": {
+            "protein": 44,
+            "fiber": 5,
+            "carbs": 92,
+            "calories": 1160,
+            "fat": 67,
+            "satFat": 23,
+            "sodium": 1300,
+            "sugar": 8,
+            "calcium": 210,
+            "vitD": 0.3,
+            "insulin": 15
+          },
+          "time": "14:24",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
