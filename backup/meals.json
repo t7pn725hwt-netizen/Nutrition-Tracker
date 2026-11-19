@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-19T13:17:07.526Z",
+  "exported": "2026-11-19T16:26:04.142Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23800,6 +23800,52 @@
           },
           "time": "18:53",
           "starred": false
+        }
+      ],
+      "2026-11-19": [
+        {
+          "id": "m_1795094235386_llgnt",
+          "name": "Optimum Nutrition Protein",
+          "macros": {
+            "protein": 48,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "07:17",
+          "starred": false
+        },
+        {
+          "id": "m_1795105500929_n8eda",
+          "name": "2 Piece Fried Chicken (Thigh & Drumstick) + Medium Banana",
+          "macros": {
+            "protein": 22,
+            "fiber": 3,
+            "carbs": 39,
+            "calories": 385,
+            "fat": 17,
+            "satFat": 4,
+            "sodium": 350,
+            "sugar": 14,
+            "calcium": 32,
+            "vitD": 0,
+            "insulin": 8
+          },
+          "time": "10:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
