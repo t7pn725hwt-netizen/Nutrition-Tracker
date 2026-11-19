@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-19T23:04:44.419Z",
+  "exported": "2026-11-19T23:13:42.727Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23888,6 +23888,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795129908342_13cnq",
+          "name": "Kwik Trip Rib Patty Sub (half bun) + Country Fresh Beef Sticks & Colby (3oz pack)",
+          "macros": {
+            "protein": 34,
+            "fiber": 1,
+            "carbs": 40,
+            "calories": 680,
+            "fat": 45,
+            "satFat": 21,
+            "sodium": 1885,
+            "sugar": 23,
+            "calcium": 405,
+            "vitD": 0.1,
+            "insulin": 3
+          },
+          "time": "17:11",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 4.5,
             "bsAtDose": null
           }
         }
