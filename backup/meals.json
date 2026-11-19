@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-19T16:35:05.082Z",
+  "exported": "2026-11-19T17:17:37.673Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -23826,7 +23826,7 @@
           "id": "m_1795105500929_n8eda",
           "name": "2 Piece Fried Chicken (Thigh & Drumstick) + Medium Banana",
           "macros": {
-            "protein": 22,
+            "protein": 34,
             "fiber": 3,
             "carbs": 39,
             "calories": 385,
