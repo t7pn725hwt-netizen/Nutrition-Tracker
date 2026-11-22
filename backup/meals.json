@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-21T21:39:42.090Z",
+  "exported": "2026-11-22T00:42:28.517Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24025,6 +24025,31 @@
             "insulin": 3
           },
           "time": "10:29",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795297190845_npsqb",
+          "name": "Ham Slider + Turkey Slider + Muffin + Fruit Crumble Bar + Strawberries",
+          "macros": {
+            "protein": 70,
+            "fiber": 6,
+            "carbs": 133,
+            "calories": 1220,
+            "fat": 55,
+            "satFat": 19,
+            "sodium": 2390,
+            "sugar": 45,
+            "calcium": 520,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "15:30",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
