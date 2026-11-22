@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-22T01:41:19.516Z",
+  "exported": "2026-11-22T23:04:33.520Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24050,6 +24050,31 @@
             "insulin": 12
           },
           "time": "15:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795311706210_8k8ql",
+          "name": "Kopp's KRK Burger",
+          "macros": {
+            "protein": 55,
+            "fiber": 1,
+            "carbs": 55,
+            "calories": 1250,
+            "fat": 85,
+            "satFat": 32,
+            "sodium": 1900,
+            "sugar": 10,
+            "calcium": 450,
+            "vitD": 1,
+            "insulin": 12
+          },
+          "time": "19:41",
           "starred": false,
           "doseLog": {
             "preBolus": "10min",
