@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-23T20:49:22.113Z",
+  "exported": "2026-11-23T23:12:36.904Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24217,6 +24217,25 @@
             "insulin": 0
           },
           "time": "14:48",
+          "starred": false
+        },
+        {
+          "id": "m_1795470701075_v6s0r",
+          "name": "Chicken Wings, Unbreaded, Bone-In (1 lb)",
+          "macros": {
+            "protein": 73,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 780,
+            "fat": 52,
+            "satFat": 14,
+            "sodium": 800,
+            "sugar": 0,
+            "calcium": 40,
+            "vitD": 0.3,
+            "insulin": 0
+          },
+          "time": "15:51",
           "starred": false
         }
       ]
