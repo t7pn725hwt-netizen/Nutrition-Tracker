@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-24T19:25:21.542Z",
+  "exported": "2026-11-24T21:48:57.952Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24285,6 +24285,58 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 4.6,
+            "bsAtDose": null
+          }
+        }
+      ],
+      "2026-11-24": [
+        {
+          "id": "m_1795548330162_fjw14",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 3
+          },
+          "time": "11:30",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795548349282_4llb8",
+          "name": "Fage  with Peanut Butter",
+          "macros": {
+            "protein": 37,
+            "fiber": 4.5,
+            "carbs": 18,
+            "calories": 450,
+            "fat": 27.5,
+            "satFat": 7,
+            "sodium": 179,
+            "sugar": 9,
+            "calcium": 332,
+            "vitD": 0,
+            "insulin": 6
+          },
+          "time": "13:25",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.6,
             "bsAtDose": null
           }
         }
