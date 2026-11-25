@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-24T23:56:31.153Z",
+  "exported": "2026-11-25T03:59:14.587Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24339,6 +24339,63 @@
             "iob": 1.6,
             "bsAtDose": null
           }
+        },
+        {
+          "id": "m_1795564595875_yflm6",
+          "name": "Optimum Nutrition Protein half",
+          "macros": {
+            "protein": 24,
+            "fiber": 0,
+            "carbs": 8,
+            "calories": 240,
+            "fat": 3,
+            "satFat": 2,
+            "sodium": 260,
+            "sugar": 2,
+            "calcium": 260,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:56",
+          "starred": false
+        },
+        {
+          "id": "m_1795564603035_ro5jd",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:56",
+          "starred": false
+        },
+        {
+          "id": "m_1795564608990_y7nf1",
+          "name": "Kirkland Beef Stick",
+          "macros": {
+            "protein": 10,
+            "fiber": 0,
+            "carbs": 1,
+            "calories": 100,
+            "fat": 8,
+            "satFat": 3,
+            "sodium": 390,
+            "sugar": 0,
+            "calcium": 10,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "17:56",
+          "starred": false
         }
       ]
     },
