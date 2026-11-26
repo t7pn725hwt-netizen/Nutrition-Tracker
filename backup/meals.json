@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-26T01:31:43.927Z",
+  "exported": "2026-11-26T05:37:48.830Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24461,6 +24461,53 @@
           },
           "time": "19:31",
           "starred": false
+        },
+        {
+          "id": "m_1795656712110_67q7h",
+          "name": "Biscuits and Sausage Gravy",
+          "macros": {
+            "protein": 35,
+            "fiber": 2,
+            "carbs": 62,
+            "calories": 780,
+            "fat": 48,
+            "satFat": 16,
+            "sodium": 2100,
+            "sugar": 11,
+            "calcium": 200,
+            "vitD": 0.5,
+            "insulin": 8
+          },
+          "time": "19:31",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795667044090_t1nse",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 3
+          },
+          "time": "22:24",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 258
+          }
         }
       ]
     },
