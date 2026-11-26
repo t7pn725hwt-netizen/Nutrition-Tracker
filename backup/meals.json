@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-26T19:57:36.247Z",
+  "exported": "2026-11-26T20:44:11.504Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24554,6 +24554,28 @@
           },
           "time": "12:45",
           "starred": false
+        },
+        {
+          "id": "m_1795723696072_waxlc",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 5
+          },
+          "time": "14:08",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": null
+          }
         }
       ]
     },
