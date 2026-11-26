@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-26T05:37:48.830Z",
+  "exported": "2026-11-26T18:46:48.472Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24508,6 +24508,52 @@
           "doseLog": {
             "bsAtDose": 258
           }
+        }
+      ],
+      "2026-11-26": [
+        {
+          "id": "m_1795716406212_frlyh",
+          "name": "Egg Quiche (2 slices)",
+          "macros": {
+            "protein": 34,
+            "fiber": 1,
+            "carbs": 36,
+            "calories": 700,
+            "fat": 50,
+            "satFat": 24,
+            "sodium": 900,
+            "sugar": 4,
+            "calcium": 300,
+            "vitD": 1.6,
+            "insulin": 7
+          },
+          "time": "12:06",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795718732604_wngrp",
+          "name": "Sliced Ham + Cheddar Cheese",
+          "macros": {
+            "protein": 32,
+            "fiber": 0,
+            "carbs": 4,
+            "calories": 380,
+            "fat": 22,
+            "satFat": 11,
+            "sodium": 1800,
+            "sugar": 3,
+            "calcium": 280,
+            "vitD": 0,
+            "insulin": 0
+          },
+          "time": "12:45",
+          "starred": false
         }
       ]
     },
