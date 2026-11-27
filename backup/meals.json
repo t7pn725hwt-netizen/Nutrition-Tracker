@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-26T23:48:50.010Z",
+  "exported": "2026-11-27T03:13:34.736Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24600,6 +24600,53 @@
             "activityAfter": false,
             "iob": 6.6,
             "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795736936990_vb86h",
+          "name": "Thanksgiving Pies: Pecan + Pumpkin + Chocolate Cream",
+          "macros": {
+            "protein": 12,
+            "fiber": 5,
+            "carbs": 120,
+            "calories": 970,
+            "fat": 52,
+            "satFat": 19,
+            "sodium": 660,
+            "sugar": 74,
+            "calcium": 120,
+            "vitD": 0.3,
+            "insulin": 12
+          },
+          "time": "17:48",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 3.2,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795746820273_nd3gj",
+          "name": "Humalog Correction",
+          "macros": {
+            "protein": 0,
+            "fiber": 0,
+            "carbs": 0,
+            "calories": 0,
+            "fat": 0,
+            "satFat": 0,
+            "sodium": 0,
+            "sugar": 0,
+            "calcium": 0,
+            "vitD": 0,
+            "insulin": 4
+          },
+          "time": "20:33",
+          "starred": false,
+          "doseLog": {
+            "bsAtDose": 278
           }
         }
       ]
