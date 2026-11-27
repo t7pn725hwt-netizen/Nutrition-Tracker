@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-27T17:41:02.501Z",
+  "exported": "2026-11-27T19:54:22.542Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24669,6 +24669,33 @@
           "starred": false,
           "doseLog": {
             "bsAtDose": 292
+          }
+        }
+      ],
+      "2026-11-27": [
+        {
+          "id": "m_1795801272696_42rzi",
+          "name": "**5 Eggs + 4oz Cheddar + 10 Small Cherry Tomatoes**",
+          "macros": {
+            "protein": 59,
+            "fiber": 2,
+            "carbs": 10,
+            "calories": 845,
+            "fat": 63,
+            "satFat": 32,
+            "sodium": 1050,
+            "sugar": 4,
+            "calcium": 934,
+            "vitD": 1,
+            "insulin": 4
+          },
+          "time": "11:41",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
           }
         }
       ]
