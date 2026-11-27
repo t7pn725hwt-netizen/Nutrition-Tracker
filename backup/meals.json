@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-27T19:54:22.542Z",
+  "exported": "2026-11-27T19:55:04.098Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24695,6 +24695,31 @@
             "preBolus": "10min",
             "activityAfter": false,
             "iob": 0,
+            "bsAtDose": null
+          }
+        },
+        {
+          "id": "m_1795809274094_b3jh6",
+          "name": "Thanksgiving Plate: Turkey, Mashed Potatoes, Stuffing, Gravy, Corn",
+          "macros": {
+            "protein": 90,
+            "fiber": 9,
+            "carbs": 109,
+            "calories": 1280,
+            "fat": 53,
+            "satFat": 19,
+            "sodium": 2500,
+            "sugar": 10,
+            "calcium": 155,
+            "vitD": 1,
+            "insulin": 12
+          },
+          "time": "13:54",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 1.8,
             "bsAtDose": null
           }
         }
