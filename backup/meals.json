@@ -1,5 +1,5 @@
 {
-  "exported": "2026-11-28T02:19:07.237Z",
+  "exported": "2026-11-28T05:02:22.724Z",
   "version": "v1",
   "data": {
     "meals": {
@@ -24741,6 +24741,31 @@
           },
           "time": "17:51",
           "starred": false
+        },
+        {
+          "id": "m_1795832353039_iyb83",
+          "name": "Half a Restaurant Cheeseburger + Side of Fries",
+          "macros": {
+            "protein": 25,
+            "fiber": 6,
+            "carbs": 70,
+            "calories": 755,
+            "fat": 40,
+            "satFat": 12,
+            "sodium": 950,
+            "sugar": 4,
+            "calcium": 135,
+            "vitD": 0.2,
+            "insulin": 12
+          },
+          "time": "20:19",
+          "starred": false,
+          "doseLog": {
+            "preBolus": "10min",
+            "activityAfter": false,
+            "iob": 0,
+            "bsAtDose": null
+          }
         }
       ]
     },
